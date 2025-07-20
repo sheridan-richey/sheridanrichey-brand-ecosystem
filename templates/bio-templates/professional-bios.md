@@ -51,7 +51,7 @@ I'm the founder of Bring It Forward Investments and creator of the ZAG Matrix fr
 
 Connect with me to explore career transformation, executive leadership, and strategic growth opportunities."
 
-### **Website (sheridanrichey.com)**
+### **Website (Coming Soon)**
 **Hero Section:**
 "Transform Your Career with the ZAG Matrix Framework"
 
@@ -92,9 +92,9 @@ I help mid-career professionals who've achieved success but crave greater purpos
 
 ## 🌟 Connect
 
-- **Website:** [sheridanrichey.com](https://sheridanrichey.com)
+- **Website:** sheridanrichey.com (Coming Soon)
 - **LinkedIn:** [linkedin.com/in/sheridanrichey](https://linkedin.com/in/sheridanrichey)
-- **Newsletter:** [Join the Community](https://sheridanrichey.com/newsletter)
+- **Newsletter:** Join the Community (Coming Soon)
 
 ---
 

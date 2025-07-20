@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * SLR.com Brand Ecosystem Setup Script
+ * Sheridan Richey Brand Ecosystem Setup Script
  * 
  * This script helps set up the complete Sheridan Richey brand ecosystem
  * including the website, content hub, and professional profiles.
@@ -16,7 +16,7 @@ console.log('🚀 Setting up Sheridan Richey Brand Ecosystem...\n');
 // Check if we're in the right directory
 const packageJsonPath = path.join(process.cwd(), 'package.json');
 if (!fs.existsSync(packageJsonPath)) {
-  console.error('❌ Error: package.json not found. Please run this script from the SLR.com root directory.');
+  console.error('❌ Error: package.json not found. Please run this script from the sheridanrichey-brand-ecosystem root directory.');
   process.exit(1);
 }
 
@@ -49,7 +49,7 @@ try {
   
   console.log('\n🎯 Next steps:');
   console.log('1. Start development server: npm run dev');
-  console.log('2. Create GitHub repository: git init && git remote add origin https://github.com/sheridanrichey/SLR.com.git');
+  console.log('2. Create GitHub repository: git init && git remote add origin https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem.git');
   console.log('3. Add your brand assets to assets/logos/');
   console.log('4. Update professional role details in professional-roles/');
   console.log('5. Create content in content/blog/');

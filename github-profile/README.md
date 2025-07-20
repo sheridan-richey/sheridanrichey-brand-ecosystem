@@ -20,7 +20,7 @@ I help mid-career professionals who've achieved success but crave greater purpos
 ## 💼 **Professional Experience**
 
 With over two decades in SaaS leadership, I've:
-- Led product development teams of 100+ professionals
+- Led product development teams of 300+ professionals
 - Managed complex M&A processes
 - Built high-performing teams and cultures
 - Driven profitable growth at scale
@@ -38,7 +38,7 @@ With over two decades in SaaS leadership, I've:
 ## 📚 **Latest Insights**
 
 ### **ZEN - Finding Clarity**
-- [Finding Clarity in Mid-Career](https://sheridanrichey.com/blog/finding-clarity-mid-career)
+- Finding Clarity in Mid-Career (Coming Soon)
 - Leadership insights from executive experience
 - Purpose discovery frameworks
 
@@ -54,9 +54,9 @@ With over two decades in SaaS leadership, I've:
 
 ## 🌟 **Connect & Learn More**
 
-- **Website:** [sheridanrichey.com](https://sheridanrichey.com)
+- **Website:** sheridanrichey.com (Coming Soon)
 - **LinkedIn:** [linkedin.com/in/sheridanrichey](https://linkedin.com/in/sheridanrichey)
-- **Newsletter:** [Join the Community](https://sheridanrichey.com/newsletter)
+- **Newsletter:** Join the Community (Coming Soon)
 
 ## 🛠️ **Technical Stack**
 
@@ -79,9 +79,9 @@ With over two decades in SaaS leadership, I've:
 
 ## 🎯 **Featured Projects**
 
-- **[SLR.com](https://github.com/sheridanrichey/SLR.com)** - Personal brand ecosystem
-- **[ZAG Matrix Framework](https://sheridanrichey.com/zag-matrix)** - Career transformation system
-- **[Content Management System](https://github.com/sheridanrichey/SLR.com/tree/main/website)** - Next.js website
+- **[Sheridan Richey Brand Ecosystem](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem)** - Personal brand ecosystem
+- **[ZAG Matrix Framework](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem)** - Career transformation system
+- **[Content Management System](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/tree/main/website)** - Next.js website
 
 ## 💡 **Philosophy**
 
@@ -89,7 +89,7 @@ With over two decades in SaaS leadership, I've:
 
 ## 🚀 **Get Started**
 
-1. **Explore the ZAG Matrix** at [sheridanrichey.com](https://sheridanrichey.com)
+1. **Explore the ZAG Matrix** in the GitHub repository
 2. **Join the community** through the newsletter
 3. **Connect professionally** on LinkedIn
 4. **Follow the journey** as we build together

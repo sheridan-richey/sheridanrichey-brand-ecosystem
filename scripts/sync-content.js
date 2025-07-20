@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Content Sync Script for SLR.com Brand Ecosystem
+ * Content Sync Script for Sheridan Richey Brand Ecosystem
  * 
  * This script syncs content from the centralized content hub
  * to the website for publishing.
