@@ -1,0 +1,35 @@
+{
+  "name": "sheridan-richey-brand-ecosystem",
+  "version": "1.0.0",
+  "description": "Sheridan Richey Personal Brand Ecosystem - Complete brand management system including website, content hub, and professional profiles",
+  "private": true,
+  "scripts": {
+    "dev": "cd website && npm run dev",
+    "build": "cd website && npm run build",
+    "start": "cd website && npm start",
+    "lint": "cd website && npm run lint",
+    "content:sync": "node scripts/sync-content.js",
+    "content:validate": "node scripts/validate-content.js",
+    "brand:update": "node scripts/update-brand-assets.js",
+    "deploy:website": "cd website && npm run build && echo 'Website built successfully'",
+    "deploy:github": "node scripts/deploy-github-profile.js",
+    "setup": "npm install && cd website && npm install"
+  },
+  "keywords": [
+    "personal-branding",
+    "zag-matrix",
+    "career-transformation",
+    "executive-leadership",
+    "content-management"
+  ],
+  "author": "Sheridan Richey",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sheridanrichey/sheridanrichey-brand-ecosystem"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+} 
