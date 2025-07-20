@@ -101,13 +101,13 @@ sheridanrichey-brand-ecosystem/
    ```
 
 2. **Create GitHub Repository:**
-   - Repository: `sheridanrichey/sheridanrichey-brand-ecosystem`
+   - Repository: `sheridan-richey/sheridanrichey-brand-ecosystem`
    - Description: "Sheridan Richey Personal Brand Ecosystem - Complete brand management system including website, content hub, and professional profiles"
    - Public repository for professional visibility
 
 3. **Connect to GitHub:**
    ```bash
-   git remote add origin https://github.com/sheridanrichey/sheridanrichey-brand-ecosystem.git
+   git remote add origin https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem.git
    git branch -M main
    git push -u origin main
    ```

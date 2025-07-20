@@ -79,7 +79,7 @@ sheridanrichey-brand-ecosystem/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/sheridanrichey/sheridanrichey-brand-ecosystem.git
+   git clone https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem.git
    cd sheridanrichey-brand-ecosystem
    ```
 
