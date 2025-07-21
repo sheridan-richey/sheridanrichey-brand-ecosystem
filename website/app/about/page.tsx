@@ -16,6 +16,9 @@ export default function AboutPage() {
               Executive leader, entrepreneur, and guide for awakened technologists seeking 
               purpose-driven transformation through the ZAG Matrix framework.
             </p>
+            <div className="flex justify-center mt-8">
+              <img src="/sheridan-about.jpg" alt="Sheridan Richey" className="rounded-2xl shadow-xl w-64 h-80 object-cover object-top" />
+            </div>
           </div>
         </div>
       </section>

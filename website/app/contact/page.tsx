@@ -25,6 +25,9 @@ export default function ContactPage() {
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
               <div>
+                <div className="flex justify-center mb-8">
+                  <img src="/sheridan-contact.jpg" alt="Sheridan Richey" className="rounded-2xl shadow-xl w-64 h-80 object-cover object-top" />
+                </div>
                 <h2 className="text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
                   Get in Touch
                 </h2>
