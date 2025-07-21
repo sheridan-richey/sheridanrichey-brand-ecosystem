@@ -119,7 +119,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-16 text-center">
-            <Link href="/blog" className="btn-primary">
+            <Link href="/blog" className="btn-primary inline-flex items-center">
               View All Posts
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
