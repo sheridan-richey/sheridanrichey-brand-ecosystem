@@ -47,57 +47,59 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white/80 backdrop-blur-md border-b border-secondary-200 sticky top-0 z-50">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Sheridan Richey</span>
-            <div className="flex items-center space-x-2">
-              <span className="font-heading text-2xl font-bold text-slate-900 uppercase tracking-wide">SHERIDAN</span>
-              <span className="font-heading text-2xl font-bold text-[#279595] uppercase tracking-wide">RICHEY</span>
-            </div>
-          </Link>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-secondary-700"
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Open main menu"
-          >
-            <Menu className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-semibold leading-6 text-secondary-900 hover:text-primary-600 transition-colors"
-            >
-              {item.name}
+    <>
+      <header className="bg-white/80 backdrop-blur-md border-b border-secondary-200 sticky top-0 z-50">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+          <div className="flex lg:flex-1">
+            <Link href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">Sheridan Richey</span>
+              <div className="flex items-center space-x-2">
+                <span className="font-heading text-2xl font-bold text-slate-900 uppercase tracking-wide">SHERIDAN</span>
+                <span className="font-heading text-2xl font-bold text-[#279595] uppercase tracking-wide">RICHEY</span>
+              </div>
             </Link>
-          ))}
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="/newsletter" className="btn-primary">
-            Join Community
-          </Link>
-        </div>
-      </nav>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-secondary-700"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open main menu"
+            >
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-secondary-900 hover:text-primary-600 transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <Link href="/newsletter" className="btn-primary">
+              Join Community
+            </Link>
+          </div>
+        </nav>
+      </header>
       
-      {/* Mobile menu */}
+      {/* Mobile menu - Fixed positioning outside header */}
       {mobileMenuOpen && (
-        <div className="lg:hidden">
+        <div className="lg:hidden fixed inset-0 z-[100]">
           {/* Backdrop */}
           <div 
-            className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm"
             onClick={closeMobileMenu}
             aria-hidden="true"
           />
           
           {/* Menu panel */}
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-secondary-900/10">
+          <div className="fixed inset-y-0 right-0 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-secondary-900/10">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={closeMobileMenu}>
                 <span className="sr-only">Sheridan Richey</span>
@@ -143,6 +145,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </header>
+    </>
   )
 } 
