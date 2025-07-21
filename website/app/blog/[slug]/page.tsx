@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Calendar, Tag, Share2 } from 'lucide-react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 // This would typically come from your CMS or data source
 const blogPosts = [
@@ -339,10 +341,28 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       {/* Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         <article className="prose prose-lg max-w-none">
-          <div 
-            className="font-body text-slate-700 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>').replace(/#{1,6}\s+(.+)/g, '<h2 class="font-heading text-2xl font-bold text-slate-900 mt-8 mb-4">$1</h2>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>') }}
-          />
+          <div className="blog-content font-body text-slate-700 leading-relaxed">
+            <ReactMarkdown 
+              remarkPlugins={[remarkGfm]}
+              components={{
+                h1: ({children}) => <h1 className="font-heading text-4xl font-bold text-slate-900 mt-8 mb-6">{children}</h1>,
+                h2: ({children}) => <h2 className="font-heading text-3xl font-bold text-slate-900 mt-8 mb-4">{children}</h2>,
+                h3: ({children}) => <h3 className="font-heading text-2xl font-bold text-slate-900 mt-6 mb-3">{children}</h3>,
+                h4: ({children}) => <h4 className="font-heading text-xl font-bold text-slate-900 mt-4 mb-2">{children}</h4>,
+                p: ({children}) => <p className="mb-4 leading-relaxed">{children}</p>,
+                ul: ({children}) => <ul className="list-disc list-inside mb-4 space-y-1">{children}</ul>,
+                ol: ({children}) => <ol className="list-decimal list-inside mb-4 space-y-1">{children}</ol>,
+                li: ({children}) => <li className="ml-4">{children}</li>,
+                strong: ({children}) => <strong className="font-semibold text-slate-900">{children}</strong>,
+                em: ({children}) => <em className="italic">{children}</em>,
+                blockquote: ({children}) => <blockquote className="border-l-4 border-[#279595] pl-4 italic text-slate-600 mb-4">{children}</blockquote>,
+                code: ({children}) => <code className="bg-slate-100 px-2 py-1 rounded text-sm font-mono">{children}</code>,
+                pre: ({children}) => <pre className="bg-slate-100 p-4 rounded-lg overflow-x-auto mb-4">{children}</pre>,
+              }}
+            >
+              {post.content}
+            </ReactMarkdown>
+          </div>
         </article>
 
         {/* Tags */}
