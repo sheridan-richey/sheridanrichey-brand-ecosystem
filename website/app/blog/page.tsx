@@ -20,6 +20,24 @@ const blogPosts = [
     tags: ["clarity", "purpose", "mid-career", "transformation"],
     featured: false,
     slug: "finding-clarity-mid-career"
+  },
+  {
+    title: "Building Momentum Through Strategic Relationships",
+    description: "The power of surrounding yourself with people who accelerate your growth.",
+    date: "2024-01-10",
+    category: "ACT",
+    tags: ["relationships", "networking", "momentum", "growth"],
+    featured: false,
+    slug: "building-momentum-through-relationships"
+  },
+  {
+    title: "Strategic Career Moves That Compound Success",
+    description: "How to make career decisions that build upon each other for exponential growth.",
+    date: "2024-01-05",
+    category: "GEM",
+    tags: ["career moves", "strategic planning", "compounding", "growth"],
+    featured: false,
+    slug: "strategic-career-moves"
   }
 ]
 
