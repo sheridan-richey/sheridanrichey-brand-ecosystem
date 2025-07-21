@@ -33,10 +33,10 @@ export const Post = defineDocumentType(() => ({
       required: false,
     },
     featured: {
-      type: 'string',
+      type: 'boolean',
       description: 'Whether the post is featured',
       required: false,
-      default: 'false',
+      default: false,
     },
     image: {
       type: 'string',

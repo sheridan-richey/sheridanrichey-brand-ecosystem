@@ -12,7 +12,7 @@ const blogPosts = allPosts
       month: 'short', 
       day: 'numeric' 
     }),
-    featured: String(post.featured) === 'true',
+    featured: post.featured === true,
   }))
 
 const categoryColorMap: Record<string, string> = {
@@ -132,9 +132,7 @@ export default function BlogPage() {
             <article key={post.slug} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-200">
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className={`inline-flex items-center px-2 py-1 rounded-full ${categoryColorMap[post.category] || 'bg-[#279595]/10 text-[#279595]'}`}>
-                    {post.category}
-                  </span>
+                  <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap[post.category] || 'bg-[#279595]/10 text-[#279595]'}`}>{post.category}</span>
                   {post.featured && (
                     <span className="inline-flex items-center px-2 py-1 bg-[#6366F1]/10 rounded-full">
                       <span className="text-[#6366F1] font-body text-xs font-medium">Featured</span>
