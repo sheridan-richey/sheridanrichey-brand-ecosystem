@@ -1,13 +1,33 @@
 import Link from 'next/link'
 import HeroSection from '@/components/HeroSection'
 import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
+import { allPosts } from 'contentlayer/generated'
+import BlogCard, { BlogCardPost } from '@/components/BlogCard'
+
+function getLatestFeaturedPosts(posts: any[], count: number): BlogCardPost[] {
+  // Sort by date descending
+  const sorted = posts
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .map(post => ({
+      ...post,
+      date: new Date(post.date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }),
+      featured: post.featured === true,
+    }))
+  const featured = sorted.filter(p => p.featured)
+  const rest = sorted.filter(p => !p.featured)
+  return [...featured.slice(0, count), ...rest].slice(0, count)
+}
 
 export default function HomePage() {
+  const latestPosts = getLatestFeaturedPosts(allPosts, 3)
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection />
-
       {/* ZAG Matrix Overview */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -19,7 +39,6 @@ export default function HomePage() {
               A proven system for mid-career professionals seeking holistic transformation
             </p>
           </div>
-          
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
               <div className="flex flex-col">
@@ -41,7 +60,6 @@ export default function HomePage() {
                   </p>
                 </dd>
               </div>
-              
               <div className="flex flex-col">
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-secondary-900">
                   <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-accent-600">
@@ -61,7 +79,6 @@ export default function HomePage() {
                   </p>
                 </dd>
               </div>
-              
               <div className="flex flex-col">
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-secondary-900">
                   <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-secondary-600">
@@ -85,7 +102,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Featured Content */}
       <section className="bg-secondary-50 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -97,76 +113,11 @@ export default function HomePage() {
               Practical wisdom for your transformation journey
             </p>
           </div>
-          
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {/* Featured Blog Post Placeholders */}
-            <article className="card hover:shadow-lg transition-shadow">
-              <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime="2024-01-16" className="text-secondary-500">
-                  Jan 16, 2024
-                </time>
-                <span className="relative z-10 rounded-full bg-primary-50 px-3 py-1.5 font-medium text-primary-600 hover:bg-primary-100">
-                  ZEN
-                </span>
-              </div>
-              <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-secondary-900 group-hover:text-primary-600">
-                  <Link href="/blog/finding-clarity-mid-career">
-                    <span className="absolute inset-0" />
-                    Finding Clarity When You're Stuck in Success
-                  </Link>
-                </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-secondary-600">
-                  How to break through the plateau of achievement and discover what truly drives you forward.
-                </p>
-              </div>
-            </article>
-
-            <article className="card hover:shadow-lg transition-shadow">
-              <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime="2024-01-10" className="text-secondary-500">
-                  Jan 10, 2024
-                </time>
-                <span className="relative z-10 rounded-full bg-accent-50 px-3 py-1.5 font-medium text-accent-600 hover:bg-accent-100">
-                  ACT
-                </span>
-              </div>
-              <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-secondary-900 group-hover:text-primary-600">
-                  <Link href="/blog/building-momentum-through-relationships">
-                    <span className="absolute inset-0" />
-                    Building Momentum Through Strategic Relationships
-                  </Link>
-                </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-secondary-600">
-                  The power of surrounding yourself with people who accelerate your growth.
-                </p>
-              </div>
-            </article>
-
-            <article className="card hover:shadow-lg transition-shadow">
-              <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime="2024-01-05" className="text-secondary-500">
-                  Jan 5, 2024
-                </time>
-                <span className="relative z-10 rounded-full bg-secondary-50 px-3 py-1.5 font-medium text-secondary-600 hover:bg-secondary-100">
-                  GEM
-                </span>
-              </div>
-              <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-secondary-900 group-hover:text-primary-600">
-                  <Link href="/blog/strategic-career-moves">
-                    <span className="absolute inset-0" />
-                    Strategic Career Moves That Compound Success
-                  </Link>
-                </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-secondary-600">
-                  How to make career decisions that build upon each other for exponential growth.
-                </p>
-              </div>
-            </article>
+            {latestPosts.map(post => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
           </div>
-          
           <div className="mt-16 text-center">
             <Link href="/blog" className="btn-primary">
               View All Posts
@@ -175,7 +126,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="bg-primary-600">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
@@ -198,7 +148,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
     </div>
   )
 } 
