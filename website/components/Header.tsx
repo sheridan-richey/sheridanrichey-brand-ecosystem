@@ -22,10 +22,8 @@ export default function Header() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Sheridan Richey</span>
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-accent-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">SR</span>
-              </div>
-              <span className="text-xl font-bold gradient-text">Sheridan Richey</span>
+              <span className="font-heading text-2xl font-bold text-slate-900 uppercase tracking-wide">SHERIDAN</span>
+              <span className="font-heading text-2xl font-bold text-[#279595] uppercase tracking-wide">RICHEY</span>
             </div>
           </Link>
         </div>
@@ -66,10 +64,8 @@ export default function Header() {
               <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Sheridan Richey</span>
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-accent-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">SR</span>
-                  </div>
-                  <span className="text-xl font-bold gradient-text">Sheridan Richey</span>
+                  <span className="font-heading text-2xl font-bold text-slate-900 uppercase tracking-wide">SHERIDAN</span>
+                  <span className="font-heading text-2xl font-bold text-[#279595] uppercase tracking-wide">RICHEY</span>
                 </div>
               </Link>
               <button

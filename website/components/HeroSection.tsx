@@ -13,21 +13,9 @@ export default function HeroSection() {
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
-      {/* Header with Logo */}
-      <header className="absolute top-0 left-0 right-0 z-20 px-6 py-4">
+      {/* Trust Indicator - Now directly below top */}
+      <div className="absolute top-0 left-0 right-0 z-20 px-6 py-4">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center mb-3">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-[#279595] rounded-lg flex items-center justify-center">
-                <span className="font-heading text-white font-bold text-lg">SR</span>
-              </div>
-              <div className="font-heading text-2xl font-bold text-slate-900">
-                SHERIDAN <span className="text-[#279595]">RICHEY</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Trust Indicator - Now directly below logo */}
           <div className="flex justify-start">
             <div
               className={`inline-flex items-center px-4 py-2 bg-[#279595]/10 rounded-full transition-all duration-800 ${
@@ -39,7 +27,7 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Main Hero Content - Pulled way up */}
       <div className="min-h-screen flex items-start justify-center px-4 pt-32 pb-8">
