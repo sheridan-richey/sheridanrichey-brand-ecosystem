@@ -12,6 +12,17 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     notFound()
   }
 
+  // Format the date and handle featured status
+  const formattedPost = {
+    ...post,
+    date: new Date(post.date).toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'short', 
+      day: 'numeric' 
+    }),
+    featured: post.featured === 'true'
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       {/* Header */}
@@ -25,35 +36,55 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             Back to Blog
           </Link>
           
-          <div className="mb-6">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="inline-flex items-center px-3 py-1 bg-[#279595]/10 rounded-full">
-                <span className="text-[#279595] font-body text-sm font-medium">{post.category}</span>
-              </span>
-              {post.featured && (
-                <span className="inline-flex items-center px-3 py-1 bg-[#6366F1]/10 rounded-full">
-                  <span className="text-[#6366F1] font-body text-sm font-medium">Featured</span>
+                      <div className="mb-6">
+              <div className="flex items-center gap-2 mb-4">
+                <span className={`inline-flex items-center px-3 py-1 rounded-full ${
+                  formattedPost.category === 'ZEN' ? 'bg-[#6366F1]/10' :
+                  formattedPost.category === 'ACT' ? 'bg-[#279595]/10' :
+                  formattedPost.category === 'GEM' ? 'bg-[#8B5A3C]/10' :
+                  'bg-[#279595]/10'
+                }`}>
+                  <span className={`font-body text-sm font-medium ${
+                    formattedPost.category === 'ZEN' ? 'text-[#6366F1]' :
+                    formattedPost.category === 'ACT' ? 'text-[#279595]' :
+                    formattedPost.category === 'GEM' ? 'text-[#8B5A3C]' :
+                    'text-[#279595]'
+                  }`}>{formattedPost.category}</span>
                 </span>
-              )}
-            </div>
-            
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              {post.title}
-            </h1>
-            
-            <p className="font-body text-xl text-slate-600 mb-6">
-              {post.description}
-            </p>
-            
-            <div className="flex items-center gap-6 text-slate-500">
-              <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                <span className="font-body text-sm">{post.date}</span>
+                {formattedPost.featured && (
+                  <span className="inline-flex items-center px-3 py-1 bg-[#6366F1]/10 rounded-full">
+                    <span className="text-[#6366F1] font-body text-sm font-medium">Featured</span>
+                  </span>
+                )}
               </div>
-              <div className="flex items-center gap-2">
-                <Tag className="h-4 w-4" />
-                <span className="font-body text-sm">{post.category}</span>
-              </div>
+              
+              <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                {formattedPost.title}
+              </h1>
+              
+              <p className="font-body text-xl text-slate-600 mb-6">
+                {formattedPost.description}
+              </p>
+              
+              <div className="flex items-center gap-6 text-slate-500">
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  <span className="font-body text-sm">{formattedPost.date}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Tag className={`h-4 w-4 ${
+                    formattedPost.category === 'ZEN' ? 'text-[#6366F1]' :
+                    formattedPost.category === 'ACT' ? 'text-[#279595]' :
+                    formattedPost.category === 'GEM' ? 'text-[#8B5A3C]' :
+                    'text-[#279595]'
+                  }`} />
+                  <span className={`font-body text-sm ${
+                    formattedPost.category === 'ZEN' ? 'text-[#6366F1]' :
+                    formattedPost.category === 'ACT' ? 'text-[#279595]' :
+                    formattedPost.category === 'GEM' ? 'text-[#8B5A3C]' :
+                    'text-[#279595]'
+                  }`}>{formattedPost.category}</span>
+                </div>
               <button className="flex items-center gap-2 hover:text-[#279595] transition-colors duration-200">
                 <Share2 className="h-4 w-4" />
                 <span className="font-body text-sm">Share</span>
@@ -85,7 +116,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 pre: ({children}) => <pre className="bg-slate-100 p-4 rounded-lg overflow-x-auto mb-4">{children}</pre>,
               }}
             >
-              {post.body.raw}
+              {formattedPost.body.raw}
             </ReactMarkdown>
           </div>
         </article>
@@ -97,7 +128,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <span className="font-body text-sm font-medium text-slate-700">Tags:</span>
           </div>
           <div className="flex flex-wrap gap-2">
-            {post.tags?.map((tag) => (
+            {formattedPost.tags?.map((tag) => (
               <span 
                 key={tag}
                 className="inline-flex items-center px-3 py-1 bg-slate-100 rounded-full"
