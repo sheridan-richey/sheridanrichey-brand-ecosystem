@@ -28,19 +28,26 @@ export default function BlogPage() {
       {/* Header */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-8">
-            <div className="flex-shrink-0 flex justify-center md:justify-start">
-              <img src="/sheridan-blog.jpg" alt="Sheridan Richey" className="rounded-2xl shadow-xl w-40 h-52 object-cover object-top mb-6 md:mb-0" />
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <img 
+                  src="/sheridan-blog.jpg" 
+                  alt="Sheridan Richey" 
+                  className="rounded-full shadow-lg w-24 h-24 object-cover object-top border-4 border-white" 
+                />
+                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-[#279595] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">SR</span>
+                </div>
+              </div>
             </div>
-            <div className="text-center md:text-left">
-              <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-                The ZAG Blog
-              </h1>
-              <p className="font-body text-xl text-slate-600 max-w-3xl mx-auto md:mx-0">
-                Insights, strategies, and stories for awakened technologists ready to integrate 
-                clarity, momentum, and mastery into their purpose-driven careers.
-              </p>
-            </div>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              The ZAG Blog
+            </h1>
+            <p className="font-body text-xl text-slate-600">
+              Insights, strategies, and stories for awakened technologists ready to integrate 
+              clarity, momentum, and mastery into their purpose-driven careers.
+            </p>
           </div>
         </div>
       </div>
