@@ -1,11 +1,8 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import { Mail, MessageSquare, Calendar, MapPin } from 'lucide-react'
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-24 sm:py-32">
@@ -164,7 +161,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   )
 } 

@@ -1,12 +1,9 @@
 import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import { Target, Users, TrendingUp, Award, Building, Lightbulb } from 'lucide-react'
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      <Header />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-24 sm:py-32">
@@ -198,7 +195,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   )
 } 

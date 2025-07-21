@@ -1,15 +1,11 @@
 import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import HeroSection from '@/components/HeroSection'
 import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      <Header />
-      
-            {/* Hero Section */}
+      {/* Hero Section */}
       <HeroSection />
 
       {/* ZAG Matrix Overview */}
@@ -203,7 +199,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   )
 } 
