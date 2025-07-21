@@ -1,45 +1,9 @@
 import Link from 'next/link'
 import { ArrowRight, Calendar, Tag } from 'lucide-react'
+import { allPosts } from 'contentlayer/generated'
 
-// This would typically come from your CMS or data source
-const blogPosts = [
-  {
-    title: "The ZAG Matrix: A Framework for Awakened Technologists",
-    description: "Discover how the ZAG Matrix helps mid-career professionals integrate clarity, momentum, and mastery into purpose-driven careers.",
-    date: "2025-07-21",
-    category: "ZAG",
-    tags: ["ZAG Matrix", "career transformation", "mid-career", "purpose"],
-    featured: true,
-    slug: "zag-matrix-framework-introduction"
-  },
-  {
-    title: "Finding Clarity When You're Stuck in Success",
-    description: "How to break through the plateau of achievement and discover what truly drives you forward in your career and life.",
-    date: "2024-01-16",
-    category: "ZEN",
-    tags: ["clarity", "purpose", "mid-career", "transformation"],
-    featured: false,
-    slug: "finding-clarity-mid-career"
-  },
-  {
-    title: "Building Momentum Through Strategic Relationships",
-    description: "The power of surrounding yourself with people who accelerate your growth.",
-    date: "2024-01-10",
-    category: "ACT",
-    tags: ["relationships", "networking", "momentum", "growth"],
-    featured: false,
-    slug: "building-momentum-through-relationships"
-  },
-  {
-    title: "Strategic Career Moves That Compound Success",
-    description: "How to make career decisions that build upon each other for exponential growth.",
-    date: "2024-01-05",
-    category: "GEM",
-    tags: ["career moves", "strategic planning", "compounding", "growth"],
-    featured: false,
-    slug: "strategic-career-moves"
-  }
-]
+// Sort posts by date (newest first)
+const blogPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 export default function BlogPage() {
   return (
