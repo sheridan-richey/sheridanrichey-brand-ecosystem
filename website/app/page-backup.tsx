@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import HeroSection from '@/components/HeroSection'
 import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
 
 export default function HomePage() {
@@ -9,8 +8,30 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Header />
       
-            {/* Hero Section */}
-      <HeroSection />
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-accent-50">
+        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-secondary-900 sm:text-6xl">
+              Transform Your Career with the{' '}
+              <span className="gradient-text">ZAG Matrix</span>
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-secondary-600">
+              For awakened technologists who've achieved success but crave greater purpose. 
+              Discover how to integrate clarity, momentum, and mastery into your professional journey.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <Link href="/zag-matrix" className="btn-primary">
+                Explore the Framework
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <Link href="/about" className="btn-secondary">
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ZAG Matrix Overview */}
       <section className="py-24 sm:py-32">
