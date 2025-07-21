@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, BookOpen, Tool, Users, FileText, ExternalLink, Download } from 'lucide-react'
+import { ArrowRight, BookOpen, Wrench, Users, FileText, ExternalLink, Download } from 'lucide-react'
 
 export default function ResourcesPage() {
   return (
@@ -106,7 +106,7 @@ export default function ResourcesPage() {
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-[#279595] to-[#34D399] rounded-xl flex items-center justify-center">
-                <Tool className="h-6 w-6 text-white" />
+                <Wrench className="h-6 w-6 text-white" />
               </div>
               <div>
                 <h2 className="font-heading text-2xl font-bold text-slate-900">The Toolkit</h2>
