@@ -12,8 +12,15 @@ const blogPosts = allPosts
       month: 'short', 
       day: 'numeric' 
     }),
-    featured: post.featured === 'true'
+    featured: String(post.featured) === 'true',
   }))
+
+const categoryColorMap: Record<string, string> = {
+  ZAG: 'bg-[#279595] text-white',
+  ZEN: 'bg-[#6366F1]/10 text-[#6366F1]',
+  ACT: 'bg-[#279595]/10 text-[#279595]',
+  GEM: 'bg-[#8B5A3C]/10 text-[#8B5A3C]',
+};
 
 export default function BlogPage() {
   return (
@@ -125,18 +132,8 @@ export default function BlogPage() {
             <article key={post.slug} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-200">
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className={`inline-flex items-center px-2 py-1 rounded-full ${
-                    post.category === 'ZEN' ? 'bg-[#6366F1]/10' :
-                    post.category === 'ACT' ? 'bg-[#279595]/10' :
-                    post.category === 'GEM' ? 'bg-[#8B5A3C]/10' :
-                    'bg-[#279595]/10'
-                  }`}>
-                    <span className={`font-body text-xs font-medium ${
-                      post.category === 'ZEN' ? 'text-[#6366F1]' :
-                      post.category === 'ACT' ? 'text-[#279595]' :
-                      post.category === 'GEM' ? 'text-[#8B5A3C]' :
-                      'text-[#279595]'
-                    }`}>{post.category}</span>
+                  <span className={`inline-flex items-center px-2 py-1 rounded-full ${categoryColorMap[post.category] || 'bg-[#279595]/10 text-[#279595]'}`}>
+                    {post.category}
                   </span>
                   {post.featured && (
                     <span className="inline-flex items-center px-2 py-1 bg-[#6366F1]/10 rounded-full">
