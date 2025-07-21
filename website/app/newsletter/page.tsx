@@ -1,0 +1,322 @@
+'use client'
+
+import Link from 'next/link'
+import { ArrowRight, CheckCircle, Users, Zap, Target } from 'lucide-react'
+import { useState } from 'react'
+
+export default function NewsletterPage() {
+  const [formData, setFormData] = useState({
+    email: '',
+    name: '',
+    role: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitMessage, setSubmitMessage] = useState('')
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setSubmitMessage(result.message)
+        setFormData({ email: '', name: '', role: '' })
+      } else {
+        setSubmitStatus('error')
+        setSubmitMessage(result.error || 'Failed to subscribe')
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      setSubmitMessage('Network error. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+      {/* Header */}
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <img 
+                  src="/sheridan-blog.jpg" 
+                  alt="Sheridan Richey" 
+                  className="rounded-full shadow-lg w-24 h-24 object-cover object-top border-4 border-white" 
+                />
+                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-[#279595] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">SR</span>
+                </div>
+              </div>
+            </div>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              Join the ZAG Community
+            </h1>
+            <p className="font-body text-xl text-slate-600">
+              Connect with awakened technologists on their transformation journey. 
+              Get weekly insights, strategies, and stories delivered to your inbox.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left Column - Benefits & Features */}
+          <div>
+            <h2 className="font-heading text-3xl font-bold text-slate-900 mb-6">
+              What You'll Get
+            </h2>
+            
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#279595]/10 rounded-lg flex items-center justify-center">
+                  <Zap className="h-6 w-6 text-[#279595]" />
+                </div>
+                <div>
+                  <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">
+                    Weekly ZAG Insights
+                  </h3>
+                  <p className="font-body text-slate-600">
+                    Practical strategies for integrating clarity, momentum, and mastery into your career. 
+                    Real stories from technologists who've transformed their professional lives.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#6366F1]/10 rounded-lg flex items-center justify-center">
+                  <Target className="h-6 w-6 text-[#6366F1]" />
+                </div>
+                <div>
+                  <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">
+                    Exclusive Resources
+                  </h3>
+                  <p className="font-body text-slate-600">
+                    Access to frameworks, templates, and tools that help you apply the ZAG Matrix 
+                    to your specific situation. Plus early access to new content and courses.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#8B5A3C]/10 rounded-lg flex items-center justify-center">
+                  <Users className="h-6 w-6 text-[#8B5A3C]" />
+                </div>
+                <div>
+                  <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">
+                    Community Connection
+                  </h3>
+                  <p className="font-body text-slate-600">
+                    Connect with like-minded professionals who understand the challenges of mid-career 
+                    transformation. Share experiences and learn from others on similar journeys.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="mt-12 p-6 bg-slate-50 rounded-xl">
+              <h3 className="font-heading text-lg font-bold text-slate-900 mb-4">
+                What Our Community Says
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-[#279595] mt-0.5" />
+                  <p className="font-body text-slate-600">
+                    "The ZAG framework helped me find clarity in my career direction and build the momentum 
+                    I needed to make meaningful changes."
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-[#279595] mt-0.5" />
+                  <p className="font-body text-slate-600">
+                    "Sheridan's insights are practical and actionable. I've implemented several strategies 
+                    that have already made a difference in my professional life."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Signup Form */}
+          <div className="lg:sticky lg:top-8">
+            <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8">
+              <h3 className="font-heading text-2xl font-bold text-slate-900 mb-2">
+                Start Your ZAG Journey
+              </h3>
+              <p className="font-body text-slate-600 mb-6">
+                Join 500+ awakened technologists transforming their careers.
+              </p>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600" />
+                    <p className="font-body text-green-800">{submitMessage}</p>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="font-body text-red-800">{submitMessage}</p>
+                </div>
+              )}
+
+              {/* Newsletter Signup Form */}
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="email" className="block font-body text-sm font-medium text-slate-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#279595] focus:border-transparent font-body"
+                    placeholder="your.email@example.com"
+                    disabled={isSubmitting}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="name" className="block font-body text-sm font-medium text-slate-700 mb-2">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#279595] focus:border-transparent font-body"
+                    placeholder="Your first name"
+                    disabled={isSubmitting}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="role" className="block font-body text-sm font-medium text-slate-700 mb-2">
+                    Current Role
+                  </label>
+                  <select
+                    id="role"
+                    name="role"
+                    value={formData.role}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#279595] focus:border-transparent font-body"
+                    disabled={isSubmitting}
+                  >
+                    <option value="">Select your role</option>
+                    <option value="software-engineer">Software Engineer</option>
+                    <option value="product-manager">Product Manager</option>
+                    <option value="engineering-manager">Engineering Manager</option>
+                    <option value="executive">Executive/C-Level</option>
+                    <option value="consultant">Consultant</option>
+                    <option value="entrepreneur">Entrepreneur</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full font-body bg-[#279595] hover:bg-[#1f7a7a] disabled:bg-slate-400 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Joining...' : 'Join the Community'}
+                  {!isSubmitting && <ArrowRight className="inline ml-2 h-4 w-4" />}
+                </button>
+              </form>
+
+              <div className="mt-6 text-center">
+                <p className="font-body text-xs text-slate-500">
+                  Powered by Beehiiv • No spam, unsubscribe anytime
+                </p>
+              </div>
+            </div>
+
+            {/* ZAG Matrix Preview */}
+            <div className="mt-8 bg-gradient-to-br from-[#279595]/5 to-[#6366F1]/5 rounded-2xl p-6 border border-slate-200">
+              <h4 className="font-heading text-lg font-bold text-slate-900 mb-3">
+                The ZAG Matrix Framework
+              </h4>
+              <p className="font-body text-slate-600 mb-4">
+                Three interconnected pillars of transformation you'll master:
+              </p>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#6366F1] to-[#8B5CF6] rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="font-heading text-lg font-bold text-white">Z</span>
+                  </div>
+                  <p className="font-heading text-sm font-bold text-[#6366F1]">Clarity</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#279595] to-[#34D399] rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="font-heading text-lg font-bold text-white">A</span>
+                  </div>
+                  <p className="font-heading text-sm font-bold text-[#279595]">Momentum</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#8B5A3C] to-[#D97706] rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="font-heading text-lg font-bold text-white">G</span>
+                  </div>
+                  <p className="font-heading text-sm font-bold text-[#8B5A3C]">Mastery</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer CTA */}
+      <div className="bg-gradient-to-br from-[#279595]/5 to-[#6366F1]/5 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="text-center">
+            <h2 className="font-heading text-3xl font-bold text-slate-900 mb-4">
+              Ready to Transform Your Career?
+            </h2>
+            <p className="font-body text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+              Join hundreds of technologists who've already started their ZAG journey. 
+              Your transformation begins with one click.
+            </p>
+            <Link 
+              href="#top"
+              className="inline-flex items-center font-body bg-[#279595] hover:bg-[#1f7a7a] text-white px-8 py-4 rounded-lg transition-colors duration-200 font-medium text-lg"
+            >
+              Join the Community Now
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+} 
