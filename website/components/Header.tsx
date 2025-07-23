@@ -52,7 +52,7 @@ export default function Header() {
       <header className="bg-white/80 backdrop-blur-md border-b border-smoke sticky top-0 z-50">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5 mr-10">
+            <Link href="/" className="-m-1.5 p-1.5 mr-16">
               <span className="sr-only">Sheridan Richey</span>
               <Image
                 src="/assets/SVG/Logo-Zoomed-Locked.svg"
@@ -74,7 +74,7 @@ export default function Header() {
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
