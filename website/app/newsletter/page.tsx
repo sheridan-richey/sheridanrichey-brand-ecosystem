@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, CheckCircle, Users, Zap, Target } from 'lucide-react'
 import { useState } from 'react'
 
@@ -54,9 +55,9 @@ export default function NewsletterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-light-bg to-white">
       {/* Header */}
-      <div className="bg-white border-b border-slate-200">
+      <div className="bg-white border-b border-smoke">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex justify-center mb-6">
@@ -66,15 +67,21 @@ export default function NewsletterPage() {
                   alt="Sheridan Richey" 
                   className="rounded-full shadow-lg w-24 h-24 object-cover object-top border-4 border-white" 
                 />
-                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-[#279595] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">SR</span>
+                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
+                  <Image
+                    src="/assets/Emblem/SVG/Asset 4.svg"
+                    alt="SR"
+                    width={16}
+                    height={16}
+                    className="w-4 h-4"
+                  />
                 </div>
               </div>
             </div>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h1 className="font-manrope text-4xl md:text-5xl font-bold text-phantom mb-4">
               Join the ZAG Community
             </h1>
-            <p className="font-body text-xl text-slate-600">
+            <p className="font-manrope text-xl text-graphite">
               Connect with awakened technologists on their transformation journey. 
               Get weekly insights, strategies, and stories delivered to your inbox.
             </p>
@@ -87,20 +94,20 @@ export default function NewsletterPage() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column - Benefits & Features */}
           <div>
-            <h2 className="font-heading text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="font-manrope text-3xl font-bold text-phantom mb-6">
               What You'll Get
             </h2>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#279595]/10 rounded-lg flex items-center justify-center">
-                  <Zap className="h-6 w-6 text-[#279595]" />
+                <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
+                  <Zap className="h-6 w-6 text-primary-500" />
                 </div>
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">
+                  <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
                     Weekly ZAG Insights
                   </h3>
-                  <p className="font-body text-slate-600">
+                  <p className="font-manrope text-graphite">
                     Practical strategies for integrating clarity, momentum, and mastery into your career. 
                     Real stories from technologists who've transformed their professional lives.
                   </p>
@@ -108,14 +115,14 @@ export default function NewsletterPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#6366F1]/10 rounded-lg flex items-center justify-center">
-                  <Target className="h-6 w-6 text-[#6366F1]" />
+                <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
+                  <Target className="h-6 w-6 text-primary-500" />
                 </div>
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">
+                  <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
                     Exclusive Resources
                   </h3>
-                  <p className="font-body text-slate-600">
+                  <p className="font-manrope text-graphite">
                     Access to frameworks, templates, and tools that help you apply the ZAG Matrix 
                     to your specific situation. Plus early access to new content and courses.
                   </p>
@@ -123,14 +130,14 @@ export default function NewsletterPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#8B5A3C]/10 rounded-lg flex items-center justify-center">
-                  <Users className="h-6 w-6 text-[#8B5A3C]" />
+                <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
+                  <Users className="h-6 w-6 text-primary-500" />
                 </div>
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">
+                  <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
                     Community Connection
                   </h3>
-                  <p className="font-body text-slate-600">
+                  <p className="font-manrope text-graphite">
                     Connect with like-minded professionals who understand the challenges of mid-career 
                     transformation. Share experiences and learn from others on similar journeys.
                   </p>
@@ -139,21 +146,21 @@ export default function NewsletterPage() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="mt-12 p-6 bg-slate-50 rounded-xl">
-              <h3 className="font-heading text-lg font-bold text-slate-900 mb-4">
+            <div className="mt-12 p-6 bg-cloud rounded-xl">
+              <h3 className="font-manrope text-lg font-bold text-phantom mb-4">
                 What Our Community Says
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-[#279595] mt-0.5" />
-                  <p className="font-body text-slate-600">
+                  <CheckCircle className="h-5 w-5 text-primary-500 mt-0.5" />
+                  <p className="font-manrope text-graphite">
                     "The ZAG framework helped me find clarity in my career direction and build the momentum 
                     I needed to make meaningful changes."
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-[#279595] mt-0.5" />
-                  <p className="font-body text-slate-600">
+                  <CheckCircle className="h-5 w-5 text-primary-500 mt-0.5" />
+                  <p className="font-manrope text-graphite">
                     "Sheridan's insights are practical and actionable. I've implemented several strategies 
                     that have already made a difference in my professional life."
                   </p>
@@ -164,11 +171,11 @@ export default function NewsletterPage() {
 
           {/* Right Column - Signup Form */}
           <div className="lg:sticky lg:top-8">
-            <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8">
-              <h3 className="font-heading text-2xl font-bold text-slate-900 mb-2">
+            <div className="bg-white rounded-2xl shadow-xl border border-smoke p-8">
+              <h3 className="font-manrope text-2xl font-bold text-phantom mb-2">
                 Start Your ZAG Journey
               </h3>
-              <p className="font-body text-slate-600 mb-6">
+              <p className="font-manrope text-graphite mb-6">
                 Join 500+ awakened technologists transforming their careers.
               </p>
 
@@ -177,21 +184,21 @@ export default function NewsletterPage() {
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <p className="font-body text-green-800">{submitMessage}</p>
+                    <p className="font-manrope text-green-800">{submitMessage}</p>
                   </div>
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="font-body text-red-800">{submitMessage}</p>
+                  <p className="font-manrope text-red-800">{submitMessage}</p>
                 </div>
               )}
 
               {/* Newsletter Signup Form */}
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="email" className="block font-body text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="email" className="block font-manrope text-sm font-medium text-phantom mb-2">
                     Email Address *
                   </label>
                   <input
@@ -201,14 +208,14 @@ export default function NewsletterPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#279595] focus:border-transparent font-body"
+                    className="w-full px-4 py-3 border border-smoke rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent font-manrope"
                     placeholder="your.email@example.com"
                     disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="name" className="block font-body text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="name" className="block font-manrope text-sm font-medium text-phantom mb-2">
                     First Name
                   </label>
                   <input
@@ -217,14 +224,14 @@ export default function NewsletterPage() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#279595] focus:border-transparent font-body"
+                    className="w-full px-4 py-3 border border-smoke rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent font-manrope"
                     placeholder="Your first name"
                     disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="role" className="block font-body text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="role" className="block font-manrope text-sm font-medium text-phantom mb-2">
                     Current Role
                   </label>
                   <select
@@ -232,7 +239,7 @@ export default function NewsletterPage() {
                     name="role"
                     value={formData.role}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#279595] focus:border-transparent font-body"
+                    className="w-full px-4 py-3 border border-smoke rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent font-manrope"
                     disabled={isSubmitting}
                   >
                     <option value="">Select your role</option>
@@ -249,7 +256,7 @@ export default function NewsletterPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full font-body bg-[#279595] hover:bg-[#1f7a7a] disabled:bg-slate-400 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium disabled:cursor-not-allowed"
+                  className="w-full font-manrope bg-primary-500 hover:bg-primary-600 disabled:bg-graphite text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Joining...' : 'Join the Community'}
                   {!isSubmitting && <ArrowRight className="inline ml-2 h-4 w-4" />}
@@ -257,38 +264,38 @@ export default function NewsletterPage() {
               </form>
 
               <div className="mt-6 text-center">
-                <p className="font-body text-xs text-slate-500">
+                <p className="font-manrope text-xs text-graphite">
                   Powered by Beehiiv • No spam, unsubscribe anytime
                 </p>
               </div>
             </div>
 
             {/* ZAG Matrix Preview */}
-            <div className="mt-8 bg-gradient-to-br from-[#279595]/5 to-[#6366F1]/5 rounded-2xl p-6 border border-slate-200">
-              <h4 className="font-heading text-lg font-bold text-slate-900 mb-3">
+            <div className="mt-8 bg-gradient-to-br from-primary-500/5 to-light-teal/5 rounded-2xl p-6 border border-smoke">
+              <h4 className="font-manrope text-lg font-bold text-phantom mb-3">
                 The ZAG Matrix Framework
               </h4>
-              <p className="font-body text-slate-600 mb-4">
+              <p className="font-manrope text-graphite mb-4">
                 Three interconnected pillars of transformation you'll master:
               </p>
               <div className="grid grid-cols-3 gap-3">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#6366F1] to-[#8B5CF6] rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <span className="font-heading text-lg font-bold text-white">Z</span>
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="font-manrope text-lg font-bold text-white">Z</span>
                   </div>
-                  <p className="font-heading text-sm font-bold text-[#6366F1]">Clarity</p>
+                  <p className="font-manrope text-sm font-bold text-primary-500">Clarity</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#279595] to-[#34D399] rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <span className="font-heading text-lg font-bold text-white">A</span>
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="font-manrope text-lg font-bold text-white">A</span>
                   </div>
-                  <p className="font-heading text-sm font-bold text-[#279595]">Momentum</p>
+                  <p className="font-manrope text-sm font-bold text-primary-500">Momentum</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#8B5A3C] to-[#D97706] rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <span className="font-heading text-lg font-bold text-white">G</span>
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="font-manrope text-lg font-bold text-white">G</span>
                   </div>
-                  <p className="font-heading text-sm font-bold text-[#8B5A3C]">Mastery</p>
+                  <p className="font-manrope text-sm font-bold text-primary-500">Mastery</p>
                 </div>
               </div>
             </div>
@@ -297,19 +304,19 @@ export default function NewsletterPage() {
       </div>
 
       {/* Footer CTA */}
-      <div className="bg-gradient-to-br from-[#279595]/5 to-[#6366F1]/5 border-t border-slate-200">
+      <div className="bg-gradient-to-br from-primary-500/5 to-light-teal/5 border-t border-smoke">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="font-manrope text-3xl font-bold text-phantom mb-4">
               Ready to Transform Your Career?
             </h2>
-            <p className="font-body text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            <p className="font-manrope text-xl text-graphite mb-8 max-w-2xl mx-auto">
               Join hundreds of technologists who've already started their ZAG journey. 
               Your transformation begins with one click.
             </p>
             <Link 
               href="#top"
-              className="inline-flex items-center font-body bg-[#279595] hover:bg-[#1f7a7a] text-white px-8 py-4 rounded-lg transition-colors duration-200 font-medium text-lg"
+              className="inline-flex items-center font-manrope bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg transition-colors duration-200 font-medium text-lg"
             >
               Join the Community Now
               <ArrowRight className="ml-2 h-5 w-5" />
