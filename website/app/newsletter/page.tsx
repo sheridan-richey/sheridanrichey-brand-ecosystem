@@ -67,7 +67,7 @@ export default function NewsletterPage() {
                   alt="Sheridan Richey" 
                   className="rounded-full shadow-lg w-24 h-24 object-cover object-top border-4 border-white" 
                 />
-                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
+                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-white rounded-full flex items-center justify-center border-2 border-smoke">
                   <Image
                     src="/assets/Emblem/SVG/Asset 4.svg"
                     alt="SR"

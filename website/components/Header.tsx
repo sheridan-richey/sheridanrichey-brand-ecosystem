@@ -57,9 +57,9 @@ export default function Header() {
               <Image
                 src="/assets/SVG/Logo-1.svg"
                 alt="Sheridan Richey"
-                width={280}
-                height={84}
-                className="h-16 w-auto"
+                width={400}
+                height={120}
+                className="h-20 w-auto"
                 priority
               />
             </Link>
@@ -111,9 +111,9 @@ export default function Header() {
                 <Image
                   src="/assets/SVG/Logo-1.svg"
                   alt="Sheridan Richey"
-                  width={200}
-                  height={60}
-                  className="h-12 w-auto"
+                  width={300}
+                  height={90}
+                  className="h-16 w-auto"
                 />
               </Link>
               <button
