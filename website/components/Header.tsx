@@ -57,9 +57,9 @@ export default function Header() {
               <Image
                 src="/assets/SVG/Logo-SR-Monogram.svg"
                 alt="SR - Sheridan Richey"
-                width={120}
-                height={120}
-                className="h-16 w-16"
+                width={300}
+                height={40}
+                className="h-10 w-auto"
                 priority
               />
             </Link>
@@ -111,9 +111,9 @@ export default function Header() {
                 <Image
                   src="/assets/SVG/Logo-SR-Monogram.svg"
                   alt="SR - Sheridan Richey"
-                  width={80}
-                  height={80}
-                  className="h-12 w-12"
+                  width={200}
+                  height={30}
+                  className="h-8 w-auto"
                 />
               </Link>
               <button
