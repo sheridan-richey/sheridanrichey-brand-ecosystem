@@ -55,11 +55,11 @@ export default function Header() {
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Sheridan Richey</span>
               <Image
-                src="/assets/SVG/Logo-1.svg"
-                alt="Sheridan Richey"
-                width={600}
-                height={180}
-                className="h-32 w-auto"
+                src="/assets/SVG/Logo-SR-Monogram.svg"
+                alt="SR - Sheridan Richey"
+                width={120}
+                height={120}
+                className="h-16 w-16"
                 priority
               />
             </Link>
@@ -109,11 +109,11 @@ export default function Header() {
               <Link href="/" className="-m-1.5 p-1.5" onClick={closeMobileMenu}>
                 <span className="sr-only">Sheridan Richey</span>
                 <Image
-                  src="/assets/SVG/Logo-1.svg"
-                  alt="Sheridan Richey"
-                  width={400}
-                  height={120}
-                  className="h-24 w-auto"
+                  src="/assets/SVG/Logo-SR-Monogram.svg"
+                  alt="SR - Sheridan Richey"
+                  width={80}
+                  height={80}
+                  className="h-12 w-12"
                 />
               </Link>
               <button
