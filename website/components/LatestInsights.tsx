@@ -39,7 +39,7 @@ export default function LatestInsights({
   const latestPosts = getLatestFeaturedPosts(allPosts, postCount)
 
   return (
-    <section className={`bg-cloud py-24 sm:py-32 ${className}`}>
+    <section className={`py-24 sm:py-32 ${className}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-phantom sm:text-4xl font-manrope">
