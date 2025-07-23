@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Target, Users, TrendingUp, Award, Building, Lightbulb } from 'lucide-react'
+import ZagMatrixOverview from '@/components/ZagMatrixOverview'
 
 export default function AboutPage() {
   return (
@@ -88,92 +89,7 @@ export default function AboutPage() {
       </section>
 
       {/* ZAG Matrix Deep Dive */}
-      <section className="bg-secondary-50 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
-              The ZAG Matrix Framework
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-secondary-600">
-              A comprehensive system for mid-career transformation that addresses the 
-              three critical dimensions of sustainable success.
-            </p>
-          </div>
-          
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <div className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-              <div className="card">
-                <div className="flex items-center gap-x-3 mb-4">
-                  <div className="h-12 w-12 flex items-center justify-center rounded-lg bg-primary-600">
-                    <Target className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-secondary-900">ZEN</h3>
-                </div>
-                <h4 className="text-lg font-medium text-secondary-900 mb-2">Zeal Evolves Now</h4>
-                <p className="text-secondary-600 mb-4">
-                  Find clarity, purpose, and mental resilience. Transform your mindset from 
-                  reactive to proactive, building the foundation for sustainable growth.
-                </p>
-                <ul className="space-y-2 text-sm text-secondary-600">
-                  <li>• Identify your core drivers and authentic motivation</li>
-                  <li>• Develop mental resilience and clarity</li>
-                  <li>• Create a purpose-driven vision for your future</li>
-                  <li>• Build sustainable habits for long-term success</li>
-                </ul>
-                <Link href="/zag-matrix/zen" className="inline-block mt-4 text-primary-600 hover:text-primary-500 font-semibold">
-                  Learn more →
-                </Link>
-              </div>
-              
-              <div className="card">
-                <div className="flex items-center gap-x-3 mb-4">
-                  <div className="h-12 w-12 flex items-center justify-center rounded-lg bg-accent-600">
-                    <Users className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-secondary-900">ACT</h3>
-                </div>
-                <h4 className="text-lg font-medium text-secondary-900 mb-2">Awaken Core Thrust</h4>
-                <p className="text-secondary-600 mb-4">
-                  Build physical well-being and strengthen key relationships to generate 
-                  momentum. Create the energy and support system needed for breakthrough growth.
-                </p>
-                <ul className="space-y-2 text-sm text-secondary-600">
-                  <li>• Optimize your physical health and energy levels</li>
-                  <li>• Strengthen relationships that accelerate your growth</li>
-                  <li>• Build momentum through consistent action</li>
-                  <li>• Create a support system for sustainable success</li>
-                </ul>
-                <Link href="/zag-matrix/act" className="inline-block mt-4 text-primary-600 hover:text-primary-500 font-semibold">
-                  Learn more →
-                </Link>
-              </div>
-              
-              <div className="card">
-                <div className="flex items-center gap-x-3 mb-4">
-                  <div className="h-12 w-12 flex items-center justify-center rounded-lg bg-secondary-600">
-                    <TrendingUp className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-secondary-900">GEM</h3>
-                </div>
-                <h4 className="text-lg font-medium text-secondary-900 mb-2">Growth Earns Mastery</h4>
-                <p className="text-secondary-600 mb-4">
-                  Apply zeal and energy toward strategic career moves, investments, and 
-                  entrepreneurial growth. Master the art of compounding success.
-                </p>
-                <ul className="space-y-2 text-sm text-secondary-600">
-                  <li>• Make strategic career decisions that compound</li>
-                  <li>• Build wealth through smart investments</li>
-                  <li>• Develop entrepreneurial skills and mindset</li>
-                  <li>• Create multiple streams of income and impact</li>
-                </ul>
-                <Link href="/zag-matrix/gem" className="inline-block mt-4 text-primary-600 hover:text-primary-500 font-semibold">
-                  Learn more →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ZagMatrixOverview className="bg-secondary-50" />
 
       {/* Mission Section */}
       <section className="py-24 sm:py-32">
