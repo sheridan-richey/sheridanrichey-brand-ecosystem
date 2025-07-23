@@ -2,63 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
-  }
-  
-  .font-heading {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
-  }
-  
-  .font-body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
   }
   
   body {
-    @apply bg-white text-secondary-800;
+    @apply bg-light-bg text-phantom font-manrope;
   }
 }
 
 @layer components {
+  /* Button Components */
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md;
   }
   
   .btn-secondary {
-    @apply bg-secondary-100 hover:bg-secondary-200 text-secondary-700 font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-white hover:bg-cloud text-phantom font-semibold py-3 px-6 rounded-lg border border-smoke transition-colors duration-200 shadow-sm hover:shadow-md;
   }
   
+  .btn-outline {
+    @apply bg-transparent hover:bg-primary-500 text-primary-500 hover:text-white font-semibold py-3 px-6 rounded-lg border-2 border-primary-500 transition-colors duration-200;
+  }
+  
+  /* Card Components */
   .card {
-    @apply bg-white rounded-xl shadow-sm border border-secondary-200 p-6;
+    @apply bg-white rounded-xl shadow-sm border border-smoke p-6 hover:shadow-md transition-shadow duration-200;
   }
   
+  .card-elevated {
+    @apply bg-white rounded-xl shadow-lg border border-smoke p-6;
+  }
+  
+  /* Text Components */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-500 to-light-teal bg-clip-text text-transparent;
   }
   
-  /* Blog post styling */
+  .text-heading {
+    @apply font-manrope font-bold text-phantom;
+  }
+  
+  .text-body {
+    @apply font-manrope font-normal text-phantom leading-relaxed;
+  }
+  
+  .text-caption {
+    @apply font-manrope text-sm text-graphite;
+  }
+  
+  /* Blog post styling with new brand colors */
   .blog-content h1 {
-    @apply font-heading text-4xl font-bold text-slate-900 mt-8 mb-6;
+    @apply font-manrope text-h1 font-bold text-phantom mt-8 mb-6;
   }
   
   .blog-content h2 {
-    @apply font-heading text-3xl font-bold text-slate-900 mt-8 mb-4;
+    @apply font-manrope text-h2 font-semibold text-phantom mt-8 mb-4;
   }
   
   .blog-content h3 {
-    @apply font-heading text-2xl font-bold text-slate-900 mt-6 mb-3;
+    @apply font-manrope text-h3 font-semibold text-phantom mt-6 mb-3;
   }
   
   .blog-content h4 {
-    @apply font-heading text-xl font-bold text-slate-900 mt-4 mb-2;
+    @apply font-manrope text-xl font-semibold text-phantom mt-4 mb-2;
   }
   
   .blog-content p {
-    @apply mb-4 leading-relaxed text-slate-700;
+    @apply mb-4 leading-relaxed text-phantom font-manrope;
   }
   
   .blog-content ul {
@@ -70,11 +84,11 @@
   }
   
   .blog-content li {
-    @apply ml-4 text-slate-700;
+    @apply ml-4 text-phantom font-manrope;
   }
   
   .blog-content strong {
-    @apply font-semibold text-slate-900;
+    @apply font-semibold text-phantom;
   }
   
   .blog-content em {
@@ -82,14 +96,41 @@
   }
   
   .blog-content blockquote {
-    @apply border-l-4 border-[#279595] pl-4 italic text-slate-600 mb-4 bg-slate-50 py-2;
+    @apply border-l-4 border-primary-500 pl-4 italic text-graphite mb-4 bg-cloud py-2 rounded-r-lg;
   }
   
   .blog-content code {
-    @apply bg-slate-100 px-2 py-1 rounded text-sm font-mono;
+    @apply bg-cloud px-2 py-1 rounded text-sm font-mono text-phantom;
   }
   
   .blog-content pre {
-    @apply bg-slate-100 p-4 rounded-lg overflow-x-auto mb-4;
+    @apply bg-cloud p-4 rounded-lg overflow-x-auto mb-4 border border-smoke;
+  }
+  
+  /* Navigation Components */
+  .nav-link {
+    @apply text-phantom hover:text-primary-500 transition-colors duration-200 font-medium;
+  }
+  
+  .nav-link-active {
+    @apply text-primary-500 font-semibold;
+  }
+  
+  /* Form Components */
+  .form-input {
+    @apply w-full px-4 py-3 border border-smoke rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 bg-white text-phantom placeholder-graphite;
+  }
+  
+  .form-label {
+    @apply block text-sm font-semibold text-phantom mb-2;
+  }
+  
+  /* Section Components */
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .container-padding {
+    @apply px-6 lg:px-8;
   }
 } 
