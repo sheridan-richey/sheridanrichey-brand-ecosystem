@@ -2,10 +2,11 @@ import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 
 const categoryColorMap: Record<string, string> = {
-  ZAG: 'bg-[#279595] text-white',
-  ZEN: 'bg-[#6366F1]/10 text-[#6366F1]',
+  ZAG: 'bg-[#279595]/10 text-[#279595]',
+  ZEN: 'bg-[#279595]/10 text-[#279595]',
   ACT: 'bg-[#279595]/10 text-[#279595]',
-  GEM: 'bg-[#8B5A3C]/10 text-[#8B5A3C]',
+  GEM: 'bg-[#279595]/10 text-[#279595]',
+  Featured: 'bg-[#279595]/10 text-[#279595]',
 };
 
 export type BlogCardPost = {
@@ -24,9 +25,7 @@ export default function BlogCard({ post }: { post: BlogCardPost }) {
         <div className="flex items-center gap-2 mb-3">
           <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap[post.category] || 'bg-[#279595]/10 text-[#279595]'}`}>{post.category}</span>
           {post.featured && (
-            <span className="inline-flex items-center px-2 py-1 bg-[#6366F1]/10 rounded-full">
-              <span className="text-[#6366F1] font-body text-xs font-medium">Featured</span>
-            </span>
+            <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap['Featured']}`}>Featured</span>
           )}
         </div>
         <h3 className="font-heading text-xl font-bold text-slate-900 mb-3 line-clamp-2">
