@@ -225,4 +225,5 @@ This project uses [Playwright](https://playwright.dev/) for automated end-to-end
   ```sh
   npx playwright test
   ```
-- Tests are automatically run in CI on every pull request via GitHub Actions. 
+- Tests are automatically run in CI on every pull request via GitHub Actions.
+- **Ready for testing:** The E2E test suite is now set up and ready to validate critical user workflows. 
