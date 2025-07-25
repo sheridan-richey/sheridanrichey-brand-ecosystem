@@ -10,6 +10,7 @@
     "contentlayer": "contentlayer build"
   },
   "dependencies": {
+    "@contentlayer/source-files": "^0.3.4",
     "@tailwindcss/typography": "^0.5.10",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
