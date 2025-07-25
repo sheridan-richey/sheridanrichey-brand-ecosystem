@@ -226,4 +226,5 @@ This project uses [Playwright](https://playwright.dev/) for automated end-to-end
   npx playwright test
   ```
 - Tests are automatically run in CI on every pull request via GitHub Actions.
-- **Ready for testing:** The E2E test suite is now set up and ready to validate critical user workflows. 
+- **Ready for testing:** The E2E test suite is now set up and ready to validate critical user workflows.
+- **Workflow fixed:** GitHub Actions workflow now properly references Vercel secrets. 
