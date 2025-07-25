@@ -19,6 +19,35 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent" />
       </div>
 
+      {/* SVG/CSS Background Elements */}
+      {/* Large white arc, top left */}
+      <svg className="absolute -top-32 -left-32 w-96 h-96 opacity-30 pointer-events-none" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M400,200a200,200 0 1,0 -200,200" stroke="white" strokeWidth="32" fill="none" />
+      </svg>
+      {/* Concentric arcs, bottom right */}
+      <svg className="absolute bottom-0 right-0 w-80 h-80 opacity-30 pointer-events-none" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="160" cy="160" r="120" stroke="white" strokeWidth="2" fill="none" />
+        <circle cx="160" cy="160" r="90" stroke="white" strokeWidth="2" fill="none" />
+        <circle cx="160" cy="160" r="60" stroke="white" strokeWidth="2" fill="none" />
+        <circle cx="160" cy="160" r="30" stroke="white" strokeWidth="2" fill="none" />
+      </svg>
+      {/* Dot grid, top right */}
+      <svg className="absolute top-8 right-8 w-32 h-32 opacity-20 pointer-events-none" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {Array.from({ length: 5 }).map((_, row) => (
+          Array.from({ length: 5 }).map((_, col) => (
+            <circle key={`dot-tr-${row}-${col}`} cx={8 + col * 12} cy={8 + row * 12} r="2.5" fill="white" />
+          ))
+        ))}
+      </svg>
+      {/* Dot grid, bottom left */}
+      <svg className="absolute bottom-8 left-8 w-32 h-32 opacity-20 pointer-events-none" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {Array.from({ length: 5 }).map((_, row) => (
+          Array.from({ length: 5 }).map((_, col) => (
+            <circle key={`dot-bl-${row}-${col}`} cx={8 + col * 12} cy={8 + row * 12} r="2.5" fill="white" />
+          ))
+        ))}
+      </svg>
+
       {/* Trust Indicator */}
       <div className="absolute top-0 left-0 right-0 z-20 px-6 py-4">
         <div className="max-w-4xl mx-auto">
@@ -81,6 +110,22 @@ export default function HeroSection() {
               <br />
               <span className="text-primary-200">The ZAG Matrix Transformation</span>
             </h1>
+          </div>
+
+          {/* Primary CTA - Above the fold */}
+          <div
+            className={`mb-8 flex justify-center transition-all duration-1000 ${
+              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
+            }`}
+            style={{ transitionDelay: isVisible ? "0.55s" : "0s" }}
+          >
+            <Button
+              size="lg"
+              className="group font-manrope bg-white text-primary-600 hover:bg-primary-100 px-10 py-5 text-xl font-bold rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl border-2 border-primary-600"
+            >
+              Join Community + Get AI Prompt Engineer Guide
+              <span className="ml-3 group-hover:translate-x-1 transition-transform duration-200 text-2xl">→</span>
+            </Button>
           </div>
 
           {/* Subheadline - Simplified */}
@@ -156,21 +201,14 @@ export default function HeroSection() {
             </p>
           </div>
 
-          {/* Enhanced CTAs */}
+          {/* Enhanced CTAs - Below the fold */}
           <div
             className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 ${
               isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "1.1s" : "0s" }}
           >
-            <Button
-              size="lg"
-              className="group font-manrope bg-white text-primary-600 hover:bg-primary-50 px-8 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg"
-            >
-              Join Community + Get AI Prompt Engineer Guide
-              <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
-            </Button>
-
+            {/* Only show the secondary and tertiary CTAs here */}
             <Button
               variant="outline"
               size="lg"
