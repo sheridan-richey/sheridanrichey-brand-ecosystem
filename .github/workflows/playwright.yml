@@ -25,17 +25,35 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
-
-      - name: Deploy to Vercel
+      - name: Deploy to Vercel via API
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
-          vercel --token $VERCEL_TOKEN --scope $VERCEL_ORG_ID --yes
-          echo "VERCEL_URL=$(vercel --token $VERCEL_TOKEN --scope $VERCEL_ORG_ID --yes --prod | grep -o 'https://.*\.vercel\.app')" >> $GITHUB_ENV
+          # Create deployment
+          DEPLOYMENT_RESPONSE=$(curl -s -X POST \
+            -H "Authorization: Bearer $VERCEL_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "name": "github-actions-deploy",
+              "projectId": "'$VERCEL_PROJECT_ID'",
+              "target": "preview"
+            }' \
+            "https://api.vercel.com/v1/deployments")
+          
+          echo "Deployment response: $DEPLOYMENT_RESPONSE"
+          
+          # Extract deployment URL
+          DEPLOYMENT_URL=$(echo $DEPLOYMENT_RESPONSE | jq -r '.url // empty')
+          
+          if [ -z "$DEPLOYMENT_URL" ]; then
+            echo "Failed to get deployment URL"
+            exit 1
+          fi
+          
+          echo "VERCEL_URL=https://$DEPLOYMENT_URL" >> $GITHUB_ENV
+          echo "Deployment URL: https://$DEPLOYMENT_URL"
 
       - name: Run Playwright tests
         env:
