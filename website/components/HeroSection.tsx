@@ -120,8 +120,9 @@ export default function HeroSection() {
             style={{ transitionDelay: isVisible ? "0.55s" : "0s" }}
           >
             <Button
+              variant="outline"
               size="lg"
-              className="group font-manrope bg-white text-primary-600 hover:bg-primary-100 px-10 py-5 text-xl font-bold rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl border-2 border-primary-600"
+              className="group font-manrope border-2 border-white text-white font-bold hover:bg-white hover:text-primary-600 px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
             >
               Join Community + Get AI Prompt Engineer Guide
               <span className="ml-3 group-hover:translate-x-1 transition-transform duration-200 text-2xl">→</span>
