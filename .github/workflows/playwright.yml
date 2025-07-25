@@ -25,17 +25,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Get Vercel Preview URL
-        id: vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-args: '--prod'
-
-      - name: Run Playwright tests
+      - name: Run Playwright tests against production
         env:
-          BASE_URL: ${{ steps.vercel.outputs.preview-url }}
+          BASE_URL: https://sheridanrichey.com
         run: npx playwright test --project=chromium 
