@@ -215,3 +215,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Built with ❤️ for awakened technologists everywhere.**
 
 *Helping mid-career professionals transform their careers and lives through the ZAG Matrix framework.* 
+
+## End-to-End (E2E) Testing Strategy
+
+This project uses [Playwright](https://playwright.dev/) for automated end-to-end testing, optimized for Next.js and Vercel deployments. The E2E test suite covers critical workflows (newsletter signup, contact form, blog rendering, and link validation) and is located in the `/tests/e2e/` directory.
+
+- See `TESTING_STRATEGY.md` for the full strategy, setup, and best practices.
+- To run all E2E tests locally:
+  ```sh
+  npx playwright test
+  ```
+- Tests are automatically run in CI on every pull request via GitHub Actions. 

@@ -1,30 +1,15 @@
-# RULES.md
+# Project Rules & Standards
 
-## Project: sheridanrichey.com
+## E2E Testing
+- **Playwright** is the standard tool for all end-to-end (E2E) testing.
+- All critical user workflows (newsletter signup, contact form, blog navigation, etc.) must have E2E test coverage.
+- Use the **Page Object Model (POM)** for maintainable test code.
+- All interactive elements and form fields must include `data-testid` attributes for stable selectors.
+- Refer to `TESTING_STRATEGY.md` for the full E2E testing strategy, setup, and best practices.
 
-### Content Workflow
-- All blog posts are stored in `/website/posts` as MDX files with standard multi-line YAML frontmatter.
-- Contentlayer is the only content pipeline.
-- Blog categories align with the ZAG Matrix: ZEN, ACT, GEM.
-- All content must speak to "Alex, the Awakened Technologist" and reflect the ZAG Matrix philosophy.
+## Development
+- All new features and pages must include or update E2E tests as part of the PR process.
+- E2E tests must pass in CI before merging to main.
 
-### Deployment
-- Platform: Vercel
-- Production URL: https://sheridanrichey.com
-- Deploy command: `vercel --prod`
-- No preview/staging environment currently.
-- No manual steps required; Vercel handles all deployments.
-- See `DEPLOYMENT.md` for persistent deployment details.
-- **Every production deployment must be preceded by a git commit and push with a clear, descriptive commit message.**
-
-### Brand & Content Principles
-- All content must connect to the ZAG Matrix (ZEN, ACT, GEM).
-- Tone: Professional, confident, knowledgeable, approachable.
-- Every page and post should have a clear purpose and call to action.
-
-### PARA Method
-- Project management and content categorization should follow PARA (Project, Area, Resource, Archive).
-- Suggest PARA category and filename for all new content.
-
----
-**This file and DEPLOYMENT.md are the persistent sources of truth for workflow and deployment. I will reference them automatically for all future sessions.** 
+## Documentation
+- Keep `README.md` and `TESTING_STRATEGY.md` up to date with any changes to the testing approach or critical workflows. 
