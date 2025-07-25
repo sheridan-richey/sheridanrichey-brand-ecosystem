@@ -36,28 +36,28 @@ export default function HeroSection() {
       </div>
 
       {/* Main Hero Content - Single Column */}
-      <div className="min-h-screen flex items-center justify-center px-4 pt-32 pb-8 relative z-10">
+      <div className="min-h-screen flex items-center justify-center px-4 pt-24 pb-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Tagline */}
+          {/* Tagline - Reduced spacing, larger size */}
           <div
-            className={`mb-6 transition-all duration-1000 ${
+            className={`mb-4 transition-all duration-1000 ${
               isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "0.3s" : "0s" }}
           >
-            <h2 className="font-manrope text-2xl md:text-3xl font-bold text-white mb-2">
+            <h2 className="font-manrope text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
               Awaken. Align. Achieve.
             </h2>
           </div>
 
-          {/* Professional Photo */}
+          {/* Professional Photo - Larger size */}
           <div
-            className={`mb-8 transition-all duration-1000 ${
+            className={`mb-6 transition-all duration-1000 ${
               isVisible ? "opacity-100 transform translate-y-0 scale-100" : "opacity-0 transform translate-y-8 scale-95"
             }`}
             style={{ transitionDelay: isVisible ? "0.4s" : "0s" }}
           >
-            <div className="relative w-48 h-56 md:w-56 md:h-64 mx-auto rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-56 h-64 md:w-64 md:h-72 mx-auto rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/sheridan-headshot.jpg"
                 alt="Sheridan Richey - Executive Leadership Coach"
@@ -83,89 +83,76 @@ export default function HeroSection() {
             </h1>
           </div>
 
-          {/* Subheadline */}
+          {/* Subheadline - Simplified */}
           <div
-            className={`mb-8 transition-all duration-1000 ${
+            className={`mb-6 transition-all duration-1000 ${
               isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "0.6s" : "0s" }}
           >
             <p className="font-manrope text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              The proven framework that transforms mid-career technologists into energized, purpose-driven leaders through balanced growth.
+              Transform mid-career technologists into energized, purpose-driven leaders.
             </p>
           </div>
 
-          {/* Three Pillars Introduction */}
+          {/* Three Pillars Introduction - Simplified */}
           <div
-            className={`mb-8 transition-all duration-1000 ${
+            className={`mb-6 transition-all duration-1000 ${
               isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "0.7s" : "0s" }}
           >
             <p className="font-manrope text-lg text-white/80 max-w-2xl mx-auto">
-              The ZAG Matrix: Three interconnected pillars (ZEN, ACT, GEM) that guide your transformation from clarity to momentum to mastery.
+              Three interconnected pillars: <span className="text-white font-semibold">ZEN • ACT • GEM</span>
             </p>
           </div>
 
-          {/* Social Proof */}
+          {/* Social Proof - Simplified and more prominent */}
           <div
-            className={`mb-8 transition-all duration-1000 ${
+            className={`mb-6 transition-all duration-1000 ${
               isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "0.8s" : "0s" }}
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
-              <p className="font-manrope text-lg text-white font-medium">
-                6 acquisitions, 3 successful exits | 60-point NPS improvements | Launched dozens of careers to Director, VP, and CTO levels
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto border border-white/20">
+              <p className="font-manrope text-lg text-white font-semibold">
+                6 acquisitions • 3 successful exits • 60-point NPS improvements
               </p>
             </div>
           </div>
 
-          {/* Mentorship Focus */}
+          {/* Key Benefits - Bullet points for better readability */}
           <div
-            className={`mb-6 transition-all duration-1000 ${
+            className={`mb-8 transition-all duration-1000 ${
               isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "0.9s" : "0s" }}
           >
-            <p className="font-manrope text-lg text-white/90 max-w-2xl mx-auto">
-              From executive leadership to career mentorship - helping technologists find their path to energized, purpose-driven success.
-            </p>
+            <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-manrope text-lg font-bold text-white mb-2">Career Launcher</h3>
+                <p className="font-manrope text-sm text-white/90">Launched dozens of careers to Director, VP, and CTO levels</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-manrope text-lg font-bold text-white mb-2">Balanced Growth</h3>
+                <p className="font-manrope text-sm text-white/90">Integrates career mastery with personal growth and relationships</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-manrope text-lg font-bold text-white mb-2">AI-Powered</h3>
+                <p className="font-manrope text-sm text-white/90">Leverage AI to accelerate your transformation and impact</p>
+              </div>
+            </div>
           </div>
 
-          {/* Balanced Growth Emphasis */}
+          {/* Value Proposition - Simplified */}
           <div
-            className={`mb-6 transition-all duration-1000 ${
+            className={`mb-8 transition-all duration-1000 ${
               isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "1.0s" : "0s" }}
           >
-            <p className="font-manrope text-lg text-white/90 max-w-2xl mx-auto">
-              Because life isn't all about work. The ZAG Matrix integrates career mastery with personal growth, relationships, and holistic well-being.
-            </p>
-          </div>
-
-          {/* AI Integration */}
-          <div
-            className={`mb-8 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "1.1s" : "0s" }}
-          >
-            <p className="font-manrope text-lg text-white/90 max-w-2xl mx-auto">
-              Plus, learn how to leverage AI to accelerate your transformation and amplify your impact.
-            </p>
-          </div>
-
-          {/* Value Proposition */}
-          <div
-            className={`mb-8 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "1.2s" : "0s" }}
-          >
             <p className="font-manrope text-xl text-white font-semibold max-w-2xl mx-auto">
-              Join me in building the next generation of energized technologists using the ZAG Matrix framework.
+              Join me in building the next generation of energized technologists.
             </p>
           </div>
 
@@ -174,7 +161,7 @@ export default function HeroSection() {
             className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 ${
               isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
             }`}
-            style={{ transitionDelay: isVisible ? "1.3s" : "0s" }}
+            style={{ transitionDelay: isVisible ? "1.1s" : "0s" }}
           >
             <Button
               size="lg"
