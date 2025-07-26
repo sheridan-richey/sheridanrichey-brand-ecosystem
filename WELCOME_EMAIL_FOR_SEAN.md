@@ -96,7 +96,7 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 ### **Contact Information**
 - **Email:** sheridan@sheridanrichey.com
 - **GitHub:** @sheridan-richey
-- **Emergency Contact:** 801.518.2714 (for urgent issues only)
+- **Emergency Contact:** 801.518.2714
 
 ### **Communication Channels**
 - **Primary:** Email for longer discussions and planning
@@ -126,6 +126,7 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 - **Examples from Sheridan's career:** Include specific insights and stories
 - **Actionable insights:** Provide practical advice and next steps
 - **Tone:** Professional but approachable, like a mentor sharing wisdom
+- **Line Endings:** Use LF (Unix) line endings, NOT CRLF (Windows)
 
 **Suggested First Blog Post Topics:**
 - **ZEN:** "Finding Clarity in Mid-Career Transitions"

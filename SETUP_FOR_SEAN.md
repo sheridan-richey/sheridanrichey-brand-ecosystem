@@ -130,6 +130,7 @@ SLR.com/
 - **Length:** 800-1500 words
 - **Structure:** Introduction, main content, actionable takeaways
 - **ZAG Connection:** Must relate to ZEN, ACT, or GEM framework
+- **Line Endings:** Use LF (Unix) line endings, NOT CRLF (Windows)
 
 ### Content Ideas for First Post
 - **ZEN Focus:** "Finding Clarity in Mid-Career Transitions"
@@ -192,6 +193,7 @@ excerpt: "Brief description of the post"
    - Enable format on save
    - Set tab size to 2 spaces
    - Enable TypeScript strict mode
+   - **Set line endings to LF** (important for MDX files)
 
 ### Testing
 ```bash
@@ -272,6 +274,13 @@ npm install
 # Reset to remote state
 git fetch origin
 git reset --hard origin/main
+```
+
+### MDX Line Ending Issues
+```bash
+# Convert CRLF to LF for MDX files
+git config core.autocrlf false
+# Or use .gitattributes file to enforce LF
 ```
 
 ## 📚 Key Resources
