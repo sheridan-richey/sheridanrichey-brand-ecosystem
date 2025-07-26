@@ -2,24 +2,8 @@ import Link from 'next/link'
 import ContributorCard from '@/components/ContributorCard'
 
 export default function ContributorsPage() {
-  // Mock contributor data - in a real implementation, this would come from a CMS or database
+  // Contributor data - currently all blog posts are written by Sheridan Richey
   const contributors = [
-    {
-      id: 'sean-hokanson',
-      name: 'Sean Hokanson',
-      title: 'Contributing Editor & Systems Architect',
-      bio: 'As a seasoned Chief Architect with over two decades of experience building scalable, high-performance software systems, Sean brings a unique architectural rigor to the ZAG Matrix. He and Sheridan were partners for seven years at Extensiv, where they led product and technology strategy. Sean focuses on applying the principles of systems thinking to the GEM pillar, helping individuals architect a life of purpose and financial independence. He is also a dedicated father, whose personal "Dad 2.0" journey is a powerful testament to the principles of ZEN and ACT.',
-      headshot: '/assets/images/contributors/sean-hokanson.jpg', // Placeholder path
-      linkedin: 'https://linkedin.com/in/seanhokanson',
-      twitter: 'https://twitter.com/seanhokanson',
-      authoredPosts: [
-        {
-          title: 'The CEO & The Architect: Two Sides of the Same System',
-          slug: 'ceo-architect-system',
-          date: '2024-01-15'
-        }
-      ]
-    },
     {
       id: 'sheridan-richey',
       name: 'Sheridan Richey',
@@ -30,19 +14,24 @@ export default function ContributorsPage() {
       twitter: 'https://twitter.com/sheridanrichey',
       authoredPosts: [
         {
+          title: 'The ZAG Matrix: A Framework for Awakened Technologists',
+          slug: 'zag-matrix-framework-introduction',
+          date: '2025-07-21'
+        },
+        {
           title: 'Finding Clarity Mid-Career: The ZEN Framework',
           slug: 'finding-clarity-mid-career',
-          date: '2024-01-10'
+          date: '2024-01-16'
         },
         {
           title: 'Building Momentum Through Relationships: The ACT Framework',
           slug: 'building-momentum-through-relationships',
-          date: '2024-01-12'
+          date: '2024-01-16'
         },
         {
           title: 'Strategic Career Moves: The GEM Framework',
           slug: 'strategic-career-moves',
-          date: '2024-01-14'
+          date: '2024-01-16'
         }
       ]
     }
@@ -66,7 +55,7 @@ export default function ContributorsPage() {
 
       {/* Contributors Grid */}
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {contributors.map((contributor) => (
             <ContributorCard key={contributor.id} contributor={contributor} />
           ))}
