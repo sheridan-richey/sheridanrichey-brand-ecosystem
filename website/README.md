@@ -56,24 +56,30 @@ website/
 ### **Blog Posts**
 - **Location:** `posts/` directory
 - **Format:** MDX with frontmatter
-- **Categories:** ZEN, ACT, GEM (ZAG Matrix framework)
-- **Sync:** Content is synced from `../content/blog/`
+- **Categories:** ZEN, ACT, GEM, Leadership, Entrepreneurship, Wellness
+- **Data-Driven:** Uses centralized author data and automatic attribution
 
 ### **Adding New Posts**
+The blog system is now fully data-driven. See [BLOG_SYSTEM_README.md](./BLOG_SYSTEM_README.md) for complete documentation.
+
+**Quick Start:**
 1. Create MDX file in `posts/` directory
-2. Add frontmatter metadata:
+2. Add required frontmatter:
    ```yaml
    ---
    title: "Your Post Title"
    description: "Brief description for SEO"
-   date: 2024-01-20
-   category: "ZEN" # ZEN, ACT, GEM
-   tags: ["tag1", "tag2"]
+   date: "2025-07-26"
+   category: "GEM"  # ZEN, ACT, GEM, Leadership, etc.
+   author: "sheridan-richey"  # Must match author ID in data/authors.ts
+   tags:
+     - "tag1"
+     - "tag2"
    featured: false
    ---
    ```
 3. Write content using Markdown/MDX
-4. Preview at `http://localhost:3000/blog/your-post-title`
+4. Deploy - everything is automatically wired up!
 
 ## 🎨 **Design System**
 

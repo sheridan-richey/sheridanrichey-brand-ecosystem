@@ -212,3 +212,4 @@ coverage/
 brand-assets/
 personal-photos/
 private-documents/ 
+.vercel

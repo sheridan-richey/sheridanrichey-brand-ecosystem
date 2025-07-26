@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { allPosts } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
+import AboutAuthor from '@/components/AboutAuthor'
+import { getAuthor } from '@/data/authors'
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = allPosts.find((p) => p.slug === params.slug)
@@ -13,11 +15,18 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   }
 
   const categoryColorMap: Record<string, string> = {
-    ZAG: 'bg-[#279595] text-white',
-    ZEN: 'bg-[#6366F1]/10 text-[#6366F1]',
-    ACT: 'bg-[#279595]/10 text-[#279595]',
-    GEM: 'bg-[#8B5A3C]/10 text-[#8B5A3C]',
+    ZAG: 'bg-teal-500 text-white',
+    ZEN: 'bg-teal-500/10 text-teal-500',
+    ACT: 'bg-teal-500/10 text-teal-500',
+    GEM: 'bg-teal-500/10 text-teal-500',
+    Leadership: 'bg-teal-500/10 text-teal-500',
   };
+
+  const author = getAuthor(post.author)
+  
+  if (!author) {
+    notFound()
+  }
 
   // Format the date and handle featured status
   const formattedPost = {
@@ -45,10 +54,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           
                       <div className="mb-6">
               <div className="flex items-center gap-2 mb-4">
-                <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap[formattedPost.category] || 'bg-[#279595]/10 text-[#279595]'}`}>{formattedPost.category}</span>
+                <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap[formattedPost.category] || 'bg-teal-500/10 text-teal-500'}`}>{formattedPost.category}</span>
                 {formattedPost.featured && (
-                  <span className="inline-flex items-center px-3 py-1 bg-[#6366F1]/10 rounded-full">
-                    <span className="text-[#6366F1] font-body text-sm font-medium">Featured</span>
+                  <span className="inline-flex items-center px-3 py-1 bg-teal-500/10 rounded-full">
+                    <span className="text-teal-500 font-body text-sm font-medium">Featured</span>
                   </span>
                 )}
               </div>
@@ -67,18 +76,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   <span className="font-body text-sm">{formattedPost.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Tag className={`h-4 w-4 ${
-                    formattedPost.category === 'ZEN' ? 'text-[#6366F1]' :
-                    formattedPost.category === 'ACT' ? 'text-[#279595]' :
-                    formattedPost.category === 'GEM' ? 'text-[#8B5A3C]' :
-                    'text-[#279595]'
-                  }`} />
-                  <span className={`font-body text-sm ${
-                    formattedPost.category === 'ZEN' ? 'text-[#6366F1]' :
-                    formattedPost.category === 'ACT' ? 'text-[#279595]' :
-                    formattedPost.category === 'GEM' ? 'text-[#8B5A3C]' :
-                    'text-[#279595]'
-                  }`}>{formattedPost.category}</span>
+                  <Tag className="h-4 w-4 text-teal-500" />
+                  <span className="font-body text-sm text-teal-500">{formattedPost.category}</span>
                 </div>
               <button className="flex items-center gap-2 hover:text-[#279595] transition-colors duration-200">
                 <Share2 className="h-4 w-4" />
@@ -115,6 +114,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </ReactMarkdown>
           </div>
         </article>
+
+        {/* About the Author */}
+        <AboutAuthor author={author} />
 
         {/* Tags */}
         <div className="mt-12 pt-8 border-t border-slate-200">

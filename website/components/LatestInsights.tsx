@@ -2,20 +2,25 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { allPosts } from 'contentlayer/generated'
 import BlogCard, { BlogCardPost } from './BlogCard'
+import { getAuthor } from '@/data/authors'
 
 function getLatestFeaturedPosts(posts: any[], count: number): BlogCardPost[] {
   // Sort by date descending
   const sorted = posts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .map(post => ({
-      ...post,
-      date: new Date(post.date).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      }),
-      featured: post.featured === true,
-    }))
+            .map(post => {
+          const author = getAuthor(post.author)
+          return {
+            ...post,
+            date: new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            }),
+            featured: post.featured === true,
+            author: author || undefined
+          }
+        })
   const featured = sorted.filter(p => p.featured)
   const rest = sorted.filter(p => !p.featured)
   return [...featured.slice(0, count), ...rest].slice(0, count)

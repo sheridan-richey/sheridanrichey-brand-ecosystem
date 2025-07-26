@@ -1,0 +1,59 @@
+# E2E Testing Standards
+
+## Playwright Configuration
+- E2E tests use Playwright with JavaScript (not TypeScript)
+- Configuration file: [playwright.config.js](mdc:playwright.config.js)
+- Tests run against production site: `https://sheridanrichey.com`
+- Base URL configured via `BASE_URL` environment variable
+
+## Test Structure
+- Test files located in `tests/e2e/` directory
+- Use `.spec.js` extension for test files
+- Follow Page Object Model (POM) pattern for maintainability
+- Page Objects stored in `tests/e2e/pageObjects/`
+- Utility functions in `tests/utils/`
+
+## Test Naming and Organization
+- Test files: `newsletter.spec.js`, `contact.spec.js`, `blog.spec.js`, `links.spec.js`
+- Use descriptive test names that explain the user journey
+- Group related tests using `test.describe()` blocks
+- Focus on user workflows, not implementation details
+
+## Selectors and Best Practices
+- Use `data-testid` attributes for stable selectors
+- Avoid CSS selectors that might change with styling updates
+- Prefer semantic selectors (e.g., `h1`, `nav`, `main`) for basic page structure
+- Use `page.locator()` for element selection
+
+## CI/CD Integration
+- GitHub Actions workflow: [.github/workflows/playwright.yml](mdc:.github/workflows/playwright.yml)
+- Triggers on pull requests to `main` branch
+- Manual trigger available via `workflow_dispatch`
+- Tests run against production site (not preview deployments)
+
+## Current Test Coverage
+- Basic navigation validation
+- Page loading verification (no 404s)
+- Blog functionality testing
+- Form testing excluded until forms are wired up
+
+## Adding New Tests
+1. Create test file in `tests/e2e/` directory
+2. Use existing test structure as template
+3. Focus on user journeys, not technical implementation
+4. Ensure tests are independent and can run in any order
+5. Add appropriate assertions for user expectations
+
+## Running Tests Locally
+```bash
+npx playwright test
+```
+
+## Test Data and Environment
+- Use production site for testing
+- No test data setup required for current tests
+- Environment variables handled via GitHub Actions secrets
+description:
+globs:
+alwaysApply: false
+---

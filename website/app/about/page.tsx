@@ -91,6 +91,26 @@ export default function AboutPage() {
       {/* ZAG Matrix Deep Dive */}
       <ZagMatrixOverview className="bg-secondary-50" />
 
+      {/* Contributors Section */}
+      <section className="py-24 sm:py-32 bg-secondary-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
+              Our Team
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-secondary-600">
+              Meet the talented strategists, architects, and storytellers dedicated to helping 
+              you navigate your journey of transformation.
+            </p>
+            <div className="mt-10">
+              <Link href="/contributors" className="btn-primary">
+                Meet Our Contributors
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission Section */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -1,4 +1,5 @@
 import { Mail, MessageSquare, Calendar, MapPin } from 'lucide-react'
+import ContactForm from '@/components/ContactForm'
 
 export default function ContactPage() {
   return (
@@ -43,7 +44,12 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-phantom font-manrope">Email</h3>
-                      <p className="text-graphite font-manrope">sheridan@sheridanrichey.com</p>
+                      <a 
+                        href="mailto:sheridan@sheridanrichey.com" 
+                        className="text-graphite font-manrope hover:text-primary-500 transition-colors"
+                      >
+                        sheridan@sheridanrichey.com
+                      </a>
                     </div>
                   </div>
                   
@@ -53,7 +59,14 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-phantom font-manrope">LinkedIn</h3>
-                      <p className="text-graphite font-manrope">linkedin.com/in/sheridanrichey</p>
+                      <a 
+                        href="https://linkedin.com/in/sheridanrichey" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-graphite font-manrope hover:text-primary-500 transition-colors"
+                      >
+                        linkedin.com/in/sheridanrichey
+                      </a>
                     </div>
                   </div>
                   
@@ -69,73 +82,7 @@ export default function ContactPage() {
                 </div>
               </div>
               
-              <div className="bg-white rounded-2xl shadow-xl border border-smoke p-8">
-                <form className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-phantom font-manrope">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      className="mt-2 block w-full rounded-md border border-smoke px-3 py-2 text-phantom placeholder-graphite focus:border-primary-500 focus:outline-none focus:ring-primary-500 font-manrope"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-phantom font-manrope">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      className="mt-2 block w-full rounded-md border border-smoke px-3 py-2 text-phantom placeholder-graphite focus:border-primary-500 focus:outline-none focus:ring-primary-500 font-manrope"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-phantom font-manrope">
-                      Subject
-                    </label>
-                    <select
-                      name="subject"
-                      id="subject"
-                      className="mt-2 block w-full rounded-md border border-smoke px-3 py-2 text-phantom focus:border-primary-500 focus:outline-none focus:ring-primary-500 font-manrope"
-                    >
-                      <option>Select a topic</option>
-                      <option>Executive Coaching</option>
-                      <option>Speaking Engagement</option>
-                      <option>ZAG Matrix Workshop</option>
-                      <option>Partnership Opportunity</option>
-                      <option>General Inquiry</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-phantom font-manrope">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      id="message"
-                      rows={4}
-                      className="mt-2 block w-full rounded-md border border-smoke px-3 py-2 text-phantom placeholder-graphite focus:border-primary-500 focus:outline-none focus:ring-primary-500 font-manrope"
-                      placeholder="Tell me about your situation and how I can help..."
-                    />
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    className="w-full btn-primary font-manrope"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              </div>
+              <ContactForm />
             </div>
           </div>
         </div>

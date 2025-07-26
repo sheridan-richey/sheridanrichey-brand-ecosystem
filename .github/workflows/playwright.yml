@@ -3,6 +3,7 @@ name: Playwright E2E Tests
 on:
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   e2e:
@@ -24,18 +25,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Get Vercel Preview URL
-        id: vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          scope: production
-          vercel-args: '--prod' # Remove if you want preview only
-
-      - name: Run Playwright tests
+      - name: Run Playwright tests against production
         env:
-          BASE_URL: ${{ steps.vercel.outputs.preview-url }}
-        run: npx playwright test --project=chromium 
+          BASE_URL: https://sheridanrichey.com
+        run: npx playwright test

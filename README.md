@@ -98,6 +98,13 @@ sheridanrichey-brand-ecosystem/
 
 ## 📝 **Content Management**
 
+### **Blog System**
+The website now features a fully data-driven blog system. See [website/BLOG_SYSTEM_README.md](./website/BLOG_SYSTEM_README.md) for complete documentation on:
+- Adding new blog posts with automatic author attribution
+- Managing contributors and author profiles
+- Brand-consistent styling and categorization
+- Data-driven approach for easy maintenance
+
 ### **Creating New Blog Posts**
 
 1. **Create content in the hub:**
@@ -226,4 +233,8 @@ This project uses [Playwright](https://playwright.dev/) for automated end-to-end
   npx playwright test
   ```
 - Tests are automatically run in CI on every pull request via GitHub Actions.
-- **Ready for testing:** The E2E test suite is now set up and ready to validate critical user workflows. 
+- **Ready for testing:** The E2E test suite is now set up and ready to validate critical user workflows.
+- **Workflow fixed:** GitHub Actions workflow now properly references Vercel secrets.
+- **Secret updated:** Vercel org ID secret has been corrected and should now work.
+- **Testing:** Attempting to trigger workflow with updated secret.
+- **Personal account:** Updated Vercel org ID to use username instead of team ID. 

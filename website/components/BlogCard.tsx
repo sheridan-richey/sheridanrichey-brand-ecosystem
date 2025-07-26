@@ -1,12 +1,13 @@
 import Link from 'next/link';
-import { Calendar } from 'lucide-react';
+import { Calendar, User } from 'lucide-react';
 
 const categoryColorMap: Record<string, string> = {
-  ZAG: 'bg-[#279595]/10 text-[#279595]',
-  ZEN: 'bg-[#279595]/10 text-[#279595]',
-  ACT: 'bg-[#279595]/10 text-[#279595]',
-  GEM: 'bg-[#279595]/10 text-[#279595]',
-  Featured: 'bg-[#279595]/10 text-[#279595]',
+  ZAG: 'bg-teal-500 text-white',
+  ZEN: 'bg-teal-500/10 text-teal-500',
+  ACT: 'bg-teal-500/10 text-teal-500',
+  GEM: 'bg-teal-500/10 text-teal-500',
+  Leadership: 'bg-teal-500/10 text-teal-500',
+  Featured: 'bg-teal-500/10 text-teal-500',
 };
 
 export type BlogCardPost = {
@@ -16,6 +17,10 @@ export type BlogCardPost = {
   date: string;
   category: string;
   featured?: boolean;
+  author?: {
+    name: string;
+    title: string;
+  };
 };
 
 export default function BlogCard({ post }: { post: BlogCardPost }) {
@@ -34,6 +39,14 @@ export default function BlogCard({ post }: { post: BlogCardPost }) {
         <p className="font-body text-slate-600 mb-4 line-clamp-3">
           {post.description}
         </p>
+        {post.author && (
+          <div className="flex items-center gap-2 text-slate-500 mb-4">
+            <User className="h-4 w-4" />
+            <span className="font-body text-sm font-medium">{post.author.name}</span>
+            <span className="font-body text-xs text-slate-400">•</span>
+            <span className="font-body text-xs">{post.author.title}</span>
+          </div>
+        )}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-slate-500">
             <Calendar className="h-4 w-4" />
@@ -41,7 +54,7 @@ export default function BlogCard({ post }: { post: BlogCardPost }) {
           </div>
           <Link 
             href={`/blog/${post.slug}`}
-            className="font-body text-[#279595] hover:text-[#1f7a7a] font-medium text-sm transition-colors duration-200"
+            className="font-body text-teal-500 hover:text-teal-600 font-medium text-sm transition-colors duration-200"
           >
             Read More →
           </Link>

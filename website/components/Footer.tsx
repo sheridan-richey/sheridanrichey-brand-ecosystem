@@ -9,11 +9,11 @@ export default function Footer() {
           <div className="space-y-8">
             <div className="flex items-center space-x-3">
               <Image
-                src="/assets/SVG/Logo-1.svg"
+                src="/assets/SVG/Logo-Zoomed-Locked.svg"
                 alt="Sheridan Richey"
-                width={120}
-                height={36}
-                className="h-9 w-auto"
+                width={180}
+                height={54}
+                className="h-12 w-auto"
               />
             </div>
             <p className="text-smoke text-sm leading-6">
@@ -62,6 +62,11 @@ export default function Footer() {
                   <li>
                     <Link href="/about" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
                       About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contributors" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
+                      Contributors
                     </Link>
                   </li>
                   <li>
