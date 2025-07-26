@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm'
 import { allPosts } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 import AboutAuthor from '@/components/AboutAuthor'
+import { getAuthor } from '@/data/authors'
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = allPosts.find((p) => p.slug === params.slug)
@@ -21,50 +22,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     Leadership: 'bg-teal-500/10 text-teal-500',
   };
 
-  // Author data mapping for blog posts
-  const getAuthorData = (postSlug: string) => {
-    const authorMap: Record<string, any> = {
-      'finding-clarity-mid-career': {
-        id: 'sheridan-richey',
-        name: 'Sheridan Richey',
-        title: 'Founder & Chief Strategist',
-        bio: 'Sheridan Richey is a seasoned executive leader and entrepreneur who has guided multiple SaaS companies through transformative growth. With over two decades of experience in product development, M&A, and team leadership, Sheridan has developed the ZAG Matrix framework to help awakened technologists navigate their mid-career transformation.',
-        headshot: '/assets/images/contributors/sheridan-richey.jpg'
-      },
-      'building-momentum-through-relationships': {
-        id: 'sheridan-richey',
-        name: 'Sheridan Richey',
-        title: 'Founder & Chief Strategist',
-        bio: 'Sheridan Richey is a seasoned executive leader and entrepreneur who has guided multiple SaaS companies through transformative growth. With over two decades of experience in product development, M&A, and team leadership, Sheridan has developed the ZAG Matrix framework to help awakened technologists navigate their mid-career transformation.',
-        headshot: '/assets/images/contributors/sheridan-richey.jpg'
-      },
-      'strategic-career-moves': {
-        id: 'sheridan-richey',
-        name: 'Sheridan Richey',
-        title: 'Founder & Chief Strategist',
-        bio: 'Sheridan Richey is a seasoned executive leader and entrepreneur who has guided multiple SaaS companies through transformative growth. With over two decades of experience in product development, M&A, and team leadership, Sheridan has developed the ZAG Matrix framework to help awakened technologists navigate their mid-career transformation.',
-        headshot: '/assets/images/contributors/sheridan-richey.jpg'
-      },
-      'zag-matrix-framework-introduction': {
-        id: 'sheridan-richey',
-        name: 'Sheridan Richey',
-        title: 'Founder & Chief Strategist',
-        bio: 'Sheridan Richey is a seasoned executive leader and entrepreneur who has guided multiple SaaS companies through transformative growth. With over two decades of experience in product development, M&A, and team leadership, Sheridan has developed the ZAG Matrix framework to help awakened technologists navigate their mid-career transformation.',
-        headshot: '/assets/images/contributors/sheridan-richey.jpg'
-      },
-      'system-architect-for-life': {
-        id: 'sean-hokanson',
-        name: 'Sean Hokanson',
-        title: 'Contributing Editor & Systems Architect',
-        bio: 'As a seasoned Chief Architect with over two decades of experience building scalable, high-performance software systems, Sean brings a unique architectural rigor to the ZAG Matrix. He and Sheridan were partners for seven years at Extensiv, where they led product and technology strategy.',
-        headshot: '/assets/images/contributors/sean-hokanson.jpg'
-      }
-    }
-    
-    return authorMap[postSlug] || authorMap['finding-clarity-mid-career'] // Default to Sheridan
-  }
-
-  const author = getAuthorData(params.slug)
+  const author = getAuthor(post.author)
 
   // Format the date and handle featured status
   const formattedPost = {

@@ -38,6 +38,11 @@ export const Post = defineDocumentType(() => ({
       required: false,
       default: false,
     },
+    author: {
+      type: 'string',
+      description: 'The author ID of the post',
+      required: true,
+    },
     image: {
       type: 'string',
       description: 'Featured image URL',
