@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 
 interface Author {
   id: string
@@ -14,6 +17,9 @@ interface AboutAuthorProps {
 }
 
 export default function AboutAuthor({ author }: AboutAuthorProps) {
+  const [imageError, setImageError] = useState(false)
+  const initials = author.name.split(' ').map(n => n[0]).join('')
+
   return (
     <div className="mt-12 pt-8 border-t border-smoke">
       <div className="bg-light-bg rounded-lg p-6 border border-smoke">
@@ -21,25 +27,22 @@ export default function AboutAuthor({ author }: AboutAuthorProps) {
           {/* Left Column - Headshot */}
           <div className="flex-shrink-0">
             <div className="w-16 h-16 rounded-full overflow-hidden bg-smoke">
-              <Image
-                src={author.headshot}
-                alt={author.name}
-                width={64}
-                height={64}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  // Fallback to a placeholder if image fails to load
-                  const target = e.target as HTMLImageElement
-                  target.style.display = 'none'
-                  target.parentElement!.innerHTML = `
-                    <div class="w-full h-full bg-smoke flex items-center justify-center">
-                      <span class="text-graphite font-manrope font-medium text-sm">
-                        ${author.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                  `
-                }}
-              />
+              {!imageError ? (
+                <Image
+                  src={author.headshot}
+                  alt={author.name}
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-cover"
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="w-full h-full bg-smoke flex items-center justify-center">
+                  <span className="text-graphite font-manrope font-medium text-sm">
+                    {initials}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 
