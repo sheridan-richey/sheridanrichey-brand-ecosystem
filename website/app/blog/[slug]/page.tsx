@@ -76,18 +76,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   <span className="font-body text-sm">{formattedPost.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Tag className={`h-4 w-4 ${
-                    formattedPost.category === 'ZEN' ? 'text-[#6366F1]' :
-                    formattedPost.category === 'ACT' ? 'text-[#279595]' :
-                    formattedPost.category === 'GEM' ? 'text-[#8B5A3C]' :
-                    'text-[#279595]'
-                  }`} />
-                  <span className={`font-body text-sm ${
-                    formattedPost.category === 'ZEN' ? 'text-[#6366F1]' :
-                    formattedPost.category === 'ACT' ? 'text-[#279595]' :
-                    formattedPost.category === 'GEM' ? 'text-[#8B5A3C]' :
-                    'text-[#279595]'
-                  }`}>{formattedPost.category}</span>
+                  <Tag className="h-4 w-4 text-teal-500" />
+                  <span className="font-body text-sm text-teal-500">{formattedPost.category}</span>
                 </div>
               <button className="flex items-center gap-2 hover:text-[#279595] transition-colors duration-200">
                 <Share2 className="h-4 w-4" />
