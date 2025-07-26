@@ -105,10 +105,10 @@ export default function HeroSection() {
             }`}
             style={{ transitionDelay: isVisible ? "0.5s" : "0s" }}
           >
-            <h1 className="font-manrope text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-white leading-tight">
+            <h1 className="font-manrope text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-white leading-tight px-2">
               From 'Meh' to Mastery:
               <br />
-              <span className="text-primary-200">The ZAG Matrix Transformation</span>
+              <span className="text-primary-200">The ZAG Matrix</span>
             </h1>
           </div>
 
@@ -122,10 +122,11 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="group font-manrope border-2 border-white text-white font-bold hover:bg-white hover:text-primary-600 px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+              className="group font-manrope border-2 border-white text-white font-bold hover:bg-white hover:text-primary-600 px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-xl rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-none"
             >
-              Join Community + Get AI Prompt Engineer Guide
-              <span className="ml-3 group-hover:translate-x-1 transition-transform duration-200 text-2xl">→</span>
+              <span className="hidden sm:inline">Join Community + Get AI Prompt Engineer Guide</span>
+              <span className="sm:hidden">Join Community + Get Guide</span>
+              <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-200 text-lg sm:text-xl md:text-2xl">→</span>
             </Button>
           </div>
 
@@ -136,7 +137,7 @@ export default function HeroSection() {
             }`}
             style={{ transitionDelay: isVisible ? "0.6s" : "0s" }}
           >
-            <p className="font-manrope text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-manrope text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed px-4">
               Transform mid-career technologists into energized, purpose-driven leaders.
             </p>
           </div>
@@ -148,7 +149,7 @@ export default function HeroSection() {
             }`}
             style={{ transitionDelay: isVisible ? "0.7s" : "0s" }}
           >
-            <p className="font-manrope text-lg text-white/80 max-w-2xl mx-auto">
+            <p className="font-manrope text-base sm:text-lg text-white/80 max-w-2xl mx-auto px-4">
               Three interconnected pillars: <span className="text-white font-semibold">ZEN • ACT • GEM</span>
             </p>
           </div>
@@ -160,8 +161,8 @@ export default function HeroSection() {
             }`}
             style={{ transitionDelay: isVisible ? "0.8s" : "0s" }}
           >
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto border border-white/20">
-              <p className="font-manrope text-lg text-white font-semibold">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-3 sm:p-4 max-w-2xl mx-auto border border-white/20 mx-4">
+              <p className="font-manrope text-sm sm:text-lg text-white font-semibold text-center">
                 6 acquisitions • 3 successful exits • 60-point NPS improvements
               </p>
             </div>
@@ -174,18 +175,18 @@ export default function HeroSection() {
             }`}
             style={{ transitionDelay: isVisible ? "0.9s" : "0s" }}
           >
-            <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <h3 className="font-manrope text-lg font-bold text-white mb-2">Career Launcher</h3>
-                <p className="font-manrope text-sm text-white/90">Launched dozens of careers to Director, VP, and CTO levels</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto px-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                <h3 className="font-manrope text-base sm:text-lg font-bold text-white mb-2">Career Launcher</h3>
+                <p className="font-manrope text-xs sm:text-sm text-white/90">Launched dozens of careers to Director, VP, and CTO levels</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <h3 className="font-manrope text-lg font-bold text-white mb-2">Balanced Growth</h3>
-                <p className="font-manrope text-sm text-white/90">Integrates career mastery with personal growth and relationships</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                <h3 className="font-manrope text-base sm:text-lg font-bold text-white mb-2">Balanced Growth</h3>
+                <p className="font-manrope text-xs sm:text-sm text-white/90">Integrates career mastery with personal growth and relationships</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <h3 className="font-manrope text-lg font-bold text-white mb-2">AI-Powered</h3>
-                <p className="font-manrope text-sm text-white/90">Leverage AI to accelerate your transformation and impact</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 sm:col-span-2 md:col-span-1">
+                <h3 className="font-manrope text-base sm:text-lg font-bold text-white mb-2">AI-Powered</h3>
+                <p className="font-manrope text-xs sm:text-sm text-white/90">Leverage AI to accelerate your transformation and impact</p>
               </div>
             </div>
           </div>
@@ -204,7 +205,7 @@ export default function HeroSection() {
 
           {/* Enhanced CTAs - Below the fold */}
           <div
-            className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 ${
+            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center transition-all duration-1000 px-4 ${
               isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "1.1s" : "0s" }}
@@ -213,7 +214,7 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="font-manrope border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent hover:shadow-lg"
+              className="font-manrope border-2 border-white text-white hover:bg-white hover:text-primary-600 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent hover:shadow-lg w-full sm:w-auto"
             >
               Learn About ZAG Matrix
             </Button>
@@ -221,7 +222,7 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="font-manrope border-2 border-white/50 text-white/90 hover:bg-white/10 px-6 py-4 text-base rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent"
+              className="font-manrope border-2 border-white/50 text-white/90 hover:bg-white/10 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent w-full sm:w-auto"
             >
               Download Framework Overview
             </Button>
