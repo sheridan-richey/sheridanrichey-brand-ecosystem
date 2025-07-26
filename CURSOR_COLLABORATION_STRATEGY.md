@@ -122,7 +122,7 @@ This document outlines how to maximize Cursor's effectiveness when collaborating
 #### When Starting Work (Both Team Members)
 ```bash
 # Pull latest changes
-git pull origin test-playwright-workflow
+git pull origin main
 
 # Start development server
 cd website && npm run dev

@@ -46,7 +46,7 @@ Learn how to maximize Cursor's effectiveness for team collaboration:
 
 ### 1. **GitHub Repository Access**
 - **Repository:** https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem
-- **Branch:** `test-playwright-workflow` (current development branch)
+- **Branch:** `main` (current development branch)
 - **Permissions:** Write access (can push/pull, can't delete repo)
 
 ### 2. **Vercel Deployment Access**

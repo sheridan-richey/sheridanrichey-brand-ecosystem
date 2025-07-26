@@ -78,15 +78,14 @@ SLR.com/
 ## 🔄 Git Workflow
 
 ### Branch Strategy
-- **main**: Production-ready code
-- **test-playwright-workflow**: Current development branch
+- **main**: Primary development branch
 - **feature/[name]**: New features
 - **fix/[name]**: Bug fixes
 
 ### Daily Workflow
 1. **Pull latest changes:**
    ```bash
-   git pull origin test-playwright-workflow
+   git pull origin main
    ```
 
 2. **Create feature branch:**
