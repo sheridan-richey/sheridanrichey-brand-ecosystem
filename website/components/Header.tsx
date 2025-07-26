@@ -50,16 +50,16 @@ export default function Header() {
   return (
     <>
       <header className="bg-white/80 backdrop-blur-md border-b border-smoke sticky top-0 z-50">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between py-4 px-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5 mr-16">
+            <Link href="/" className="-m-1.5 p-1.5 mr-20">
               <span className="sr-only">Sheridan Richey</span>
               <Image
                 src="/assets/Emblem/SVG/Asset 6.svg"
                 alt="SR - Sheridan Richey"
-                width={60}
-                height={40}
-                className="h-10 w-auto"
+                width={72}
+                height={48}
+                className="h-12 w-auto"
                 priority
               />
             </Link>
@@ -74,19 +74,23 @@ export default function Header() {
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-8">
+          <div className="hidden lg:flex lg:gap-x-10">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-phantom hover:text-primary-500 transition-colors"
+                className="text-base font-semibold leading-6 text-phantom hover:text-teal-500 transition-colors duration-200 relative group"
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-500 transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link href="/newsletter" className="btn-primary">
+            <Link 
+              href="/newsletter" 
+              className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+            >
               Join Community
             </Link>
           </div>
@@ -111,9 +115,9 @@ export default function Header() {
                 <Image
                   src="/assets/Emblem/SVG/Asset 6.svg"
                   alt="SR - Sheridan Richey"
-                  width={48}
-                  height={32}
-                  className="h-8 w-auto"
+                  width={56}
+                  height={38}
+                  className="h-9 w-auto"
                 />
               </Link>
               <button
@@ -142,7 +146,7 @@ export default function Header() {
                 <div className="py-6">
                   <Link
                     href="/newsletter"
-                    className="btn-primary w-full text-center"
+                    className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md w-full text-center block"
                     onClick={closeMobileMenu}
                   >
                     Join Community
