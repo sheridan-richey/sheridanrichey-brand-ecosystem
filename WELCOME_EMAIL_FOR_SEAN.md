@@ -103,6 +103,7 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 - **Project Updates:** GitHub Issues and PRs
 - **Quick Questions:** Email or GitHub Discussions
 - **Urgent Issues:** Phone (only for critical problems)
+- **Community:** The ZAG Collective (Slack) - sheridanrichey.com/zag-collective
 
 ## 🎨 Key Project Files to Review
 

@@ -13,6 +13,18 @@ This repository contains the complete brand ecosystem for Sheridan Richey, inclu
 - **Professional Roles** - Guidelines for HSO and BIFI integration
 - **Content Templates** - Reusable templates for consistent messaging
 
+## 🌐 **Brand Ecosystem**
+
+### **The ZAG Navigator (Beehiiv Newsletter)**
+Our public newsletter for sharing core ideas and insights. This is "The Stage" where we deliver polished, high-value content to a broad audience of Awakened Technologists.
+
+### **The ZAG Collective (Slack Community)**
+Our private community for collaborators and members to discuss and apply the framework. This is "The Workshop" where real-time conversation and peer-to-peer support happens. For access, please contact Sheridan directly.
+
+### **Website Integration**
+- **Public Community Page** (`/community`): Newsletter-focused, public-facing
+- **Private Collective Page** (`/zag-collective`): Direct access only, invitation-based
+
 ## 🏗️ **Project Structure**
 
 ```

@@ -88,10 +88,10 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link 
-              href="/newsletter" 
+              href="/community" 
               className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
             >
-              Join Community
+              Community
             </Link>
           </div>
         </nav>
@@ -145,11 +145,11 @@ export default function Header() {
                 </div>
                 <div className="py-6">
                   <Link
-                    href="/newsletter"
+                    href="/community"
                     className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md w-full text-center block"
                     onClick={closeMobileMenu}
                   >
-                    Join Community
+                    Community
                   </Link>
                 </div>
               </div>

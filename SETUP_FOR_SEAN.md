@@ -233,6 +233,7 @@ This is a **part-time, asynchronous collaboration** designed for flexibility:
 - **Email**: sheridan@sheridanrichey.com (primary)
 - **GitHub**: @sheridan-richey (for project discussions)
 - **Phone**: 801.518.2714 (urgent issues only)
+- **Community**: The ZAG Collective (Slack) - sheridanrichey.com/zag-collective
 
 ## 🎯 First Month Goals
 
