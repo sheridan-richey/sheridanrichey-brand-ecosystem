@@ -20,7 +20,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     GEM: 'bg-[#8B5A3C]/10 text-[#8B5A3C]',
   };
 
-  // Author data - all current blog posts are written by Sheridan Richey
+  // Author data mapping for blog posts
   const getAuthorData = (postSlug: string) => {
     const authorMap: Record<string, any> = {
       'finding-clarity-mid-career': {
@@ -50,6 +50,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         title: 'Founder & Chief Strategist',
         bio: 'Sheridan Richey is a seasoned executive leader and entrepreneur who has guided multiple SaaS companies through transformative growth. With over two decades of experience in product development, M&A, and team leadership, Sheridan has developed the ZAG Matrix framework to help awakened technologists navigate their mid-career transformation.',
         headshot: '/assets/images/contributors/sheridan-richey.jpg'
+      },
+      'system-architect-for-life': {
+        id: 'sean-hokanson',
+        name: 'Sean Hokanson',
+        title: 'Contributing Editor & Systems Architect',
+        bio: 'As a seasoned Chief Architect with over two decades of experience building scalable, high-performance software systems, Sean brings a unique architectural rigor to the ZAG Matrix. He and Sheridan were partners for seven years at Extensiv, where they led product and technology strategy.',
+        headshot: '/assets/images/contributors/sean-hokanson.jpg'
       }
     }
     

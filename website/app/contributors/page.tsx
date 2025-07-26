@@ -2,7 +2,7 @@ import Link from 'next/link'
 import ContributorCard from '@/components/ContributorCard'
 
 export default function ContributorsPage() {
-  // Contributor data - currently all blog posts are written by Sheridan Richey
+  // Contributor data
   const contributors = [
     {
       id: 'sheridan-richey',
@@ -34,6 +34,22 @@ export default function ContributorsPage() {
           date: '2024-01-16'
         }
       ]
+    },
+    {
+      id: 'sean-hokanson',
+      name: 'Sean Hokanson',
+      title: 'Contributing Editor & Systems Architect',
+      bio: 'As a seasoned Chief Architect with over two decades of experience building scalable, high-performance software systems, Sean brings a unique architectural rigor to the ZAG Matrix. He and Sheridan were partners for seven years at Extensiv, where they led product and technology strategy. Sean focuses on applying the principles of systems thinking to the GEM pillar, helping individuals architect a life of purpose and financial independence. He is also a dedicated father, whose personal "Dad 2.0" journey is a powerful testament to the principles of ZEN and ACT.',
+      headshot: '/assets/images/contributors/sean-hokanson.jpg',
+      linkedin: 'https://linkedin.com/in/seanhokanson',
+      twitter: 'https://twitter.com/seanhokanson',
+      authoredPosts: [
+        {
+          title: 'System Architect for Life: Applying Engineering Principles to Personal Transformation',
+          slug: 'system-architect-for-life',
+          date: '2025-07-26'
+        }
+      ]
     }
   ]
 
@@ -55,7 +71,7 @@ export default function ContributorsPage() {
 
       {/* Contributors Grid */}
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {contributors.map((contributor) => (
             <ContributorCard key={contributor.id} contributor={contributor} />
           ))}
