@@ -1,13 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Calendar, Tag, User } from 'lucide-react'
+import { ArrowRight, Calendar, Tag } from 'lucide-react'
 import { allPosts } from 'contentlayer/generated'
-import { getAuthor } from '@/data/authors'
+import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
 
 // Sort posts: featured first, then non-featured, both in descending date order
 const blogPosts = allPosts
   .map(post => {
-    const author = getAuthor(post.author)
     return {
       ...post,
       date: new Date(post.date).toLocaleDateString('en-US', { 
@@ -16,7 +15,7 @@ const blogPosts = allPosts
         day: 'numeric' 
       }),
       featured: post.featured === true,
-      author: author
+      author: null // Temporarily remove author until contentlayer issue is resolved
     }
   })
   .sort((a, b) => {
@@ -105,34 +104,7 @@ export default function BlogPage() {
                 </Link>
               </div>
               <div className="relative">
-                <div className="bg-white rounded-2xl shadow-xl p-8 border border-smoke">
-                  <div className="text-center mb-6">
-                    <h3 className="font-manrope text-2xl font-bold text-phantom mb-2">The ZAG Matrix</h3>
-                    <p className="font-manrope text-graphite">Three interconnected pillars of transformation</p>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-                      <span className="font-manrope text-xl font-bold text-white">Z</span>
-                    </div>
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-                      <span className="font-manrope text-xl font-bold text-white">A</span>
-                    </div>
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-                      <span className="font-manrope text-xl font-bold text-white">G</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-between text-center">
-                    <div>
-                      <h4 className="font-manrope text-sm font-bold text-primary-500">Clarity</h4>
-                    </div>
-                    <div>
-                      <h4 className="font-manrope text-sm font-bold text-primary-500">Momentum</h4>
-                    </div>
-                    <div>
-                      <h4 className="font-manrope text-sm font-bold text-primary-500">Mastery</h4>
-                    </div>
-                  </div>
-                </div>
+                <ZagMatrixSidebar />
               </div>
             </div>
           </div>
@@ -166,14 +138,6 @@ export default function BlogPage() {
                 <p className="font-manrope text-graphite mb-4 line-clamp-3">
                   {post.description}
                 </p>
-                {post.author && (
-                  <div className="flex items-center gap-2 text-graphite mb-4">
-                    <User className="h-4 w-4" />
-                    <span className="font-manrope text-sm font-medium">{post.author.name}</span>
-                    <span className="font-manrope text-xs text-graphite">•</span>
-                    <span className="font-manrope text-xs">{post.author.title}</span>
-                  </div>
-                )}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-graphite">
                     <Calendar className="h-4 w-4" />
