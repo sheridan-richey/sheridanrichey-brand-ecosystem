@@ -7,6 +7,7 @@ interface FormData {
   email: string
   subject: string
   message: string
+  newsletterSignup: boolean
 }
 
 interface FormErrors {
@@ -21,7 +22,8 @@ export default function ContactForm() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    newsletterSignup: false
   })
   
   const [errors, setErrors] = useState<FormErrors>({})
@@ -66,12 +68,23 @@ export default function ContactForm() {
     setSubmitStatus('idle')
     
     try {
+      // Handle different submission types
+      if (formData.subject === 'Speaking Engagement') {
+        // For speaking inquiries, could integrate with Beehiiv or redirect to speaking page
+        console.log('Speaking inquiry - could integrate with Beehiiv')
+      }
+      
+      if (formData.newsletterSignup) {
+        // Handle newsletter signup - could integrate with Beehiiv
+        console.log('Newsletter signup - could integrate with Beehiiv')
+      }
+      
       // For now, we'll simulate a successful submission
       // In production, this would send to your email service or API
       await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
       
       setSubmitStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
+      setFormData({ name: '', email: '', subject: '', message: '', newsletterSignup: false })
       
       // Reset success message after 5 seconds
       setTimeout(() => {
@@ -197,6 +210,20 @@ export default function ContactForm() {
           {errors.message && (
             <p className="mt-1 text-sm text-red-600">{errors.message}</p>
           )}
+        </div>
+        
+        <div className="flex items-center">
+          <input
+            id="newsletterSignup"
+            name="newsletterSignup"
+            type="checkbox"
+            checked={formData.newsletterSignup}
+            onChange={(e) => setFormData(prev => ({ ...prev, newsletterSignup: e.target.checked }))}
+            className="h-4 w-4 text-primary-500 focus:ring-primary-500 border-smoke rounded"
+          />
+          <label htmlFor="newsletterSignup" className="ml-2 block text-sm text-graphite font-manrope">
+            Subscribe to my newsletter for insights on career transformation and the ZAG Matrix framework
+          </label>
         </div>
         
         <button
