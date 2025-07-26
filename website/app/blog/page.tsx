@@ -1,26 +1,65 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Calendar, Tag } from 'lucide-react'
+import { ArrowRight, Calendar, Tag, User } from 'lucide-react'
 import { allPosts } from 'contentlayer/generated'
 
-// Sort posts by date (newest first) and format dates
+// Author data mapping for blog posts
+const getAuthorData = (postSlug: string) => {
+  const authorMap: Record<string, any> = {
+    'finding-clarity-mid-career': {
+      name: 'Sheridan Richey',
+      title: 'Founder & Chief Strategist'
+    },
+    'building-momentum-through-relationships': {
+      name: 'Sheridan Richey',
+      title: 'Founder & Chief Strategist'
+    },
+    'strategic-career-moves': {
+      name: 'Sheridan Richey',
+      title: 'Founder & Chief Strategist'
+    },
+    'zag-matrix-framework-introduction': {
+      name: 'Sheridan Richey',
+      title: 'Founder & Chief Strategist'
+    },
+    'system-architect-for-life': {
+      name: 'Sean Hokanson',
+      title: 'Contributing Editor & Systems Architect'
+    }
+  }
+  
+  return authorMap[postSlug] || authorMap['finding-clarity-mid-career'] // Default to Sheridan
+}
+
+// Sort posts: featured first, then non-featured, both in descending date order
 const blogPosts = allPosts
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  .map(post => ({
-    ...post,
-    date: new Date(post.date).toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric' 
-    }),
-    featured: post.featured === true,
-  }))
+  .map(post => {
+    const author = getAuthorData(post.slug)
+    return {
+      ...post,
+      date: new Date(post.date).toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      }),
+      featured: post.featured === true,
+      author: author
+    }
+  })
+  .sort((a, b) => {
+    // First sort by featured status (featured posts first)
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    // Then sort by date (newest first)
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  })
 
 const categoryColorMap: Record<string, string> = {
-  ZAG: 'bg-primary-500 text-white',
-  ZEN: 'bg-primary-500/10 text-primary-500',
-  ACT: 'bg-primary-500/10 text-primary-500',
-  GEM: 'bg-primary-500/10 text-primary-500',
+  ZAG: 'bg-teal-500 text-white',
+  ZEN: 'bg-teal-500/10 text-teal-500',
+  ACT: 'bg-teal-500/10 text-teal-500',
+  GEM: 'bg-teal-500/10 text-teal-500',
+  Leadership: 'bg-teal-500/10 text-teal-500',
 };
 
 export default function BlogPage() {
@@ -154,6 +193,12 @@ export default function BlogPage() {
                 <p className="font-manrope text-graphite mb-4 line-clamp-3">
                   {post.description}
                 </p>
+                <div className="flex items-center gap-2 text-graphite mb-4">
+                  <User className="h-4 w-4" />
+                  <span className="font-manrope text-sm font-medium">{post.author.name}</span>
+                  <span className="font-manrope text-xs text-graphite">•</span>
+                  <span className="font-manrope text-xs">{post.author.title}</span>
+                </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-graphite">
                     <Calendar className="h-4 w-4" />
@@ -161,7 +206,7 @@ export default function BlogPage() {
                   </div>
                   <Link 
                     href={`/blog/${post.slug}`}
-                    className="font-manrope text-primary-500 hover:text-primary-600 font-medium text-sm transition-colors duration-200"
+                    className="font-manrope text-teal-500 hover:text-teal-600 font-medium text-sm transition-colors duration-200"
                   >
                     Read More →
                   </Link>

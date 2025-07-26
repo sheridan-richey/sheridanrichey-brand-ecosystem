@@ -3,19 +3,51 @@ import { ArrowRight } from 'lucide-react'
 import { allPosts } from 'contentlayer/generated'
 import BlogCard, { BlogCardPost } from './BlogCard'
 
+// Author data mapping for blog posts
+const getAuthorData = (postSlug: string) => {
+  const authorMap: Record<string, any> = {
+    'finding-clarity-mid-career': {
+      name: 'Sheridan Richey',
+      title: 'Founder & Chief Strategist'
+    },
+    'building-momentum-through-relationships': {
+      name: 'Sheridan Richey',
+      title: 'Founder & Chief Strategist'
+    },
+    'strategic-career-moves': {
+      name: 'Sheridan Richey',
+      title: 'Founder & Chief Strategist'
+    },
+    'zag-matrix-framework-introduction': {
+      name: 'Sheridan Richey',
+      title: 'Founder & Chief Strategist'
+    },
+    'system-architect-for-life': {
+      name: 'Sean Hokanson',
+      title: 'Contributing Editor & Systems Architect'
+    }
+  }
+  
+  return authorMap[postSlug] || authorMap['finding-clarity-mid-career'] // Default to Sheridan
+}
+
 function getLatestFeaturedPosts(posts: any[], count: number): BlogCardPost[] {
   // Sort by date descending
   const sorted = posts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .map(post => ({
-      ...post,
-      date: new Date(post.date).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      }),
-      featured: post.featured === true,
-    }))
+    .map(post => {
+      const author = getAuthorData(post.slug)
+      return {
+        ...post,
+        date: new Date(post.date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        }),
+        featured: post.featured === true,
+        author: author
+      }
+    })
   const featured = sorted.filter(p => p.featured)
   const rest = sorted.filter(p => !p.featured)
   return [...featured.slice(0, count), ...rest].slice(0, count)

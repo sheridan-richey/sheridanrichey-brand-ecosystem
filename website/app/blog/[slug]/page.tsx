@@ -14,10 +14,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   }
 
   const categoryColorMap: Record<string, string> = {
-    ZAG: 'bg-[#279595] text-white',
-    ZEN: 'bg-[#6366F1]/10 text-[#6366F1]',
-    ACT: 'bg-[#279595]/10 text-[#279595]',
-    GEM: 'bg-[#8B5A3C]/10 text-[#8B5A3C]',
+    ZAG: 'bg-teal-500 text-white',
+    ZEN: 'bg-teal-500/10 text-teal-500',
+    ACT: 'bg-teal-500/10 text-teal-500',
+    GEM: 'bg-teal-500/10 text-teal-500',
+    Leadership: 'bg-teal-500/10 text-teal-500',
   };
 
   // Author data mapping for blog posts
@@ -91,10 +92,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           
                       <div className="mb-6">
               <div className="flex items-center gap-2 mb-4">
-                <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap[formattedPost.category] || 'bg-[#279595]/10 text-[#279595]'}`}>{formattedPost.category}</span>
+                <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap[formattedPost.category] || 'bg-teal-500/10 text-teal-500'}`}>{formattedPost.category}</span>
                 {formattedPost.featured && (
-                  <span className="inline-flex items-center px-3 py-1 bg-[#6366F1]/10 rounded-full">
-                    <span className="text-[#6366F1] font-body text-sm font-medium">Featured</span>
+                  <span className="inline-flex items-center px-3 py-1 bg-teal-500/10 rounded-full">
+                    <span className="text-teal-500 font-body text-sm font-medium">Featured</span>
                   </span>
                 )}
               </div>
