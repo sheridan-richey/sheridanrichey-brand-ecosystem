@@ -1,0 +1,57 @@
+# CI/CD Workflow Standards
+
+## GitHub Actions Workflow
+- E2E testing workflow: [.github/workflows/playwright.yml](mdc:.github/workflows/playwright.yml)
+- Triggers on pull requests to `main` branch
+- Manual trigger available via `workflow_dispatch`
+- Runs Playwright tests against production site
+
+## Vercel Deployment
+- Automatic deployments from GitHub
+- Production URL: https://sheridanrichey.com
+- Preview deployments for pull requests
+- Environment variables managed via Vercel dashboard
+
+## Required Secrets
+- `VERCEL_TOKEN`: Vercel API token
+- `VERCEL_ORG_ID`: Team ID (team_SXzIcySViXy1FSCVMJ9Si9pE)
+- `VERCEL_PROJECT_ID`: Project ID (prj_Z0L8peVOikrqGnjPmTq023GFz4Kh)
+
+## Testing Strategy
+- E2E tests run against production site
+- No preview deployment testing (build issues resolved separately)
+- Tests focus on navigation and page loading
+- Form testing excluded until forms are wired up
+
+## Deployment Process
+1. Code changes pushed to feature branch
+2. Pull request created to `main`
+3. GitHub Actions triggers E2E tests
+4. Tests run against production site
+5. Vercel automatically deploys on merge to `main`
+
+## Quality Gates
+- All E2E tests must pass before merge
+- No 404 errors on main navigation pages
+- Blog functionality must work
+- Basic page loading validation
+
+## Rollback Strategy
+- Vercel provides automatic rollback capabilities
+- Previous deployments available in Vercel dashboard
+- Can manually trigger rollback if needed
+
+## Monitoring
+- Vercel Analytics for performance monitoring
+- GitHub Actions logs for test results
+- Production site monitoring via Vercel
+
+## Best Practices
+- Always test locally before pushing
+- Use descriptive commit messages
+- Keep pull requests focused and small
+- Monitor test results in GitHub Actions
+description:
+globs:
+alwaysApply: false
+---

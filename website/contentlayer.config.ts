@@ -1,6 +1,4 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
-import fs from 'fs';
-console.log('Contentlayer scanning posts:', fs.readdirSync('./posts'));
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',

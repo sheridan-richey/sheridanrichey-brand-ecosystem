@@ -1,0 +1,54 @@
+# Project Structure Guide
+
+## Root Organization
+- Main website code in `website/` directory
+- E2E tests in `tests/e2e/` directory
+- Documentation in root directory
+- GitHub Actions workflows in `.github/workflows/`
+
+## Website Structure (`website/`)
+- Next.js App Router application
+- Main entry point: [website/app/layout.tsx](mdc:website/app/layout.tsx)
+- Pages: [website/app/page.tsx](mdc:website/app/page.tsx), [website/app/about/page.tsx](mdc:website/app/about/page.tsx), etc.
+- Components: [website/components/](mdc:website/components/)
+- Blog posts: [website/posts/](mdc:website/posts/) (MDX files)
+- Configuration: [website/next.config.js](mdc:website/next.config.js), [website/contentlayer.config.ts](mdc:website/contentlayer.config.ts)
+
+## Content Management
+- Blog uses MDX with Contentlayer
+- Blog posts in `website/posts/` with frontmatter
+- Categories: ZEN, ACT, GEM, Leadership, Entrepreneurship, Wellness
+- Contentlayer generates types from [website/contentlayer.config.ts](mdc:website/contentlayer.config.ts)
+
+## Testing Infrastructure
+- E2E tests: [tests/e2e/](mdc:tests/e2e/)
+- Playwright config: [playwright.config.js](mdc:playwright.config.js)
+- CI/CD: [.github/workflows/playwright.yml](mdc:.github/workflows/playwright.yml)
+
+## Key Configuration Files
+- Package.json: [website/package.json](mdc:website/package.json)
+- TypeScript config: [website/tsconfig.json](mdc:website/tsconfig.json)
+- Tailwind config: [website/tailwind.config.js](mdc:website/tailwind.config.js)
+- Git ignore: [website/.gitignore](mdc:website/.gitignore)
+
+## Deployment
+- Vercel deployment
+- Production URL: https://sheridanrichey.com
+- GitHub integration for automatic deployments
+- Environment variables managed via Vercel dashboard
+
+## Development Workflow
+1. Make changes in `website/` directory
+2. Test locally with `npm run dev`
+3. Create pull request to trigger E2E tests
+4. Tests run against production site
+5. Merge when tests pass
+
+## Brand Framework
+- ZAG Matrix: ZEN (clarity), ACT (momentum), GEM (mastery)
+- Target audience: "Alex, the Awakened Technologist"
+- Content focuses on mid-career professionals seeking purpose
+description:
+globs:
+alwaysApply: false
+---

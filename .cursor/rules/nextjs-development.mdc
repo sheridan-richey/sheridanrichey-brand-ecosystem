@@ -1,0 +1,58 @@
+# Next.js Development Standards
+
+## App Router Structure
+- Use Next.js 13+ App Router
+- Pages in `website/app/` directory
+- Layout file: [website/app/layout.tsx](mdc:website/app/layout.tsx)
+- Global styles: [website/app/globals.css](mdc:website/app/globals.css)
+
+## Component Organization
+- Components in `website/components/` directory
+- Use TypeScript for type safety
+- Follow React functional component patterns
+- Use Tailwind CSS for styling
+
+## Contentlayer Integration
+- Blog posts as MDX files in `website/posts/`
+- Contentlayer configuration: [website/contentlayer.config.ts](mdc:website/contentlayer.config.ts)
+- Next.js config with Contentlayer: [website/next.config.js](mdc:website/next.config.js)
+- Generated types available via `contentlayer/generated`
+
+## Blog Post Structure
+- Frontmatter with required fields: title, description, date, category
+- Categories: ZEN, ACT, GEM, Leadership, Entrepreneurship, Wellness
+- MDX content with React components support
+- URL generation handled by Contentlayer
+
+## Styling Standards
+- Tailwind CSS for utility-first styling
+- Configuration: [website/tailwind.config.js](mdc:website/tailwind.config.js)
+- Typography plugin for blog content
+- Responsive design patterns
+
+## Testing Integration
+- Add `data-testid` attributes for E2E testing
+- Use semantic HTML elements for accessibility
+- Ensure components work with Playwright selectors
+
+## Performance Considerations
+- Use Next.js Image component for optimized images
+- Implement proper loading states
+- Optimize bundle size with dynamic imports when needed
+
+## Development Commands
+```bash
+npm run dev    # Start development server
+npm run build  # Build for production
+npm run start  # Start production server
+npm run lint   # Run ESLint
+```
+
+## Environment Variables
+- Use `.env.local` for local development
+- Production variables managed via Vercel dashboard
+- No sensitive data in version control
+description:
+globs:
+alwaysApply: false
+---
