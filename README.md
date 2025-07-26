@@ -98,6 +98,13 @@ sheridanrichey-brand-ecosystem/
 
 ## 📝 **Content Management**
 
+### **Blog System**
+The website now features a fully data-driven blog system. See [website/BLOG_SYSTEM_README.md](./website/BLOG_SYSTEM_README.md) for complete documentation on:
+- Adding new blog posts with automatic author attribution
+- Managing contributors and author profiles
+- Brand-consistent styling and categorization
+- Data-driven approach for easy maintenance
+
 ### **Creating New Blog Posts**
 
 1. **Create content in the hub:**
