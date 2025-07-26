@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="space-y-8">
             <div className="flex items-center space-x-3">
               <Image
-                src="/assets/SVG/Logo-1.svg"
+                src="/assets/SVG/Logo-Zoomed-Locked.svg"
                 alt="Sheridan Richey"
                 width={120}
                 height={36}
