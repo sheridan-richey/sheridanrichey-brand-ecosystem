@@ -166,12 +166,14 @@ export default function BlogPage() {
                 <p className="font-manrope text-graphite mb-4 line-clamp-3">
                   {post.description}
                 </p>
-                <div className="flex items-center gap-2 text-graphite mb-4">
-                  <User className="h-4 w-4" />
-                  <span className="font-manrope text-sm font-medium">{post.author.name}</span>
-                  <span className="font-manrope text-xs text-graphite">•</span>
-                  <span className="font-manrope text-xs">{post.author.title}</span>
-                </div>
+                {post.author && (
+                  <div className="flex items-center gap-2 text-graphite mb-4">
+                    <User className="h-4 w-4" />
+                    <span className="font-manrope text-sm font-medium">{post.author.name}</span>
+                    <span className="font-manrope text-xs text-graphite">•</span>
+                    <span className="font-manrope text-xs">{post.author.title}</span>
+                  </div>
+                )}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-graphite">
                     <Calendar className="h-4 w-4" />
