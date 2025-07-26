@@ -117,9 +117,9 @@ This document outlines how to maximize Cursor's effectiveness when collaborating
 
 ## 🔄 Team Workflow with Cursor
 
-### 1. **Daily Development Cycle**
+### 1. **Asynchronous Development Cycle**
 
-#### Morning Setup (Both Team Members)
+#### When Starting Work (Both Team Members)
 ```bash
 # Pull latest changes
 git pull origin test-playwright-workflow
@@ -165,20 +165,21 @@ cursor .
 - [ ] Accessibility requirements are met
 - [ ] Tests are included and passing
 
-### 3. **Pair Programming Sessions**
+### 3. **Asynchronous Collaboration Sessions**
 
-#### Setup for Pair Programming
-1. **Use Cursor's multiplayer features** or screen sharing
-2. **Set up shared terminal session**
-3. **Use AI as a third team member:**
+#### Setup for Independent Work
+1. **Use Cursor's AI features** for guidance and suggestions
+2. **Create detailed GitHub Issues** for tracking progress
+3. **Use AI as a development partner:**
    - Ask for suggestions during development
    - Get instant feedback on approaches
    - Validate solutions against project goals
 
-#### Session Structure
-- **15 min**: Planning and context sharing
-- **45 min**: Active development with AI assistance
-- **15 min**: Review and next steps
+#### Work Session Structure
+- **Planning**: Create GitHub Issue with clear requirements
+- **Development**: Work independently with AI assistance
+- **Review**: Submit PR with detailed description
+- **Feedback**: Async review and iteration
 
 ## 🎨 Content Creation Workflow
 
@@ -333,25 +334,28 @@ export const ZagComponent: React.FC<ZagComponentProps> = ({
 2. **Review AI suggestions** before implementing
 3. **Use AI for code reviews** to maintain quality
 4. **Share knowledge** through AI-assisted documentation
+5. **Respond to emails within 24-48 hours**
 
 ### For Sean (Collaborator)
 1. **Follow established patterns** and AI guidance
 2. **Ask AI for clarification** when unsure
 3. **Use AI for rapid prototyping** and iteration
 4. **Contribute to shared knowledge** base
+5. **Work at your own pace** - no pressure for speed
 
 ### For Both Team Members
-1. **Regular sync sessions** to align on AI usage
+1. **Use GitHub Issues** for tracking and discussions
 2. **Share successful AI prompts** and techniques
 3. **Continuously improve** AI context and rules
 4. **Balance AI assistance** with human creativity
+5. **Maintain clear communication** via email and GitHub
 
 ## 🎉 Getting Started
 
 1. **Both team members install Cursor**
 2. **Set up shared configuration files**
-3. **Create first pair programming session**
-4. **Establish regular review cadence**
+3. **Create first GitHub Issue for tracking**
+4. **Establish comfortable communication rhythm**
 5. **Iterate and improve workflow**
 
 Remember: Cursor is a powerful tool, but it's most effective when used as a collaborative partner rather than a replacement for human creativity and judgment. The goal is to amplify your team's capabilities while maintaining the unique voice and vision of the Sheridan Richey brand. 

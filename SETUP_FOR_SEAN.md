@@ -153,39 +153,42 @@ vercel --prod
 
 ## 📞 Communication Channels
 
-### Daily Standups
-- **Time**: 9:00 AM EST
-- **Format**: Quick Slack/Teams check-in
-- **Topics**: What you did yesterday, today's plan, blockers
+### Asynchronous Collaboration
+This is a **part-time, asynchronous collaboration** designed for flexibility:
 
-### Weekly Reviews
-- **Time**: Fridays 2:00 PM EST
-- **Format**: 30-minute video call
-- **Topics**: Progress review, next week planning, feedback
+### Weekly Check-ins
+- **Format**: Email updates or GitHub Issues
+- **Frequency**: Weekly (when you have updates)
+- **Topics**: Progress updates, questions, next priorities
+
+### Monthly Planning (Optional)
+- **Format**: Video call or email thread
+- **Frequency**: Monthly (as needed)
+- **Topics**: Big picture planning, feedback, strategy
 
 ### Emergency Contact
-- **Slack**: @sheridan-richey
-- **Email**: sheridan@sheridanrichey.com
-- **Phone**: [Sheridan's phone number]
+- **Email**: sheridan@sheridanrichey.com (primary)
+- **GitHub**: @sheridan-richey (for project discussions)
+- **Phone**: [Sheridan's phone number] (urgent issues only)
 
-## 🎯 First Week Goals
+## 🎯 First Month Goals
 
-### Day 1-2: Setup & Exploration
+### Week 1: Setup & Exploration
 - [ ] Complete all setup steps above
 - [ ] Explore codebase structure
 - [ ] Read through existing documentation
 - [ ] Set up development environment
 
-### Day 3-4: First Contribution
+### Week 2-3: First Contribution
 - [ ] Pick a small bug fix or enhancement
 - [ ] Create feature branch
 - [ ] Make changes and test locally
 - [ ] Create first PR
 
-### Day 5: Review & Planning
-- [ ] Code review session with Sheridan
-- [ ] Discuss next week's priorities
-- [ ] Identify areas for improvement
+### Week 4: Review & Planning
+- [ ] Code review session (async via GitHub)
+- [ ] Discuss next priorities via email
+- [ ] Establish comfortable communication rhythm
 
 ## 🚨 Common Issues & Solutions
 
