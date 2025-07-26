@@ -23,6 +23,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   };
 
   const author = getAuthor(post.author)
+  
+  if (!author) {
+    notFound()
+  }
 
   // Format the date and handle featured status
   const formattedPost = {
