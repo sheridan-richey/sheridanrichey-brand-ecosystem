@@ -230,7 +230,7 @@ This is a **part-time, asynchronous collaboration** designed for flexibility:
 ### Emergency Contact
 - **Email**: sheridan@sheridanrichey.com (primary)
 - **GitHub**: @sheridan-richey (for project discussions)
-- **Phone**: [Sheridan's phone number] (urgent issues only)
+- **Phone**: 801.518.2714 (urgent issues only)
 
 ## 🎯 First Month Goals
 

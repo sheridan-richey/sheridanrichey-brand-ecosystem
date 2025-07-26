@@ -96,7 +96,7 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 ### **Contact Information**
 - **Email:** sheridan@sheridanrichey.com
 - **GitHub:** @sheridan-richey
-- **Emergency Contact:** [Your phone number] (for urgent issues only)
+- **Emergency Contact:** 801.518.2714 (for urgent issues only)
 
 ### **Communication Channels**
 - **Primary:** Email for longer discussions and planning
