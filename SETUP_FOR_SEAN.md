@@ -35,15 +35,16 @@ npm install
    ```
 2. **Get environment variables from Sheridan** (API keys, etc.)
 
-### Step 4: Vercel Access
-1. **Accept Vercel invitation** (check email)
-2. **Install Vercel CLI:**
+### Step 4: Deployment Setup
+1. **No Vercel account needed** - deployment is automatic via GitHub
+2. **Push to main branch** → automatic deployment to production
+3. **Create PRs** → automatic preview URLs generated
+4. **Optional: Install Vercel CLI for local testing:**
    ```bash
    npm i -g vercel
-   ```
-3. **Login to Vercel:**
-   ```bash
    vercel login
+   cd website
+   vercel link
    ```
 
 ### Step 5: Development Workflow
@@ -121,6 +122,63 @@ SLR.com/
 - Focus on actionable insights
 - Include specific examples from Sheridan's career
 
+## 📝 Content Creation Guide
+
+### Blog Post Requirements
+- **Location:** `website/posts/` directory
+- **Format:** MDX (Markdown + JSX)
+- **Length:** 800-1500 words
+- **Structure:** Introduction, main content, actionable takeaways
+- **ZAG Connection:** Must relate to ZEN, ACT, or GEM framework
+
+### Content Ideas for First Post
+- **ZEN Focus:** "Finding Clarity in Mid-Career Transitions"
+- **ACT Focus:** "Building Momentum Through Strategic Relationships"
+- **GEM Focus:** "Strategic Career Moves: When to Pivot vs. Persevere"
+
+### Writing Guidelines
+1. **Start with a hook** - relatable problem or question
+2. **Include Sheridan's experience** - specific examples from career
+3. **Connect to ZAG Matrix** - explain how it applies
+4. **Provide actionable steps** - concrete next steps for readers
+5. **End with encouragement** - inspire action and growth
+
+### Example Post Structure
+```mdx
+---
+title: "Your Post Title"
+date: "2025-01-XX"
+category: "zen" # or "act" or "gem"
+excerpt: "Brief description of the post"
+---
+
+# Your Post Title
+
+[Introduction with hook]
+
+## The Challenge
+
+[Describe the problem "Alex" faces]
+
+## My Experience
+
+[Share specific example from Sheridan's career]
+
+## The ZAG Matrix Connection
+
+[Explain how this relates to ZEN/ACT/GEM]
+
+## Actionable Steps
+
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+
+## Moving Forward
+
+[Encouraging conclusion]
+```
+
 ## 🛠️ Development Tools
 
 ### Cursor IDE Setup
@@ -146,8 +204,12 @@ npm run test:e2e -- tests/e2e/blog.spec.js
 
 ### Deployment
 ```bash
-# Deploy to Vercel
-vercel --prod
+# Automatic deployment via GitHub
+git push origin main  # Deploys to production
+git push origin feature/your-branch  # Creates PR with preview URL
+
+# Optional: Local testing with Vercel CLI
+vercel --prod  # Only if you have Vercel CLI installed
 ```
 
 ## 📞 Communication Channels
@@ -183,6 +245,7 @@ This is a **part-time, asynchronous collaboration** designed for flexibility:
 - [ ] Create feature branch
 - [ ] Make changes and test locally
 - [ ] Create first PR
+- [ ] **Write a blog post** (see content guidelines below)
 
 ### Week 4: Review & Planning
 - [ ] Code review session (async via GitHub)
@@ -208,7 +271,7 @@ npm install
 ```bash
 # Reset to remote state
 git fetch origin
-git reset --hard origin/test-playwright-workflow
+git reset --hard origin/main
 ```
 
 ## 📚 Key Resources

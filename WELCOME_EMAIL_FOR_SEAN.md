@@ -49,10 +49,11 @@ Learn how to maximize Cursor's effectiveness for team collaboration:
 - **Branch:** `main` (current development branch)
 - **Permissions:** Write access (can push/pull, can't delete repo)
 
-### 2. **Vercel Deployment Access**
-- **Project:** `sheridanrichey-brand-ecosystem`
-- **Role:** Developer (can deploy, can't change billing/settings)
-- **URL:** [Your Vercel project URL]
+### 2. **Deployment Access**
+- **Deployment:** Automatic via GitHub integration
+- **URL:** https://www.sheridanrichey.com
+- **Process:** Push to `main` branch → automatic deployment
+- **Preview:** Each PR gets a preview URL automatically
 
 ### 3. **Environment Variables**
 I'll share the necessary API keys and configuration values via secure channel once you accept the invitations.
@@ -60,7 +61,7 @@ I'll share the necessary API keys and configuration values via secure channel on
 ## 🎯 Your First Week Goals
 
 ### **Week 1: Setup & Exploration**
-- [ ] Accept GitHub and Vercel invitations
+- [ ] Accept GitHub invitation
 - [ ] Clone repository and install dependencies
 - [ ] Set up development environment
 - [ ] Explore codebase structure
@@ -71,6 +72,7 @@ I'll share the necessary API keys and configuration values via secure channel on
 - [ ] Create feature branch
 - [ ] Make changes and test locally
 - [ ] Create first PR
+- [ ] **Write a blog post** (see content guidelines below)
 
 ### **Week 3: Review & Planning**
 - [ ] Code review session (async via GitHub)
@@ -115,7 +117,20 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 - **`TODO/`** directory - Current tasks and priorities
 - **`website/`** directory - Next.js application
 - **`content/`** directory - Blog posts and resources
-- **`tests/`** directory - E2E tests with Playwright
+- **`tests/** directory - E2E tests with Playwright
+
+### **Content Creation Guidelines**
+- **Blog posts go in:** `website/posts/` (MDX format)
+- **Target audience:** "Alex, the Awakened Technologist"
+- **Connect to ZAG Matrix:** Every post should relate to ZEN, ACT, or GEM
+- **Examples from Sheridan's career:** Include specific insights and stories
+- **Actionable insights:** Provide practical advice and next steps
+- **Tone:** Professional but approachable, like a mentor sharing wisdom
+
+**Suggested First Blog Post Topics:**
+- **ZEN:** "Finding Clarity in Mid-Career Transitions"
+- **ACT:** "Building Momentum Through Strategic Relationships" 
+- **GEM:** "Strategic Career Moves: When to Pivot vs. Persevere"
 
 ## 🚨 Important Notes
 
@@ -127,7 +142,7 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 
 ## 🎉 Next Steps
 
-1. **Accept the GitHub and Vercel invitations** (check your email)
+1. **Accept the GitHub invitation** (check your email)
 2. **Start with `SETUP_FOR_SEAN.md`** for complete setup instructions
 3. **Set up your development environment** following the guide
 4. **Reach out with any questions** via email - no question is too small!
