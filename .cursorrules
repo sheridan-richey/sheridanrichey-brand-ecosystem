@@ -1,0 +1,60 @@
+# Sheridan Richey Brand Ecosystem - Team Rules
+
+## Project Context
+- Building personal brand website for Sheridan Richey
+- Target audience: "Alex, the Awakened Technologist"
+- Core framework: ZAG Matrix (ZEN, ACT, GEM)
+- Tech stack: Next.js, TypeScript, Tailwind CSS, MDX
+
+## Code Standards
+- Use TypeScript strict mode
+- Follow Next.js 13+ App Router patterns
+- Implement responsive design with Tailwind
+- Write self-documenting code with clear comments
+- Include JSDoc comments for complex functions
+
+## Brand Guidelines
+- All content must connect to ZAG Matrix framework
+- Professional but approachable tone
+- Focus on actionable insights
+- Include specific examples from Sheridan's career
+- Maintain visual consistency with brand assets
+
+## File Organization
+- Components in `/website/components/`
+- Pages in `/website/app/`
+- Blog posts in `/website/posts/`
+- Content in `/content/` directory
+- Tests in `/tests/` directory
+
+## Naming Conventions
+- Components: PascalCase (e.g., `ZagMatrixSidebar.tsx`)
+- Files: kebab-case (e.g., `zag-matrix-page.tsx`)
+- Functions: camelCase (e.g., `handleNewsletterSignup`)
+- Constants: UPPER_SNAKE_CASE (e.g., `ZAG_MATRIX_PILLARS`)
+
+## Testing Requirements
+- Write E2E tests for critical user flows
+- Test responsive design on multiple screen sizes
+- Ensure accessibility compliance
+- Validate brand consistency in UI components
+
+## Content Strategy
+- Every piece of content must serve "Alex, the Awakened Technologist"
+- Connect all insights back to ZEN, ACT, GEM framework
+- Use specific examples from Sheridan's executive career
+- Maintain professional authority while being approachable
+- Focus on actionable, implementable advice
+
+## ZAG Matrix Integration
+- ZEN (Zeal Evolves Now): Mental clarity, purpose, resilience
+- ACT (Awaken Core Thrust): Physical well-being, relationships, momentum
+- GEM (Growth Earns Mastery): Strategic moves, investments, entrepreneurship
+- Always consider how content relates to these three pillars
+
+## Technical Priorities
+- Performance and accessibility first
+- Mobile-responsive design
+- SEO optimization
+- Fast loading times
+- Clean, maintainable code 
