@@ -110,7 +110,7 @@ SLR.com/
 
 ### ZAG Matrix Framework
 - **ZEN (Zeal Evolves Now)**: Mental clarity and purpose
-- **ACT (Awaken Core Thrust)**: Physical well-being and relationships
+- **ACT (Activate Core Thrust)**: Physical well-being and relationships
 - **GEM (Growth Earns Mastery)**: Strategic career and entrepreneurial growth
 
 ### Target Audience

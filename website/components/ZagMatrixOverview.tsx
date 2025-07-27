@@ -53,7 +53,7 @@ export default function ZagMatrixOverview({
                 <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                ACT (Awaken Core Thrust)
+                ACT (Activate Core Thrust)
               </dt>
               <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-graphite font-manrope">
                 <p className="flex-auto">

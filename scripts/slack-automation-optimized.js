@@ -27,7 +27,7 @@ class OptimizedSlackAutomation {
       },
       'act-align': {
         description: 'Physical well-being, relationships, and momentum. Building sustainable energy, strengthening key relationships, and creating momentum in your career and life.',
-        purpose: 'ACT: Awaken Core Thrust - Physical well-being, relationships, and momentum',
+        purpose: 'ACT: Activate Core Thrust - Physical well-being, relationships, and momentum',
         isPrivate: false
       },
       'gem-achieve': {

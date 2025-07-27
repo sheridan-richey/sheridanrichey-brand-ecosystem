@@ -14,7 +14,7 @@ This is a personal branding website and content ecosystem for Sheridan Richey, f
 
 **Core Framework:** ZAG Matrix (ZEN, ACT, GEM)
 - **ZEN (Zeal Evolves Now):** Mental clarity, purpose, resilience
-- **ACT (Awaken Core Thrust):** Physical well-being, relationships, momentum  
+- **ACT (Activate Core Thrust):** Physical well-being, relationships, momentum  
 - **GEM (Growth Earns Mastery):** Strategic moves, investments, entrepreneurship
 
 ## 📋 Your Complete Setup Guide

@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
+import Header from '@/components/Header'
+import { ArrowRight, Target, TrendingUp, Users } from 'lucide-react'
+import Link from 'next/link'
 
 export default function HomePage() {
   return (
@@ -72,7 +72,7 @@ export default function HomePage() {
                   <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-accent-600">
                     <Users className="h-6 w-6 text-white" />
                   </div>
-                  ACT (Awaken Core Thrust)
+                  ACT (Activate Core Thrust)
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-secondary-600">
                   <p className="flex-auto">

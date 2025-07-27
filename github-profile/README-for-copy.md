@@ -7,7 +7,7 @@ Executive leader, entrepreneur, and guide for awakened technologists seeking pur
 I help mid-career professionals who've achieved success but crave greater purpose through a proven three-pillar system:
 
 - **ZEN** (Zeal Evolves Now): Find clarity, purpose, and mental resilience
-- **ACT** (Awaken Core Thrust): Build physical well-being and strategic relationships  
+- **ACT** (Activate Core Thrust): Build physical well-being and strategic relationships  
 - **GEM** (Growth Earns Mastery): Apply energy toward compounding success
 
 ## 🚀 **Current Focus**

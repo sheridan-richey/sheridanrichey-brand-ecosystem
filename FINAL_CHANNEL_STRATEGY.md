@@ -21,7 +21,7 @@ Transform The ZAG Collective into a **4-channel powerhouse** that perfectly embo
 
 ### **ACT + Introductions = Network Building Mastery**
 **Why this works perfectly:**
-- **Network building** is fundamental to "Awaken Core Thrust"
+- **Network building** is fundamental to "Activate Core Thrust"
 - **Introducing yourself** is literally extending into your network
 - **Relationships** are the foundation of momentum
 - **Natural flow**: Introduction → Relationship building → Momentum
