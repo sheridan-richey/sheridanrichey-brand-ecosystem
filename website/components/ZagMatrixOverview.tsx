@@ -1,5 +1,5 @@
+import { Target, TrendingUp, Users } from 'lucide-react'
 import Link from 'next/link'
-import { Target, Users, TrendingUp } from 'lucide-react'
 
 interface ZagMatrixOverviewProps {
   title?: string
@@ -36,7 +36,7 @@ export default function ZagMatrixOverview({
               </dt>
               <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-graphite font-manrope">
                 <p className="flex-auto">
-                  Find clarity, purpose, and mental resilience. Transform your mindset from 
+                  Awaken to your authentic self and true purpose. Transform your mindset from 
                   reactive to proactive, building the foundation for sustainable growth.
                 </p>
                 {showLearnMoreLinks && (
@@ -57,8 +57,8 @@ export default function ZagMatrixOverview({
               </dt>
               <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-graphite font-manrope">
                 <p className="flex-auto">
-                  Build physical well-being and strengthen key relationships to generate 
-                  momentum. Create the energy and support system needed for breakthrough growth.
+                  Align your energy, relationships, and systems. Create the momentum and 
+                  support system needed for breakthrough growth.
                 </p>
                 {showLearnMoreLinks && (
                   <p className="mt-6">
@@ -78,7 +78,7 @@ export default function ZagMatrixOverview({
               </dt>
               <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-graphite font-manrope">
                 <p className="flex-auto">
-                  Apply zeal and energy toward strategic career moves, investments, and 
+                  Achieve mastery through strategic career moves, investments, and 
                   entrepreneurial growth. Master the art of compounding success.
                 </p>
                 {showLearnMoreLinks && (

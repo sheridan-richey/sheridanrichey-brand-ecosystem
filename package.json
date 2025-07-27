@@ -13,7 +13,18 @@
     "brand:update": "node scripts/update-brand-assets.js",
     "deploy:website": "cd website && npm run build && echo 'Website built successfully'",
     "deploy:github": "node scripts/deploy-github-profile.js",
-    "setup": "npm install && cd website && npm install"
+    "setup": "npm install && cd website && npm install",
+    "slack:create": "node scripts/slack-automation.js create",
+    "slack:list": "node scripts/slack-automation.js list",
+    "slack:invite": "node scripts/slack-automation.js invite",
+    "slack:setup": "npm run slack:create && npm run slack:list",
+    "slack:consolidate": "node scripts/slack-automation-optimized.js consolidate",
+    "slack:optimized-list": "node scripts/slack-automation-optimized.js list",
+    "slack:cleanup": "node scripts/slack-automation-optimized.js cleanup",
+    "slack:finalize": "node scripts/slack-automation-final.js finalize",
+    "slack:final-list": "node scripts/slack-automation-final.js list",
+    "slack:final-cleanup": "node scripts/slack-automation-final.js cleanup",
+    "slack:final-update": "node scripts/slack-automation-final.js update"
   },
   "keywords": [
     "personal-branding",

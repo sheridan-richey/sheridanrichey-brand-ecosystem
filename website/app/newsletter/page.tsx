@@ -1,8 +1,9 @@
 'use client'
 
-import Link from 'next/link'
+import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
+import { ArrowRight, CheckCircle, Target, Users, Zap } from 'lucide-react'
 import Image from 'next/image'
-import { ArrowRight, CheckCircle, Users, Zap, Target } from 'lucide-react'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export default function NewsletterPage() {
@@ -271,33 +272,8 @@ export default function NewsletterPage() {
             </div>
 
             {/* ZAG Matrix Preview */}
-            <div className="mt-8 bg-gradient-to-br from-primary-500/5 to-light-teal/5 rounded-2xl p-6 border border-smoke">
-              <h4 className="font-manrope text-lg font-bold text-phantom mb-3">
-                The ZAG Matrix Framework
-              </h4>
-              <p className="font-manrope text-graphite mb-4">
-                Three interconnected pillars of transformation you'll master:
-              </p>
-              <div className="grid grid-cols-3 gap-3">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <span className="font-manrope text-lg font-bold text-white">Z</span>
-                  </div>
-                  <p className="font-manrope text-sm font-bold text-primary-500">Clarity</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <span className="font-manrope text-lg font-bold text-white">A</span>
-                  </div>
-                  <p className="font-manrope text-sm font-bold text-primary-500">Momentum</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <span className="font-manrope text-lg font-bold text-white">G</span>
-                  </div>
-                  <p className="font-manrope text-sm font-bold text-primary-500">Mastery</p>
-                </div>
-              </div>
+            <div className="mt-8">
+              <ZagMatrixSidebar />
             </div>
           </div>
         </div>

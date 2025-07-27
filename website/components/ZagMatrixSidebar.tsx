@@ -1,5 +1,5 @@
+import { ArrowRight, Target, TrendingUp, Users } from 'lucide-react'
 import Link from 'next/link'
-import { ArrowRight, Target, Users, TrendingUp } from 'lucide-react'
 
 interface ZagMatrixSidebarProps {
   className?: string
@@ -19,19 +19,19 @@ export default function ZagMatrixSidebar({ className = "" }: ZagMatrixSidebarPro
           <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
             <span className="font-manrope text-xl font-bold text-white">Z</span>
           </div>
-          <h4 className="font-manrope text-sm font-bold text-primary-500">Clarity</h4>
+          <h4 className="font-manrope text-sm font-bold text-primary-500">Awaken</h4>
         </div>
         <div className="text-center">
           <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
             <span className="font-manrope text-xl font-bold text-white">A</span>
           </div>
-          <h4 className="font-manrope text-sm font-bold text-primary-500">Momentum</h4>
+          <h4 className="font-manrope text-sm font-bold text-primary-500">Align</h4>
         </div>
         <div className="text-center">
           <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
             <span className="font-manrope text-xl font-bold text-white">G</span>
           </div>
-          <h4 className="font-manrope text-sm font-bold text-primary-500">Mastery</h4>
+          <h4 className="font-manrope text-sm font-bold text-primary-500">Achieve</h4>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ export default function ZagMatrixSidebar({ className = "" }: ZagMatrixSidebarPro
           </div>
           <div>
             <h5 className="font-manrope text-sm font-semibold text-phantom mb-1">ZEN</h5>
-            <p className="font-manrope text-xs text-graphite">Find clarity, purpose, and mental resilience</p>
+            <p className="font-manrope text-xs text-graphite">Awaken to your authentic self and true purpose</p>
           </div>
         </div>
         
@@ -53,7 +53,7 @@ export default function ZagMatrixSidebar({ className = "" }: ZagMatrixSidebarPro
           </div>
           <div>
             <h5 className="font-manrope text-sm font-semibold text-phantom mb-1">ACT</h5>
-            <p className="font-manrope text-xs text-graphite">Build physical well-being and strengthen relationships</p>
+            <p className="font-manrope text-xs text-graphite">Align your energy, relationships, and systems</p>
           </div>
         </div>
         
@@ -63,7 +63,7 @@ export default function ZagMatrixSidebar({ className = "" }: ZagMatrixSidebarPro
           </div>
           <div>
             <h5 className="font-manrope text-sm font-semibold text-phantom mb-1">GEM</h5>
-            <p className="font-manrope text-xs text-graphite">Apply energy toward strategic career moves and growth</p>
+            <p className="font-manrope text-xs text-graphite">Achieve mastery through strategic growth and execution</p>
           </div>
         </div>
       </div>
