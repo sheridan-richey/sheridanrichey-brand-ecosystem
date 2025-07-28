@@ -22,6 +22,7 @@ This is a personal branding website and content ecosystem for Sheridan Richey, f
 I've created comprehensive documentation to get you up and running quickly. Here's what you need to know:
 
 ### 🚀 **Start Here: Sean Setup Guide**
+**📄 [Complete Setup Guide](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/1P/sean-onboarding/20250727-sean-setup-guide.md)**
 This is your complete onboarding guide with step-by-step instructions for:
 - Repository access and cloning
 - Development environment setup
@@ -30,6 +31,7 @@ This is your complete onboarding guide with step-by-step instructions for:
 - Common issues and solutions
 
 ### 🤖 **AI-Powered Development: Collaboration Guidelines**
+**📄 [Collaboration Guidelines](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/1P/sean-onboarding/20250727-collaboration-guidelines.md)**
 Learn how to maximize Cursor's effectiveness for team collaboration:
 - AI-powered code reviews
 - Shared AI context for consistent behavior
@@ -86,7 +88,7 @@ I'll share the necessary API keys and configuration values via secure channel on
 This is a **part-time, asynchronous collaboration** - we'll be working in off-hours and communicating primarily through:
 - **GitHub Issues and PRs** for project updates and discussions
 - **Email** for longer-form communication and planning
-- **Slack/Teams** for quick questions (when online)
+- **Slack** for quick questions (when online)
 
 ### **Ad-Hoc Schedule**
 - **No fixed meeting times** - we'll schedule calls as needed
@@ -109,11 +111,11 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 ## 🎨 Key Project Files to Review
 
 ### **Core Documentation**
-- **`README.md`** - Project overview and quick start
-- **`RULES.md`** - Brand guidelines and project rules
-- **`2A/content-creation/content-strategy.md`** - Content creation process
-- **`2A/technical-maintenance/deployment-process.md`** - Deployment and hosting details
-- **`2A/technical-maintenance/testing-strategy.md`** - Testing approach and requirements
+- **📄 [Project README](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/README.md)** - Project overview and quick start
+- **📄 [Brand Guidelines](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/RULES.md)** - Brand guidelines and project rules
+- **📄 [Content Strategy](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/2A/content-creation/content-strategy.md)** - Content creation process
+- **📄 [Deployment Process](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/2A/technical-maintenance/deployment-process.md)** - Deployment and hosting details
+- **📄 [Testing Strategy](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/2A/technical-maintenance/testing-strategy.md)** - Testing approach and requirements
 
 ### **Current Development Focus**
 - **`1P/`** directory - Active projects and tasks
@@ -146,7 +148,7 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 ## 🎉 Next Steps
 
 1. **Accept the GitHub invitation** (check your email)
-2. **Start with the Sean Setup Guide** for complete setup instructions
+2. **📄 [Start with the Sean Setup Guide](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/1P/sean-onboarding/20250727-sean-setup-guide.md)** for complete setup instructions
 3. **Set up your development environment** following the guide
 4. **Reach out with any questions** via email - no question is too small!
 5. **Send me an email** once you're set up and ready to start
