@@ -21,7 +21,7 @@ This is a personal branding website and content ecosystem for Sheridan Richey, f
 
 I've created comprehensive documentation to get you up and running quickly. Here's what you need to know:
 
-### 🚀 **Start Here: SETUP_FOR_SEAN.md**
+### 🚀 **Start Here: Sean Setup Guide**
 This is your complete onboarding guide with step-by-step instructions for:
 - Repository access and cloning
 - Development environment setup
@@ -29,7 +29,7 @@ This is your complete onboarding guide with step-by-step instructions for:
 - Project structure overview
 - Common issues and solutions
 
-### 🤖 **AI-Powered Development: CURSOR_COLLABORATION_STRATEGY.md**
+### 🤖 **AI-Powered Development: Collaboration Guidelines**
 Learn how to maximize Cursor's effectiveness for team collaboration:
 - AI-powered code reviews
 - Shared AI context for consistent behavior
@@ -54,6 +54,7 @@ Learn how to maximize Cursor's effectiveness for team collaboration:
 - **URL:** https://www.sheridanrichey.com
 - **Process:** Push to `main` branch → automatic deployment
 - **Preview:** Each PR gets a preview URL automatically
+- **Note:** No Vercel account needed - deployment is fully automated
 
 ### 3. **Environment Variables**
 I'll share the necessary API keys and configuration values via secure channel once you accept the invitations.
@@ -87,11 +88,11 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 - **Email** for longer-form communication and planning
 - **Slack/Teams** for quick questions (when online)
 
-### **Flexible Schedule**
+### **Ad-Hoc Schedule**
 - **No fixed meeting times** - we'll schedule calls as needed
 - **Work when it fits your schedule** - evenings, weekends, whenever works
-- **Weekly check-ins** via email or GitHub updates
-- **Monthly video calls** for planning and review (optional)
+- **Communication as needed** via email or GitHub updates
+- **Video calls scheduled** when beneficial for planning or review
 
 ### **Contact Information**
 - **Email:** sheridan@sheridanrichey.com
@@ -110,15 +111,15 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 ### **Core Documentation**
 - **`README.md`** - Project overview and quick start
 - **`RULES.md`** - Brand guidelines and project rules
-- **`CONTENT_WORKFLOW.md`** - Content creation process
-- **`DEPLOYMENT.md`** - Deployment and hosting details
-- **`TESTING_STRATEGY.md`** - Testing approach and requirements
+- **`2A/content-creation/content-strategy.md`** - Content creation process
+- **`2A/technical-maintenance/deployment-process.md`** - Deployment and hosting details
+- **`2A/technical-maintenance/testing-strategy.md`** - Testing approach and requirements
 
 ### **Current Development Focus**
-- **`TODO/`** directory - Current tasks and priorities
+- **`1P/`** directory - Active projects and tasks
 - **`website/`** directory - Next.js application
 - **`content/`** directory - Blog posts and resources
-- **`tests/** directory - E2E tests with Playwright
+- **`tests/`** directory - E2E tests with Playwright
 
 ### **Content Creation Guidelines**
 - **Blog posts go in:** `website/posts/` (MDX format)
@@ -145,7 +146,7 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 ## 🎉 Next Steps
 
 1. **Accept the GitHub invitation** (check your email)
-2. **Start with `SETUP_FOR_SEAN.md`** for complete setup instructions
+2. **Start with the Sean Setup Guide** for complete setup instructions
 3. **Set up your development environment** following the guide
 4. **Reach out with any questions** via email - no question is too small!
 5. **Send me an email** once you're set up and ready to start

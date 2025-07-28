@@ -50,10 +50,10 @@ This document outlines the final steps to complete both the ZAG Collective Slack
   - [ ] Ensure access to all repository features
   - [ ] Set up branch protection rules
 
-- [ ] **Vercel Deployment:**
-  - [ ] Add Sean as Developer on Vercel project
-  - [ ] Grant access to deployment logs and settings
-  - [ ] Set up environment variable access
+- [ ] **Deployment Access:**
+  - [ ] GitHub integration handles deployment automatically
+  - [ ] No Vercel account access needed
+  - [ ] Environment variables shared via secure channel
 
 #### **2. Environment Setup**
 - [ ] **Create `.env.example` file:**
@@ -169,8 +169,8 @@ This document outlines the final steps to complete both the ZAG Collective Slack
 ### **Immediate (Today):**
 1. Update Slack channel purposes
 2. Create welcome messages
-3. Send Sean GitHub/Vercel invitations
-4. Create `.env.example` file
+3. Send Sean GitHub invitation (already sent)
+4. Create `.env.example` file (completed)
 
 ### **This Week:**
 1. Complete Sean's environment setup

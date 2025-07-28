@@ -7,7 +7,6 @@
 - [ ] Git installed
 - [ ] Cursor IDE installed
 - [ ] GitHub account created
-- [ ] Vercel account created
 
 ### Step 1: Repository Access
 1. **Accept GitHub invitation** (check email from Sheridan)
@@ -54,16 +53,10 @@ npm install
    - General chat in `#all-the-zag-collective`
 
 ### Step 5: Deployment Setup
-1. **No Vercel account needed** - deployment is automatic via GitHub
+1. **Deployment is automatic** via GitHub integration
 2. **Push to main branch** → automatic deployment to production
 3. **Create PRs** → automatic preview URLs generated
-4. **Optional: Install Vercel CLI for local testing:**
-   ```bash
-   npm i -g vercel
-   vercel login
-   cd website
-   vercel link
-   ```
+4. **Note:** Vercel deployment is handled automatically - no account needed
 
 ### Step 5: Development Workflow
 1. **Start development server:**
