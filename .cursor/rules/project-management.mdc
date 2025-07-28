@@ -1,0 +1,60 @@
+# Project Management & PARA System
+
+## PARA System Organization
+Follow the established PARA system for organizing all project files:
+
+### 1P - Projects (Time-bound objectives)
+- Use YYYYMMDD prefix for all project files
+- Create project folders without date prefix
+- Include comprehensive project briefs and status tracking
+- Reference: [Brand Ecosystem Project Tracker](mdc:1P/20250727-brand-ecosystem-project-tracker.md)
+
+### 2A - Areas (Ongoing responsibilities)
+- No date prefix needed
+- Focus on ongoing maintenance and responsibilities
+- Examples: brand management, content creation, technical maintenance
+
+### 3R - Resources (Reference materials)
+- No date prefix needed
+- Store templates, guides, and reference materials
+- Include setup documentation and best practices
+
+### 4A - Archives (Completed work)
+- Use YYYYMMDD-COMPLETED suffix
+- Move completed projects here for historical reference
+- Maintain project history and learnings
+
+## Project Structure Standards
+Each project should include:
+- **README.md** - Project overview and navigation
+- **YYYYMMDD-project-brief.md** - Detailed implementation plan
+- **YYYYMMDD-status-tracker.md** - Progress tracking and updates
+- Additional files as needed for the specific project
+
+## Current Active Projects
+- **Newsletter & Beehiiv Integration**: [Project Folder](mdc:1P/newsletter-beehiiv-integration/)
+  - [Project Brief](mdc:1P/newsletter-beehiiv-integration/20250727-project-brief.md)
+  - [Status Tracker](mdc:1P/newsletter-beehiiv-integration/20250727-integration-status.md)
+
+## Project Documentation Standards
+- Use clear, descriptive titles
+- Include ZAG Matrix pillar alignment
+- Specify target audience impact
+- Define success metrics and timelines
+- Track progress with status indicators
+
+## File Naming Conventions
+- **Projects**: `YYYYMMDD-[description].md`
+- **Archives**: `YYYYMMDD-[description]-COMPLETED.md`
+- **Areas/Resources**: `[description].md` (no date prefix)
+- **Folders**: `[description]/` (no date prefix)
+
+## Integration with Brand Strategy
+- All projects must align with ZAG Matrix framework
+- Focus on serving "Alex, the Awakened Technologist"
+- Prioritize conversion and user experience
+- Maintain professional authority while being approachable
+description:
+globs:
+alwaysApply: false
+---

@@ -1,0 +1,65 @@
+# Testing Standards & E2E Testing
+
+## Testing Infrastructure
+- Use Playwright for end-to-end testing
+- Follow the configuration in [playwright.config.js](mdc:playwright.config.js)
+- Maintain test results in [test-results directory](mdc:test-results/)
+- Use page object pattern for maintainable tests
+
+## E2E Test Structure
+Follow the established patterns in the [tests/e2e directory](mdc:tests/e2e/):
+
+### Test Files
+- [Homepage Tests](mdc:tests/e2e/homepage.spec.js) - Landing page functionality
+- [Blog Tests](mdc:tests/e2e/blog.spec.js) - Blog page and content
+- [Contact Tests](mdc:tests/e2e/contact.spec.js) - Contact form functionality
+- [Newsletter Tests](mdc:tests/e2e/newsletter.spec.js) - Email signup process
+- [ZAG Matrix Tests](mdc:tests/e2e/zag-matrix.spec.js) - Framework page
+- [Links Tests](mdc:tests/e2e/links.spec.js) - Navigation and link validation
+
+### Page Objects
+- [BlogPage](mdc:tests/e2e/pageObjects/BlogPage.js) - Blog page interactions
+- [NewsletterPage](mdc:tests/e2e/pageObjects/NewsletterPage.js) - Newsletter functionality
+- [HomePage](mdc:tests/e2e/pageObjects/HomePage.js) - Homepage interactions
+- [ContactPage](mdc:tests/e2e/pageObjects/ContactPage.js) - Contact form handling
+
+## Testing Standards
+- Test all critical user flows
+- Validate responsive design across screen sizes
+- Ensure accessibility compliance
+- Test form submissions and API integrations
+- Verify navigation and link functionality
+- Check for proper error handling
+
+## Test Writing Guidelines
+- Use descriptive test names that explain the scenario
+- Group related tests with `describe` blocks
+- Use `beforeEach` for common setup
+- Implement proper error handling and timeouts
+- Include visual regression testing where appropriate
+- Test both positive and negative scenarios
+
+## Performance Testing
+- Monitor page load times
+- Test Core Web Vitals
+- Validate image optimization
+- Check for memory leaks
+- Ensure fast navigation between pages
+
+## Accessibility Testing
+- Test keyboard navigation
+- Validate screen reader compatibility
+- Check color contrast ratios
+- Ensure proper ARIA labels
+- Test focus management
+
+## Continuous Integration
+- Run tests on every deployment
+- Generate test reports for review
+- Maintain test coverage metrics
+- Automate test result notifications
+- Include visual regression testing in CI/CD pipeline
+description:
+globs:
+alwaysApply: false
+---

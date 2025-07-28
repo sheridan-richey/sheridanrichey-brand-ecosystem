@@ -1,0 +1,65 @@
+# Content Creation Standards
+
+## Content Strategy
+All content must serve "Alex, the Awakened Technologist" and align with the ZAG Matrix framework:
+
+### ZAG Matrix Content Pillars
+- **ZEN**: Mental clarity, purpose, resilience content
+- **ACT**: Physical well-being, relationships, momentum content  
+- **GEM**: Strategic growth, entrepreneurship, career advancement content
+
+## Blog Post Structure
+Follow the established patterns in [website/posts directory](mdc:website/posts/):
+
+### Current Blog Posts
+- [ZAG Matrix Framework Introduction](mdc:website/posts/zag-matrix-framework-introduction.mdx)
+- [Finding Clarity Mid-Career](mdc:website/posts/finding-clarity-mid-career.mdx)
+- [Building Momentum Through Relationships](mdc:website/posts/building-momentum-through-relationships.mdx)
+- [Strategic Career Moves](mdc:website/posts/strategic-career-moves.mdx)
+- [System Architect for Life](mdc:website/posts/system-architect-for-life.mdx)
+
+## Content Creation Guidelines
+- Use MDX format for blog posts
+- Include frontmatter with metadata (title, description, date, tags)
+- Connect content to specific ZAG Matrix pillars
+- Use specific examples from Sheridan's executive experience
+- Include actionable insights and practical advice
+- Maintain professional but approachable tone
+
+## Content Organization
+- **Blog Posts**: [website/posts/](mdc:website/posts/) - Main blog content
+- **Newsletter Content**: [content/newsletter/](mdc:content/newsletter/) - Email content
+- **Resources**: [content/resources/](mdc:content/resources/) - Downloadable materials
+- **Social Content**: [content/social/](mdc:content/social/) - Social media content
+
+## Writing Standards
+- Target audience: Mid-career professionals seeking purpose and growth
+- Tone: Professional authority with approachable warmth
+- Structure: Clear headings, actionable insights, practical examples
+- Length: Comprehensive but digestible (1500-3000 words for blog posts)
+- Include calls-to-action that align with ZAG Matrix goals
+
+## SEO and Metadata
+- Use descriptive titles that include ZAG Matrix keywords
+- Write compelling meta descriptions
+- Include relevant tags and categories
+- Optimize for "Alex, the Awakened Technologist" search intent
+- Use internal linking to connect related content
+
+## Content Calendar Integration
+- Align with newsletter strategy
+- Plan content around ZAG Matrix pillars
+- Include case studies and executive insights
+- Balance educational content with personal stories
+- Maintain consistent publishing schedule
+
+## Quality Standards
+- Fact-check all information
+- Include specific examples and data points
+- Ensure actionable takeaways
+- Review for ZAG Matrix alignment
+- Test content with target audience feedback
+description:
+globs:
+alwaysApply: false
+---
