@@ -20,12 +20,24 @@
 - Include specific examples from Sheridan's career
 - Maintain visual consistency with brand assets
 
-## File Organization
+## File Organization (PARA System)
+- **1P** - Time-bound objectives (Projects) with YYYYMMDD prefix
+- **2A** - Ongoing responsibilities (Areas) - no date prefix
+- **3R** - Reference materials (Resources) - no date prefix  
+- **4A** - Completed work (Archives) with YYYYMMDD-COMPLETED suffix
 - Components in `/website/components/`
 - Pages in `/website/app/`
 - Blog posts in `/website/posts/`
 - Content in `/content/` directory
 - Tests in `/tests/` directory
+
+## Date Stamping Rules
+- **ALWAYS use current date** when creating new files with YYYYMMDD prefix
+- **NEVER use dates from memory** - always get current date programmatically
+- Use `Get-Date -Format "yyyyMMdd"` (PowerShell) or equivalent for current date
+- For Projects (1P): `YYYYMMDD-[description].md`
+- For Archives (4A): `YYYYMMDD-[description]-COMPLETED.md`
+- Areas (2A) and Resources (3R): No date prefix needed
 
 ## Naming Conventions
 - Components: PascalCase (e.g., `ZagMatrixSidebar.tsx`)

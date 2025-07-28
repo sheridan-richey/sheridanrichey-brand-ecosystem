@@ -58,7 +58,7 @@ Learn how to maximize Cursor's effectiveness for team collaboration:
 ### 3. **Environment Variables**
 I'll share the necessary API keys and configuration values via secure channel once you accept the invitations.
 
-## 🎯 Your First Month Goals
+## 🎯 Your First Week Goals
 
 ### **Week 1: Setup & Exploration**
 - [ ] Accept GitHub invitation
@@ -124,7 +124,7 @@ This is a **part-time, asynchronous collaboration** - we'll be working in off-ho
 - **Blog posts go in:** `website/posts/` (MDX format)
 - **Target audience:** "Alex, the Awakened Technologist"
 - **Connect to ZAG Matrix:** Every post should relate to ZEN, ACT, or GEM
-- **Examples from your career/life:** Include specific insights and stories
+- **Examples from Sheridan's career:** Include specific insights and stories
 - **Actionable insights:** Provide practical advice and next steps
 - **Tone:** Professional but approachable, like a mentor sharing wisdom
 - **Line Endings:** Use LF (Unix) line endings, NOT CRLF (Windows)

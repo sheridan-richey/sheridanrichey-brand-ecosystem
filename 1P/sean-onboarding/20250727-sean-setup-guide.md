@@ -7,6 +7,7 @@
 - [ ] Git installed
 - [ ] Cursor IDE installed
 - [ ] GitHub account created
+- [ ] Vercel account created
 
 ### Step 1: Repository Access
 1. **Accept GitHub invitation** (check email from Sheridan)
@@ -34,10 +35,35 @@ npm install
    ```
 2. **Get environment variables from Sheridan** (API keys, etc.)
 
-### Step 4: Deployment Setup
+### Step 4: Slack Community Access
+1. **Join The ZAG Collective Slack workspace:**
+   - Check your email for Slack invitation
+   - Or contact Sheridan for direct invite link
+   - Workspace: "The ZAG Collective"
+
+2. **Channel Structure (4 channels):**
+   - `#zen-awaken` - Mental clarity, purpose, and resilience
+   - `#act-align` - Relationships, momentum + Introductions
+   - `#gem-achieve` - Strategic growth, investments, mastery + Wins & Learnings
+   - `#all-the-zag-collective` - General community discussions
+
+3. **Community Guidelines:**
+   - Introduce yourself in `#act-align`
+   - Share wins and learnings in `#gem-achieve`
+   - Ask direct questions via DM to Sheridan
+   - General chat in `#all-the-zag-collective`
+
+### Step 5: Deployment Setup
 1. **No Vercel account needed** - deployment is automatic via GitHub
 2. **Push to main branch** → automatic deployment to production
 3. **Create PRs** → automatic preview URLs generated
+4. **Optional: Install Vercel CLI for local testing:**
+   ```bash
+   npm i -g vercel
+   vercel login
+   cd website
+   vercel link
+   ```
 
 ### Step 5: Development Workflow
 1. **Start development server:**
@@ -131,7 +157,7 @@ SLR.com/
 
 ### Writing Guidelines
 1. **Start with a hook** - relatable problem or question
-2. **Include your experience** - specific examples from career
+2. **Include Sheridan's experience** - specific examples from career
 3. **Connect to ZAG Matrix** - explain how it applies
 4. **Provide actionable steps** - concrete next steps for readers
 5. **End with encouragement** - inspire action and growth

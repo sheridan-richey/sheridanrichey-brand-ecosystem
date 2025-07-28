@@ -24,7 +24,8 @@
     "slack:finalize": "node scripts/slack-automation-final.js finalize",
     "slack:final-list": "node scripts/slack-automation-final.js list",
     "slack:final-cleanup": "node scripts/slack-automation-final.js cleanup",
-    "slack:final-update": "node scripts/slack-automation-final.js update"
+    "slack:final-update": "node scripts/slack-automation-final.js update",
+    "slack:welcome": "node scripts/post-welcome-messages.js post"
   },
   "keywords": [
     "personal-branding",

@@ -25,14 +25,44 @@ Our private community for collaborators and members to discuss and apply the fra
 - **Public Community Page** (`/community`): Newsletter-focused, public-facing
 - **Private Collective Page** (`/zag-collective`): Direct access only, invitation-based
 
-## 🏗️ **Project Structure**
+## 🏗️ **Project Structure (PARA System)**
+
+This project uses the PARA system for knowledge management:
+
+- **1P** - Time-bound objectives (Projects)
+- **2A** - Ongoing responsibilities (Areas) 
+- **3R** - Reference materials (Resources)
+- **4A** - Completed work (Archives)
 
 ```
 sheridanrichey-brand-ecosystem/
 ├── README.md                           # This file
+├── RULES.md                           # Brand guidelines & rules
 ├── package.json                        # Root project configuration
 ├── .gitignore                          # Global gitignore
-├── PROFESSIONAL_ROLES.md               # Role management guidelines
+│
+├── 1P/                                # Time-bound objectives
+│   ├── slack-community-setup/         # Current project
+│   ├── sean-onboarding/               # Current project
+│   └── website-enhancements/          # Future project
+│
+├── 2A/                                # Ongoing responsibilities
+│   ├── content-creation/              # Blog, newsletter, social
+│   ├── brand-management/              # ZAG Matrix, guidelines
+│   └── technical-maintenance/         # Website, deployment
+│
+├── 3R/                                # Reference materials
+│   ├── docs/                          # Documentation
+│   │   ├── setup/                     # Setup guides
+│   │   ├── collaboration/             # Team documentation
+│   │   └── technical/                 # Technical docs
+│   ├── templates/                     # Content templates
+│   ├── assets/                        # Static assets
+│   └── professional-roles/            # Professional information
+│
+├── 4A/                                # Completed work
+│   ├── completed-projects/            # Finished projects
+│   └── historical-docs/               # Old documentation
 │
 ├── website/                            # sheridanrichey.com (Next.js)
 │   ├── app/                           # Next.js app directory
@@ -40,11 +70,6 @@ sheridanrichey-brand-ecosystem/
 │   ├── posts/                         # Blog content
 │   ├── package.json                   # Website dependencies
 │   └── README.md                      # Website-specific docs
-│
-├── github-profile/                     # GitHub profile (@sheridanrichey)
-│   ├── README.md                      # Professional profile README
-│   ├── assets/                        # Profile images, badges
-│   └── templates/                     # Reusable profile components
 │
 ├── content/                           # Centralized content hub
 │   ├── blog/                          # All blog posts (organized by ZAG)
@@ -56,28 +81,9 @@ sheridanrichey-brand-ecosystem/
 │   ├── social/                        # Social media content
 │   └── newsletter/                    # Email newsletter content
 │
-├── assets/                            # Global brand assets
-│   ├── logos/                         # Official brand assets
-│   ├── images/                        # Brand photos, graphics
-│   ├── documents/                     # Resumes, case studies
-│   └── media/                         # Videos, podcasts
-│
-├── professional-roles/                 # Professional role management
-│   ├── henry-schein-one/              # HSO role & references
-│   ├── bring-it-forward/              # BIFI investment company
-│   └── personal-brand/                # Sheridan Richey brand
-│
-├── projects/                          # Other brand projects
-│   ├── speaking/                      # Speaking engagements
-│   ├── coaching/                      # Executive coaching materials
-│   └── investments/                   # Investment-related content
-│
-├── tools/                             # Brand management tools
-├── docs/                              # Documentation
-└── templates/                         # Cross-platform templates
-    ├── bio-templates/                 # Different bio lengths & contexts
-    ├── social-media/                  # Social media templates
-    └── professional/                  # Professional communication templates
+├── scripts/                           # Automation scripts
+├── tests/                             # Testing infrastructure
+└── .github/                           # GitHub configuration
 ```
 
 ## 🚀 **Quick Start**
