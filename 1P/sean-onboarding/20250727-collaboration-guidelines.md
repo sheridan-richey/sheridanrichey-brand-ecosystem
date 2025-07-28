@@ -1,7 +1,7 @@
 # Collaboration Guidelines for Sean Hokanson
 
 ## 🎯 **Overview**
-This document outlines the collaboration standards, workflows, and expectations for working on the Sheridan Richey Brand Ecosystem project.
+This document outlines the collaboration standards, workflows, and expectations for working on the Sheridan Richey Brand Ecosystem project. This is a **flexible, ad-hoc collaboration** designed for off-hours work with no fixed schedules or urgent deadlines.
 
 ## 🔄 **Git Workflow**
 
@@ -80,24 +80,22 @@ All content serves "Alex, the Awakened Technologist":
 
 ## 📞 **Communication Protocols**
 
-### **Daily Communication**
-- **Slack DM** for quick questions and updates
-- **Email** for formal updates and planning
-- **GitHub Issues/PRs** for code-related discussions
+### **Asynchronous Communication**
+- **Email** for longer-form updates and planning (primary)
+- **GitHub Issues/PRs** for code-related discussions and progress tracking
+- **Slack DM** for quick questions when both online (secondary)
+- **No scheduled meetings** - we'll communicate when it fits our schedules
 
-### **Weekly Sync Meetings**
-- **Duration**: 30 minutes
-- **Format**: Video call or phone
-- **Agenda**: 
-  - Review progress from last week
-  - Discuss current priorities
-  - Address any blockers
-  - Plan next week's tasks
+### **Response Expectations**
+- **Email**: 24-48 hour response time (best effort)
+- **GitHub Issues**: Address within a few days when working on the project
+- **Slack**: When online and available (no pressure for immediate response)
+- **No urgent deadlines** - this is a flexible, low-pressure collaboration
 
 ### **Emergency Contact**
-- **Phone**: 801.518.2714 (Sheridan)
-- **Email**: sheridan@sheridanrichey.com
-- **Slack**: @sheridan (in ZAG Collective)
+- **Email**: sheridan@sheridanrichey.com (primary)
+- **Phone**: 801.518.2714 (only for critical technical issues)
+- **GitHub**: @sheridan-richey (for project discussions)
 
 ## 🧪 **Testing Requirements**
 
@@ -124,26 +122,26 @@ All content serves "Alex, the Awakened Technologist":
 
 ### **Success Metrics**
 Track these to measure collaboration effectiveness:
-- Time to first contribution
-- Code review efficiency
-- Feature development velocity
-- Brand consistency in deliverables
-- Team communication quality
+- **Quality of contributions** (not speed)
+- **Code review efficiency** when reviews happen
+- **Brand consistency** in deliverables
+- **Clear communication** via GitHub and email
+- **Sustainable, low-pressure collaboration** rhythm
 
 ## 🚀 **Development Workflow**
 
-### **Daily Routine**
-1. **Pull latest changes** from main branch
-2. **Check for any urgent issues** or updates
-3. **Work on assigned tasks** or pick from backlog
-4. **Commit and push** changes regularly
-5. **Update progress** in Slack or email
+### **Flexible Work Pattern**
+1. **Work when it fits your schedule** - evenings, weekends, whenever available
+2. **Pull latest changes** when starting work on the project
+3. **Pick tasks that interest you** or align with your availability
+4. **Commit and push** when you have meaningful progress
+5. **Update via email or GitHub Issues** when you have updates to share
 
-### **Weekly Planning**
-1. **Review completed work** from previous week
-2. **Plan priorities** for upcoming week
-3. **Identify any blockers** or dependencies
-4. **Update project documentation** as needed
+### **No Fixed Schedule**
+- **No daily check-ins** required
+- **No weekly planning meetings** scheduled
+- **Work at your own pace** - this is designed to be sustainable
+- **Communicate when you have something to share** or need input
 
 ## 🎯 **Quality Assurance**
 
@@ -181,14 +179,14 @@ Track these to measure collaboration effectiveness:
 ### **Short-term (First Month)**
 - [ ] First contribution completed successfully
 - [ ] Development environment fully operational
-- [ ] Regular communication established
+- [ ] Comfortable communication rhythm established
 - [ ] Understanding of brand guidelines demonstrated
 
 ### **Long-term (Ongoing)**
 - [ ] Consistent high-quality deliverables
-- [ ] Efficient collaboration workflow
+- [ ] Sustainable, low-pressure collaboration
 - [ ] Brand consistency maintained
-- [ ] Positive impact on project velocity
+- [ ] Positive impact on project when working on it
 
 ---
 
