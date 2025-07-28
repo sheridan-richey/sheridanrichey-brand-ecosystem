@@ -1,0 +1,50 @@
+# Collaboration Standards
+
+## Git Workflow
+- **Branch Strategy**: main (protected), feature/[name], fix/[name], docs/[name]
+- **Commit Messages**: Use format `type(scope): description`
+  - Examples: `feat(website): add new ZAG Matrix component`, `fix(blog): resolve MDX rendering issue`
+- **PR Process**: Create feature branch → focused changes → descriptive PR → review → merge
+
+## Code Standards
+- **TypeScript**: Use strict mode, proper type definitions, functional components with hooks
+- **React**: Follow Next.js 13+ App Router patterns
+- **Styling**: Tailwind CSS, responsive design, consistent spacing/typography
+- **File Organization**: 
+  - Components: [website/components/](mdc:website/components/)
+  - Pages: [website/app/](mdc:website/app/)
+  - Blog posts: [website/posts/](mdc:website/posts/)
+  - Content: [content/](mdc:content/)
+  - Tests: [tests/](mdc:tests/)
+
+## Naming Conventions
+- **Components**: PascalCase (e.g., `ZagMatrixSidebar.tsx`)
+- **Files**: kebab-case (e.g., `zag-matrix-page.tsx`)
+- **Functions**: camelCase (e.g., `handleNewsletterSignup`)
+- **Constants**: UPPER_SNAKE_CASE (e.g., `ZAG_MATRIX_PILLARS`)
+
+## Brand Consistency
+- **ZAG Matrix Framework**: All content must connect to ZEN, ACT, GEM
+- **Target Audience**: "Alex, the Awakened Technologist" - mid-career professionals seeking purpose
+- **Tone**: Professional but approachable, confident, actionable insights
+- **Examples**: Include specific examples from Sheridan's career
+
+## Communication
+- **Primary**: Email for longer-form updates and planning
+- **Project Updates**: GitHub Issues/PRs for code discussions
+- **Quick Questions**: Slack DM when both online
+- **No Fixed Schedule**: Flexible, ad-hoc collaboration
+- **Response Time**: 24-48 hours for email, few days for GitHub Issues
+
+## Quality Assurance
+Before submitting PRs:
+- [ ] Code follows TypeScript and React best practices
+- [ ] All tests pass
+- [ ] Responsive design works on multiple screen sizes
+- [ ] Brand consistency maintained
+- [ ] ZAG Matrix framework integrated appropriately
+- [ ] Documentation updated if needed
+description:
+globs:
+alwaysApply: false
+---

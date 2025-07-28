@@ -1,0 +1,69 @@
+# PARA System Organization
+
+## Project Structure Overview
+The repository follows the PARA (Projects, Areas, Resources, Archives) organization system:
+
+## **1P - Projects (Time-bound objectives)**
+- **Location**: [1P/](mdc:1P/)
+- **Naming**: `YYYYMMDD-[description].md`
+- **Purpose**: Specific projects with deadlines and objectives
+- **Examples**: 
+  - [1P/sean-onboarding/](mdc:1P/sean-onboarding/) - Sean's onboarding project
+  - [1P/website-enhancements/](mdc:1P/website-enhancements/) - Website improvement projects
+  - [1P/slack-community-setup/](mdc:1P/slack-community-setup/) - Community setup projects
+
+## **2A - Areas (Ongoing responsibilities)**
+- **Location**: [2A/](mdc:2A/)
+- **Naming**: No date prefix needed
+- **Purpose**: Ongoing responsibilities and maintenance
+- **Examples**:
+  - [2A/brand-management/](mdc:2A/brand-management/) - Brand guidelines and strategy
+  - [2A/content-creation/](mdc:2A/content-creation/) - Content strategy and workflow
+  - [2A/technical-maintenance/](mdc:2A/technical-maintenance/) - Deployment, testing, maintenance
+
+## **3R - Resources (Reference materials)**
+- **Location**: [3R/](mdc:3R/)
+- **Naming**: No date prefix needed
+- **Purpose**: Reference materials, templates, and documentation
+- **Examples**:
+  - [3R/docs/](mdc:3R/docs/) - Documentation and guides
+  - [3R/templates/](mdc:3R/templates/) - Email and content templates
+  - [3R/assets/](mdc:3R/assets/) - Images, logos, media
+
+## **4A - Archives (Completed work)**
+- **Location**: [4A/](mdc:4A/)
+- **Naming**: `YYYYMMDD-[description]-COMPLETED.md`
+- **Purpose**: Completed projects and historical documentation
+- **Examples**:
+  - [4A/completed-projects/](mdc:4A/completed-projects/) - Finished projects
+  - [4A/historical-docs/](mdc:4A/historical-docs/) - Historical documentation
+
+## File Organization Rules
+- **New Projects**: Create in `1P/` with current date prefix
+- **Ongoing Work**: Store in `2A/` without date prefix
+- **Reference Materials**: Store in `3R/` for easy access
+- **Completed Work**: Move to `4A/` with `-COMPLETED` suffix
+
+## Date Stamping Rules
+- **ALWAYS use current date** when creating new files with YYYYMMDD prefix
+- **NEVER use dates from memory** - always get current date programmatically
+- **For Projects (1P)**: `YYYYMMDD-[description].md`
+- **For Archives (4A)**: `YYYYMMDD-[description]-COMPLETED.md`
+- **Areas (2A) and Resources (3R)**: No date prefix needed
+
+## Key Directories
+- **Website Code**: [website/](mdc:website/) - Next.js application
+- **Content**: [content/](mdc:content/) - Blog posts and resources
+- **Tests**: [tests/](mdc:tests/) - E2E tests with Playwright
+- **Scripts**: [scripts/](mdc:scripts/) - Automation and utility scripts
+- **Templates**: [templates/](mdc:templates/) - Email and content templates
+
+## Navigation Guidelines
+- **Active Projects**: Check `1P/` for current work
+- **Ongoing Responsibilities**: Check `2A/` for maintenance tasks
+- **Reference Materials**: Check `3R/` for templates and guides
+- **Historical Context**: Check `4A/` for completed work and decisions
+description:
+globs:
+alwaysApply: false
+---

@@ -1,0 +1,74 @@
+# Content Creation Guidelines
+
+## Target Audience: "Alex, the Awakened Technologist"
+- **Demographic**: Mid-career professional (30-50 years old)
+- **Background**: Has achieved success but feels a pull towards greater purpose
+- **Interests**: Holistic well-being, entrepreneurial growth, personal development
+- **Challenges**: Seeking clarity, building momentum, strategic career moves
+
+## ZAG Matrix Framework Integration
+Every piece of content must connect to one or more ZAG Matrix pillars:
+
+### **ZEN (Zeal Evolves Now)**
+- **Focus**: Mental clarity, purpose, resilience
+- **Topics**: Mindfulness, career transitions, finding meaning, stress management
+- **Examples**: Executive decision-making, leadership clarity, purpose-driven work
+
+### **ACT (Activate Core Thrust)**
+- **Focus**: Physical well-being, relationships, momentum
+- **Topics**: Health optimization, relationship building, energy management
+- **Examples**: Team leadership, stakeholder relationships, work-life integration
+
+### **GEM (Growth Earns Mastery)**
+- **Focus**: Strategic growth, investments, entrepreneurship
+- **Topics**: Career strategy, business development, investment decisions
+- **Examples**: M&A experience, startup leadership, strategic planning
+
+## Content Structure Requirements
+- **Length**: 800-1500 words for blog posts
+- **Format**: MDX with proper frontmatter
+- **Location**: [website/posts/](mdc:website/posts/) for blog posts
+- **Line Endings**: Use LF (Unix), NOT CRLF (Windows)
+
+## Writing Guidelines
+1. **Start with a hook** - relatable problem or question for Alex
+2. **Include Sheridan's experience** - specific examples from executive career
+3. **Connect to ZAG Matrix** - explain how this applies to ZEN/ACT/GEM
+4. **Provide actionable steps** - concrete next steps for readers
+5. **End with encouragement** - inspire action and growth
+
+## Tone & Voice
+- **Professional but approachable** - like a mentor sharing wisdom
+- **Confident and knowledgeable** - draw from executive experience
+- **Actionable insights** - provide practical, implementable advice
+- **Specific examples** - use real career stories and data points
+
+## Content Categories
+- **ZEN**: Mental clarity, purpose, resilience posts
+- **ACT**: Relationships, momentum, well-being posts  
+- **GEM**: Strategic growth, entrepreneurship, mastery posts
+- **Leadership**: Executive insights and team management
+- **Entrepreneurship**: Business development and strategic moves
+
+## Frontmatter Template
+```mdx
+---
+title: "Your Post Title"
+date: "2025-01-XX"
+category: "zen" # or "act" or "gem"
+excerpt: "Brief description of the post"
+---
+```
+
+## Quality Checklist
+- [ ] Connects to ZAG Matrix framework
+- [ ] Serves "Alex, the Awakened Technologist"
+- [ ] Includes specific examples from Sheridan's career
+- [ ] Provides actionable insights
+- [ ] Uses proper MDX formatting
+- [ ] Follows brand tone and voice
+- [ ] Has clear structure and flow
+description:
+globs:
+alwaysApply: false
+---
