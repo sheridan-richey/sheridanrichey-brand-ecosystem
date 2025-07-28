@@ -163,10 +163,22 @@ Track these to measure collaboration effectiveness:
 ## 📚 **Resources & References**
 
 ### **Key Documents**
-- `SETUP_FOR_SEAN.md` - Complete setup guide
-- `FINISHING_TOUCHES_PLAN.md` - Current project status
-- `ENV_EXAMPLE.md` - Environment variables setup
-- `FINAL_CHANNEL_STRATEGY.md` - Slack community structure
+- **📄 [Sean Setup Guide](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/1P/sean-onboarding/20250727-sean-setup-guide.md)** - Complete onboarding guide with step-by-step instructions
+- **📄 [Environment Setup](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/1P/sean-onboarding/20250727-environment-setup.md)** - Environment variables and configuration setup
+- **📄 [Welcome Email Template](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/1P/sean-onboarding/20250727-welcome-email-template.md)** - Welcome communication and project overview
+
+### **Core Project Documentation**
+- **📄 [Project README](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/README.md)** - Project overview and quick start
+- **📄 [Brand Guidelines](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/RULES.md)** - Brand guidelines and project rules
+
+### **Areas (2A) - Ongoing Responsibilities**
+- **📄 [Content Strategy](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/2A/content-creation/content-strategy.md)** - Content creation process and guidelines
+- **📄 [Deployment Process](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/2A/technical-maintenance/deployment-process.md)** - Deployment and hosting details
+- **📄 [Testing Strategy](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/2A/technical-maintenance/testing-strategy.md)** - Testing approach and requirements
+
+### **Resources (3R) - Reference Materials**
+- **📄 [PARA System Guide](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/3R/docs/setup/para-system-guide.md)** - Understanding the PARA organization system
+- **📄 [Environment Setup](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/3R/docs/setup/environment-setup.md)** - Development environment configuration
 
 ### **External Resources**
 - [Next.js Documentation](https://nextjs.org/docs)
