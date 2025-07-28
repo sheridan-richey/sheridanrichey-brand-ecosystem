@@ -13,17 +13,34 @@
 - Page Objects stored in `tests/e2e/pageObjects/`
 - Utility functions in `tests/utils/`
 
+## Test Files and Coverage
+- `homepage.spec.js` - Homepage functionality and components
+- `links.spec.js` - Navigation and page loading across all pages
+- `blog.spec.js` - Blog functionality, posts, and categories
+- `newsletter.spec.js` - Newsletter and community functionality
+- `contact.spec.js` - Contact page and form functionality
+- `zag-matrix.spec.js` - ZAG Matrix page and framework content
+- `speaking.spec.js` - Speaking page and professional services
+
+## Page Objects
+- `HomePage.js` - Homepage navigation and CTA functionality
+- `ContactPage.js` - Contact form and information
+- `BlogPage.js` - Blog posts and category filtering
+- `NewsletterPage.js` - Newsletter signup and community features
+
 ## Test Naming and Organization
-- Test files: `newsletter.spec.js`, `contact.spec.js`, `blog.spec.js`, `links.spec.js`
 - Use descriptive test names that explain the user journey
 - Group related tests using `test.describe()` blocks
 - Focus on user workflows, not implementation details
+- Test both desktop and mobile functionality
 
 ## Selectors and Best Practices
 - Use `data-testid` attributes for stable selectors
 - Avoid CSS selectors that might change with styling updates
 - Prefer semantic selectors (e.g., `h1`, `nav`, `main`) for basic page structure
 - Use `page.locator()` for element selection
+- Test for element presence before interaction
+- Use `.first()` for elements that might have multiple instances
 
 ## CI/CD Integration
 - GitHub Actions workflow: [.github/workflows/playwright.yml](mdc:.github/workflows/playwright.yml)
@@ -31,11 +48,16 @@
 - Manual trigger available via `workflow_dispatch`
 - Tests run against production site (not preview deployments)
 
-## Current Test Coverage
-- Basic navigation validation
-- Page loading verification (no 404s)
-- Blog functionality testing
-- Form testing excluded until forms are wired up
+## Current Test Coverage ✅
+- **32 tests passing** across 7 test files
+- **Navigation**: All main pages load without 404s
+- **Mobile Responsiveness**: Mobile menu functionality
+- **Blog**: Post loading, navigation, and category filtering
+- **Forms**: Contact and newsletter form accessibility
+- **Content**: ZAG Matrix framework and speaking services
+- **CTAs**: Call-to-action button functionality
+- **SEO**: Basic page structure and meta elements
+- **Cross-browser**: Tests run on multiple browsers
 
 ## Adding New Tests
 1. Create test file in `tests/e2e/` directory
@@ -43,17 +65,31 @@
 3. Focus on user journeys, not technical implementation
 4. Ensure tests are independent and can run in any order
 5. Add appropriate assertions for user expectations
+6. Create corresponding Page Object if needed
 
 ## Running Tests Locally
 ```bash
+# From root directory
 npx playwright test
+
+# Run specific test
+npx playwright test --grep "test name"
+
+# Run with headed browser
+npx playwright test --headed
 ```
 
 ## Test Data and Environment
 - Use production site for testing
 - No test data setup required for current tests
 - Environment variables handled via GitHub Actions secrets
-description:
-globs:
-alwaysApply: false
----
+- Tests are designed to be non-destructive (no form submissions)
+
+## Best Practices
+- Test for element presence before interaction
+- Use conditional checks for optional elements
+- Focus on user experience and accessibility
+- Test both positive and negative scenarios
+- Ensure tests are fast and reliable
+- Use `.first()` for elements that might have multiple instances
+- Keep tests focused on user workflows, not implementation details
