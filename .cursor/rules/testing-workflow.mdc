@@ -1,0 +1,140 @@
+# Testing Workflow Guidelines
+
+## 🧪 **Test Types and Locations**
+
+### **E2E Tests (Playwright)**
+- **Location**: [tests/e2e/](mdc:tests/e2e/)
+- **Configuration**: [playwright.config.js](mdc:playwright.config.js)
+- **Purpose**: Test critical user flows and functionality
+- **Scope**: Navigation, forms, blog posts, responsive design
+
+### **Website Tests**
+- **Location**: [website/](mdc:website/) directory
+- **Configuration**: [website/package.json](mdc:website/package.json) scripts
+- **Purpose**: Component and page functionality
+
+## 🚀 **Test Commands**
+
+### **Root Level Commands**
+```bash
+npm run test:e2e              # Run E2E tests
+npm run test:e2e:ui           # Run with UI
+npm run test:e2e:debug        # Debug mode
+npm run test:e2e:report       # Show test report
+npm run test:pre-deploy       # Tests + build validation
+```
+
+### **Website Level Commands**
+```bash
+cd website
+npm run test:e2e              # Run E2E tests
+npm run test:e2e:ui           # Run with UI
+npm run test:e2e:debug        # Debug mode
+npm run test:e2e:report       # Show test report
+```
+
+## 📋 **Test Workflow**
+
+### **Development Process**
+1. **Make changes** to website code
+2. **Run tests locally** to validate changes
+3. **Fix any issues** found by tests
+4. **Commit changes** when tests pass
+5. **Deploy** (tests don't trigger deployment)
+
+### **Pre-Deployment Testing**
+```bash
+# Before deploying, run:
+npm run test:pre-deploy
+
+# This validates everything before deployment
+```
+
+## 🎯 **Test File Organization**
+
+### **Excluded from Deployment**
+```
+tests/                    # E2E test files
+website/test-results/     # Test output
+website/playwright-report/ # Test reports
+website/coverage/         # Coverage reports
+```
+
+### **Included in Deployment**
+```
+website/app/              # Next.js pages
+website/components/       # React components
+website/posts/           # Blog content
+website/public/          # Static assets
+```
+
+## 📊 **Test Coverage Areas**
+
+### **Critical User Flows**
+- [x] Homepage navigation
+- [x] Blog post reading
+- [x] Contact form submission
+- [x] Newsletter signup
+- [x] ZAG Matrix page
+- [x] Responsive design
+
+### **Future Test Areas**
+- [ ] Component unit tests
+- [ ] API endpoint testing
+- [ ] Performance testing
+- [ ] Accessibility testing
+- [ ] SEO validation
+
+## 🔧 **Test Configuration**
+
+### **Playwright Configuration**
+- **File**: [playwright.config.js](mdc:playwright.config.js)
+- **Tests**: [tests/e2e/](mdc:tests/e2e/)
+- **Reports**: `website/playwright-report/`
+- **Results**: `website/test-results/`
+
+### **Test Environment**
+- **Base URL**: `http://localhost:3000` (dev)
+- **Production URL**: `https://sheridanrichey.com` (CI)
+- **Browsers**: Chromium, Firefox, Safari
+- **Mobile**: Responsive testing enabled
+
+## 📝 **Best Practices**
+
+### **For Developers**
+1. **Run tests before committing** website changes
+2. **Write tests for new features**
+3. **Update tests when changing functionality**
+4. **Use descriptive test names**
+5. **Keep tests focused and fast**
+
+### **For Deployment**
+1. **Always run tests before deploying**
+2. **Don't deploy if tests fail**
+3. **Monitor test results**
+4. **Update tests as needed**
+
+## 🚨 **Why Tests Don't Trigger Deployments**
+
+### **1. Tests Are Validation Tools**
+- Tests check if code works correctly
+- They don't change the website content
+- Deployment should only happen for actual changes
+
+### **2. Test Files Change Frequently**
+- Test results, reports, and configurations change often
+- Would cause unnecessary deployments
+- Test files are excluded via [.vercelignore](mdc:.vercelignore)
+
+### **3. Proper CI/CD Flow**
+- Tests should run **before** deployment
+- Only deploy if tests pass
+- Tests validate, deployment delivers
+
+## 📚 **Reference Documentation**
+- **Test Workflow Guide**: [2A/technical-maintenance/test-workflow.md](mdc:2A/technical-maintenance/test-workflow.md)
+- **Deployment Process**: [2A/technical-maintenance/deployment-process.md](mdc:2A/technical-maintenance/deployment-process.md)
+description:
+globs:
+alwaysApply: false
+---

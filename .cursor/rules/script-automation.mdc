@@ -1,0 +1,179 @@
+# Script Automation and Project Management
+
+## 🛠️ **Available Scripts**
+
+### **Root Level Scripts**
+```bash
+# Development
+npm run dev              # Start development server
+npm run build            # Build website
+npm run start            # Start production server
+npm run lint             # Run linting
+
+# Content Management
+npm run content:sync     # Sync content across directories
+npm run content:validate # Validate content structure
+npm run brand:update     # Update brand assets
+
+# Deployment
+npm run deploy:website   # Deploy website
+npm run deploy:github    # Deploy GitHub profile
+
+# Setup
+npm run setup            # Install all dependencies
+
+# Testing
+npm run test:e2e         # Run E2E tests
+npm run test:e2e:ui      # Run tests with UI
+npm run test:e2e:debug   # Run tests in debug mode
+npm run test:e2e:report  # Show test report
+npm run test:pre-deploy  # Pre-deployment testing
+```
+
+### **Slack Community Scripts**
+```bash
+# Slack Automation
+npm run slack:create     # Create Slack channels
+npm run slack:list       # List Slack channels
+npm run slack:invite     # Invite users to Slack
+npm run slack:setup      # Complete Slack setup
+npm run slack:consolidate # Consolidate channels
+npm run slack:optimized-list # List optimized channels
+npm run slack:cleanup    # Clean up channels
+npm run slack:finalize   # Finalize channel structure
+npm run slack:final-list # List final channels
+npm run slack:final-cleanup # Final cleanup
+npm run slack:final-update # Update final structure
+npm run slack:welcome    # Post welcome messages
+```
+
+## 📁 **Script Organization**
+
+### **Script Locations**
+- **Root Scripts**: [package.json](mdc:package.json) - Project-wide automation
+- **Slack Scripts**: [scripts/](mdc:scripts/) - Community management
+- **Website Scripts**: [website/package.json](mdc:website/package.json) - Website-specific
+
+### **Script Categories**
+- **Development**: Build, dev, lint, test
+- **Content**: Sync, validate, brand updates
+- **Deployment**: Website and GitHub deployment
+- **Community**: Slack automation and management
+- **Setup**: Environment and dependency management
+
+## 🔧 **Script Configuration**
+
+### **Package.json Scripts**
+- **Root**: [package.json](mdc:package.json) - Project-wide commands
+- **Website**: [website/package.json](mdc:website/package.json) - Website-specific commands
+- **Dependencies**: Managed in respective package.json files
+
+### **Script Dependencies**
+- **Playwright**: E2E testing framework
+- **Node.js**: Runtime environment
+- **Slack API**: Community management
+- **GitHub API**: Profile deployment
+
+## 📋 **Automation Workflows**
+
+### **Development Workflow**
+```bash
+# 1. Setup environment
+npm run setup
+
+# 2. Start development
+npm run dev
+
+# 3. Test changes
+npm run test:e2e
+
+# 4. Build and deploy
+npm run test:pre-deploy
+git push origin main  # Triggers deployment
+```
+
+### **Content Management Workflow**
+```bash
+# 1. Sync content
+npm run content:sync
+
+# 2. Validate content
+npm run content:validate
+
+# 3. Update brand assets
+npm run brand:update
+```
+
+### **Community Management Workflow**
+```bash
+# 1. Setup Slack community
+npm run slack:setup
+
+# 2. Invite team members
+npm run slack:invite
+
+# 3. Post welcome messages
+npm run slack:welcome
+```
+
+## 🎯 **Script Best Practices**
+
+### **For Developers**
+1. **Use npm scripts** for common tasks
+2. **Check script documentation** before running
+3. **Test scripts locally** before committing
+4. **Update scripts** when adding new functionality
+5. **Keep scripts focused** and well-documented
+
+### **For Automation**
+1. **Scripts don't trigger deployments** (excluded via .vercelignore)
+2. **Use descriptive script names**
+3. **Include error handling** in scripts
+4. **Log script execution** for debugging
+5. **Validate script outputs**
+
+## 🚨 **Script Troubleshooting**
+
+### **Common Issues**
+1. **Script not found** → Check package.json scripts
+2. **Permission denied** → Check file permissions
+3. **Dependency missing** → Run npm install
+4. **Environment variables** → Check .env files
+5. **API errors** → Verify API keys and permissions
+
+### **Debugging Steps**
+1. **Check script syntax** in package.json
+2. **Verify dependencies** are installed
+3. **Check environment variables**
+4. **Review script logs** and error messages
+5. **Test scripts individually**
+
+## 📚 **Script Documentation**
+
+### **Individual Scripts**
+- **Slack Automation**: [scripts/slack-automation-final.js](mdc:scripts/slack-automation-final.js)
+- **Content Sync**: [scripts/sync-content.js](mdc:scripts/sync-content.js)
+- **Welcome Messages**: [scripts/post-welcome-messages.js](mdc:scripts/post-welcome-messages.js)
+
+### **Configuration Files**
+- **Root Package**: [package.json](mdc:package.json)
+- **Website Package**: [website/package.json](mdc:website/package.json)
+- **Playwright Config**: [playwright.config.js](mdc:playwright.config.js)
+
+## 🔍 **Script Monitoring**
+
+### **Execution Tracking**
+- **Script logs** in console output
+- **Error handling** with descriptive messages
+- **Success indicators** for completed tasks
+- **Progress tracking** for long-running scripts
+
+### **Performance Considerations**
+- **Script efficiency** for automation
+- **Resource usage** monitoring
+- **Timeout handling** for API calls
+- **Error recovery** mechanisms
+description:
+globs:
+alwaysApply: false
+---
