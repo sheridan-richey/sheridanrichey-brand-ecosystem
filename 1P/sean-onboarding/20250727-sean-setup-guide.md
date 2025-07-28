@@ -73,18 +73,35 @@ npm install
 
 ```
 SLR.com/
-├── website/                 # Next.js website
-│   ├── app/                # App router pages
-│   ├── components/         # React components
-│   ├── posts/             # MDX blog posts
+├── 1P/                     # Projects (Time-bound objectives)
+│   ├── sean-onboarding/    # Sean's onboarding project
+│   ├── slack-community-setup/ # Slack community setup
+│   └── website-enhancements/  # Website improvement projects
+├── 2A/                     # Areas (Ongoing responsibilities)
+│   ├── brand-management/   # Brand guidelines and strategy
+│   ├── content-creation/   # Content strategy and workflow
+│   └── technical-maintenance/ # Deployment, testing, maintenance
+├── 3R/                     # Resources (Reference materials)
+│   ├── assets/            # Images, logos, media
+│   ├── docs/              # Documentation and guides
+│   ├── professional-roles/ # Role descriptions and context
+│   └── templates/         # Email and content templates
+├── 4A/                     # Archives (Completed work)
+│   ├── completed-projects/ # Finished projects
+│   └── historical-docs/   # Historical documentation
+├── website/                # Next.js website application
+│   ├── app/               # App router pages
+│   ├── components/        # React components
+│   ├── posts/            # MDX blog posts
 │   └── package.json
 ├── content/               # Content management
 │   ├── blog/             # Blog content by ZAG category
 │   ├── newsletter/       # Newsletter content
 │   └── resources/        # Resource files
-├── assets/               # Images, logos, media
-├── tests/               # E2E tests with Playwright
-└── docs/               # Project documentation
+├── tests/                # E2E tests with Playwright
+├── scripts/              # Automation and utility scripts
+├── README.md             # Project overview
+└── RULES.md              # Brand guidelines and project rules
 ```
 
 ## 🔄 Git Workflow
@@ -297,11 +314,18 @@ git config core.autocrlf false
 
 ## 📚 Key Resources
 
-- **Project README**: `/README.md`
-- **Brand Guidelines**: `/RULES.md`
-- **Content Workflow**: `/CONTENT_WORKFLOW.md`
-- **Deployment Guide**: `/DEPLOYMENT.md`
-- **Testing Strategy**: `/TESTING_STRATEGY.md`
+### **Core Documentation**
+- **📄 [Project README](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/README.md)** - Project overview and quick start
+- **📄 [Brand Guidelines](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/RULES.md)** - Brand guidelines and project rules
+
+### **Areas (2A) - Ongoing Responsibilities**
+- **📄 [Content Strategy](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/2A/content-creation/content-strategy.md)** - Content creation process
+- **📄 [Deployment Process](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/2A/technical-maintenance/deployment-process.md)** - Deployment and hosting details
+- **📄 [Testing Strategy](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/2A/technical-maintenance/testing-strategy.md)** - Testing approach and requirements
+
+### **Resources (3R) - Reference Materials**
+- **📄 [PARA System Guide](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/3R/docs/setup/para-system-guide.md)** - Understanding the PARA organization system
+- **📄 [Environment Setup](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/blob/main/3R/docs/setup/environment-setup.md)** - Development environment configuration
 
 ## 🎉 Welcome to the Team!
 
