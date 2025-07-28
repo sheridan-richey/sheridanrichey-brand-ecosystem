@@ -1,4 +1,4 @@
-# Project Management & PARA System
+# Project Organization & PARA System
 
 ## PARA System Organization
 Follow the established PARA system for organizing all project files:
@@ -54,6 +54,29 @@ Each project should include:
 - Focus on serving "Alex, the Awakened Technologist"
 - Prioritize conversion and user experience
 - Maintain professional authority while being approachable
+
+## Project Selection Criteria
+When choosing the next project to tackle:
+1. **Impact on "Alex"** - How directly does this serve the target audience?
+2. **ZAG Matrix Alignment** - Which pillar does this strengthen?
+3. **Conversion Potential** - Will this drive newsletter signups or engagement?
+4. **Technical Dependencies** - Are there blocking factors?
+5. **Resource Requirements** - Time, budget, and skill requirements
+
+## Deep Dive Process
+For each project, follow this structured approach:
+1. **Project Brief** - Detailed scope, objectives, and success metrics
+2. **Resource Planning** - Time, tools, and team requirements
+3. **Timeline Creation** - Milestones and deliverables
+4. **Risk Assessment** - Potential challenges and mitigation strategies
+5. **Success Measurement** - KPIs and tracking methods
+
+## Collaboration Standards
+- Use clear communication channels
+- Document decisions and rationale
+- Maintain project history and learnings
+- Share progress updates regularly
+- Celebrate project completions
 description:
 globs:
 alwaysApply: false

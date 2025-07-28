@@ -1,4 +1,4 @@
-# Content Creation Standards
+# Content Strategy & Creation Standards
 
 ## Content Strategy
 All content must serve "Alex, the Awakened Technologist" and align with the ZAG Matrix framework:
@@ -59,6 +59,20 @@ Follow the established patterns in [website/posts directory](mdc:website/posts/)
 - Ensure actionable takeaways
 - Review for ZAG Matrix alignment
 - Test content with target audience feedback
+
+## Newsletter Content Strategy
+- Weekly insights aligned with ZAG Matrix pillars
+- Include exclusive content not available on the blog
+- Provide actionable frameworks and tools
+- Share behind-the-scenes insights from executive experience
+- Build community engagement and discussion
+
+## Resource Development
+- Create downloadable ZAG Matrix guides
+- Develop career transition templates
+- Build executive decision-making frameworks
+- Provide strategic planning tools
+- Include case studies and success stories
 description:
 globs:
 alwaysApply: false
