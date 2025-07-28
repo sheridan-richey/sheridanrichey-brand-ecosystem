@@ -25,7 +25,12 @@
     "slack:final-list": "node scripts/slack-automation-final.js list",
     "slack:final-cleanup": "node scripts/slack-automation-final.js cleanup",
     "slack:final-update": "node scripts/slack-automation-final.js update",
-    "slack:welcome": "node scripts/post-welcome-messages.js post"
+    "slack:welcome": "node scripts/post-welcome-messages.js post",
+    "test:e2e": "cd website && npm run test:e2e",
+    "test:e2e:ui": "cd website && npm run test:e2e:ui",
+    "test:e2e:debug": "cd website && npm run test:e2e:debug",
+    "test:e2e:report": "cd website && npm run test:e2e:report",
+    "test:pre-deploy": "npm run test:e2e && npm run build"
   },
   "keywords": [
     "personal-branding",
