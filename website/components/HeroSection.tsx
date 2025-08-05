@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 import { useEffect, useState } from "react"
 
 export default function HeroSection() {
@@ -87,12 +86,10 @@ export default function HeroSection() {
             style={{ transitionDelay: isVisible ? "0.4s" : "0s" }}
           >
             <div className="relative w-56 h-64 md:w-64 md:h-72 mx-auto rounded-2xl overflow-hidden shadow-2xl">
-              <Image
+              <img
                 src="/sheridan-headshot.jpg"
                 alt="Sheridan Richey - Executive Leadership Coach"
-                fill
-                className="object-cover object-top"
-                priority
+                className="object-cover object-top w-full h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
             </div>

@@ -2,7 +2,6 @@
 
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
 import { ArrowRight, CheckCircle, Target, Users, Zap } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -63,12 +62,10 @@ export default function NewsletterPage() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex justify-center mb-6">
                              <div className="relative">
-                 <Image 
+                 <img 
                    src="/sheridan-blog.jpg" 
                    alt="Sheridan Richey" 
-                   width={96}
-                   height={96}
-                   className="rounded-full shadow-lg object-cover object-top border-4 border-white" 
+                   className="rounded-full shadow-lg w-24 h-24 object-cover object-top border-4 border-white" 
                  />
                 <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-white rounded-full flex items-center justify-center border-2 border-smoke">
                   <img

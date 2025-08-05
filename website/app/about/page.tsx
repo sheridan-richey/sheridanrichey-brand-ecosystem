@@ -1,6 +1,5 @@
 import ZagMatrixOverview from '@/components/ZagMatrixOverview'
 import { Award, Building, Lightbulb, TrendingUp } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function AboutPage() {
@@ -19,7 +18,7 @@ export default function AboutPage() {
               purpose-driven transformation through the ZAG Matrix framework.
             </p>
                          <div className="flex justify-center mt-8">
-               <Image src="/sheridan-about.jpg" alt="Sheridan Richey" width={256} height={320} className="rounded-2xl shadow-xl object-cover object-top" />
+               <img src="/sheridan-about.jpg" alt="Sheridan Richey" className="rounded-2xl shadow-xl w-64 h-80 object-cover object-top" />
              </div>
           </div>
         </div>

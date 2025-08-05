@@ -1,6 +1,5 @@
 import ContactForm from '@/components/ContactForm'
 import { Calendar, Mail, MessageSquare } from 'lucide-react'
-import Image from 'next/image'
 
 export default function ContactPage() {
   return (
@@ -28,7 +27,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
               <div>
                                  <div className="flex justify-center mb-8">
-                   <Image src="/sheridan-contact.jpg" alt="Sheridan Richey" width={256} height={320} className="rounded-2xl shadow-xl object-cover object-top" />
+                   <img src="/sheridan-contact.jpg" alt="Sheridan Richey" className="rounded-2xl shadow-xl w-64 h-80 object-cover object-top" />
                  </div>
                 <h2 className="text-3xl font-bold tracking-tight text-phantom sm:text-4xl font-manrope">
                   Get in Touch
