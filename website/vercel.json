@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd website && npm run build",
-  "installCommand": "cd website && npm install",
-  "outputDirectory": "website/.next",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
   "framework": "nextjs",
   "regions": ["iad1"],
   "headers": [
