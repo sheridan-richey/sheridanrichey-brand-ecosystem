@@ -1,4 +1,2 @@
-# Ignore everything except the website directory
-*
-!website/
-!website/** 
+# Remove conflicting .vercelignore content
+# The root directory setting in Vercel dashboard should handle this 
