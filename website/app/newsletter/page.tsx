@@ -63,7 +63,7 @@ export default function NewsletterPage() {
             <div className="flex justify-center mb-6">
               <div className="relative">
                 <img 
-                  src="/sheridan-blog.jpg" 
+                  src="./sheridan-blog.jpg" 
                   alt="Sheridan Richey" 
                   className="rounded-full shadow-lg w-24 h-24 object-cover object-top border-4 border-white" 
                 />

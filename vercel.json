@@ -1,6 +1,11 @@
 {
   "framework": "nextjs",
   "regions": ["iad1"],
+  "functions": {
+    "website/app/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
