@@ -87,7 +87,7 @@ export default function HeroSection() {
           >
             <div className="relative w-56 h-64 md:w-64 md:h-72 mx-auto rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="./sheridan-headshot.jpg"
+                src="/sheridan-headshot.jpg"
                 alt="Sheridan Richey - Executive Leadership Coach"
                 className="object-cover object-top w-full h-full"
               />
