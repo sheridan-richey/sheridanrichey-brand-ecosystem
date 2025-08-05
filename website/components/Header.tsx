@@ -1,9 +1,8 @@
 'use client'
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -54,13 +53,10 @@ export default function Header() {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5 mr-20">
               <span className="sr-only">Sheridan Richey</span>
-              <Image
+              <img
                 src="/assets/Emblem/SVG/Asset 6.svg"
                 alt="SR - Sheridan Richey"
-                width={72}
-                height={48}
                 className="h-12 w-auto"
-                priority
               />
             </Link>
           </div>
@@ -112,11 +108,9 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={closeMobileMenu}>
                 <span className="sr-only">Sheridan Richey</span>
-                <Image
+                <img
                   src="/assets/Emblem/SVG/Asset 6.svg"
                   alt="SR - Sheridan Richey"
-                  width={56}
-                  height={38}
                   className="h-9 w-auto"
                 />
               </Link>

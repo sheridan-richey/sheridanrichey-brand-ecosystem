@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -8,11 +7,9 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <div className="flex items-center space-x-3">
-              <Image
+              <img
                 src="/assets/SVG/Logo-Zoomed-Locked.svg"
                 alt="Sheridan Richey"
-                width={180}
-                height={54}
                 className="h-12 w-auto"
               />
             </div>
