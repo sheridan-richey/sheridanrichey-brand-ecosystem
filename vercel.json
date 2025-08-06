@@ -4,7 +4,6 @@
   "buildCommand": "cd website && npm run build",
   "outputDirectory": "website/.next",
   "installCommand": "cd website && npm install",
-  "public": "website/public",
   "functions": {
     "website/app/**/*.ts": {
       "runtime": "nodejs18.x"
