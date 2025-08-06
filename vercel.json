@@ -1,10 +1,11 @@
 {
   "framework": "nextjs",
   "regions": ["iad1"],
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
+  "buildCommand": "cd website && npm run build",
+  "outputDirectory": "website/.next",
+  "installCommand": "cd website && npm install",
   "functions": {
-    "app/**/*.ts": {
+    "website/app/**/*.ts": {
       "runtime": "nodejs18.x"
     }
   },
