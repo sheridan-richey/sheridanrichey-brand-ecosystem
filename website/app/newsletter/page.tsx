@@ -1,6 +1,7 @@
 'use client'
 
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
+import NewsletterTest from '@/components/NewsletterTest'
 import { ArrowRight, CheckCircle, Target, Users, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -47,6 +48,7 @@ export default function NewsletterPage() {
         setSubmitMessage(result.error || 'Failed to subscribe')
       }
     } catch (error) {
+      console.error('Newsletter signup error:', error)
       setSubmitStatus('error')
       setSubmitMessage('Network error. Please try again.')
     } finally {
@@ -271,6 +273,11 @@ export default function NewsletterPage() {
             {/* ZAG Matrix Preview */}
             <div className="mt-8">
               <ZagMatrixSidebar />
+            </div>
+
+            {/* Newsletter Test Component - Remove in production */}
+            <div className="mt-8">
+              <NewsletterTest />
             </div>
           </div>
         </div>
