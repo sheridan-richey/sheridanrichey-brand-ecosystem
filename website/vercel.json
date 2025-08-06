@@ -7,7 +7,7 @@
   "git": {
     "deploymentEnabled": false
   },
-  "public": "./public",
+  "public": true,
 
 
   "headers": [
