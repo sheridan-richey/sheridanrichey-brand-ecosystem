@@ -21,9 +21,16 @@ jobs:
           cache-dependency-path: website/package-lock.json
 
       - name: Deploy to Vercel
+        id: deploy
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: ${{ github.ref == 'refs/heads/main' && '--prod' || '' }} 
+          vercel-args: ${{ github.ref == 'refs/heads/main' && '--prod' || '' }}
+
+      - name: Show Deployment URL
+        run: |
+          echo "🚀 Deployment URL: ${{ steps.deploy.outputs.preview-url }}"
+          echo "📝 Branch: ${{ github.ref_name }}"
+          echo "🔗 Production: https://sheridanrichey.com" 
