@@ -54,7 +54,7 @@ export default function Header() {
             <Link href="/" className="-m-1.5 p-1.5 mr-20">
               <span className="sr-only">Sheridan Richey</span>
               <img
-                src="/assets/Emblem/SVG/Asset 6.svg"
+                src="/assets/Emblem/SVG/SR-padded-white-teal.svg"
                 alt="SR - Sheridan Richey"
                 className="h-12 w-auto"
               />
@@ -109,7 +109,7 @@ export default function Header() {
               <Link href="/" className="-m-1.5 p-1.5" onClick={closeMobileMenu}>
                 <span className="sr-only">Sheridan Richey</span>
                 <img
-                  src="/assets/Emblem/SVG/Asset 6.svg"
+                  src="/assets/Emblem/SVG/SR-padded-white-teal.svg"
                   alt="SR - Sheridan Richey"
                   className="h-9 w-auto"
                 />

@@ -47,6 +47,7 @@ export default function NewsletterPage() {
         setSubmitMessage(result.error || 'Failed to subscribe')
       }
     } catch (error) {
+      console.error('Newsletter signup error:', error)
       setSubmitStatus('error')
       setSubmitMessage('Network error. Please try again.')
     } finally {
@@ -272,6 +273,8 @@ export default function NewsletterPage() {
             <div className="mt-8">
               <ZagMatrixSidebar />
             </div>
+
+
           </div>
         </div>
       </div>
