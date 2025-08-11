@@ -1,5 +1,6 @@
 'use client'
 
+import NewsletterTest from '@/components/NewsletterTest'
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
 import { ArrowRight, CheckCircle, Target, Users, Zap } from 'lucide-react'
 import Link from 'next/link'
@@ -274,7 +275,10 @@ export default function NewsletterPage() {
               <ZagMatrixSidebar />
             </div>
 
-
+            {/* Newsletter Test Component - Remove in production */}
+            <div className="mt-8">
+              <NewsletterTest />
+            </div>
           </div>
         </div>
       </div>
