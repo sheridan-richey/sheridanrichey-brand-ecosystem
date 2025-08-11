@@ -2,9 +2,11 @@
 
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
+import NewsletterSignup from "./NewsletterSignup"
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [showNewsletterSignup, setShowNewsletterSignup] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -125,6 +127,7 @@ export default function HeroSection() {
             style={{ transitionDelay: isVisible ? "0.55s" : "0s" }}
           >
             <Button
+              onClick={() => setShowNewsletterSignup(true)}
               variant="outline"
               size="lg"
               className="group font-manrope border-2 border-white text-white font-bold hover:bg-white hover:text-primary-600 px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-xl rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-none"
@@ -234,6 +237,28 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Newsletter Signup Modal */}
+      {showNewsletterSignup && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-2xl">
+            <button
+              onClick={() => setShowNewsletterSignup(false)}
+              className="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 transition-colors z-10"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <NewsletterSignup 
+              variant="hero"
+              title="Join The ZAG Navigator"
+              description="Get weekly insights for awakened technologists. Plus, instant access to the AI Prompt Engineer's Guide."
+              onSuccess={() => setShowNewsletterSignup(false)}
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 } 
