@@ -29,11 +29,11 @@ export async function POST(request: NextRequest) {
     // Prepare subscriber data for Beehiiv
     const subscriberData = {
       email: email,
-      custom_fields: {
-        first_name: name || '',
-        role: role || '',
-        source: 'website_signup'
-      },
+      custom_fields: [
+        { key: 'first_name', value: name || '' },
+        { key: 'role', value: role || '' },
+        { key: 'source', value: 'website_signup' }
+      ],
       reactivate_existing: false,
       send_welcome_email: true,
       utm_source: 'website',
