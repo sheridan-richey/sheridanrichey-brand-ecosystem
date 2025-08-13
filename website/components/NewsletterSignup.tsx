@@ -34,17 +34,21 @@ export default function NewsletterSignup({
     setIsLoading(true)
     setMessage('')
 
+    // Debug logging
+    const formData = {
+      email,
+      name: showName ? name : undefined,
+      role: showRole ? role : undefined,
+    }
+    console.log('Form data being sent:', formData)
+
     try {
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          email,
-          name: showName ? name : undefined,
-          role: showRole ? role : undefined,
-        }),
+        body: JSON.stringify(formData),
       })
 
       const data = await response.json()
