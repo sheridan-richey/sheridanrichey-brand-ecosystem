@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
 
     const beehiivUrl = `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`
 
-    async function postToBeehiiv(payload: unknown) {
+    const postToBeehiiv = async (payload: unknown) => {
       return fetch(beehiivUrl, {
         method: 'POST',
         headers: {
