@@ -42,14 +42,18 @@ export default function NewsletterSignup({
     setIsLoading(true)
     setMessage('')
 
+    // Always get current page path for UTM attribution
+    const currentPagePath = window.location.pathname
+
     // Debug logging
     const formData = {
       email,
       name: showName ? name : undefined,
       role: showRole ? role : undefined,
-      pagePath
+      pagePath: currentPagePath
     }
     console.log('Form data being sent:', formData)
+    console.log('Current page path:', currentPagePath)
 
     try {
       const response = await fetch('/api/newsletter', {
