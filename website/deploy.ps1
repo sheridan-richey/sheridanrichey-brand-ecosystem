@@ -1,77 +1,117 @@
-# Sheridan Richey Website Deployment Script
-# This script automates the deployment process to Vercel
+# Sheridan Richey Website - Git-Based Deployment Helper
+# Safe, minimal PowerShell script for Vercel git deployments
 
-Write-Host "🚀 Starting Sheridan Richey Website Deployment..." -ForegroundColor Green
+param(
+    [switch]$Commit,
+    [switch]$Push,
+    [switch]$Status,
+    [switch]$Help
+)
 
-# Check if we're in the right directory
-if (-not (Test-Path "package.json")) {
-    Write-Host "❌ Error: package.json not found. Please run this script from the website directory." -ForegroundColor Red
-    exit 1
+function ShowHelp {
+    Write-Host "Sheridan Richey Website - Git Deployment Helper"
+    Write-Host ""
+    Write-Host "Usage:"
+    Write-Host "  .\deploy.ps1 -Status     # Check git status and readiness"
+    Write-Host "  .\deploy.ps1 -Commit     # Stage all changes"
+    Write-Host "  .\deploy.ps1 -Push       # Push to main (triggers Vercel deploy)"
+    Write-Host "  .\deploy.ps1 -Help       # Show this help"
+    Write-Host ""
+    Write-Host "Note: Vercel deploys automatically when you push to main."
 }
 
-# Check if Node.js is installed
-try {
-    $nodeVersion = node --version
-    Write-Host "✅ Node.js version: $nodeVersion" -ForegroundColor Green
-} catch {
-    Write-Host "❌ Error: Node.js is not installed. Please install Node.js first." -ForegroundColor Red
-    exit 1
-}
+function ShowStatus {
+    Write-Host "Checking git status..."
+    $status = git status --porcelain
+    if ($status) {
+        Write-Host "Changes detected:"
+        $status | ForEach-Object { Write-Host "  $_" }
+    } else {
+        Write-Host "Working directory clean."
+    }
 
-# Check if npm is installed
-try {
-    $npmVersion = npm --version
-    Write-Host "✅ npm version: $npmVersion" -ForegroundColor Green
-} catch {
-    Write-Host "❌ Error: npm is not installed. Please install npm first." -ForegroundColor Red
-    exit 1
-}
+    Write-Host ""
+    Write-Host "Recent commits:"
+    git log --oneline -5
 
-# Install dependencies
-Write-Host "📦 Installing dependencies..." -ForegroundColor Yellow
-npm install
+    Write-Host ""
+    Write-Host "Remote status:"
+    git fetch origin 2>$null
+    $localCommit = git rev-parse HEAD
+    $remoteCommit = git rev-parse origin/main
+    if ($localCommit -eq $remoteCommit) {
+        Write-Host "Local main is up to date with origin/main."
+    } else {
+        Write-Host "Local main differs from origin/main."
+        Write-Host ("  Local:  {0}" -f $localCommit.Substring(0,7))
+        Write-Host ("  Remote: {0}" -f $remoteCommit.Substring(0,7))
+    }
 
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "❌ Error: Failed to install dependencies." -ForegroundColor Red
-    exit 1
-}
-
-# Build the project
-Write-Host "🔨 Building the project..." -ForegroundColor Yellow
-npm run build
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "❌ Error: Build failed. Please check the build errors above." -ForegroundColor Red
-    exit 1
-}
-
-Write-Host "✅ Build completed successfully!" -ForegroundColor Green
-
-# Check if Vercel CLI is installed
-try {
-    $vercelVersion = vercel --version
-    Write-Host "✅ Vercel CLI version: $vercelVersion" -ForegroundColor Green
-} catch {
-    Write-Host "📦 Installing Vercel CLI..." -ForegroundColor Yellow
-    npm install -g vercel
-    
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "❌ Error: Failed to install Vercel CLI." -ForegroundColor Red
-        exit 1
+    Write-Host ""
+    Write-Host "Next steps:"
+    if ($status) {
+        Write-Host "  1) Stage changes: .\deploy.ps1 -Commit"
+        Write-Host "  2) Commit: git commit -m 'YOUR_MESSAGE'"
+        Write-Host "  3) Push:   .\deploy.ps1 -Push"
+    } else {
+        Write-Host "  1) Make code changes"
+        Write-Host "  2) Stage changes: .\deploy.ps1 -Commit"
+        Write-Host "  3) Commit and Push"
     }
 }
 
-# Deploy to Vercel
-Write-Host "🚀 Deploying to Vercel..." -ForegroundColor Yellow
-Write-Host "This will open your browser for authentication if needed." -ForegroundColor Cyan
+function StageChanges {
+    Write-Host "Staging all changes..."
+    git add .
+    Write-Host ""
+    Write-Host "Staged changes:"
+    git status --porcelain
+    Write-Host ""
+    Write-Host "Now commit with: git commit -m 'feat: your message'"
+}
 
-vercel --prod
+function PushDeploy {
+    Write-Host "Pushing to origin/main to trigger Vercel deploy..."
+    git fetch origin 2>$null
+    $localCommit = git rev-parse HEAD
+    $remoteCommit = git rev-parse origin/main
+    if ($localCommit -eq $remoteCommit) {
+        Write-Host "No new commits to push. Commit your changes first."
+        return
+    }
 
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "❌ Error: Deployment failed." -ForegroundColor Red
+    git push origin main
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "Push succeeded. Vercel deployment triggered."
+        Write-Host "Monitor at: https://vercel.com/dashboard"
+    } else {
+        Write-Host "Push failed. Check git status and try again."
+    }
+}
+
+# Entry point
+if ($Help) { ShowHelp; exit 0 }
+
+# Ensure we are in the website directory (contains package.json)
+if (-not (Test-Path "package.json")) {
+    Write-Host "Error: package.json not found. Run this from the 'website' directory."
     exit 1
 }
 
-Write-Host "🎉 Deployment completed successfully!" -ForegroundColor Green
-Write-Host "🌐 Your website should be live at: https://sheridanrichey.com" -ForegroundColor Cyan
-Write-Host "📊 Check deployment status at: https://vercel.com/dashboard" -ForegroundColor Cyan 
+try {
+    $gitVersion = git --version
+    Write-Host ("Git available: {0}" -f $gitVersion)
+} catch {
+    Write-Host "Error: Git is not available. Install Git first."
+    exit 1
+}
+
+if ($Status) {
+    ShowStatus
+} elseif ($Commit) {
+    StageChanges
+} elseif ($Push) {
+    PushDeploy
+} else {
+    ShowStatus
+}

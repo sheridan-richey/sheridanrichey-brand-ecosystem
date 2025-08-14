@@ -4,17 +4,29 @@ import NewsletterTest from '@/components/NewsletterTest'
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
 import { ArrowRight, CheckCircle, Target, Users, Zap } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 export default function NewsletterPage() {
+  const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     email: '',
     name: '',
     role: ''
   })
+  const [ctaSource, setCtaSource] = useState('newsletter_page')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [submitMessage, setSubmitMessage] = useState('')
+
+  // Capture CTA source from URL on page load
+  useEffect(() => {
+    const cta = searchParams.get('cta')
+    if (cta) {
+      setCtaSource(cta)
+      console.log('CTA source captured:', cta)
+    }
+  }, [searchParams])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -28,13 +40,20 @@ export default function NewsletterPage() {
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
+    const submitData = {
+      ...formData,
+      ctaSource
+    }
+
+    console.log('Submitting newsletter signup:', submitData)
+
     try {
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(submitData)
       })
 
       const result = await response.json()

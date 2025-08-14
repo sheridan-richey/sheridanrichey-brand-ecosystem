@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Button } from './ui/button'
 
 interface NewsletterSignupProps {
@@ -10,6 +10,7 @@ interface NewsletterSignupProps {
   showName?: boolean
   showRole?: boolean
   className?: string
+  ctaSource?: string
   onSuccess?: () => void
 }
 
@@ -20,40 +21,29 @@ export default function NewsletterSignup({
   showName = true,
   showRole = true,
   className = '',
+  ctaSource = 'newsletter_page',
   onSuccess
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [role, setRole] = useState('')
-  const [pagePath, setPagePath] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [message, setMessage] = useState('')
   const [isSuccess, setIsSuccess] = useState(false)
-
-  // Capture current page path for UTM attribution
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setPagePath(window.location.pathname)
-    }
-  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
     setMessage('')
 
-    // Always get current page path for UTM attribution
-    const currentPagePath = window.location.pathname
-
-    // Debug logging
     const formData = {
       email,
       name: showName ? name : undefined,
       role: showRole ? role : undefined,
-      pagePath: currentPagePath
+      ctaSource
     }
-    console.log('Form data being sent:', formData)
-    console.log('Current page path:', currentPagePath)
+
+    console.log('Newsletter signup form data:', formData)
 
     try {
       const response = await fetch('/api/newsletter', {
