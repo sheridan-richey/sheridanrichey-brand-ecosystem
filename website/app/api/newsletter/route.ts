@@ -30,14 +30,14 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Prepare subscriber data for Beehiiv
+    // Prepare subscriber data for Beehiiv (array format required)
     const subscriberData = {
       email: email,
-      custom_fields: {
-        first_name: name || '',
-        role: role || '',
-        source: 'website_signup'
-      },
+      custom_fields: [
+        { name: 'first_name', value: name || '' },
+        { name: 'role', value: role || '' },
+        { name: 'source', value: 'website_signup' }
+      ],
       reactivate_existing: false,
       send_welcome_email: true,
       utm_source: 'website',
