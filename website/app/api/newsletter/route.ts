@@ -1,13 +1,14 @@
+
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { email, name, role } = body
+    const { email, name, role, pagePath } = body
 
     // Debug logging
     console.log('Newsletter signup request body:', body)
-    console.log('Extracted fields:', { email, name, role })
+    console.log('Extracted fields:', { email, name, role, pagePath })
 
     // Validate required fields
     if (!email) {
@@ -18,7 +19,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Beehiiv API integration
-    // You'll need to replace this with your actual Beehiiv publication ID and API key
     const BEEHIIV_PUBLICATION_ID = process.env.BEEHIIV_PUBLICATION_ID
     const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY
 
@@ -30,8 +30,8 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Prepare subscriber data for Beehiiv (object form first)
-    const subscriberDataObject = {
+    // Prepare subscriber data for Beehiiv
+    const subscriberData = {
       email: email,
       custom_fields: {
         first_name: name || '',
@@ -42,78 +42,37 @@ export async function POST(request: NextRequest) {
       send_welcome_email: true,
       utm_source: 'website',
       utm_medium: 'newsletter_page',
-      utm_campaign: 'zag_community'
+      utm_campaign: pagePath || 'zag_community',
+      utm_content: 'newsletter_signup_form'
     }
 
     // Debug logging
-    console.log('Subscriber data (object form) being sent to Beehiiv:', subscriberDataObject)
+    console.log('Subscriber data being sent to Beehiiv:', subscriberData)
 
-    const beehiivUrl = `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`
-
-    const postToBeehiiv = async (payload: unknown) => {
-      return fetch(beehiivUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${BEEHIIV_API_KEY}`
-        },
-        body: JSON.stringify(payload)
-      })
-    }
-
-    // Try object form first
-    let response = await postToBeehiiv(subscriberDataObject)
-
-    // If Beehiiv rejects, try array form with name/value keys
-    if (!response.ok) {
-      let errorData: any
-      try {
-        errorData = await response.json()
-      } catch (_) {
-        errorData = { error: 'Unknown error parsing Beehiiv response' }
-      }
-      console.error('Beehiiv API error (object form):', errorData)
-      console.error('Response status:', response.status)
-      console.error('Response headers:', Object.fromEntries(response.headers.entries()))
-
-      // Only attempt a fallback for validation-type failures
-      if (response.status >= 400 && response.status < 500) {
-        const subscriberDataArray = {
-          email: email,
-          custom_fields: [
-            { name: 'first_name', value: name || '' },
-            { name: 'role', value: role || '' },
-            { name: 'source', value: 'website_signup' }
-          ],
-          reactivate_existing: false,
-          send_welcome_email: true,
-          utm_source: 'website',
-          utm_medium: 'newsletter_page',
-          utm_campaign: 'zag_community'
-        }
-
-        console.log('Retrying with array form for custom_fields:', subscriberDataArray)
-        response = await postToBeehiiv(subscriberDataArray)
-      }
-    }
+    // Submit to Beehiiv API
+    const response = await fetch(`https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${BEEHIIV_API_KEY}`
+      },
+      body: JSON.stringify(subscriberData)
+    })
 
     if (!response.ok) {
-      let errorData: any
-      try {
-        errorData = await response.json()
-      } catch (_) {
-        errorData = { error: 'Unknown error parsing Beehiiv response' }
-      }
-      console.error('Beehiiv API error (after fallback if any):', errorData)
+      const errorData = await response.json()
+      console.error('Beehiiv API error:', errorData)
       console.error('Response status:', response.status)
       console.error('Response headers:', Object.fromEntries(response.headers.entries()))
-
+      
+      // Handle specific error cases
       if (response.status === 409) {
         return NextResponse.json(
           { error: 'You are already subscribed to our newsletter!' },
           { status: 409 }
         )
       }
+      
       return NextResponse.json(
         { error: 'Failed to subscribe to newsletter' },
         { status: 500 }

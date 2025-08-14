@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 
 interface NewsletterSignupProps {
@@ -25,9 +25,17 @@ export default function NewsletterSignup({
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [role, setRole] = useState('')
+  const [pagePath, setPagePath] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [message, setMessage] = useState('')
   const [isSuccess, setIsSuccess] = useState(false)
+
+  // Capture current page path for UTM attribution
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setPagePath(window.location.pathname)
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -39,6 +47,7 @@ export default function NewsletterSignup({
       email,
       name: showName ? name : undefined,
       role: showRole ? role : undefined,
+      pagePath
     }
     console.log('Form data being sent:', formData)
 
