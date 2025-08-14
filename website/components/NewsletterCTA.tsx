@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { Button } from './ui/button'
 
 interface NewsletterCTAProps {
-  variant?: 'default' | 'outline' | 'ghost'
-  size?: 'sm' | 'md' | 'lg'
+  variant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link'
+  size?: 'default' | 'sm' | 'lg' | 'icon'
   ctaSource: string
   children: React.ReactNode
   className?: string
@@ -13,7 +13,7 @@ interface NewsletterCTAProps {
 
 export default function NewsletterCTA({
   variant = 'default',
-  size = 'md',
+  size = 'default',
   ctaSource,
   children,
   className = ''
