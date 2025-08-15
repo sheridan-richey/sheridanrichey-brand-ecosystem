@@ -152,7 +152,7 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* Newsletter Signup */}
+        {/* Newsletter CTA */}
         <div className="mt-16 bg-gradient-to-br from-primary-500/5 to-light-teal/5 rounded-2xl p-8 border border-smoke">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="font-manrope text-2xl font-bold text-phantom mb-4">
@@ -162,15 +162,19 @@ export default function BlogPage() {
               Get weekly insights, strategies, and stories delivered to your inbox. 
               Join other awakened technologists on their transformation journey.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-smoke rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              />
-              <button className="font-manrope bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg transition-colors duration-200">
-                Subscribe
-              </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/newsletter"
+                className="font-manrope bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg transition-colors duration-200 font-semibold"
+              >
+                Join the Newsletter
+              </Link>
+              <Link 
+                href="/zag-matrix"
+                className="font-manrope border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-8 py-3 rounded-lg transition-colors duration-200 font-semibold"
+              >
+                Learn the Framework
+              </Link>
             </div>
           </div>
         </div>
