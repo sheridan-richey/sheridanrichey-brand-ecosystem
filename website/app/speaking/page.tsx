@@ -187,12 +187,12 @@ export default function SpeakingPage() {
               or community with actionable insights from the ZAG Matrix framework.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a 
-                href="mailto:sheridan@sheridanrichey.com?subject=Speaking%20Engagement%20Inquiry" 
-                className="bg-white text-primary-500 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-colors font-manrope"
+              <Link 
+                href="/contact?subject=Speaking%20Engagement&source=speaking" 
+                className="bg-white text-primary-500 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-colors font-manrope inline-flex items-center gap-2"
               >
-                Book a Consultation
-              </a>
+                Book a Speaking Engagement <ArrowRight className="h-4 w-4" />
+              </Link>
               <Link 
                 href="/contact" 
                 className="text-white hover:text-white/80 font-semibold font-manrope flex items-center gap-2"

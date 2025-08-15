@@ -39,6 +39,7 @@ export default function ContactForm() {
   useEffect(() => {
     const source = searchParams.get('source')
     const code = searchParams.get('code')
+    const subject = searchParams.get('subject')
     
     if (source === 'community' && code) {
       setFormData(prev => ({
@@ -46,6 +47,11 @@ export default function ContactForm() {
         subject: 'Community Access Request',
         communityCode: code,
         message: `I'm requesting access to The ZAG Collective community. Access Code: ${code}\n\nPlease tell me about your situation and how you're applying the ZAG Matrix framework...`
+      }))
+    } else if (subject) {
+      setFormData(prev => ({
+        ...prev,
+        subject: decodeURIComponent(subject)
       }))
     }
   }, [searchParams])
@@ -142,9 +148,32 @@ export default function ContactForm() {
         }
       }
       
-      // For now, we'll simulate a successful submission
-      // In production, this would send to your email service or API
-      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
+      // Submit contact form to our API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          newsletterSignup: formData.newsletterSignup,
+          communityCode: formData.communityCode,
+          source: searchParams.get('source') || 'contact_page'
+        })
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        console.error('Contact form submission failed:', errorData)
+        setSubmitStatus('error')
+        return
+      }
+
+      const result = await response.json()
+      console.log('Contact form submitted successfully:', result)
       
       setSubmitStatus('success')
       setFormData({ 
@@ -162,6 +191,7 @@ export default function ContactForm() {
       }, 5000)
       
     } catch (error) {
+      console.error('Contact form submission error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -190,6 +220,9 @@ export default function ContactForm() {
             Thank you! Your message has been sent successfully. I'll get back to you soon.
             {formData.newsletterSignup && newsletterStatus === 'success' && (
               <span className="block mt-2">You've also been subscribed to the newsletter!</span>
+            )}
+            {formData.subject === 'Speaking Engagement' && (
+              <span className="block mt-2">I'll review your speaking inquiry and get back to you within 24 hours.</span>
             )}
           </p>
         </div>
