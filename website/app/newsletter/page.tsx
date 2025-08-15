@@ -1,7 +1,7 @@
 'use client'
 
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight, CheckCircle, Target, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -120,7 +120,7 @@ export default function NewsletterPage() {
                              {/* Benefit 1: Foundation */}
                <div className="flex items-start gap-4">
                  <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
-                   <span className="text-2xl">⚡</span>
+                   <Zap className="h-6 w-6 text-primary-500" />
                  </div>
                  <div>
                    <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
@@ -136,7 +136,7 @@ export default function NewsletterPage() {
                {/* Benefit 2: Tools & Resources */}
                <div className="flex items-start gap-4">
                  <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
-                   <span className="text-2xl">🎯</span>
+                   <Target className="h-6 w-6 text-primary-500" />
                  </div>
                  <div>
                    <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
