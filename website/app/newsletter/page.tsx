@@ -98,7 +98,7 @@ export default function NewsletterPage() {
               </div>
             </div>
             <h1 className="font-manrope text-4xl md:text-5xl font-bold text-phantom mb-4">
-              Join the ZAG Community
+              Join the ZAG Newsletter
             </h1>
             <p className="font-manrope text-xl text-graphite">
               Connect with awakened technologists on their transformation journey. 
@@ -154,7 +154,7 @@ export default function NewsletterPage() {
                 </div>
                 <div>
                   <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
-                    Community Connection
+                    Newsletter Connection
                   </h3>
                   <p className="font-manrope text-graphite">
                     Connect with like-minded professionals who understand the challenges of mid-career 
@@ -167,7 +167,7 @@ export default function NewsletterPage() {
             {/* Trust Indicators */}
             <div className="mt-12 p-6 bg-cloud rounded-xl">
               <h3 className="font-manrope text-lg font-bold text-phantom mb-4">
-                What Our Community Says
+                What Our Newsletter Subscribers Say
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -277,7 +277,7 @@ export default function NewsletterPage() {
                   disabled={isSubmitting}
                   className="w-full font-manrope bg-primary-500 hover:bg-primary-600 disabled:bg-graphite text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Joining...' : 'Join the Community'}
+                  {isSubmitting ? 'Joining...' : 'Join the Newsletter'}
                   {!isSubmitting && <ArrowRight className="inline ml-2 h-4 w-4" />}
                 </button>
               </form>
@@ -311,13 +311,13 @@ export default function NewsletterPage() {
             </h2>
             <p className="font-manrope text-xl text-graphite mb-8 max-w-2xl mx-auto">
               Join hundreds of technologists who've already started their ZAG journey. 
-              Your transformation begins with one click.
+              Your transformation begins with one click above.
             </p>
             <Link 
               href="#top"
               className="inline-flex items-center font-manrope bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg transition-colors duration-200 font-medium text-lg"
             >
-              Join the Community Now
+              Back to Newsletter Signup
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
