@@ -1,11 +1,11 @@
-import Link from 'next/link'
-import { ArrowLeft, Calendar, Tag, Share2 } from 'lucide-react'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import { allPosts } from 'contentlayer/generated'
-import { notFound } from 'next/navigation'
 import AboutAuthor from '@/components/AboutAuthor'
 import { getAuthor } from '@/data/authors'
+import { allPosts } from 'contentlayer/generated'
+import { ArrowLeft, Calendar, Share2, Tag } from 'lucide-react'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = allPosts.find((p) => p.slug === params.slug)
@@ -153,7 +153,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 Explore the Framework
               </Link>
               <Link 
-                href="/contact"
+                href="/newsletter"
                 className="font-body border-2 border-[#279595] text-[#279595] hover:bg-[#279595] hover:text-white px-6 py-3 rounded-lg transition-colors duration-200"
               >
                 Join the Community

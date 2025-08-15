@@ -51,7 +51,7 @@ test.describe('Homepage Functionality', () => {
     await page.goto('/');
     
     // Look for CTA elements
-    const ctaElements = page.locator('text=Join, text=Community, text=Contact, text=Let\'s Talk, text=Transform');
+    const ctaElements = page.locator('text=Join, text=Newsletter, text=Contact, text=Let\'s Talk, text=Transform');
     
     if (await ctaElements.count() > 0) {
       await expect(ctaElements.first()).toBeVisible();
@@ -61,8 +61,8 @@ test.describe('Homepage Functionality', () => {
   test('homepage CTAs should link to correct pages', async ({ page }) => {
     await page.goto('/');
     
-    // Test newsletter/community CTA
-    const newsletterCTA = page.locator('a[href="/newsletter"], a[href="/community"], a:has-text("Join"), a:has-text("Community")');
+    // Test newsletter CTA
+    const newsletterCTA = page.locator('a[href="/newsletter"], a:has-text("Join"), a:has-text("Newsletter")');
     if (await newsletterCTA.count() > 0) {
       await expect(newsletterCTA.first()).toBeVisible();
       

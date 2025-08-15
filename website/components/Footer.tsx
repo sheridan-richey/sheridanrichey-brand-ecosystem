@@ -84,33 +84,33 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold leading-6 text-white">ZAG Matrix</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
-                    <Link href="/zag-matrix/zen" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
-                      ZEN Framework
+                    <Link href="/zag-matrix" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
+                      Framework Overview
                     </Link>
                   </li>
                   <li>
-                    <Link href="/zag-matrix/act" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
-                      ACT Framework
+                    <Link href="/resources" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
+                      Tools & Templates
                     </Link>
                   </li>
                   <li>
-                    <Link href="/zag-matrix/gem" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
-                      GEM Framework
+                    <Link href="/newsletter" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
+                      Weekly Insights
                     </Link>
                   </li>
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Connect</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
-                    <Link href="/privacy" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
-                      Privacy Policy
+                    <Link href="/newsletter" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
+                      Join Newsletter
                     </Link>
                   </li>
                   <li>
-                    <Link href="/terms" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
-                      Terms of Service
+                    <Link href="/speaking" className="text-sm leading-6 text-smoke hover:text-white transition-colors">
+                      Speaking Events
                     </Link>
                   </li>
                 </ul>

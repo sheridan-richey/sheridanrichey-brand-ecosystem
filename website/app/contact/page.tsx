@@ -101,7 +101,7 @@ export default function ContactPage() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a href="/newsletter" className="bg-white text-primary-500 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-colors font-manrope">
-                Join the Community
+                Join the Newsletter
               </a>
               <a href="/blog" className="text-white hover:text-white/80 font-semibold font-manrope">
                 Read the Blog →

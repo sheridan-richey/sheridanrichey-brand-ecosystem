@@ -6,7 +6,7 @@ class HomePage {
     // Navigation elements
     this.nav = page.locator('nav');
     this.navLinks = page.locator('nav a[href]');
-    this.communityButton = page.locator('nav a:has-text("Community")');
+    this.newsletterButton = page.locator('nav a:has-text("Newsletter")');
     this.mobileMenuButton = page.locator('button[aria-label="Open main menu"]');
     this.mobileMenu = page.locator('.lg\\:hidden.fixed');
     this.mobileCloseButton = page.locator('button[aria-label="Close menu"]');
@@ -21,7 +21,7 @@ class HomePage {
     this.latestInsightsSection = page.locator('text=Latest, text=Insights, text=Blog');
     
     // CTA sections
-    this.newsletterCTA = page.locator('a[href="/newsletter"], a:has-text("Join"), a:has-text("Community")');
+    this.newsletterCTA = page.locator('a[href="/newsletter"], a:has-text("Join"), a:has-text("Newsletter")');
     this.contactCTA = page.locator('a[href="/contact"], a:has-text("Contact"), a:has-text("Let\'s Talk")');
     
     // Page structure
@@ -41,8 +41,8 @@ class HomePage {
     await this.mobileCloseButton.click();
   }
 
-  async clickCommunityButton() {
-    await this.communityButton.click();
+  async clickNewsletterButton() {
+    await this.newsletterButton.click();
   }
 
   async clickNewsletterCTA() {

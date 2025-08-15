@@ -1,8 +1,7 @@
-import Link from 'next/link'
 import HeroSection from '@/components/HeroSection'
 import LatestInsights from '@/components/LatestInsights'
 import ZagMatrixOverview from '@/components/ZagMatrixOverview'
-import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function HomePage() {
   return (
@@ -26,7 +25,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link href="/newsletter" className="bg-white text-primary-500 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-colors font-manrope">
-                Join the Community
+                Join the Newsletter
               </Link>
               <Link href="/contact" className="text-white hover:text-white/80 font-semibold font-manrope">
                 Let's Talk <span aria-hidden="true">→</span>

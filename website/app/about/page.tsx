@@ -127,7 +127,7 @@ export default function AboutPage() {
                 Let's Work Together
               </Link>
               <Link href="/newsletter" className="btn-secondary">
-                Join the Community
+                Join the Newsletter
               </Link>
             </div>
           </div>

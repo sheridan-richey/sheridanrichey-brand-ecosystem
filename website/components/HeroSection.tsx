@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 import NewsletterSignup from "./NewsletterSignup"
 
@@ -132,8 +133,8 @@ export default function HeroSection() {
               size="lg"
               className="group font-manrope border-2 border-white text-white font-bold hover:bg-white hover:text-primary-600 px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-xl rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-none"
             >
-              <span className="hidden sm:inline">Join Community + Get AI Prompt Engineer Guide</span>
-              <span className="sm:hidden">Join Community + Get Guide</span>
+              <span className="hidden sm:inline">Join Newsletter + Get AI Prompt Engineer Guide</span>
+              <span className="sm:hidden">Join Newsletter + Get Guide</span>
               <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-200 text-lg sm:text-xl md:text-2xl">→</span>
             </Button>
           </div>
@@ -219,21 +220,25 @@ export default function HeroSection() {
             style={{ transitionDelay: isVisible ? "1.1s" : "0s" }}
           >
             {/* Only show the secondary and tertiary CTAs here */}
-            <Button
-              variant="outline"
-              size="lg"
-              className="font-manrope border-2 border-white text-white hover:bg-white hover:text-primary-600 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent hover:shadow-lg w-full sm:w-auto"
-            >
-              Learn About ZAG Matrix
-            </Button>
+            <Link href="/zag-matrix">
+              <Button
+                variant="outline"
+                size="lg"
+                className="font-manrope border-2 border-white text-white hover:bg-white hover:text-primary-600 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent hover:shadow-lg w-full sm:w-auto"
+              >
+                Learn About ZAG Matrix
+              </Button>
+            </Link>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="font-manrope border-2 border-white/50 text-white/90 hover:bg-white/10 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent w-full sm:w-auto"
-            >
-              Download Framework Overview
-            </Button>
+            <Link href="/resources">
+              <Button
+                variant="outline"
+                size="lg"
+                className="font-manrope border-2 border-white/50 text-white/90 hover:bg-white/10 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent w-full sm:w-auto"
+              >
+                Download Framework Overview
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
