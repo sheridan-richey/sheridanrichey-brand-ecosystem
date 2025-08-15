@@ -38,47 +38,50 @@ export default function ContactPage() {
                 </p>
                 
                 <div className="mt-10 space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500">
+                  <a 
+                    href="mailto:sheridan@sheridanrichey.com" 
+                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 group"
+                  >
+                    <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500 group-hover:bg-primary-600 transition-colors">
                       <Mail className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-phantom font-manrope">Email</h3>
-                      <a 
-                        href="mailto:sheridan@sheridanrichey.com" 
-                        className="text-graphite font-manrope hover:text-primary-500 transition-colors"
-                      >
+                      <h3 className="font-semibold text-phantom font-manrope group-hover:text-primary-500 transition-colors">Email</h3>
+                      <p className="text-graphite font-manrope group-hover:text-primary-500 transition-colors">
                         sheridan@sheridanrichey.com
-                      </a>
+                      </p>
                     </div>
-                  </div>
+                  </a>
                   
-                  <div className="flex items-center space-x-4">
-                    <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500">
+                  <a 
+                    href="https://linkedin.com/in/sheridanrichey" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 group"
+                  >
+                    <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500 group-hover:bg-primary-600 transition-colors">
                       <MessageSquare className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-phantom font-manrope">LinkedIn</h3>
-                      <a 
-                        href="https://linkedin.com/in/sheridanrichey" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-graphite font-manrope hover:text-primary-500 transition-colors"
-                      >
+                      <h3 className="font-semibold text-phantom font-manrope group-hover:text-primary-500 transition-colors">LinkedIn</h3>
+                      <p className="text-graphite font-manrope group-hover:text-primary-500 transition-colors">
                         linkedin.com/in/sheridanrichey
-                      </a>
+                      </p>
                     </div>
-                  </div>
+                  </a>
                   
-                  <div className="flex items-center space-x-4">
-                    <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500">
+                  <a 
+                    href="/speaking" 
+                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 group"
+                  >
+                    <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500 group-hover:bg-primary-600 transition-colors">
                       <Calendar className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-phantom font-manrope">Speaking</h3>
-                      <p className="text-graphite font-manrope">Available for conferences and events</p>
+                      <h3 className="font-semibold text-phantom font-manrope group-hover:text-primary-500 transition-colors">Speaking</h3>
+                      <p className="text-graphite font-manrope group-hover:text-primary-500 transition-colors">Available for conferences and events</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
               
