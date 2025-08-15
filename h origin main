@@ -1,0 +1,5 @@
+[33m9a8cbdb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m fix: Replace bogus newsletter signup with proper CTAs on blog page
+[33m96ade1b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m feat: Complete Community  Newsletter CTA migration + testing framework updates
+[33mba66171[m docs(cursor): consolidate and update all Cursor rules
+[33m87e9f03[m fix(resources): replace broken newsletter form with NewsletterCTA
+[33m35986e1[m feat(newsletter): centralize signup and CTA tracking

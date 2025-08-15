@@ -1,0 +1,187 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation "Global":
+    - link "Sheridan Richey SR - Sheridan Richey":
+      - /url: /
+      - text: Sheridan Richey
+      - img "SR - Sheridan Richey"
+    - link "Home":
+      - /url: /
+    - link "About":
+      - /url: /about
+    - link "Blog":
+      - /url: /blog
+    - link "Resources":
+      - /url: /resources
+    - link "Contact":
+      - /url: /contact
+    - link "Newsletter":
+      - /url: /newsletter
+- main:
+  - img
+  - img
+  - img
+  - img
+  - text: 20+ Years Executive Leadership
+  - heading "Awaken. Align. Achieve." [level=2]
+  - img "Sheridan Richey - Executive Leadership Coach"
+  - 'heading "From ''Meh'' to Mastery: The ZAG Matrix" [level=1]'
+  - button "Join Newsletter + Get AI Prompt Engineer Guide →"
+  - paragraph: Transform mid-career technologists into energized, purpose-driven leaders.
+  - paragraph: "Three interconnected pillars: ZEN • ACT • GEM"
+  - paragraph: 6 acquisitions • 3 successful exits • 60-point NPS improvements
+  - heading "Career Launcher" [level=3]
+  - paragraph: Launched dozens of careers to Director, VP, and CTO levels
+  - heading "Balanced Growth" [level=3]
+  - paragraph: Integrates career mastery with personal growth and relationships
+  - heading "AI-Powered" [level=3]
+  - paragraph: Leverage AI to accelerate your transformation and impact
+  - paragraph: Join me in building the next generation of energized technologists.
+  - link "Learn About ZAG Matrix":
+    - /url: /zag-matrix
+    - button "Learn About ZAG Matrix"
+  - link "Download Framework Overview":
+    - /url: /resources
+    - button "Download Framework Overview"
+  - button:
+    - img
+  - heading "Join The ZAG Navigator" [level=3]
+  - paragraph: Get weekly insights for awakened technologists. Plus, instant access to the AI Prompt Engineer's Guide.
+  - text: First Name
+  - textbox "First Name"
+  - text: Email Address *
+  - textbox "Email Address *"
+  - text: Current Role
+  - textbox "Current Role"
+  - button "Join The ZAG Navigator" [disabled]
+  - paragraph: Get weekly insights on career transformation, leadership, and the ZAG Matrix framework. Unsubscribe at any time.
+  - paragraph: "🎁 Free Resource: AI Prompt Engineer's Guide"
+  - paragraph: New subscribers get instant access to my comprehensive guide on using AI for career transformation
+  - heading "The ZAG Matrix Framework" [level=2]
+  - paragraph: A proven system for mid-career professionals seeking holistic transformation
+  - term:
+    - img
+    - text: ZEN (Zeal Evolves Now)
+  - definition:
+    - paragraph: Awaken to your authentic self and true purpose. Transform your mindset from reactive to proactive, building the foundation for sustainable growth.
+    - paragraph:
+      - link "Learn more":
+        - /url: /zag-matrix/zen
+  - term:
+    - img
+    - text: ACT (Activate Core Thrust)
+  - definition:
+    - paragraph: Align your energy, relationships, and systems. Create the momentum and support system needed for breakthrough growth.
+    - paragraph:
+      - link "Learn more":
+        - /url: /zag-matrix/act
+  - term:
+    - img
+    - text: GEM (Growth Earns Mastery)
+  - definition:
+    - paragraph: Achieve mastery through strategic career moves, investments, and entrepreneurial growth. Master the art of compounding success.
+    - paragraph:
+      - link "Learn more":
+        - /url: /zag-matrix/gem
+  - heading "Latest Insights" [level=2]
+  - paragraph: Practical wisdom for your transformation journey
+  - article:
+    - text: Leadership Featured
+    - 'heading "The ZAG Matrix: A Framework for Awakened Technologists" [level=3]'
+    - paragraph: Discover how the ZAG Matrix helps mid-career professionals integrate clarity, momentum, and mastery into purpose-driven careers. A proven framework for those who've achieved success but crave greater meaning.
+    - img
+    - text: Sheridan Richey • Founder & Chief Strategist
+    - img
+    - text: Jul 21, 2025
+    - link "Read More →":
+      - /url: /blog/zag-matrix-framework-introduction
+  - article:
+    - text: GEM
+    - 'heading "System Architect for Life: Applying Engineering Principles to Personal Transformation" [level=3]'
+    - paragraph: How the principles of systems architecture can transform not just software, but your entire approach to life, relationships, and career growth. A framework for building sustainable, scalable personal systems.
+    - img
+    - text: Sean Hokanson • Contributing Editor & Systems Architect
+    - img
+    - text: Jul 26, 2025
+    - link "Read More →":
+      - /url: /blog/system-architect-for-life
+  - article:
+    - text: ZEN
+    - heading "Finding Clarity When You're Stuck in Success" [level=3]
+    - paragraph: How to break through the plateau of achievement and discover what truly drives you forward in your career and life.
+    - img
+    - text: Sheridan Richey • Founder & Chief Strategist
+    - img
+    - text: Jan 16, 2024
+    - link "Read More →":
+      - /url: /blog/finding-clarity-mid-career
+  - link "View All Posts":
+    - /url: /blog
+    - text: View All Posts
+    - img
+  - heading "Ready to Transform Your Career?" [level=2]
+  - paragraph: Join our community of awakened technologists and get exclusive insights, frameworks, and strategies delivered to your inbox.
+  - link "Join the Newsletter":
+    - /url: /newsletter
+  - link "Let's Talk":
+    - /url: /contact
+- contentinfo:
+  - img "Sheridan Richey"
+  - paragraph: Helping awakened technologists transform their careers and lives through the ZAG Matrix framework.
+  - link "LinkedIn":
+    - /url: https://linkedin.com/in/sheridanrichey
+    - text: LinkedIn
+    - img
+  - link "Twitter":
+    - /url: https://twitter.com/sheridanrichey
+    - text: Twitter
+    - img
+  - heading "Content" [level=3]
+  - list:
+    - listitem:
+      - link "Blog":
+        - /url: /blog
+    - listitem:
+      - link "Resources":
+        - /url: /resources
+    - listitem:
+      - link "Newsletter":
+        - /url: /newsletter
+  - heading "Company" [level=3]
+  - list:
+    - listitem:
+      - link "About":
+        - /url: /about
+    - listitem:
+      - link "Contributors":
+        - /url: /contributors
+    - listitem:
+      - link "Contact":
+        - /url: /contact
+    - listitem:
+      - link "Speaking":
+        - /url: /speaking
+  - heading "ZAG Matrix" [level=3]
+  - list:
+    - listitem:
+      - link "Framework Overview":
+        - /url: /zag-matrix
+    - listitem:
+      - link "Tools & Templates":
+        - /url: /resources
+    - listitem:
+      - link "Weekly Insights":
+        - /url: /newsletter
+  - heading "Connect" [level=3]
+  - list:
+    - listitem:
+      - link "Join Newsletter":
+        - /url: /newsletter
+    - listitem:
+      - link "Speaking Events":
+        - /url: /speaking
+  - paragraph: © 2025 Sheridan Richey. All rights reserved.
+- alert
+```
