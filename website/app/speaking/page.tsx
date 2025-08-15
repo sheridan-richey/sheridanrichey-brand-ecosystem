@@ -1,4 +1,4 @@
-import { Calendar, Users, TrendingUp, MessageSquare, ArrowRight } from 'lucide-react'
+import { ArrowRight, MessageSquare, TrendingUp, Users } from 'lucide-react'
 import Link from 'next/link'
 
 export default function SpeakingPage() {
