@@ -1,7 +1,7 @@
 'use client'
 
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
-import { ArrowRight, CheckCircle, Target, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Star, Target, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -149,21 +149,21 @@ export default function NewsletterPage() {
                  </div>
                </div>
 
-               {/* Benefit 3: Direct Access to Expertise */}
-               <div className="flex items-start gap-4">
-                 <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
-                   <span className="text-2xl">⭐</span>
-                 </div>
-                 <div>
-                   <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
-                     Direct Access to Executive Expertise
-                   </h3>
-                   <p className="font-manrope text-graphite">
-                     Learn directly from someone who's walked the path. Get insights from 15+ years 
-                     of executive experience, M&A success, and team leadership at scale.
-                   </p>
-                 </div>
-               </div>
+                               {/* Benefit 3: Direct Access to Expertise */}
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
+                    <Star className="h-6 w-6 text-primary-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
+                      Direct Access to Executive Expertise
+                    </h3>
+                    <p className="font-manrope text-graphite">
+                      Learn directly from someone who's walked the path. Get insights from 15+ years 
+                      of executive experience, M&A success, and team leadership at scale.
+                    </p>
+                  </div>
+                </div>
             </div>
 
             {/* Trust Indicators */}
