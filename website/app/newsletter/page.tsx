@@ -1,8 +1,7 @@
 'use client'
 
-import NewsletterTest from '@/components/NewsletterTest'
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
-import { ArrowRight, CheckCircle, Target, Users, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Target, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -118,6 +117,7 @@ export default function NewsletterPage() {
             </h2>
             
             <div className="space-y-6">
+              {/* Benefit 1: Foundation */}
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
                   <Zap className="h-6 w-6 text-primary-500" />
@@ -133,13 +133,14 @@ export default function NewsletterPage() {
                 </div>
               </div>
 
+              {/* Benefit 2: Tools & Resources */}
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
                   <Target className="h-6 w-6 text-primary-500" />
                 </div>
                 <div>
                   <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
-                    Exclusive Resources
+                    Exclusive Resources & Tools
                   </h3>
                   <p className="font-manrope text-graphite">
                     Access to frameworks, templates, and tools that help you apply the ZAG Matrix 
@@ -148,17 +149,18 @@ export default function NewsletterPage() {
                 </div>
               </div>
 
+              {/* Benefit 3: Direct Access to Expertise */}
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
-                  <Users className="h-6 w-6 text-primary-500" />
+                  <span className="text-2xl">⭐</span>
                 </div>
                 <div>
                   <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
-                    Newsletter Connection
+                    Direct Access to Executive Expertise
                   </h3>
                   <p className="font-manrope text-graphite">
-                    Connect with like-minded professionals who understand the challenges of mid-career 
-                    transformation. Share experiences and learn from others on similar journeys.
+                    Learn directly from someone who's walked the path. Get insights from 15+ years 
+                    of executive experience, M&A success, and team leadership at scale.
                   </p>
                 </div>
               </div>
@@ -292,11 +294,6 @@ export default function NewsletterPage() {
             {/* ZAG Matrix Preview */}
             <div className="mt-8">
               <ZagMatrixSidebar />
-            </div>
-
-            {/* Newsletter Test Component - Remove in production */}
-            <div className="mt-8">
-              <NewsletterTest />
             </div>
           </div>
         </div>
