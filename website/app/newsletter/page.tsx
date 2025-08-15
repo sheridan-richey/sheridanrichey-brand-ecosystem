@@ -1,7 +1,7 @@
 'use client'
 
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
-import { ArrowRight, BookOpen, CheckCircle, Star, Target, Zap } from 'lucide-react'
+import { ArrowRight, BookOpen, CheckCircle, Star, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -116,78 +116,99 @@ export default function NewsletterPage() {
               What You'll Get
             </h2>
             
-            <div className="space-y-6">
-                             {/* Benefit 1: Foundation */}
+                         <div className="space-y-6">
+               {/* Benefit 1: ZEN Insights */}
                <div className="flex items-start gap-4">
                  <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
                    <Zap className="h-6 w-6 text-primary-500" />
                  </div>
                  <div>
                    <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
-                     Weekly ZAG Insights
+                     ZEN Insights
                    </h3>
                    <p className="font-manrope text-graphite">
-                     Practical strategies for integrating clarity, momentum, and mastery into your career. 
-                     Real stories from technologists who've transformed their professional lives.
+                     Mental clarity strategies, purpose discovery, and resilience building techniques from my executive career. 
+                     Every week, get actionable insights to awaken your authentic self and true purpose.
                    </p>
                  </div>
                </div>
 
-                               {/* Benefit 2: Tools & Resources */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
-                    <BookOpen className="h-6 w-6 text-primary-500" />
-                  </div>
-                  <div>
-                    <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
-                      Exclusive Resources & Tools
-                    </h3>
-                    <p className="font-manrope text-graphite">
-                      Access to frameworks, templates, and tools that help you apply the ZAG Matrix 
-                      to your specific situation. Plus early access to new content and courses.
-                    </p>
-                  </div>
-                </div>
+               {/* Benefit 2: ACT Strategies */}
+               <div className="flex items-start gap-4">
+                 <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
+                   <BookOpen className="h-6 w-6 text-primary-500" />
+                 </div>
+                 <div>
+                   <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
+                     ACT Strategies
+                   </h3>
+                   <p className="font-manrope text-graphite">
+                     Physical well-being tips, relationship building frameworks, and momentum creation methods. 
+                     Access to frameworks, templates, and tools that help you apply the ZAG Matrix to your specific situation.
+                   </p>
+                 </div>
+               </div>
 
-                               {/* Benefit 3: Direct Access to Expertise */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
-                    <Star className="h-6 w-6 text-primary-500" />
-                  </div>
-                  <div>
-                    <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
-                      Direct Access to Executive Expertise
-                    </h3>
-                    <p className="font-manrope text-graphite">
-                      Learn directly from someone who's walked the path. Get insights from 15+ years 
-                      of executive experience, M&A success, and team leadership at scale.
-                    </p>
-                  </div>
-                </div>
-            </div>
+               {/* Benefit 3: GEM Guidance */}
+               <div className="flex items-start gap-4">
+                 <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
+                   <Star className="h-6 w-6 text-primary-500" />
+                 </div>
+                 <div>
+                   <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
+                     GEM Guidance
+                   </h3>
+                   <p className="font-manrope text-graphite">
+                     Strategic career moves, investment insights, and entrepreneurial growth strategies. 
+                     Learn directly from someone who's walked the path with 15+ years of executive experience, M&A success, and team leadership at scale.
+                   </p>
+                 </div>
+               </div>
+             </div>
 
-            {/* Trust Indicators */}
-            <div className="mt-12 p-6 bg-cloud rounded-xl">
-              <h3 className="font-manrope text-lg font-bold text-phantom mb-4">
-                What Our Newsletter Subscribers Say
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary-500 mt-0.5" />
-                  <p className="font-manrope text-graphite">
-                    "The ZAG framework helped me find clarity in my career direction and build the momentum 
-                    I needed to make meaningful changes."
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary-500 mt-0.5" />
-                  <p className="font-manrope text-graphite">
-                    "Sheridan's insights are practical and actionable. I've implemented several strategies 
-                    that have already made a difference in my professional life."
-                  </p>
-                </div>
-              </div>
-            </div>
+                         {/* Newsletter Value Proposition */}
+             <div className="mt-12 p-6 bg-cloud rounded-xl">
+               <h3 className="font-manrope text-lg font-bold text-phantom mb-4">
+                 The ZAG Navigator: Your Weekly Compass
+               </h3>
+               <div className="space-y-4">
+                 <p className="font-manrope text-graphite">
+                   The ZAG Navigator newsletter is your <strong>weekly compass</strong> for navigating the journey of the "Awakened Technologist." 
+                   Every week, I share insights, strategies, and actionable frameworks from my executive career and the ZAG Matrix methodology.
+                 </p>
+                 <p className="font-manrope text-graphite">
+                   This is where you'll find <strong>polished, high-value content</strong> that helps you understand the framework, 
+                   implement the principles, and see real examples of how ZEN, ACT, and GEM work in practice.
+                 </p>
+                 <p className="font-manrope text-graphite">
+                   Think of it as your <strong>personal mentorship</strong> delivered directly to your inbox—no fluff, 
+                   just actionable insights that help you move from reading about success to living it.
+                 </p>
+               </div>
+             </div>
+
+             {/* Trust Indicators */}
+             <div className="mt-8 p-6 bg-cloud rounded-xl">
+               <h3 className="font-manrope text-lg font-bold text-phantom mb-4">
+                 What Our Newsletter Subscribers Say
+               </h3>
+               <div className="space-y-4">
+                 <div className="flex items-start gap-3">
+                   <CheckCircle className="h-5 w-5 text-primary-500 mt-0.5" />
+                   <p className="font-manrope text-graphite">
+                     "The ZAG framework helped me find clarity in my career direction and build the momentum 
+                     I needed to make meaningful changes."
+                   </p>
+                 </div>
+                 <div className="flex items-start gap-3">
+                   <CheckCircle className="h-5 w-5 text-primary-500 mt-0.5" />
+                   <p className="font-manrope text-graphite">
+                     "Sheridan's insights are practical and actionable. I've implemented several strategies 
+                     that have already made a difference in my professional life."
+                   </p>
+                 </div>
+               </div>
+             </div>
           </div>
 
           {/* Right Column - Signup Form */}
