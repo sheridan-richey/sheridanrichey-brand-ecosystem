@@ -1,5 +1,6 @@
+import { ArrowRight, BookOpen, Download, ExternalLink, FileText, Users, Wrench } from 'lucide-react'
 import Link from 'next/link'
-import { ArrowRight, BookOpen, Wrench, Users, FileText, ExternalLink, Download } from 'lucide-react'
+import NewsletterCTA from '../../components/NewsletterCTA'
 
 export default function ResourcesPage() {
   return (
@@ -349,7 +350,7 @@ export default function ResourcesPage() {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
+        {/* Newsletter CTA */}
         <div className="mt-16 bg-gradient-to-br from-primary-500/5 to-light-teal/5 rounded-2xl p-8 border border-smoke">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="font-manrope text-2xl font-bold text-phantom mb-4">
@@ -358,16 +359,9 @@ export default function ResourcesPage() {
             <p className="font-manrope text-graphite mb-6">
               Join other awakened technologists receiving weekly insights, tools, and strategies for integrating clarity, momentum, and mastery into their careers.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-smoke rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              />
-              <button className="font-manrope bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg transition-colors duration-200">
-                Subscribe
-              </button>
-            </div>
+            <NewsletterCTA ctaSource="resources_page" className="mx-auto">
+              Subscribe to Newsletter
+            </NewsletterCTA>
             <p className="font-manrope text-xs text-graphite mt-3">
               No spam, ever. Unsubscribe anytime.
             </p>
