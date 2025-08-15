@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 interface FormData {
   name: string
@@ -8,6 +9,7 @@ interface FormData {
   subject: string
   message: string
   newsletterSignup: boolean
+  communityCode?: string
 }
 
 interface FormErrors {
@@ -18,17 +20,35 @@ interface FormErrors {
 }
 
 export default function ContactForm() {
+  const searchParams = useSearchParams()
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
     message: '',
-    newsletterSignup: false
+    newsletterSignup: false,
+    communityCode: ''
   })
   
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  // Handle URL parameters for community access
+  useEffect(() => {
+    const source = searchParams.get('source')
+    const code = searchParams.get('code')
+    
+    if (source === 'community' && code) {
+      setFormData(prev => ({
+        ...prev,
+        subject: 'Community Access Request',
+        communityCode: code,
+        message: `I'm requesting access to The ZAG Collective community. Access Code: ${code}\n\nPlease tell me about your situation and how you're applying the ZAG Matrix framework...`
+      }))
+    }
+  }, [searchParams])
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
@@ -48,13 +68,46 @@ export default function ContactForm() {
     }
     
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required'
+      newErrors.message = 'Message must be at least 10 characters long'
     } else if (formData.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters long'
     }
     
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
+  }
+
+  const handleNewsletterSignup = async (): Promise<boolean> => {
+    if (!formData.newsletterSignup) return true
+    
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          name: formData.name,
+          role: 'Community Member',
+          ctaSource: 'contact_form'
+        })
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        console.error('Newsletter signup failed:', errorData)
+        setNewsletterStatus('error')
+        return false
+      }
+
+      setNewsletterStatus('success')
+      return true
+    } catch (error) {
+      console.error('Newsletter signup error:', error)
+      setNewsletterStatus('error')
+      return false
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -68,15 +121,13 @@ export default function ContactForm() {
     setSubmitStatus('idle')
     
     try {
-      // Handle different submission types
-      if (formData.subject === 'Speaking Engagement') {
-        // For speaking inquiries, could integrate with Beehiiv or redirect to speaking page
-        console.log('Speaking inquiry - could integrate with Beehiiv')
-      }
-      
+      // Handle newsletter signup first if checked
       if (formData.newsletterSignup) {
-        // Handle newsletter signup - could integrate with Beehiiv
-        console.log('Newsletter signup - could integrate with Beehiiv')
+        const newsletterSuccess = await handleNewsletterSignup()
+        if (!newsletterSuccess) {
+          // Continue with form submission even if newsletter fails
+          console.warn('Newsletter signup failed, but continuing with form submission')
+        }
       }
       
       // For now, we'll simulate a successful submission
@@ -84,7 +135,14 @@ export default function ContactForm() {
       await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
       
       setSubmitStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '', newsletterSignup: false })
+      setFormData({ 
+        name: '', 
+        email: '', 
+        subject: '', 
+        message: '', 
+        newsletterSignup: false,
+        communityCode: ''
+      })
       
       // Reset success message after 5 seconds
       setTimeout(() => {
@@ -108,12 +166,19 @@ export default function ContactForm() {
     }
   }
 
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({ ...prev, newsletterSignup: e.target.checked }))
+  }
+
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-smoke p-8">
       {submitStatus === 'success' && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800 font-medium">
             Thank you! Your message has been sent successfully. I'll get back to you soon.
+            {formData.newsletterSignup && newsletterStatus === 'success' && (
+              <span className="block mt-2">You've also been subscribed to the newsletter!</span>
+            )}
           </p>
         </div>
       )}
@@ -122,6 +187,14 @@ export default function ContactForm() {
         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
           <p className="text-red-800 font-medium">
             Sorry, there was an error sending your message. Please try again or email me directly at sheridan@sheridanrichey.com
+          </p>
+        </div>
+      )}
+
+      {newsletterStatus === 'error' && (
+        <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <p className="text-yellow-800 font-medium">
+            Your message was sent, but there was an issue with the newsletter signup. You can subscribe separately on the newsletter page.
           </p>
         </div>
       )}
@@ -181,6 +254,7 @@ export default function ContactForm() {
             }`}
           >
             <option value="">Select a topic</option>
+            <option value="Community Access Request">Community Access Request</option>
             <option value="Executive Coaching">Executive Coaching</option>
             <option value="Speaking Engagement">Speaking Engagement</option>
             <option value="ZAG Matrix Workshop">ZAG Matrix Workshop</option>
@@ -211,6 +285,17 @@ export default function ContactForm() {
             <p className="mt-1 text-sm text-red-600">{errors.message}</p>
           )}
         </div>
+
+        {formData.communityCode && (
+          <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+            <p className="text-teal-800 text-sm font-medium">
+              Community Access Code: <code className="bg-teal-100 px-2 py-1 rounded font-mono">{formData.communityCode}</code>
+            </p>
+            <p className="text-teal-700 text-sm mt-1">
+              This code shows you've read the community page and understand the process.
+            </p>
+          </div>
+        )}
         
         <div className="flex items-center">
           <input
@@ -218,7 +303,7 @@ export default function ContactForm() {
             name="newsletterSignup"
             type="checkbox"
             checked={formData.newsletterSignup}
-            onChange={(e) => setFormData(prev => ({ ...prev, newsletterSignup: e.target.checked }))}
+            onChange={handleCheckboxChange}
             className="h-4 w-4 text-primary-500 focus:ring-primary-500 border-smoke rounded"
           />
           <label htmlFor="newsletterSignup" className="ml-2 block text-sm text-graphite font-manrope">

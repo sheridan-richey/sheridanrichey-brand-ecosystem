@@ -1,5 +1,5 @@
+import { ArrowRight, Key, MessageCircle, Shield, Users } from 'lucide-react'
 import Link from 'next/link'
-import { ArrowRight, Users, MessageCircle, Shield, Zap, Target, Star } from 'lucide-react'
 
 export default function CommunityPage() {
   return (
@@ -148,6 +148,31 @@ export default function CommunityPage() {
             </div>
           </div>
 
+          {/* Community Access Code Section */}
+          <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-8 text-white mb-16">
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Key className="h-6 w-6 text-white" />
+                </div>
+              </div>
+              <h2 className="text-3xl font-bold mb-4">
+                Community Access Code
+              </h2>
+              <p className="text-xl mb-6 opacity-90">
+                Use this code when requesting community access to show you've read this page and understand the process.
+              </p>
+              <div className="bg-white/20 rounded-lg p-4 mb-6 inline-block">
+                <code className="text-2xl font-mono font-bold text-white tracking-wider">
+                  ZAG2025
+                </code>
+              </div>
+              <p className="text-sm opacity-75">
+                Include this code in your contact form message when requesting community access.
+              </p>
+            </div>
+          </div>
+
           {/* CTA Section */}
           <div className="text-center bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-12 text-white">
             <h2 className="text-3xl font-bold mb-4">
@@ -165,7 +190,7 @@ export default function CommunityPage() {
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/contact"
+                href="/contact?source=community&code=ZAG2025"
                 className="group border-2 border-white text-white hover:bg-white hover:text-teal-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
               >
                 Request Community Access
