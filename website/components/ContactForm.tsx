@@ -81,6 +81,15 @@ export default function ContactForm() {
     if (!formData.newsletterSignup) return true
     
     try {
+      // Determine the source for more accurate attribution
+      let ctaSource = 'contact_form'
+      let medium = 'contact_form'
+      
+      if (formData.communityCode) {
+        ctaSource = 'community_contact_form'
+        medium = 'community_access'
+      }
+      
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: {
@@ -90,7 +99,10 @@ export default function ContactForm() {
           email: formData.email,
           name: formData.name,
           role: 'Community Member',
-          ctaSource: 'contact_form'
+          ctaSource: ctaSource,
+          medium: medium,
+          source: 'website',
+          campaign: 'zag_community'
         })
       })
 

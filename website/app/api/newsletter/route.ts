@@ -4,10 +4,10 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { email, name, role, ctaSource } = body
+    const { email, name, role, ctaSource, medium, source, campaign } = body
 
     // Debug logging
-    console.log('Newsletter signup request:', { email, name, role, ctaSource })
+    console.log('Newsletter signup request:', { email, name, role, ctaSource, medium, source, campaign })
 
     // Validate required fields
     if (!email) {
@@ -29,20 +29,22 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Prepare subscriber data for Beehiiv
+    // Prepare subscriber data for Beehiiv with improved attribution
     const subscriberData = {
       email: email,
       custom_fields: [
         { name: 'first_name', value: name || '' },
         { name: 'role', value: role || '' },
-        { name: 'source', value: 'website_signup' },
-        { name: 'cta_source', value: ctaSource || 'newsletter_page' }
+        { name: 'source', value: source || 'website' },
+        { name: 'cta_source', value: ctaSource || 'contact_form' },
+        { name: 'medium', value: medium || 'contact_form' },
+        { name: 'campaign', value: campaign || 'zag_community' }
       ],
       reactivate_existing: false,
       send_welcome_email: true,
-      utm_source: 'website',
-      utm_medium: 'newsletter_page',
-      utm_campaign: 'zag_community'
+      utm_source: source || 'website',
+      utm_medium: medium || 'contact_form',
+      utm_campaign: campaign || 'zag_community'
     }
 
     console.log('Subscriber data for Beehiiv:', subscriberData)
