@@ -13,3 +13,13 @@
 
 ## Documentation
 - Keep `README.md` and `TESTING_STRATEGY.md` up to date with any changes to the testing approach or critical workflows. 
+
+## Deployment
+- **Model:** GitOps via Vercel. Pushing to `main` auto-deploys to production. Opening a PR creates a Vercel Preview deployment.
+- **Branching:** Feature branches → PR → CI checks (build, lint, E2E) must pass → merge to `main`.
+- **Environments:**
+  - Preview: every PR (share links with reviewers).
+  - Production: `main` only.
+- **Secrets:** Managed in Vercel Project Settings → Environment Variables. No secrets in repo.
+- **Rollback:** Revert the offending commit in Git (preferred) or redeploy a previous build from the Vercel dashboard.
+- **CLI:** Optional. Do not use `vercel --prod` for routine deploys unless the pipeline is blocked.

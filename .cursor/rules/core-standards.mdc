@@ -1,7 +1,7 @@
-# Sheridan Richey Brand Ecosystem - Core Guidelines
+# Core Development & Project Standards
 
-## ZAG Matrix Framework
-All content and development must align with the ZAG Matrix framework:
+## ZAG Matrix Framework Integration
+All development and content must align with the ZAG Matrix framework:
 
 ### ZEN (Zeal Evolves Now)
 - Mental clarity, purpose, and resilience
@@ -24,6 +24,15 @@ All content and development must align with the ZAG Matrix framework:
 - Interested in entrepreneurial endeavors and strategic growth
 - Values both professional achievement and personal fulfillment
 
+## Technical Standards
+- Use TypeScript strict mode
+- Follow Next.js 13+ App Router patterns
+- Implement responsive design with Tailwind CSS
+- Write self-documenting code with clear comments
+- Include JSDoc comments for complex functions
+- Use semantic HTML and accessibility best practices
+- Include proper error handling and loading states
+
 ## Content Principles
 - Professional but approachable tone
 - Connect all insights back to ZAG Matrix framework
@@ -31,24 +40,22 @@ All content and development must align with the ZAG Matrix framework:
 - Focus on actionable, implementable advice
 - Maintain authority while being accessible
 
-## Technical Standards
-- Use TypeScript strict mode
-- Follow Next.js 13+ App Router patterns
-- Implement responsive design with Tailwind CSS
-- Write self-documenting code with clear comments
-- Include JSDoc comments for complex functions
+## Testing Standards
+- Use Playwright for end-to-end testing
+- Test all critical user flows
+- Validate responsive design across screen sizes
+- Ensure accessibility compliance
+- Test form submissions and API integrations
+- Verify navigation and link functionality
+- Check for proper error handling
 
-## File Organization (PARA System)
-- **1P** - Time-bound objectives (Projects) with YYYYMMDD prefix
-- **2A** - Ongoing responsibilities (Areas) - no date prefix  
-- **3R** - Reference materials (Resources) - no date prefix
-- **4A** - Completed work (Archives) with YYYYMMDD-COMPLETED suffix
-
-## Key Project Files
-- [Brand Ecosystem Project Tracker](mdc:1P/20250727-brand-ecosystem-project-tracker.md)
-- [Newsletter Integration Project](mdc:1P/newsletter-beehiiv-integration/README.md)
-- [ZAG Matrix Framework](mdc:website/app/zag-matrix/page.tsx)
-- [Main Website](mdc:website/app/page.tsx)
+## Performance & Security
+- Optimize images and assets for web delivery
+- Implement proper caching strategies
+- Use CDN for static assets
+- Monitor Core Web Vitals and performance metrics
+- Validate all user inputs and implement proper authentication
+- Use HTTPS for all communications
 description:
 globs:
 alwaysApply: false

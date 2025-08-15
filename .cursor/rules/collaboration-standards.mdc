@@ -1,50 +1,47 @@
-# Collaboration Standards
+# Collaboration & Team Standards
 
-## Git Workflow
-- **Branch Strategy**: main (protected), feature/[name], fix/[name], docs/[name]
-- **Commit Messages**: Use format `type(scope): description`
-  - Examples: `feat(website): add new ZAG Matrix component`, `fix(blog): resolve MDX rendering issue`
-- **PR Process**: Create feature branch → focused changes → descriptive PR → review → merge
+## Team Structure
+- **Sheridan Richey** - Project owner and brand strategist
+- **Sean** - Team member and collaborator
+- **AI Assistant** - Development and content support
 
-## Code Standards
-- **TypeScript**: Use strict mode, proper type definitions, functional components with hooks
-- **React**: Follow Next.js 13+ App Router patterns
-- **Styling**: Tailwind CSS, responsive design, consistent spacing/typography
-- **File Organization**: 
-  - Components: [website/components/](mdc:website/components/)
-  - Pages: [website/app/](mdc:website/app/)
-  - Blog posts: [website/posts/](mdc:website/posts/)
-  - Content: [content/](mdc:content/)
-  - Tests: [tests/](mdc:tests/)
+## Communication Channels
+- **Slack Community** - Primary team communication
+- **GitHub** - Code collaboration and version control
+- **Project Documentation** - PARA system for project tracking
+- **Session Handoffs** - Clear documentation between sessions
 
-## Naming Conventions
-- **Components**: PascalCase (e.g., `ZagMatrixSidebar.tsx`)
-- **Files**: kebab-case (e.g., `zag-matrix-page.tsx`)
-- **Functions**: camelCase (e.g., `handleNewsletterSignup`)
-- **Constants**: UPPER_SNAKE_CASE (e.g., `ZAG_MATRIX_PILLARS`)
+## Collaboration Standards
+- Use clear communication channels
+- Document decisions and rationale
+- Maintain project history and learnings
+- Share progress updates regularly
+- Celebrate project completions
 
-## Brand Consistency
-- **ZAG Matrix Framework**: All content must connect to ZEN, ACT, GEM
-- **Target Audience**: "Alex, the Awakened Technologist" - mid-career professionals seeking purpose
-- **Tone**: Professional but approachable, confident, actionable insights
-- **Examples**: Include specific examples from Sheridan's career
+## Project Handoff Process
+- Create comprehensive session documentation
+- Update project trackers and status files
+- Document decisions made and rationale
+- Note any known issues or limitations
+- Provide clear next steps and priorities
 
-## Communication
-- **Primary**: Email for longer-form updates and planning
-- **Project Updates**: GitHub Issues/PRs for code discussions
-- **Quick Questions**: Slack DM when both online
-- **No Fixed Schedule**: Flexible, ad-hoc collaboration
-- **Response Time**: 24-48 hours for email, few days for GitHub Issues
+## Team Onboarding
+- Use established onboarding templates
+- Provide environment setup guides
+- Share collaboration guidelines
+- Establish communication protocols
+- Document team member responsibilities
+
+## Knowledge Sharing
+- Maintain comprehensive project documentation
+- Use PARA system for organization
+- Create reusable templates and guides
+- Document lessons learned
+- Share best practices and standards
 
 ## Quality Assurance
-Before submitting PRs:
-- [ ] Code follows TypeScript and React best practices
-- [ ] All tests pass
-- [ ] Responsive design works on multiple screen sizes
-- [ ] Brand consistency maintained
-- [ ] ZAG Matrix framework integrated appropriately
-- [ ] Documentation updated if needed
-description:
-globs:
-alwaysApply: false
----
+- Review all changes before deployment
+- Test functionality across environments
+- Validate against brand guidelines
+- Ensure ZAG Matrix alignment
+- Maintain code quality standards

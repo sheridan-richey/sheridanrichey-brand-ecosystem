@@ -1,33 +1,27 @@
-# Vercel Configuration Location Rule
+# Vercel Configuration & Deployment
 
-## Critical: vercel.json Must Stay in Website Directory
+## Vercel Configuration Files
+- [vercel.json](mdc:vercel.json) - Root level Vercel configuration
+- [website/vercel.json](mdc:website/vercel.json) - Website-specific configuration (if exists)
 
-**NEVER move `vercel.json` to the root directory of this monorepo.**
+## Deployment Configuration
+- **Project ID**: prj_Z0L8peVOikrqGnjPmTq023GFz4Kh
+- **Team ID**: team_SXzIcySViXy1FSCVMJ9Si9pE
+- **Production URL**: https://sheridanrichey.com
+- **Framework**: Next.js with App Router
 
-### Correct Location
-- `vercel.json` should always be located at: `[website/vercel.json](mdc:website/vercel.json)`
-- This is the correct location for the Next.js application in this monorepo structure
+## Environment Variables
+- **Beehiiv API Key**: Stored in Vercel dashboard
+- **Newsletter Configuration**: Managed via Vercel environment variables
+- **API Endpoints**: Configured for production deployment
 
-### Why This Matters
-- The Vercel project is configured with Root Directory set to `website`
-- Moving `vercel.json` to the root causes deployment conflicts
-- The root directory contains other project files that are not part of the web application
+## Deployment Triggers
+- **Automatic**: Push to main branch
+- **Preview**: Pull request deployments
+- **Manual**: Vercel CLI deployment (fallback)
 
-### What to Do Instead
-- If `vercel.json` needs to be created or modified, always place it in the `website/` directory
-- If you find `vercel.json` in the root directory, move it to `website/vercel.json`
-- The Vercel dashboard settings (Root Directory: `website`) handle the monorepo configuration
-
-### Related Files
-- [website/vercel.json](mdc:website/vercel.json) - The correct location for Vercel configuration
-- [website/next.config.js](mdc:website/next.config.js) - Next.js configuration
-- [website/package.json](mdc:website/package.json) - Application dependencies
-
-### Deployment Context
-- Vercel is configured to use `website` as the root directory
-- Static files are served from `website/public/`
-- Build commands run from within the `website/` directory
-description:
-globs:
-alwaysApply: false
----
+## Configuration Management
+- Environment variables managed in Vercel dashboard
+- Configuration files committed to repository
+- Sensitive data excluded from version control
+- Production settings override development defaults

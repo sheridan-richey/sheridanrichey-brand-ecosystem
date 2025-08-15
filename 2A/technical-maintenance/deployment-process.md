@@ -13,6 +13,8 @@ Create `.env.local` file in the `website/` directory:
 NEXT_PUBLIC_SITE_URL=https://sheridanrichey.com
 NEXT_PUBLIC_GA_ID=your-google-analytics-id
 NEXT_PUBLIC_VERCEL_ANALYTICS_ID=your-vercel-analytics-id
+BEEHIIV_PUBLICATION_ID=your-beehiiv-publication-id
+BEEHIIV_API_KEY=your-beehiiv-api-key
 ```
 
 ### 2. Required Assets
@@ -73,6 +75,8 @@ vercel
 NEXT_PUBLIC_SITE_URL=https://sheridanrichey.com
 NEXT_PUBLIC_GA_ID=your-google-analytics-id
 NEXT_PUBLIC_VERCEL_ANALYTICS_ID=your-vercel-analytics-id
+BEEHIIV_PUBLICATION_ID=your-beehiiv-publication-id
+BEEHIIV_API_KEY=your-beehiiv-api-key
 ```
 
 ### Domain Configuration
@@ -87,17 +91,46 @@ NEXT_PUBLIC_VERCEL_ANALYTICS_ID=your-vercel-analytics-id
 
 ## Deployment Workflow
 
-### Automatic Deployment
-- **Trigger:** Push to `main` branch
-- **Platform:** Vercel
-- **Status:** Automatic builds and deployments
+### Primary: Git Pipeline (Recommended)
+- **Trigger:** Push to `main` → Vercel deploys to Production automatically
+- **Pull Requests:** Each PR creates a Preview deployment link
+- **Checks:** Build, lint, and E2E tests must pass before merge
 
-### Manual Deployment
+### Manual (Fallback Only)
 1. **Build locally:** `npm run build`
 2. **Test locally:** `npm run start`
-3. **Deploy:** `vercel --prod`
+3. **Deploy (temporary override):** `vercel --prod`
+4. **Follow-up:** Open a PR to land the same change in `main` to realign with Git history
 
-### Content Updates
+## Newsletter Integration
+
+### API Configuration
+- **Endpoint:** `/api/newsletter`
+- **Custom Fields:** Object format for Beehiiv compatibility
+- **UTM Attribution:** Enhanced with page path tracking
+
+### UTM Parameters Sent
+```typescript
+{
+  utm_source: 'website',
+  utm_medium: 'newsletter_page',
+  utm_campaign: pagePath || 'zag_community',
+  utm_content: 'newsletter_signup_form'
+}
+```
+
+### Custom Fields Mapping
+```typescript
+{
+  custom_fields: {
+    first_name: string,
+    role: string,
+    source: 'website_signup'
+  }
+}
+```
+
+## Content Updates
 - **Blog Posts:** Add MDX files to `posts/` directory
 - **Images:** Add to `public/` directory
 - **Components:** Edit React components in `components/`
@@ -129,6 +162,11 @@ NEXT_PUBLIC_VERCEL_ANALYTICS_ID=your-vercel-analytics-id
 - **Content Performance:** Blog post analytics
 - **Traffic Sources:** Marketing attribution
 
+### Beehiiv Attribution
+- **UTM Tracking:** Automatic via API integration
+- **Page Path Attribution:** Enhanced tracking for different entry points
+- **Custom Field Analytics:** Subscriber segmentation and personalization
+
 ## Troubleshooting
 
 ### Common Issues
@@ -136,11 +174,14 @@ NEXT_PUBLIC_VERCEL_ANALYTICS_ID=your-vercel-analytics-id
 2. **Image 404s:** Verify assets in `public/` directory
 3. **Domain Issues:** Check DNS configuration
 4. **Environment Variables:** Verify in Vercel dashboard
+5. **Newsletter API:** Check Beehiiv credentials and custom field setup
 
 ### Support Resources
 - **Vercel Documentation:** https://vercel.com/docs
 - **Next.js Documentation:** https://nextjs.org/docs
+- **Beehiiv API Documentation:** https://developers.beehiiv.com/docs
 - **Domain Issues:** Contact domain registrar
 
 ---
+
 **This file is the persistent source of truth for deployment. I will reference it automatically for all future deployment questions.** 

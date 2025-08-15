@@ -1,57 +1,51 @@
-# CI/CD Workflow Standards
+# CI/CD & Deployment Workflow
 
-## GitHub Actions Workflow
-- E2E testing workflow: [.github/workflows/playwright.yml](mdc:.github/workflows/playwright.yml)
-- Triggers on pull requests to `main` branch
-- Manual trigger available via `workflow_dispatch`
-- Runs Playwright tests against production site
+## Deployment Strategy
+- **Primary Method**: Git-based deployment (GitOps)
+- **Platform**: Vercel for hosting and automatic deployments
+- **Trigger**: `git push origin main` to main branch
+- **Fallback**: Manual deployment via Vercel CLI
 
-## Vercel Deployment
-- Automatic deployments from GitHub
-- Production URL: https://sheridanrichey.com
-- Preview deployments for pull requests
-- Environment variables managed via Vercel dashboard
+## GitOps Workflow
+1. **Development**: Make changes locally
+2. **Staging**: Stage and commit changes with descriptive messages
+3. **Deployment**: Push to main branch triggers automatic deployment
+4. **Verification**: Check Vercel dashboard for deployment status
+5. **Testing**: Verify functionality on production site
 
-## Required Secrets
-- `VERCEL_TOKEN`: Vercel API token
-- `VERCEL_ORG_ID`: Team ID (team_SXzIcySViXy1FSCVMJ9Si9pE)
-- `VERCEL_PROJECT_ID`: Project ID (prj_Z0L8peVOikrqGnjPmTq023GFz4Kh)
+## Deployment Scripts
+- [deploy.ps1](mdc:website/deploy.ps1) - PowerShell deployment helper
+- Provides guidance for Git-based deployment
+- Assists with commit message formatting
+- Helps with deployment verification
 
-## Testing Strategy
-- E2E tests run against production site
-- No preview deployment testing (build issues resolved separately)
-- Tests focus on navigation and page loading
-- Form testing excluded until forms are wired up
+## Environment Management
+- **Development**: Local development server
+- **Preview**: Vercel preview deployments for PRs
+- **Production**: Main branch deployments
+- **Environment Variables**: Managed in Vercel dashboard
 
-## Deployment Process
-1. Code changes pushed to feature branch
-2. Pull request created to `main`
-3. GitHub Actions triggers E2E tests
-4. Tests run against production site
-5. Vercel automatically deploys on merge to `main`
+## Testing Integration
+- **Pre-deployment**: Run E2E tests locally
+- **Post-deployment**: Verify critical functionality
+- **Continuous Testing**: Test on every deployment
+- **Test Reports**: Generated and stored for review
 
 ## Quality Gates
-- All E2E tests must pass before merge
-- No 404 errors on main navigation pages
-- Blog functionality must work
-- Basic page loading validation
+- **Code Quality**: TypeScript compilation
+- **Testing**: E2E test suite passes
+- **Build**: Next.js build successful
+- **Deployment**: Vercel deployment successful
+- **Verification**: Production functionality verified
 
 ## Rollback Strategy
-- Vercel provides automatic rollback capabilities
-- Previous deployments available in Vercel dashboard
-- Can manually trigger rollback if needed
+- **Immediate**: Revert to previous commit
+- **Hotfix**: Quick fixes for critical issues
+- **Full Rollback**: Complete deployment reversal
+- **Documentation**: Track all rollback decisions
 
-## Monitoring
-- Vercel Analytics for performance monitoring
-- GitHub Actions logs for test results
-- Production site monitoring via Vercel
-
-## Best Practices
-- Always test locally before pushing
-- Use descriptive commit messages
-- Keep pull requests focused and small
-- Monitor test results in GitHub Actions
-description:
-globs:
-alwaysApply: false
----
+## Monitoring & Alerts
+- **Deployment Status**: Vercel dashboard monitoring
+- **Performance**: Core Web Vitals tracking
+- **Errors**: Error monitoring and alerting
+- **Uptime**: Site availability monitoring

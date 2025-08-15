@@ -1,0 +1,67 @@
+# Next.js Architecture & Component Standards
+
+## App Router Structure
+Follow the established patterns in the website directory:
+- [Main Layout](mdc:website/app/layout.tsx) - Root layout with metadata and global styles
+- [Homepage](mdc:website/app/page.tsx) - Landing page with hero section
+- [ZAG Matrix Page](mdc:website/app/zag-matrix/page.tsx) - Core framework presentation
+- [Newsletter Page](mdc:website/app/newsletter/page.tsx) - Email signup functionality
+- [Resources Page](mdc:website/app/resources/page.tsx) - Tools and frameworks
+- [About Page](mdc:website/app/about/page.tsx) - Personal story and authority
+- [Contact Page](mdc:website/app/contact/page.tsx) - User interaction
+- [Blog Pages](mdc:website/app/blog/) - Content and thought leadership
+
+## Component Architecture
+- Use TypeScript for all components
+- Follow the component structure in [components directory](mdc:website/components/)
+- Implement responsive design with Tailwind CSS
+- Use semantic HTML and accessibility best practices
+- Include proper error handling and loading states
+
+## Key Components Reference
+- [HeroSection](mdc:website/components/HeroSection.tsx) - Main landing component
+- [ZagMatrixSidebar](mdc:website/components/ZagMatrixSidebar.tsx) - Framework navigation
+- [NewsletterSignup](mdc:website/components/NewsletterSignup.tsx) - Email capture form
+- [NewsletterCTA](mdc:website/components/NewsletterCTA.tsx) - Call-to-action buttons
+- [ContactForm](mdc:website/components/ContactForm.tsx) - User interaction component
+- [BlogCard](mdc:website/components/BlogCard.tsx) - Content presentation
+- [LatestInsights](mdc:website/components/LatestInsights.tsx) - Content highlights
+
+## Styling Guidelines
+- Use Tailwind CSS utility classes
+- Follow the design system in [globals.css](mdc:website/app/globals.css)
+- Maintain ZAG Matrix color scheme and branding
+- Ensure mobile-first responsive design
+- Use consistent spacing and typography
+
+## API Integration
+- Follow the pattern in [newsletter API](mdc:website/app/api/newsletter/route.ts)
+- Implement proper error handling and validation
+- Use TypeScript interfaces for type safety
+- Include appropriate HTTP status codes
+- Handle custom fields and UTM parameters properly
+
+## Configuration Files
+- [Next.js Config](mdc:website/next.config.js) - Next.js specific settings
+- [Tailwind Config](mdc:website/tailwind.config.js) - Styling configuration
+- [TypeScript Config](mdc:website/tsconfig.json) - TypeScript settings
+- [PostCSS Config](mdc:website/postcss.config.js) - CSS processing
+- [Vercel Config](mdc:vercel.json) - Deployment configuration
+
+## Newsletter System Integration
+- Centralized signup through `/newsletter` page
+- Use `NewsletterCTA` component for redirect-based signups
+- Capture `ctaSource` for attribution tracking
+- Send data to Beehiiv with custom fields
+- Implement proper error handling and validation
+
+## Content Management
+- Use MDX for blog posts in [posts directory](mdc:website/posts/)
+- Follow content structure in [content directory](mdc:content/)
+- Implement proper metadata and SEO
+- Use Contentlayer for content processing
+- Maintain consistent ZAG Matrix messaging
+description:
+globs:
+alwaysApply: false
+---
