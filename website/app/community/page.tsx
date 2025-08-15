@@ -1,4 +1,4 @@
-import { ArrowRight, Key, MessageCircle, Shield, Users } from 'lucide-react'
+import { ArrowRight, Check, Key, MessageCircle, Shield, Users } from 'lucide-react'
 import Link from 'next/link'
 
 export default function CommunityPage() {
@@ -110,93 +110,70 @@ export default function CommunityPage() {
             </div>
           </div>
 
-          {/* How to Join */}
-          <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl p-8 text-white mb-16">
-            <h2 className="text-3xl font-bold mb-6">
-              How to Join The ZAG Collective
+          {/* Prerequisites Check */}
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-steel/10 mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-arsenic sm:text-4xl mb-8 text-center">
+              Prerequisites for Community Access
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold">1</span>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Check className="h-4 w-4 text-teal-600" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Subscribe to Newsletter</h3>
-                <p className="text-white/90 text-sm">
-                  Start with the newsletter to understand the ZAG Matrix framework and see if it resonates with you.
-                </p>
+                <div>
+                  <h3 className="text-lg font-semibold text-arsenic mb-2">Newsletter Subscription</h3>
+                  <p className="text-phantom">You're actively receiving and engaging with The ZAG Navigator newsletter.</p>
+                </div>
               </div>
               
-              <div className="text-center">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold">2</span>
+              <div className="flex items-start gap-4">
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Check className="h-4 w-4 text-teal-600" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Apply the Principles</h3>
-                <p className="text-white/90 text-sm">
-                  Use the newsletter insights to start implementing ZAG principles in your career and life.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold">3</span>
+                <div>
+                  <h3 className="text-lg font-semibold text-arsenic mb-2">Active Application</h3>
+                  <p className="text-phantom">You're implementing ZAG Matrix principles in your career and life.</p>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Request Community Access</h3>
-                <p className="text-white/90 text-sm">
-                  Once you're actively applying the framework, reach out to request an invitation to the Slack community.
-                </p>
               </div>
             </div>
           </div>
 
-          {/* Community Access Code Section */}
-          <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-8 text-white mb-16">
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                  <Key className="h-6 w-6 text-white" />
-                </div>
+          {/* Community Access & CTA - Combined Section */}
+          <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-12 text-white text-center">
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
+                <Key className="h-8 w-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold mb-4">
-                Community Access Code
-              </h2>
-              <p className="text-xl mb-6 opacity-90">
-                Use this code when requesting community access to show you've read this page and understand the process.
-              </p>
-              <div className="bg-white/20 rounded-lg p-4 mb-6 inline-block">
-                <code className="text-2xl font-mono font-bold text-white tracking-wider">
-                  ZAG2025
-                </code>
-              </div>
-              <p className="text-sm opacity-75">
-                Include this code in your contact form message when requesting community access.
-              </p>
             </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-12 text-white">
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Start Your Journey?
+              Ready to Join The ZAG Collective?
             </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Begin with the newsletter to learn the framework, then join the community when you're ready to connect with peers.
+            <p className="text-xl mb-6 opacity-90">
+              If you've been applying the ZAG Matrix framework and are ready to connect with peers, use this access code to request an invitation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/newsletter"
-                className="group bg-white text-teal-600 hover:bg-gray-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
-              >
-                Subscribe to Newsletter
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+            
+            {/* Access Code Display */}
+            <div className="bg-white/20 rounded-lg p-6 mb-8 inline-block">
+              <p className="text-sm opacity-75 mb-2">Community Access Code</p>
+              <code className="text-3xl font-mono font-bold text-white tracking-wider">
+                ZAG2025
+              </code>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="flex justify-center">
               <Link
                 href="/contact?source=community&code=ZAG2025"
-                className="group border-2 border-white text-white hover:bg-white hover:text-teal-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
+                className="group bg-white text-teal-600 hover:bg-gray-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
               >
                 Request Community Access
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
+            
+            <p className="text-sm opacity-75 mt-4">
+              Include this code in your contact form to show you've read this page and understand the process.
+            </p>
           </div>
         </div>
       </div>

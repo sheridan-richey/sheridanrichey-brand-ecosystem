@@ -1,5 +1,13 @@
 # Project Rules & Standards
 
+## PARA Documentation Standards
+- **CRITICAL:** ALWAYS use the current system date for PARA documentation filenames and date stamps
+- **NEVER use dates from memory or assume dates** - always get the actual system date
+- **Use PowerShell command:** `Get-Date -Format "yyyyMMdd"` to get current date
+- **File naming:** Use format `YYYYMMDD-[description].md` for Projects (1P) and Archives (4A)
+- **Date stamps:** Update both filename and document content with current date
+- **Verification:** Double-check date accuracy before creating or updating any PARA documentation
+
 ## E2E Testing
 - **Playwright** is the standard tool for all end-to-end (E2E) testing.
 - All critical user workflows (newsletter signup, contact form, blog navigation, etc.) must have E2E test coverage.

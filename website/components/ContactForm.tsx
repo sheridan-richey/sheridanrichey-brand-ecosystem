@@ -254,7 +254,9 @@ export default function ContactForm() {
             }`}
           >
             <option value="">Select a topic</option>
-            <option value="Community Access Request">Community Access Request</option>
+            {formData.communityCode && (
+              <option value="Community Access Request">Community Access Request</option>
+            )}
             <option value="Executive Coaching">Executive Coaching</option>
             <option value="Speaking Engagement">Speaking Engagement</option>
             <option value="ZAG Matrix Workshop">ZAG Matrix Workshop</option>
