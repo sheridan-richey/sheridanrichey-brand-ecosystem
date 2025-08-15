@@ -1,7 +1,7 @@
 'use client'
 
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
-import { ArrowRight, CheckCircle, Star, Target, Zap } from 'lucide-react'
+import { ArrowRight, BookOpen, CheckCircle, Star, Target, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -133,21 +133,21 @@ export default function NewsletterPage() {
                  </div>
                </div>
 
-               {/* Benefit 2: Tools & Resources */}
-               <div className="flex items-start gap-4">
-                 <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
-                   <Target className="h-6 w-6 text-primary-500" />
-                 </div>
-                 <div>
-                   <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
-                     Exclusive Resources & Tools
-                   </h3>
-                   <p className="font-manrope text-graphite">
-                     Access to frameworks, templates, and tools that help you apply the ZAG Matrix 
-                     to your specific situation. Plus early access to new content and courses.
-                   </p>
-                 </div>
-               </div>
+                               {/* Benefit 2: Tools & Resources */}
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center">
+                    <BookOpen className="h-6 w-6 text-primary-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-manrope text-xl font-bold text-phantom mb-2">
+                      Exclusive Resources & Tools
+                    </h3>
+                    <p className="font-manrope text-graphite">
+                      Access to frameworks, templates, and tools that help you apply the ZAG Matrix 
+                      to your specific situation. Plus early access to new content and courses.
+                    </p>
+                  </div>
+                </div>
 
                                {/* Benefit 3: Direct Access to Expertise */}
                 <div className="flex items-start gap-4">
