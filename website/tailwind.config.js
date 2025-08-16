@@ -9,14 +9,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Official Sheridan Richey Brand Colors
+        // Official Sheridan Richey Brand Colors (Exact hex values)
         primary: {
           50: '#f0fdfd',
           100: '#ccfbf1',
           200: '#99f6e4',
           300: '#5eead4',
           400: '#2dd4bf',
-          500: '#009696', // Primary Teal
+          500: '#009696', // Official Teal
           600: '#0d9488',
           700: '#0f766e',
           800: '#115e59',
@@ -28,22 +28,26 @@ module.exports = {
           200: '#99f6e4',
           300: '#5eead4',
           400: '#2dd4bf',
-          500: '#009696', // Primary Teal
+          500: '#009696', // Official Teal
           600: '#0d9488',
           700: '#0f766e',
           800: '#115e59',
           900: '#134e4a',
         },
-        'light-teal': '#70C6C6',
-        'light-bg': '#FAFBFF',
-        // Grayscale Palette
-        cloud: '#EDEFF7',
-        smoke: '#D3D6E0',
-        steel: '#BCBFCC',
-        space: '#9DA2B3',
-        graphite: '#6E7180',
-        arsenic: '#40424D',
-        phantom: '#1E1E24',
+        // Official Brand Colors (Exact hex values from guidelines)
+        'light-bg': '#FAFBFF',      // Light Background
+        'light-teal': '#70C6C6',    // Light Teal
+        black: '#000000',            // Black
+        
+        // Official Grayscale Palette (Exact hex values)
+        cloud: '#EDEFF7',            // Cloud
+        smoke: '#D3D6E0',            // Smoke
+        steel: '#BCBFCC',            // Steel
+        space: '#9DA2B3',            // Space
+        graphite: '#6E7180',         // Graphite
+        arsenic: '#40424D',          // Arsenic
+        phantom: '#1E1E24',          // Phantom
+        
         // Legacy secondary colors for backward compatibility
         secondary: {
           50: '#f8fafc',

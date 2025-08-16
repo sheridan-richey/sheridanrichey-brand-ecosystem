@@ -1,33 +1,82 @@
-# Project Rules & Standards
+# Sheridan Richey Brand Ecosystem - Team Rules
 
-## PARA Documentation Standards
-- **CRITICAL:** ALWAYS use the current system date for PARA documentation filenames and date stamps
-- **NEVER use dates from memory or assume dates** - always get the actual system date
-- **Use PowerShell command:** `Get-Date -Format "yyyyMMdd"` to get current date
-- **File naming:** Use format `YYYYMMDD-[description].md` for Projects (1P) and Archives (4A)
-- **Date stamps:** Update both filename and document content with current date
-- **Verification:** Double-check date accuracy before creating or updating any PARA documentation
+## Project Context
+- Building personal brand website for Sheridan Richey
+- Target audience: "Alex, the Awakened Technologist"
+- Core framework: ZAG Matrix (ZEN, ACT, GEM)
+- Tech stack: Next.js, TypeScript, Tailwind CSS, MDX
 
-## E2E Testing
-- **Playwright** is the standard tool for all end-to-end (E2E) testing.
-- All critical user workflows (newsletter signup, contact form, blog navigation, etc.) must have E2E test coverage.
-- Use the **Page Object Model (POM)** for maintainable test code.
-- All interactive elements and form fields must include `data-testid` attributes for stable selectors.
-- Refer to `TESTING_STRATEGY.md` for the full E2E testing strategy, setup, and best practices.
+## Code Standards
+- Use TypeScript strict mode
+- Follow Next.js 13+ App Router patterns
+- Implement responsive design with Tailwind
+- Write self-documenting code with clear comments
+- Include JSDoc comments for complex functions
 
-## Development
-- All new features and pages must include or update E2E tests as part of the PR process.
-- E2E tests must pass in CI before merging to main.
+## Brand Guidelines
+- All content must connect to ZAG Matrix framework
+- Professional but approachable tone
+- Focus on actionable insights
+- Include specific examples from Sheridan's career
+- Maintain visual consistency with brand assets
 
-## Documentation
-- Keep `README.md` and `TESTING_STRATEGY.md` up to date with any changes to the testing approach or critical workflows. 
+## **CRITICAL ICON RULE**
+- **NEVER use emojis or multi-color icons**
+- **ONLY use icons from the Lucide icon family** (https://lucide.dev/)
+- **Icon Style**: Clean, minimal, monochrome
+- **Icon Color**: Use brand colors (teal, grayscale palette)
+- **Icon Size**: Consistent sizing based on context (16px, 20px, 24px, 32px)
+- **Icon Purpose**: Enhance clarity, not distract from content
 
-## Deployment
-- **Model:** GitOps via Vercel. Pushing to `main` auto-deploys to production. Opening a PR creates a Vercel Preview deployment.
-- **Branching:** Feature branches → PR → CI checks (build, lint, E2E) must pass → merge to `main`.
-- **Environments:**
-  - Preview: every PR (share links with reviewers).
-  - Production: `main` only.
-- **Secrets:** Managed in Vercel Project Settings → Environment Variables. No secrets in repo.
-- **Rollback:** Revert the offending commit in Git (preferred) or redeploy a previous build from the Vercel dashboard.
-- **CLI:** Optional. Do not use `vercel --prod` for routine deploys unless the pipeline is blocked.
+## File Organization (PARA System)
+- **1P** - Time-bound objectives (Projects) with YYYYMMDD prefix
+- **2A** - Ongoing responsibilities (Areas) - no date prefix
+- **3R** - Reference materials (Resources) - no date prefix  
+- **4A** - Completed work (Archives) with YYYYMMDD-COMPLETED suffix
+- Components in `/website/components/`
+- Pages in `/website/app/`
+- Blog posts in `/website/posts/`
+- Content in `/content/` directory
+- Tests in `/tests/` directory
+
+## Date Stamping Rules
+- **ALWAYS use current date** when creating new files with YYYYMMDD prefix
+- **NEVER use dates from memory** - always get current date programmatically
+- Use `Get-Date -Format "yyyyMMdd"` (PowerShell) or equivalent for current date
+- For Projects (1P): `YYYYMMDD-[description].md`
+- For Archives (4A): `YYYYMMDD-[description]-COMPLETED.md`
+- Areas (2A) and Resources (3R): No date prefix needed
+
+## Naming Conventions
+- Components: PascalCase (e.g., `ZagMatrixSidebar.tsx`)
+- Files: kebab-case (e.g., `zag-matrix-page.tsx`)
+- Functions: camelCase (e.g., `handleNewsletterSignup`)
+- Constants: UPPER_SNAKE_CASE (e.g., `ZAG_MATRIX_PILLARS`)
+
+## Testing Requirements
+- Write E2E tests for critical user flows
+- Test responsive design on multiple screen sizes
+- Ensure accessibility compliance
+- Validate brand consistency in UI components
+
+## Content Strategy
+- Every piece of content must serve "Alex, the Awakened Technologist"
+- Connect all insights back to ZEN, ACT, GEM framework
+- Use specific examples from Sheridan's executive career
+- Maintain professional authority while being approachable
+- Focus on actionable, implementable advice
+
+## ZAG Matrix Integration
+- ZEN (Zeal Evolves Now): Mental clarity, purpose, resilience
+- ACT (Activate Core Thrust): Physical well-being, relationships, momentum
+- GEM (Growth Earns Mastery): Strategic moves, investments, entrepreneurship
+- Always consider how content relates to these three pillars
+
+## Technical Priorities
+- Performance and accessibility first
+- Mobile-responsive design
+- SEO optimization
+- Fast loading times
+- Clean, maintainable code
+- **Minimalist, clean interface design**
+- **Simple, compelling user experience**

@@ -1,5 +1,0 @@
-[33m21728eb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m feat: Complete Phase 4 - Migrate content and rebuild community page
-[33m25e744f[m fix: Differentiate icons to avoid visual confusion between newsletter benefits and ZAG Matrix
-[33m829d7f5[m fix: Use Lucide Star icon for consistent visual styling in newsletter benefits
-[33m06f9c39[m fix: Revert first two benefits to use Lucide icons, keep star emoji for third
-[33mb63a651[m style: Update newsletter benefits to use consistent emoji styling

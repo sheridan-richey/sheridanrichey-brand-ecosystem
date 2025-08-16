@@ -1,13 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { Award, Users, Zap } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import NewsletterSignup from "./NewsletterSignup"
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
-  const [showNewsletterSignup, setShowNewsletterSignup] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -17,253 +16,146 @@ export default function HeroSection() {
     <section className="min-h-screen relative overflow-hidden">
       {/* Background with Instagram design */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-600">
-        {/* Background geometric elements would be added here via CSS or SVG */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent" />
       </div>
 
-      {/* SVG/CSS Background Elements */}
-      {/* Large white arc, top left */}
-      <svg className="absolute -top-32 -left-32 w-96 h-96 opacity-30 pointer-events-none" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M400,200a200,200 0 1,0 -200,200" stroke="white" strokeWidth="32" fill="none" />
-      </svg>
-      {/* Concentric arcs, bottom right */}
-      <svg className="absolute bottom-0 right-0 w-80 h-80 opacity-30 pointer-events-none" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="160" cy="160" r="120" stroke="white" strokeWidth="2" fill="none" />
-        <circle cx="160" cy="160" r="90" stroke="white" strokeWidth="2" fill="none" />
-        <circle cx="160" cy="160" r="60" stroke="white" strokeWidth="2" fill="none" />
-        <circle cx="160" cy="160" r="30" stroke="white" strokeWidth="2" fill="none" />
-      </svg>
-      {/* Dot grid, top right */}
-      <svg className="absolute top-8 right-8 w-32 h-32 opacity-20 pointer-events-none" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {Array.from({ length: 5 }).map((_, row) => (
-          Array.from({ length: 5 }).map((_, col) => (
-            <circle key={`dot-tr-${row}-${col}`} cx={8 + col * 12} cy={8 + row * 12} r="2.5" fill="white" />
-          ))
-        ))}
-      </svg>
-      {/* Dot grid, bottom left */}
-      <svg className="absolute bottom-8 left-8 w-32 h-32 opacity-20 pointer-events-none" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {Array.from({ length: 5 }).map((_, row) => (
-          Array.from({ length: 5 }).map((_, col) => (
-            <circle key={`dot-bl-${row}-${col}`} cx={8 + col * 12} cy={8 + row * 12} r="2.5" fill="white" />
-          ))
-        ))}
-      </svg>
-
-      {/* Trust Indicator */}
-      <div className="absolute top-0 left-0 right-0 z-20 px-6 py-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center">
+      {/* Main Hero Content - 2 Column Layout */}
+      <div className="min-h-screen flex items-center justify-center px-4 pt-16 pb-8 relative z-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          
+          {/* Left Column - Messaging & CTAs - Centered */}
+          <div className="text-center">
+            {/* Tagline - Reduced top margin */}
             <div
-              className={`inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full transition-all duration-800 ${
-                isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
+              className={`mb-6 transition-all duration-1000 ${
+                isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
               }`}
-              style={{ transitionDelay: isVisible ? "0.2s" : "0s" }}
+              style={{ transitionDelay: isVisible ? "0.3s" : "0s" }}
             >
-              <span className="text-white font-manrope text-sm font-medium">20+ Years Executive Leadership</span>
+              <h2 className="font-manrope text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4">
+                Awaken.
+                <br />
+                Align.
+                <br />
+                Achieve.
+              </h2>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Main Hero Content - Single Column */}
-      <div className="min-h-screen flex items-center justify-center px-4 pt-24 pb-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Tagline - Reduced spacing, larger size */}
-          <div
-            className={`mb-4 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "0.3s" : "0s" }}
-          >
-            <h2 className="font-manrope text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
-              Awaken. Align. Achieve.
-            </h2>
-          </div>
-
-          {/* Professional Photo - Larger size */}
-          <div
-            className={`mb-6 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0 scale-100" : "opacity-0 transform translate-y-8 scale-95"
-            }`}
-            style={{ transitionDelay: isVisible ? "0.4s" : "0s" }}
-          >
-                         <div className="relative w-56 h-64 md:w-64 md:h-72 mx-auto rounded-2xl overflow-hidden shadow-2xl">
-               <img
-                 src="/sheridan-headshot.jpg"
-                 alt="Sheridan Richey - Executive Leadership Coach"
-                 className="object-cover object-top w-full h-full"
-                 onError={(e) => {
-                   const target = e.target as HTMLImageElement;
-                   console.error('Image failed to load:', target.src);
-                   target.style.display = 'none';
-                 }}
-                 onLoad={() => {
-                   console.log('Image loaded successfully');
-                 }}
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-             </div>
-          </div>
-
-          {/* Headline */}
-          <div
-            className={`mb-6 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "0.5s" : "0s" }}
-          >
-            <h1 className="font-manrope text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-white leading-tight px-2">
-              From 'Meh' to Mastery:
-              <br />
-              <span className="text-primary-200">The ZAG Matrix</span>
-            </h1>
-          </div>
-
-          {/* Primary CTA - Above the fold */}
-          <div
-            className={`mb-8 flex justify-center transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "0.55s" : "0s" }}
-          >
-            <Button
-              onClick={() => setShowNewsletterSignup(true)}
-              variant="outline"
-              size="lg"
-              className="group font-manrope border-2 border-white text-white font-bold hover:bg-white hover:text-primary-600 px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-xl rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-none"
+            {/* Headline */}
+            <div
+              className={`mb-10 transition-all duration-1000 ${
+                isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
+              }`}
+              style={{ transitionDelay: isVisible ? "0.5s" : "0s" }}
             >
-              <span className="hidden sm:inline">Join Newsletter + Get AI Prompt Engineer Guide</span>
-              <span className="sm:hidden">Join Newsletter + Get Guide</span>
-              <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-200 text-lg sm:text-xl md:text-2xl">→</span>
-            </Button>
-          </div>
+                             <h1 className="font-manrope text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight">
+                 Beyond Success...
+                 <br />
+                 <span className="text-primary-200">Find Your Next Chapter</span>
+               </h1>
+            </div>
 
-          {/* Subheadline - Simplified */}
-          <div
-            className={`mb-6 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "0.6s" : "0s" }}
-          >
-            <p className="font-manrope text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed px-4">
-              Transform mid-career technologists into energized, purpose-driven leaders.
-            </p>
-          </div>
+            {/* Supporting Text - Shortened */}
+            <div
+              className={`mb-12 transition-all duration-1000 ${
+                isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
+              }`}
+              style={{ transitionDelay: isVisible ? "0.6s" : "0s" }}
+            >
+              <p className="font-manrope text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                For successful tech leaders who know there's more to life than the next promotion or exit.
+              </p>
+            </div>
 
-          {/* Three Pillars Introduction - Simplified */}
-          <div
-            className={`mb-6 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "0.7s" : "0s" }}
-          >
-            <p className="font-manrope text-base sm:text-lg text-white/80 max-w-2xl mx-auto px-4">
-              Three interconnected pillars: <span className="text-white font-semibold">ZEN • ACT • GEM</span>
-            </p>
-          </div>
+                         {/* Primary CTA */}
+             <div
+               className={`mb-10 flex justify-center transition-all duration-1000 ${
+                 isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
+               }`}
+               style={{ transitionDelay: isVisible ? "0.7s" : "0s" }}
+             >
+               <Link href="/newsletter">
+                 <Button
+                   variant="outline"
+                   size="lg"
+                   className="group font-manrope border-2 border-white text-white font-bold hover:bg-white hover:text-primary-600 px-8 sm:px-12 py-4 sm:py-5 text-lg sm:text-xl rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+                 >
+                   Start Your Next Chapter + Get AI Guide
+                   <span className="ml-3 group-hover:translate-x-1 transition-transform duration-200 text-xl">→</span>
+                 </Button>
+               </Link>
+             </div>
 
-          {/* Social Proof - Simplified and more prominent */}
-          <div
-            className={`mb-6 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "0.8s" : "0s" }}
-          >
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-3 sm:p-4 max-w-2xl mx-auto border border-white/20 mx-4">
-              <p className="font-manrope text-sm sm:text-lg text-white font-semibold text-center">
-                6 acquisitions • 3 successful exits • 60-point NPS improvements
+            {/* ZAG Matrix Introduction - Clearer with link */}
+            <div
+              className={`transition-all duration-1000 ${
+                isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
+              }`}
+              style={{ transitionDelay: isVisible ? "0.8s" : "0s" }}
+            >
+              <p className="font-manrope text-lg text-white/80 max-w-2xl mx-auto">
+                Discover the <Link href="/zag-matrix" className="text-primary-200 hover:text-primary-100 underline transition-colors">ZAG Matrix framework</Link> for your transformation.
               </p>
             </div>
           </div>
 
-          {/* Key Benefits - Bullet points for better readability */}
-          <div
-            className={`mb-8 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "0.9s" : "0s" }}
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto px-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                <h3 className="font-manrope text-base sm:text-lg font-bold text-white mb-2">Career Launcher</h3>
-                <p className="font-manrope text-xs sm:text-sm text-white/90">Launched dozens of careers to Director, VP, and CTO levels</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                <h3 className="font-manrope text-base sm:text-lg font-bold text-white mb-2">Balanced Growth</h3>
-                <p className="font-manrope text-xs sm:text-sm text-white/90">Integrates career mastery with personal growth and relationships</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 sm:col-span-2 md:col-span-1">
-                <h3 className="font-manrope text-base sm:text-lg font-bold text-white mb-2">AI-Powered</h3>
-                <p className="font-manrope text-xs sm:text-sm text-white/90">Leverage AI to accelerate your transformation and impact</p>
+          {/* Right Column - Personal Introduction & Social Proof */}
+          <div className="text-center lg:text-left">
+            {/* Professional Photo - Width matches social proof box */}
+            <div
+              className={`mb-8 transition-all duration-1000 ${
+                isVisible ? "opacity-100 transform translate-y-0 scale-100" : "opacity-0 transform translate-y-8 scale-95"
+              }`}
+              style={{ transitionDelay: isVisible ? "0.4s" : "0s" }}
+            >
+              <div className="relative w-full max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="/sheridan-headshot.jpg"
+                  alt="Sheridan Richey - Executive Leadership Coach"
+                  className="object-cover object-top w-full h-80 md:h-88"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    console.error('Image failed to load:', target.src);
+                    target.style.display = 'none';
+                  }}
+                  onLoad={() => {
+                    console.log('Image loaded successfully');
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
             </div>
-          </div>
 
-          {/* Value Proposition - Simplified */}
-          <div
-            className={`mb-8 transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "1.0s" : "0s" }}
-          >
-            <p className="font-manrope text-xl text-white font-semibold max-w-2xl mx-auto">
-              Join me in building the next generation of energized technologists.
-            </p>
-          </div>
-
-          {/* Enhanced CTAs - Below the fold */}
-          <div
-            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center transition-all duration-1000 px-4 ${
-              isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "1.1s" : "0s" }}
-          >
-            {/* Only show the secondary and tertiary CTAs here */}
-            <Link href="/zag-matrix">
-              <Button
-                variant="outline"
-                size="lg"
-                className="font-manrope border-2 border-white text-white hover:bg-white hover:text-primary-600 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent hover:shadow-lg w-full sm:w-auto"
-              >
-                Learn About ZAG Matrix
-              </Button>
-            </Link>
-
-            <Link href="/resources">
-              <Button
-                variant="outline"
-                size="lg"
-                className="font-manrope border-2 border-white/50 text-white/90 hover:bg-white/10 px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-all duration-300 transform hover:scale-105 bg-transparent w-full sm:w-auto"
-              >
-                Download Framework Overview
-              </Button>
-            </Link>
+            {/* Consolidated Proven Results Box with Icons */}
+            <div
+              className={`transition-all duration-1000 ${
+                isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
+              }`}
+              style={{ transitionDelay: isVisible ? "0.9s" : "0s" }}
+            >
+              <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 max-w-sm mx-auto lg:mx-0 border border-white/20">
+                <h3 className="font-manrope text-xl font-bold text-white mb-4 text-center lg:text-left">Proven Results</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <Award className="w-5 h-5 text-primary-200 mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-white/90">20+ years of executive leadership in the SaaS industry</p>
+                  </div>
+                  <div className="flex items-start">
+                    <Users className="w-5 h-5 text-primary-200 mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-white/90">Launched dozens of careers to Director, VP, and CTO levels</p>
+                  </div>
+                  <div className="flex items-start">
+                    <Zap className="w-5 h-5 text-primary-200 mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-white/90">Integrates career mastery with personal growth and relationships</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Newsletter Signup Modal */}
-      {showNewsletterSignup && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-2xl">
-            <button
-              onClick={() => setShowNewsletterSignup(false)}
-              className="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 transition-colors z-10"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <NewsletterSignup 
-              variant="hero"
-              title="Join The ZAG Navigator"
-              description="Get weekly insights for awakened technologists. Plus, instant access to the AI Prompt Engineer's Guide."
-              onSuccess={() => setShowNewsletterSignup(false)}
-            />
-          </div>
-        </div>
-      )}
+      
     </section>
   )
 } 

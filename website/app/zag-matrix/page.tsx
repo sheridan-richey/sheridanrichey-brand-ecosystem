@@ -1,6 +1,7 @@
-import Link from 'next/link'
-import { ArrowRight, Target, Users, TrendingUp, BookOpen, Calendar, Users as UsersIcon } from 'lucide-react'
 import ZagMatrixOverview from '@/components/ZagMatrixOverview'
+import { CTAButton } from '@/components/ui/cta-button'
+import { BookOpen, Calendar, Users as UsersIcon } from 'lucide-react'
+import Link from 'next/link'
 
 export default function ZagMatrixPage() {
   return (
@@ -20,18 +21,23 @@ export default function ZagMatrixPage() {
               Integrate clarity, momentum, and mastery into your purpose-driven career.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/blog"
-                className="inline-flex items-center font-manrope bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg transition-colors duration-200"
-              >
-                Read the Blog
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href="/blog">
+                <CTAButton
+                  variant="journey-progress"
+                  size="md"
+                  background="white"
+                >
+                  Read the Blog
+                </CTAButton>
               </Link>
-              <Link 
-                href="/newsletter"
-                className="inline-flex items-center font-manrope border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-6 py-3 rounded-lg transition-colors duration-200"
-              >
-                Get Weekly Insights
+              <Link href="/newsletter">
+                <CTAButton
+                  variant="journey-action"
+                  size="md"
+                  background="white"
+                >
+                  Master the Framework
+                </CTAButton>
               </Link>
             </div>
           </div>
@@ -158,18 +164,23 @@ export default function ZagMatrixPage() {
               to create purpose-driven careers and lives.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/contact"
-                className="inline-flex items-center font-manrope bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg transition-colors duration-200"
-              >
-                Let's Talk
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href="/contact">
+                <CTAButton
+                  variant="journey-progress"
+                  size="lg"
+                  background="white"
+                >
+                  Let's Talk
+                </CTAButton>
               </Link>
-              <Link 
-                href="/newsletter"
-                className="inline-flex items-center font-manrope border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-8 py-4 rounded-lg transition-colors duration-200"
-              >
-                Start Your Journey
+              <Link href="/newsletter">
+                <CTAButton
+                  variant="journey-complete"
+                  size="lg"
+                  background="white"
+                >
+                  Start Your Journey
+                </CTAButton>
               </Link>
             </div>
           </div>

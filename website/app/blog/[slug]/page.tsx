@@ -1,4 +1,5 @@
 import AboutAuthor from '@/components/AboutAuthor'
+import { CTAButton } from '@/components/ui/cta-button'
 import { getAuthor } from '@/data/authors'
 import { allPosts } from 'contentlayer/generated'
 import { ArrowLeft, Calendar, Share2, Tag } from 'lucide-react'
@@ -146,17 +147,23 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               Join other awakened technologists who are transforming their careers and lives with the ZAG Matrix framework.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/zag-matrix"
-                className="font-body bg-[#279595] hover:bg-[#1f7a7a] text-white px-6 py-3 rounded-lg transition-colors duration-200"
-              >
-                Explore the Framework
+              <Link href="/zag-matrix">
+                <CTAButton
+                  variant="secondary"
+                  size="md"
+                  icon="arrow-right"
+                >
+                  Explore the Framework
+                </CTAButton>
               </Link>
-              <Link 
-                href="/newsletter"
-                className="font-body border-2 border-[#279595] text-[#279595] hover:bg-[#279595] hover:text-white px-6 py-3 rounded-lg transition-colors duration-200"
-              >
-                Join the Community
+              <Link href="/newsletter">
+                <CTAButton
+                  variant="primary"
+                  size="md"
+                  icon="arrow-right"
+                >
+                  Ready to transform? Join the movement
+                </CTAButton>
               </Link>
             </div>
           </div>
