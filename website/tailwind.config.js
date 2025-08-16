@@ -92,12 +92,19 @@ module.exports = {
             dark: '#B87D1A',      // Dark Gold (Shade) for hover states, dark accents
           },
         },
+        
+        // ZAG Matrix Gradient Colors
+        'zen-gradient': '#4A90E2',
+        'act-gradient': '#22C55E', 
+        'gem-gradient': '#F5A623',
       },
       fontFamily: {
         sans: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
         inter: ['Inter', 'system-ui', 'sans-serif'],
         serif: ['Georgia', 'serif'],
+        heading: ['Manrope', 'sans-serif'],
+        body: ['Manrope', 'sans-serif'],
       },
       fontSize: {
         // Typographic hierarchy from brand guidelines

@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import { ArrowRight, Users, MessageCircle, Zap, Shield } from 'lucide-react'
+import { ArrowRight, MessageCircle, Shield, Users } from 'lucide-react'
 
 export default function ZagCollectivePage() {
   return (
@@ -59,7 +58,7 @@ export default function ZagCollectivePage() {
                 </ul>
               </div>
               
-              <div className="bg-white rounded-xl p-8 shadow-sm border border-steal-10 bg-gradient-to-br from-teal-50 to-teal-100">
+              <div className="bg-white rounded-xl p-8 shadow-sm border border-steel/10 bg-gradient-to-br from-teal-50 to-teal-100">
                 <div className="flex items-center mb-4">
                   <Users className="h-8 w-8 text-teal-600 mr-3" />
                   <h3 className="text-xl font-semibold text-arsenic">The ZAG Collective (Slack)</h3>
