@@ -65,7 +65,7 @@ export default function ZagMatrixPage() {
           
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-zag-zen-base rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white font-manrope text-2xl font-bold">1</span>
               </div>
               <h3 className="font-manrope text-xl font-bold text-phantom mb-4">Start with ZEN</h3>
@@ -76,7 +76,7 @@ export default function ZagMatrixPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-zag-act-base rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white font-manrope text-2xl font-bold">2</span>
               </div>
               <h3 className="font-manrope text-xl font-bold text-phantom mb-4">Build ACT</h3>
@@ -87,7 +87,7 @@ export default function ZagMatrixPage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-zag-gem-base rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white font-manrope text-2xl font-bold">3</span>
               </div>
               <h3 className="font-manrope text-xl font-bold text-phantom mb-4">Execute GEM</h3>

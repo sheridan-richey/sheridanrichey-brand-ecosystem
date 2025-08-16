@@ -27,11 +27,11 @@ const blogPosts = allPosts
 
 const categoryColorMap: Record<string, string> = {
   ZAG: 'bg-teal-500 text-white',
-  ZEN: 'bg-teal-500/10 text-teal-500',
-  ACT: 'bg-teal-500/10 text-teal-500',
-  GEM: 'bg-teal-500/10 text-teal-500',
-  Leadership: 'bg-teal-500/10 text-teal-500',
-};
+  ZEN: 'bg-zag-zen-light text-zag-zen-dark',
+  ACT: 'bg-zag-act-light text-zag-act-dark',
+  GEM: 'bg-zag-gem-light text-zag-gem-dark',
+  Featured: 'bg-teal-500/10 text-teal-500',
+}
 
 export default function BlogPage() {
   return (
@@ -119,36 +119,35 @@ export default function BlogPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <article key={post.slug} className="bg-white rounded-xl shadow-sm border border-smoke overflow-hidden hover:shadow-lg transition-shadow duration-200">
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap[post.category] || 'bg-primary-500/10 text-primary-500'}`}>{post.category}</span>
-                  {post.featured && (
-                    <span className="inline-flex items-center px-2 py-1 bg-primary-500/10 rounded-full">
-                      <span className="text-primary-500 font-manrope text-xs font-medium">Featured</span>
-                    </span>
-                  )}
-                </div>
-                <h3 className="font-manrope text-xl font-bold text-phantom mb-3 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="font-manrope text-graphite mb-4 line-clamp-3">
-                  {post.description}
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-graphite">
-                    <Calendar className="h-4 w-4" />
-                    <span className="font-manrope text-sm">{post.date}</span>
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+              <article className="bg-white rounded-xl shadow-sm border border-smoke overflow-hidden hover:shadow-lg transition-all duration-200 h-full flex flex-col cursor-pointer">
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap[post.category] || 'bg-primary-500/10 text-primary-500'}`}>{post.category}</span>
+                    {post.featured && (
+                      <span className="inline-flex items-center px-2 py-1 bg-primary-500/10 rounded-full">
+                        <span className="text-primary-500 font-manrope text-xs font-medium">Featured</span>
+                      </span>
+                    )}
                   </div>
-                  <Link 
-                    href={`/blog/${post.slug}`}
-                    className="font-manrope text-teal-500 hover:text-teal-600 font-medium text-sm transition-colors duration-200"
-                  >
-                    Read More →
-                  </Link>
+                  <h3 className="font-manrope text-xl font-bold text-phantom mb-3 line-clamp-2 group-hover:text-teal-600 transition-colors duration-200">
+                    {post.title}
+                  </h3>
+                  <p className="font-manrope text-graphite mb-4 line-clamp-3 flex-1">
+                    {post.description}
+                  </p>
+                  <div className="flex items-center justify-between mt-auto">
+                    <div className="flex items-center gap-2 text-graphite">
+                      <Calendar className="h-4 w-4" />
+                      <span className="font-manrope text-sm">{post.date}</span>
+                    </div>
+                    <div className="font-manrope text-teal-500 group-hover:text-teal-600 font-medium text-sm transition-colors duration-200">
+                      Read More →
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </Link>
           ))}
         </div>
 

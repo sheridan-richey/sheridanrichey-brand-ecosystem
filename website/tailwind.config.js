@@ -73,6 +73,25 @@ module.exports = {
           800: '#854d0e',
           900: '#713f12',
         },
+        
+        // ZAG Matrix Secondary Color System
+        zag: {
+          zen: {
+            base: '#4A90E2',      // Base Blue for ZEN
+            light: '#A0C3ED',     // Light Blue (Tint) for tags, backgrounds
+            dark: '#2C588E',      // Dark Blue (Shade) for hover states, dark accents
+          },
+          act: {
+            base: '#22C55E',      // Base Green for ACT
+            light: '#86EFAC',     // Light Green (Tint) for tags, backgrounds
+            dark: '#15803D',      // Dark Green (Shade) for hover states, dark accents
+          },
+          gem: {
+            base: '#F5A623',      // Base Gold for GEM
+            light: '#FAD28C',     // Light Gold (Tint) for tags, backgrounds
+            dark: '#B87D1A',      // Dark Gold (Shade) for hover states, dark accents
+          },
+        },
       },
       fontFamily: {
         sans: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],

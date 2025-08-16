@@ -16,30 +16,30 @@ export default function ZagMatrixSidebar({ className = "" }: ZagMatrixSidebarPro
       {/* Visual Matrix */}
       <div className="grid grid-cols-3 gap-3 mb-6">
         <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+          <div className="w-16 h-16 bg-gradient-to-br from-zag-zen-base to-zag-zen-dark rounded-lg flex items-center justify-center mx-auto mb-2">
             <span className="font-manrope text-xl font-bold text-white">Z</span>
           </div>
-          <h4 className="font-manrope text-sm font-bold text-primary-500">Awaken</h4>
+          <h4 className="font-manrope text-sm font-bold text-zag-zen-base">Awaken</h4>
         </div>
         <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+          <div className="w-16 h-16 bg-gradient-to-br from-zag-act-base to-zag-act-dark rounded-lg flex items-center justify-center mx-auto mb-2">
             <span className="font-manrope text-xl font-bold text-white">A</span>
           </div>
-          <h4 className="font-manrope text-sm font-bold text-primary-500">Align</h4>
+          <h4 className="font-manrope text-sm font-bold text-zag-act-base">Align</h4>
         </div>
         <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+          <div className="w-16 h-16 bg-gradient-to-br from-zag-gem-base to-zag-gem-dark rounded-lg flex items-center justify-center mx-auto mb-2">
             <span className="font-manrope text-xl font-bold text-white">G</span>
           </div>
-          <h4 className="font-manrope text-sm font-bold text-primary-500">Achieve</h4>
+          <h4 className="font-manrope text-sm font-bold text-zag-gem-base">Achieve</h4>
         </div>
       </div>
 
       {/* Brief Explanations */}
       <div className="space-y-4 mb-6">
         <div className="flex items-start gap-3">
-          <div className="w-6 h-6 bg-primary-500/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-            <Target className="h-3 w-3 text-primary-500" />
+          <div className="w-6 h-6 bg-zag-zen-light rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <Target className="h-3 w-3 text-zag-zen-base" />
           </div>
           <div>
             <h5 className="font-manrope text-sm font-semibold text-phantom mb-1">ZEN</h5>
@@ -48,8 +48,8 @@ export default function ZagMatrixSidebar({ className = "" }: ZagMatrixSidebarPro
         </div>
         
         <div className="flex items-start gap-3">
-          <div className="w-6 h-6 bg-primary-500/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-            <Users className="h-3 w-3 text-primary-500" />
+          <div className="w-6 h-6 bg-zag-act-light rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <Users className="h-3 w-3 text-zag-act-base" />
           </div>
           <div>
             <h5 className="font-manrope text-sm font-semibold text-phantom mb-1">ACT</h5>
@@ -58,8 +58,8 @@ export default function ZagMatrixSidebar({ className = "" }: ZagMatrixSidebarPro
         </div>
         
         <div className="flex items-start gap-3">
-          <div className="w-6 h-6 bg-primary-500/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-            <TrendingUp className="h-3 w-3 text-primary-500" />
+          <div className="w-6 h-6 bg-zag-gem-light rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <TrendingUp className="h-3 w-3 text-zag-gem-base" />
           </div>
           <div>
             <h5 className="font-manrope text-sm font-semibold text-phantom mb-1">GEM</h5>

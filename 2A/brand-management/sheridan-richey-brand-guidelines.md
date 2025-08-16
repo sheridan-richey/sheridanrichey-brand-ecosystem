@@ -5,7 +5,7 @@
 ### 1.1 Index of Content
 - **1.0 Brand Guidelines**: Cover, Index
 - **2.0 Brand Logo**: Lockup Logo, Clearspace
-- **3.0 Brand Colors**: Primary Colors, Grayscale Colors
+- **3.0 Brand Colors**: Primary Colors, Grayscale Colors, Secondary Color System
 - **4.0 Primary Typography**: Font Family, Usage Examples
 - **5.0 Application Icons**: Social Media Usage
 - **6.0 Logo on Backgrounds**: Color and Dark Backgrounds
@@ -59,6 +59,35 @@ The grayscale color palette consists of varying shades of gray, ranging from bla
 - **Arsenic**: `#40424D`
 - **Phantom**: `#1E1E24`
 - **Black**: `#000000`
+
+### 3.3 Secondary Color System: The ZAG Matrix
+The Secondary Palette is a limited, strategic set of accent colors used exclusively to add meaning and visual distinction to the three pillars of the ZAG Matrix.
+
+#### ZEN (Zeal Evolves Now) - Mental Clarity & Purpose
+- **Base Blue**: `#4A90E2`
+- **Light Blue (Tint)**: `#A0C3ED` - For tags, backgrounds
+- **Dark Blue (Shade)**: `#2C588E` - For hover states, dark accents
+
+#### ACT (Activate Core Thrust) - Energy & Momentum
+- **Base Green**: `#22C55E`
+- **Light Green (Tint)**: `#86EFAC` - For tags, backgrounds
+- **Dark Green (Shade)**: `#15803D` - For hover states, dark accents
+
+#### GEM (Growth Earns Mastery) - Strategic Growth & Mastery
+- **Base Gold**: `#F5A623`
+- **Light Gold (Tint)**: `#FAD28C` - For tags, backgrounds
+- **Dark Gold (Shade)**: `#B87D1A` - For hover states, dark accents
+
+#### Usage Guidelines
+Use the secondary colors and their variations sparingly and intentionally. They are appropriate for:
+- Icons representing each pillar
+- Blog post tags or category labels
+- Diagrams, charts, and animations that explain the ZAG Matrix
+- Navigation highlights for ZAG Matrix related content
+- Button states for ZAG Matrix related actions
+- UI elements specifically referencing the ZAG Matrix framework
+
+**CRITICAL RULE**: Secondary colors should never compete with or replace the primary teal color. They are accent colors that enhance the ZAG Matrix framework while maintaining the primary brand identity.
 
 ---
 
@@ -157,6 +186,8 @@ All brand communications must connect back to the ZAG Matrix framework:
 ### 10.1 Brand Consistency
 - [ ] All communications use Manrope font family
 - [ ] Color palette strictly follows brand guidelines
+- [ ] Primary teal color maintains dominance in brand communications
+- [ ] Secondary ZAG Matrix colors used sparingly and intentionally
 - [ ] Logo usage maintains proper clearspace
 - [ ] Voice and tone align with brand personality
 - [ ] ZAG Matrix framework integrated into all content
@@ -166,9 +197,11 @@ All brand communications must connect back to the ZAG Matrix framework:
 - [ ] Visual elements maintain brand standards
 - [ ] Typography hierarchy follows established patterns
 - [ ] Color contrast meets accessibility requirements
+- [ ] Secondary colors enhance rather than compete with primary teal
 - [ ] Brand voice remains consistent across all touchpoints
 - [ ] Interface is minimalist and compelling
 - [ ] User actions are clear and obvious
+- [ ] ZAG Matrix color usage follows established guidelines
 
 ---
 

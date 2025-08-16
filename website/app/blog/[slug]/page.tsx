@@ -17,11 +17,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   const categoryColorMap: Record<string, string> = {
     ZAG: 'bg-teal-500 text-white',
-    ZEN: 'bg-teal-500/10 text-teal-500',
-    ACT: 'bg-teal-500/10 text-teal-500',
-    GEM: 'bg-teal-500/10 text-teal-500',
-    Leadership: 'bg-teal-500/10 text-teal-500',
-  };
+    ZEN: 'bg-zag-zen-light text-zag-zen-dark',
+    ACT: 'bg-zag-act-light text-zag-act-dark',
+    GEM: 'bg-zag-gem-light text-zag-gem-dark',
+    Featured: 'bg-teal-500/10 text-teal-500',
+  }
 
   const author = getAuthor(post.author)
   
