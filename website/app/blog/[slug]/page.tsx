@@ -149,18 +149,16 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/zag-matrix">
                 <CTAButton
-                  variant="secondary"
+                  variant="journey-start"
                   size="md"
-                  icon="arrow-right"
                 >
                   Explore the Framework
                 </CTAButton>
               </Link>
               <Link href="/newsletter">
                 <CTAButton
-                  variant="primary"
+                  variant="journey-progress"
                   size="md"
-                  icon="arrow-right"
                 >
                   Ready to transform? Join the movement
                 </CTAButton>
