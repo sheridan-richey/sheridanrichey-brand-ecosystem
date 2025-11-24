@@ -3,7 +3,7 @@
 ## 🎯 **Professional Identity Framework**
 
 ### **Primary Roles:**
-1. **Henry Schein One** - Full-time executive leadership
+1. **OptConnect** - Chief Technology Officer (CTO)
 2. **Bring It Forward Investments** - Investment company founder
 3. **Sheridan Richey** - Personal brand & thought leadership
 
@@ -14,22 +14,23 @@
 
 ---
 
-## 🏢 **Henry Schein One (HSO)**
+## 🏢 **OptConnect**
 
 ### **Role Description:**
-Executive leadership position at Henry Schein One, focusing on [specific areas of responsibility].
+Chief Technology Officer (CTO) at OptConnect, starting December 1, 2025. Final day at Henry Schein One: November 28, 2025.
 
 ### **How to Reference:**
 
 #### **Professional Contexts (LinkedIn, Speaking, etc.):**
-- "Executive leader at Henry Schein One"
-- "Currently serving as [title] at Henry Schein One"
-- "Leading [specific function] at Henry Schein One"
+- "Chief Technology Officer at OptConnect"
+- "CTO at OptConnect"
+- "Currently serving as CTO at OptConnect"
+- "Leading technology strategy at OptConnect"
 
 #### **Personal Brand Contexts (Website, Blog, etc.):**
-- "With over two decades in executive leadership, including my current role at Henry Schein One..."
-- "Drawing from my experience leading teams at companies like Henry Schein One..."
-- "In my current role at Henry Schein One, I see firsthand how..."
+- "With over two decades in executive leadership, including my current role at OptConnect..."
+- "Drawing from my experience leading teams at companies like OptConnect..."
+- "In my current role at OptConnect, I see firsthand how..."
 
 #### **Content Guidelines:**
 ✅ **Can Share:**
@@ -47,15 +48,34 @@ Executive leadership position at Henry Schein One, focusing on [specific areas o
 #### **Bio Templates:**
 
 **Short Bio (50 words):**
-"Executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and team building. Founder of Bring It Forward Investments and creator of the ZAG Matrix framework for career transformation."
+"Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and team building. Founder of Bring It Forward Investments and creator of the ZAG Matrix framework for career transformation."
 
 **Medium Bio (100 words):**
-"Sheridan Richey is an executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and M&A. He's the founder of Bring It Forward Investments and creator of the ZAG Matrix framework, helping awakened technologists transform their careers through clarity, momentum, and mastery."
+"Sheridan Richey is Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and M&A. He's the founder of Bring It Forward Investments and creator of the ZAG Matrix framework, helping awakened technologists transform their careers through clarity, momentum, and mastery."
 
 **Long Bio (200 words):**
-"Sheridan Richey is an executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout his career at companies like AdvancedMD, SirsiDynix, Extensiv, and Henry Schein One, he has led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
+"Sheridan Richey is Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout his career at companies like AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect, he has led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
 
 He is the founder of Bring It Forward Investments and creator of the ZAG Matrix framework, a proven system for mid-career professionals seeking holistic transformation. Through his personal brand, he helps awakened technologists who have achieved success but crave greater purpose, guiding them toward career transformation that integrates professional growth with personal fulfillment."
+
+---
+
+## 🏢 **Henry Schein One (HSO) - Past Role**
+
+### **Role Description:**
+Executive leadership position at Henry Schein One (May 2025 - November 2025). A valuable 6-month engagement that contributed to my professional growth and strategic positioning.
+
+### **How to Reference:**
+
+#### **Professional Contexts (LinkedIn, Speaking, etc.):**
+- "Former executive leader at Henry Schein One"
+- "Previously served at Henry Schein One"
+- "During my time at Henry Schein One..."
+
+#### **Personal Brand Contexts (Website, Blog, etc.):**
+- "With over two decades in executive leadership, including my experience at Henry Schein One..."
+- "Drawing from my experience leading teams at companies like Henry Schein One..."
+- "During my time at Henry Schein One, I learned..."
 
 ---
 
@@ -120,9 +140,9 @@ Investment company focused on [investment thesis and focus areas].
 ## 📝 **Cross-Platform Bio Strategy**
 
 ### **LinkedIn Profile:**
-- **Headline:** "Executive Leader at Henry Schein One | Founder, Bring It Forward Investments | ZAG Matrix Creator"
+- **Headline:** "Chief Technology Officer at OptConnect | Founder, Bring It Forward Investments | ZAG Matrix Creator"
 - **About:** Focus on professional achievements and current roles
-- **Experience:** Current role at HSO, founder of BIFI, creator of ZAG Matrix
+- **Experience:** Current role at OptConnect, founder of BIFI, creator of ZAG Matrix
 
 ### **Website (sheridanrichey.com):**
 - **Hero:** Personal brand focus with professional credibility
@@ -135,7 +155,7 @@ Investment company focused on [investment thesis and focus areas].
 - **Projects:** Website code and open-source contributions
 
 ### **Speaking Engagements:**
-- **Introduction:** "Executive leader at Henry Schein One and founder of Bring It Forward Investments"
+- **Introduction:** "Chief Technology Officer at OptConnect and founder of Bring It Forward Investments"
 - **Content:** ZAG Matrix framework with professional examples
 - **Credibility:** Draw from current and past leadership experience
 
@@ -162,7 +182,7 @@ Investment company focused on [investment thesis and focus areas].
 
 ## ⚖️ **Legal & Compliance Considerations**
 
-### **HSO Compliance:**
+### **OptConnect Compliance:**
 - Review all content for company confidentiality
 - Use general examples rather than specific company details
 - Focus on industry insights rather than company-specific strategies

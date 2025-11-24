@@ -12,7 +12,7 @@ I help mid-career professionals who've achieved success but crave greater purpos
 
 ## 🚀 **Current Focus**
 
-- **Executive Leadership** at Henry Schein One
+- **Chief Technology Officer** at OptConnect
 - **Strategic Investments** through Bring It Forward Investments
 - **Building Community** around the ZAG Matrix framework
 - **Career Transformation** coaching and speaking
@@ -25,7 +25,7 @@ With over two decades in SaaS leadership, I've:
 - Built high-performing teams and cultures
 - Driven profitable growth at scale
 
-**Companies:** AdvancedMD, SirsiDynix, Extensiv, Henry Schein One
+**Companies:** AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, OptConnect
 
 ## 🎯 **Who I Help**
 
@@ -98,4 +98,4 @@ With over two decades in SaaS leadership, I've:
 
 **Helping awakened technologists transform their careers and lives.**
 
-*Executive leader at Henry Schein One | Founder of Bring It Forward Investments | Creator of the ZAG Matrix framework* 
+*Chief Technology Officer at OptConnect | Founder of Bring It Forward Investments | Creator of the ZAG Matrix framework* 

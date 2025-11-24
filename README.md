@@ -155,7 +155,7 @@ The website now features a fully data-driven blog system. See [website/BLOG_SYST
 
 ### **Professional Roles Integration**
 
-- **Henry Schein One** - Current executive leadership role
+- **OptConnect** - Chief Technology Officer (CTO)
 - **Bring It Forward Investments** - Investment company founder
 - **Sheridan Richey** - Personal brand and ZAG Matrix creator
 

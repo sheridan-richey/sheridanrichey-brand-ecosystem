@@ -3,7 +3,7 @@
 ## 🎯 **Bio Strategy Overview**
 
 ### **Professional Identity Hierarchy:**
-1. **Henry Schein One** - Current executive leadership (credibility)
+1. **OptConnect** - Chief Technology Officer (CTO) - Current role (credibility)
 2. **Bring It Forward Investments** - Investment company founder (entrepreneurship)
 3. **Sheridan Richey** - Personal brand & ZAG Matrix creator (thought leadership)
 
@@ -17,21 +17,21 @@
 ## 📝 **Bio Templates by Length**
 
 ### **Micro Bio (25 words)**
-"Executive leader at Henry Schein One. Founder of Bring It Forward Investments. Creator of the ZAG Matrix framework."
+"Chief Technology Officer at OptConnect. Founder of Bring It Forward Investments. Creator of the ZAG Matrix framework."
 
 ### **Short Bio (50 words)**
-"Executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and team building. Founder of Bring It Forward Investments and creator of the ZAG Matrix framework for career transformation."
+"Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and team building. Founder of Bring It Forward Investments and creator of the ZAG Matrix framework for career transformation."
 
 ### **Medium Bio (100 words)**
-"Sheridan Richey is an executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and M&A. He's the founder of Bring It Forward Investments and creator of the ZAG Matrix framework, helping awakened technologists transform their careers through clarity, momentum, and mastery."
+"Sheridan Richey is Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and M&A. He's the founder of Bring It Forward Investments and creator of the ZAG Matrix framework, helping awakened technologists transform their careers through clarity, momentum, and mastery."
 
 ### **Long Bio (200 words)**
-"Sheridan Richey is an executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout his career at companies like AdvancedMD, SirsiDynix, Extensiv, and Henry Schein One, he has led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
+"Sheridan Richey is Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout his career at companies like AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect, he has led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
 
 He is the founder of Bring It Forward Investments and creator of the ZAG Matrix framework, a proven system for mid-career professionals seeking holistic transformation. Through his personal brand, he helps awakened technologists who have achieved success but crave greater purpose, guiding them toward career transformation that integrates professional growth with personal fulfillment."
 
 ### **Extended Bio (300 words)**
-"Sheridan Richey is an executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout his career at companies like AdvancedMD, SirsiDynix, Extensiv, and Henry Schein One, he has led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
+"Sheridan Richey is Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout his career at companies like AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect, he has led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
 
 He is the founder of Bring It Forward Investments and creator of the ZAG Matrix framework, a proven system for mid-career professionals seeking holistic transformation. Through his personal brand, he helps awakened technologists who have achieved success but crave greater purpose, guiding them toward career transformation that integrates professional growth with personal fulfillment.
 
@@ -42,10 +42,10 @@ Sheridan's unique perspective comes from his experience leading teams of 100+ pr
 ## 🌐 **Platform-Specific Bios**
 
 ### **LinkedIn Profile**
-**Headline:** "Executive Leader at Henry Schein One | Founder, Bring It Forward Investments | ZAG Matrix Creator"
+**Headline:** "Chief Technology Officer at OptConnect | Founder, Bring It Forward Investments | ZAG Matrix Creator"
 
 **About Section:**
-"Executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout my career at companies like AdvancedMD, SirsiDynix, Extensiv, and Henry Schein One, I've led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
+"Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout my career at companies like AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect, I've led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
 
 I'm the founder of Bring It Forward Investments and creator of the ZAG Matrix framework, helping awakened technologists transform their careers through clarity, momentum, and mastery. My mission is to guide mid-career professionals who have achieved success but crave greater purpose toward holistic transformation.
 
@@ -59,7 +59,7 @@ Connect with me to explore career transformation, executive leadership, and stra
 "Executive leader, entrepreneur, and guide for awakened technologists seeking purpose-driven transformation through the ZAG Matrix framework."
 
 **Full About:**
-"I've spent over two decades in executive leadership roles at companies like AdvancedMD, SirsiDynix, Extensiv, and Henry Schein One. I've led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
+"I've spent over two decades in executive leadership roles at companies like AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect. I've led product development, managed M&A processes, built high-performing teams, and driven profitable growth.
 
 But like many successful professionals, I hit a point where achievement wasn't enough. I was successful by conventional standards, but something was missing. That's when I began developing the ZAG Matrix framework.
 
@@ -68,7 +68,7 @@ Today, I help mid-career professionals who've achieved success but crave greater
 I'm also the founder of Bring It Forward Investments, where I apply strategic thinking and investment principles to help entrepreneurs and companies grow."
 
 ### **GitHub Profile**
-**Bio:** "Executive leader at Henry Schein One | Founder of Bring It Forward Investments | Creator of the ZAG Matrix framework for career transformation"
+**Bio:** "Chief Technology Officer at OptConnect | Founder of Bring It Forward Investments | Creator of the ZAG Matrix framework for career transformation"
 
 **README:**
 "# Sheridan Richey
@@ -85,7 +85,7 @@ I help mid-career professionals who've achieved success but crave greater purpos
 
 ## 🚀 Current Focus
 
-- Executive leadership at Henry Schein One
+- Chief Technology Officer at OptConnect
 - Strategic investments through Bring It Forward Investments
 - Building community around the ZAG Matrix framework
 - Career transformation coaching and speaking
@@ -101,17 +101,17 @@ I help mid-career professionals who've achieved success but crave greater purpos
 *Helping awakened technologists transform their careers and lives.*"
 
 ### **Twitter/X Profile**
-**Bio:** "Executive leader @HenryScheinOne | Founder @BringItForward | ZAG Matrix creator | Helping awakened technologists transform careers"
+**Bio:** "CTO @OptConnect | Founder @BringItForward | ZAG Matrix creator | Helping awakened technologists transform careers"
 
 ### **Speaking Engagements**
-**Introduction:** "Sheridan Richey is an executive leader at Henry Schein One and founder of Bring It Forward Investments. With over two decades of experience in SaaS leadership, he's the creator of the ZAG Matrix framework, helping awakened technologists transform their careers through clarity, momentum, and mastery."
+**Introduction:** "Sheridan Richey is Chief Technology Officer at OptConnect and founder of Bring It Forward Investments. With over two decades of experience in SaaS leadership, he's the creator of the ZAG Matrix framework, helping awakened technologists transform their careers through clarity, momentum, and mastery."
 
 ---
 
 ## 🎯 **Context-Specific Variations**
 
 ### **Leadership Focus**
-"Executive leader at Henry Schein One with over two decades of experience building high-performing teams and driving strategic growth in the SaaS industry."
+"Chief Technology Officer at OptConnect with over two decades of experience building high-performing teams and driving strategic growth in the SaaS industry."
 
 ### **Investment Focus**
 "Founder of Bring It Forward Investments with extensive experience in strategic investments and M&A, helping companies and entrepreneurs achieve sustainable growth."

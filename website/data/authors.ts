@@ -13,7 +13,7 @@ export const authors: Record<string, Author> = {
     id: 'sheridan-richey',
     name: 'Sheridan Richey',
     title: 'Founder & Chief Strategist',
-    bio: 'Sheridan Richey is a seasoned executive leader and entrepreneur who has guided multiple SaaS companies through transformative growth. With over two decades of experience in product development, M&A, and team leadership, Sheridan has developed the ZAG Matrix framework to help awakened technologists navigate their mid-career transformation. His journey spans executive roles at AdvancedMD, SirsiDynix, Extensiv, and Henry Schein One, alongside entrepreneurial ventures through Bring It Forward Investments.',
+    bio: 'Sheridan Richey is a seasoned executive leader and entrepreneur who has guided multiple SaaS companies through transformative growth. With over two decades of experience in product development, M&A, and team leadership, Sheridan has developed the ZAG Matrix framework to help awakened technologists navigate their mid-career transformation. His journey spans executive roles at AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect, alongside entrepreneurial ventures through Bring It Forward Investments.',
     headshot: '/assets/images/contributors/sheridan-richey.jpg',
     linkedin: 'https://linkedin.com/in/sheridanrichey'
   },

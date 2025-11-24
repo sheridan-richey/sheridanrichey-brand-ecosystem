@@ -4,7 +4,7 @@
 
 **Company:** Henry Schein One  
 **Role:** Executive Leadership  
-**Duration:** May 2025 - November 2025  
+**Duration:** May 2025 - November 28, 2025  
 **Focus Areas:** Executive leadership and strategic initiatives
 
 ## 📋 **How to Reference This Role**

@@ -35,7 +35,7 @@ export default function AboutPage() {
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-secondary-600">
                   I've spent over two decades in executive leadership roles at companies like 
-                  AdvancedMD, SirsiDynix, Extensiv, and Henry Schein One. I've led product 
+                  AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect. I've led product 
                   development, managed M&A processes, built high-performing teams, and driven 
                   profitable growth.
                 </p>

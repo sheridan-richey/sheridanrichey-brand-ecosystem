@@ -1,23 +1,24 @@
-# Henry Schein One - Role Description (Past Role)
+# OptConnect - Role Description
 
-## 🏢 **Position**
+## 🏢 **Current Position**
 
-**Company:** Henry Schein One  
-**Role:** Executive Leadership  
-**Duration:** May 2025 - November 2025  
-**Focus Areas:** Executive leadership and strategic initiatives
+**Company:** OptConnect  
+**Role:** Chief Technology Officer (CTO)  
+**Duration:** December 1, 2025 - Present  
+**Focus Areas:** [Your key responsibilities]
 
 ## 📋 **How to Reference This Role**
 
 ### **Professional Contexts:**
-- "Former executive leader at Henry Schein One"
-- "Previously served at Henry Schein One"
-- "During my time at Henry Schein One..."
+- "Chief Technology Officer at OptConnect"
+- "CTO at OptConnect"
+- "Currently serving as CTO at OptConnect"
+- "Leading technology strategy at OptConnect"
 
 ### **Personal Brand Contexts:**
-- "With over two decades in executive leadership, including my experience at Henry Schein One..."
-- "Drawing from my experience leading teams at companies like Henry Schein One..."
-- "During my time at Henry Schein One, I learned..."
+- "With over two decades in executive leadership, including my current role at OptConnect..."
+- "Drawing from my experience leading teams at companies like OptConnect..."
+- "In my current role at OptConnect, I see firsthand how..."
 
 ### **Content Guidelines:**
 ✅ **Can Share:**
@@ -39,24 +40,25 @@
 ### **ZAG Matrix Applications:**
 - **ZEN:** Leadership clarity and purpose in complex organizations
 - **ACT:** Building momentum through team relationships and culture
-- **GEM:** Strategic growth and career advancement within large companies
+- **GEM:** Strategic growth and career advancement within growing companies
 
 ### **Content Opportunities:**
 - Executive leadership insights
 - Team building and management strategies
-- Career development within large organizations
+- Career development within growing organizations
 - Industry trends and observations
+- Reuniting with former colleagues and building on past relationships
 
 ## 📝 **Bio Integration Examples**
 
 ### **Short Bio:**
-"Executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and team building."
+"Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and team building."
 
 ### **Medium Bio:**
-"Sheridan Richey is an executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and M&A."
+"Sheridan Richey is Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and M&A."
 
 ### **Long Bio:**
-"Sheridan Richey is an executive leader at Henry Schein One with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout his career at companies like AdvancedMD, SirsiDynix, Extensiv, and Henry Schein One, he has led product development, managed M&A processes, built high-performing teams, and driven profitable growth."
+"Sheridan Richey is Chief Technology Officer at OptConnect with over two decades of experience in SaaS leadership, product development, and strategic growth. Throughout his career at companies like AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect, he has led product development, managed M&A processes, built high-performing teams, and driven profitable growth."
 
 ## 🔄 **Content Creation Guidelines**
 
@@ -65,9 +67,10 @@
 - Use industry examples rather than company-specific details
 - Emphasize frameworks and methodologies
 - Connect to ZAG Matrix framework
+- Can reference the strategic decision to reunite with former colleagues
 
 ### **Speaking Engagements:**
-- Reference as past experience for credibility
+- Lead with current role for credibility
 - Focus on leadership and career transformation
 - Use general examples and frameworks
 - Emphasize personal brand and ZAG Matrix
@@ -88,4 +91,5 @@
 
 ---
 
-*This document should be updated as role responsibilities evolve.* 
+*This document should be updated as role responsibilities evolve.*
+

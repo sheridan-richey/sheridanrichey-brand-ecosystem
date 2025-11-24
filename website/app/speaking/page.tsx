@@ -62,7 +62,7 @@ export default function SpeakingPage() {
               </h3>
               <p className="text-graphite font-manrope mb-6">
                 Lessons learned from leading teams at AdvancedMD, SirsiDynix, Extensiv, 
-                and Henry Schein One. Practical strategies for scaling yourself and your organization.
+                Henry Schein One, and OptConnect. Practical strategies for scaling yourself and your organization.
               </p>
               <div className="text-sm text-graphite font-manrope">
                 <p><strong>Duration:</strong> 30-45 minutes</p>
