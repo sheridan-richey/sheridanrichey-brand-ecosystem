@@ -44,8 +44,10 @@ alwaysApply: false
 ### Git workflow
 1. Develop locally
 2. Commit with clear messages (conventional format preferred)
-3. Push to `main` (or open PR for review)
-4. Verify Vercel dashboard and GitHub Actions
+3. Push feature branch and open PR to `main` (do not push implementation directly to `main`)
+4. Wait for required CI checks to pass (Playwright + build/type checks as configured)
+5. Merge PR to `main`
+6. Verify GitHub Actions and Vercel production deployment, then run focused smoke checks for changed flows
 
 ## Vercel configuration
 

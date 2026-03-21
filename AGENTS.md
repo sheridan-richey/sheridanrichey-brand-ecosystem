@@ -72,6 +72,7 @@ These are intentionally outside PARA; link here instead of duplicating:
 ## How to work in this repo
 
 1. **Code and content**: Follow [`.cursor/rules/`](.cursor/rules/). For content, use [content-strategy](.cursor/rules/content-strategy.mdc). For Next.js and components, use [nextjs-architecture](.cursor/rules/nextjs-architecture.mdc) and [core-standards](.cursor/rules/core-standards.mdc). For planning and issues, use [agentic-workflows](.cursor/rules/agentic-workflows.mdc).
+   - **Delivery policy:** plan and implement in a feature branch, pass local quality gates, merge by PR with green CI, then verify production deployment/smoke checks (see [agentic-workflows](.cursor/rules/agentic-workflows.mdc) and [testing-deployment](.cursor/rules/testing-deployment.mdc)).
 2. **Organization**: Durable knowledge uses PARA at the root (`2A`, `3R`, selective `1P`, optional `4A`). See [para-system](.cursor/rules/para-system.mdc). **Work tracking** belongs in GitHub Issues, not duplicate trackers in markdown.
 3. **Decisions and context**: For captured decisions, see [`1P/brand-dial-in/20260301-context-and-decisions.md`](1P/brand-dial-in/20260301-context-and-decisions.md).
 
@@ -79,7 +80,7 @@ These are intentionally outside PARA; link here instead of duplicating:
 
 ## Current priorities
 
-- **Ship**: Commit, push to `main`, confirm GitHub Actions (Playwright + Deploy) and Vercel secrets. See [`1P/brand-dial-in/PUBLISH_CHECKLIST.md`](1P/brand-dial-in/PUBLISH_CHECKLIST.md).
+- **Ship**: Commit to a feature branch, merge to `main` via PR, then confirm GitHub Actions (Playwright + Deploy) and Vercel secrets. See [`1P/brand-dial-in/PUBLISH_CHECKLIST.md`](1P/brand-dial-in/PUBLISH_CHECKLIST.md).
 - **Lead magnet**: Add `website/public/downloads/prompt-architects-toolkit.pdf` when ready (see `website/public/downloads/README.md`). `.gitignore` allows PDFs in that folder only.
 - **Content**: New posts go in `content/blog/`; env vars for production are documented in `website/.env.example` (Beehiiv + Resend).
 - **Ongoing**: Blog cadence, newsletter, and ZAG-aligned content per [`.cursor/rules/`](.cursor/rules/).

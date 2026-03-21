@@ -12,6 +12,17 @@ alwaysApply: true
 ## Planning
 - For non-trivial changes: outline steps, files touched, and risks before editing
 - Prefer small, reviewable PRs with a clear issue link
+- Every implementation plan must include: branch strategy, local test gate, CI gate, and release verification steps
+
+## Branch-first delivery (required)
+- Do all substantive work in a dedicated feature branch from `main`
+- Do not implement directly on `main`; promote changes through PRs
+- Use clear, scope-based branch names (for example: `feat/blog-newsletter-cta-refinement`)
+
+## Quality gates (required)
+- Before opening PR: run targeted local checks for touched scope (at minimum build + relevant tests)
+- PR merge gate: required CI checks must be green (Playwright, build/type checks, and configured workflows)
+- Post-merge gate: verify production deployment health and run a focused smoke test for the changed user flow
 
 ## Work items (GitHub Issues)
 - Open or reference an issue for substantive work (features, bugs, content batches)
