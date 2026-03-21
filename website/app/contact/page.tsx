@@ -1,5 +1,6 @@
 import ContactForm from '@/components/ContactForm'
 import { Calendar, Mail, MessageSquare } from 'lucide-react'
+import { Suspense } from 'react'
 
 export default function ContactPage() {
   return (
@@ -40,7 +41,7 @@ export default function ContactPage() {
                 <div className="mt-10 space-y-6">
                   <a 
                     href="mailto:sheridan@sheridanrichey.com" 
-                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 group"
+                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cloud transition-all duration-200 group"
                   >
                     <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500 group-hover:bg-primary-600 transition-colors">
                       <Mail className="h-5 w-5 text-white" />
@@ -57,7 +58,7 @@ export default function ContactPage() {
                     href="https://linkedin.com/in/sheridanrichey" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 group"
+                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cloud transition-all duration-200 group"
                   >
                     <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500 group-hover:bg-primary-600 transition-colors">
                       <MessageSquare className="h-5 w-5 text-white" />
@@ -72,7 +73,7 @@ export default function ContactPage() {
                   
                   <a 
                     href="/speaking" 
-                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 group"
+                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cloud transition-all duration-200 group"
                   >
                     <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500 group-hover:bg-primary-600 transition-colors">
                       <Calendar className="h-5 w-5 text-white" />
@@ -85,7 +86,9 @@ export default function ContactPage() {
                 </div>
               </div>
               
-              <ContactForm />
+              <Suspense fallback={<div className="font-manrope text-graphite">Loading form...</div>}>
+                <ContactForm />
+              </Suspense>
             </div>
           </div>
         </div>
@@ -103,7 +106,7 @@ export default function ContactPage() {
               frameworks, and strategies delivered to your inbox.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a href="/newsletter" className="bg-white text-primary-500 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-colors font-manrope">
+              <a href="/newsletter" className="bg-white text-primary-500 hover:bg-cloud font-semibold py-3 px-6 rounded-lg transition-colors font-manrope">
                 Join the Newsletter
               </a>
               <a href="/blog" className="text-white hover:text-white/80 font-semibold font-manrope">

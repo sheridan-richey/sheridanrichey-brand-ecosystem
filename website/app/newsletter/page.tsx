@@ -4,9 +4,9 @@ import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
 import { ArrowRight, BookOpen, CheckCircle, Star, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
-export default function NewsletterPage() {
+function NewsletterContent() {
   const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     email: '',
@@ -97,7 +97,7 @@ export default function NewsletterPage() {
               </div>
             </div>
             <h1 className="font-manrope text-4xl md:text-5xl font-bold text-phantom mb-4">
-              Join the ZAG Newsletter
+              The ZAG Navigator
             </h1>
             <p className="font-manrope text-xl text-graphite">
               Connect with awakened technologists on their transformation journey. 
@@ -187,28 +187,6 @@ export default function NewsletterPage() {
                </div>
              </div>
 
-             {/* Trust Indicators */}
-             <div className="mt-8 p-6 bg-cloud rounded-xl">
-               <h3 className="font-manrope text-lg font-bold text-phantom mb-4">
-                 What Our Newsletter Subscribers Say
-               </h3>
-               <div className="space-y-4">
-                 <div className="flex items-start gap-3">
-                   <CheckCircle className="h-5 w-5 text-primary-500 mt-0.5" />
-                   <p className="font-manrope text-graphite">
-                     "The ZAG framework helped me find clarity in my career direction and build the momentum 
-                     I needed to make meaningful changes."
-                   </p>
-                 </div>
-                 <div className="flex items-start gap-3">
-                   <CheckCircle className="h-5 w-5 text-primary-500 mt-0.5" />
-                   <p className="font-manrope text-graphite">
-                     "Sheridan's insights are practical and actionable. I've implemented several strategies 
-                     that have already made a difference in my professional life."
-                   </p>
-                 </div>
-               </div>
-             </div>
           </div>
 
           {/* Right Column - Signup Form */}
@@ -218,7 +196,7 @@ export default function NewsletterPage() {
                 Start Your ZAG Journey
               </h3>
               <p className="font-manrope text-graphite mb-6">
-                Join 500+ awakened technologists transforming their careers.
+                Join awakened technologists on their transformation journey.
               </p>
 
               {/* Status Messages */}
@@ -300,7 +278,7 @@ export default function NewsletterPage() {
                   disabled={isSubmitting}
                   className="w-full font-manrope bg-primary-500 hover:bg-primary-600 disabled:bg-graphite text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Joining...' : 'Join the Newsletter'}
+                  {isSubmitting ? 'Joining...' : 'Join The ZAG Navigator'}
                   {!isSubmitting && <ArrowRight className="inline ml-2 h-4 w-4" />}
                 </button>
               </form>
@@ -328,7 +306,7 @@ export default function NewsletterPage() {
               Ready to Transform Your Career?
             </h2>
             <p className="font-manrope text-xl text-graphite mb-8 max-w-2xl mx-auto">
-              Join hundreds of technologists who've already started their ZAG journey. 
+              Join other awakened technologists who are building clarity, momentum, and mastery with the ZAG Matrix.
               Your transformation begins with one click above.
             </p>
             <Link 
@@ -342,5 +320,17 @@ export default function NewsletterPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function NewsletterPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-light-bg to-white flex items-center justify-center">
+        <p className="font-manrope text-graphite">Loading...</p>
+      </div>
+    }>
+      <NewsletterContent />
+    </Suspense>
   )
 } 

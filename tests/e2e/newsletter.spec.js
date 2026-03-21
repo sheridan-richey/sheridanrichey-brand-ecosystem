@@ -71,20 +71,16 @@ test.describe('Newsletter and Community', () => {
   test('newsletter signup should have all required fields', async ({ page }) => {
     await page.goto('/newsletter');
     
-    // Check for required form fields
+    // Check for form fields that exist on the newsletter page (email, name, role)
     const requiredFields = [
       'input[name="email"]',
-      'input[name="first_name"]',
-      'select[name="role"]',
-      'select[name="source"]',
-      'select[name="cta_source"]'
+      'input[name="name"]',
+      'select[name="role"]'
     ];
     
     for (const fieldSelector of requiredFields) {
       const field = page.locator(fieldSelector);
-      if (await field.count() > 0) {
-        await expect(field.first()).toBeVisible();
-      }
+      await expect(field.first()).toBeVisible();
     }
   });
 

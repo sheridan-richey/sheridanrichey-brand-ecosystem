@@ -296,56 +296,6 @@ export default function ResourcesPage() {
                 </div>
               </div>
 
-              <div className="border border-smoke rounded-lg p-4 hover:shadow-md transition-shadow">
-                <h3 className="font-manrope font-bold text-phantom mb-2">ZAG Matrix Assessment</h3>
-                <p className="font-manrope text-sm text-phantom mb-4">
-                  Discover your current ZAG score and identify which pillar needs the most attention in your journey.
-                </p>
-                <div className="flex items-center gap-3">
-                  <Link 
-                    href="/zag-assessment"
-                    className="inline-flex items-center font-manrope bg-cloud hover:bg-smoke text-phantom px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                  >
-                    Take Assessment
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                  <span className="font-manrope text-xs text-graphite">5 minutes</span>
-                </div>
-              </div>
-
-              <div className="border border-smoke rounded-lg p-4 hover:shadow-md transition-shadow">
-                <h3 className="font-manrope font-bold text-phantom mb-2">Weekly ZAG Planner</h3>
-                <p className="font-manrope text-sm text-phantom mb-4">
-                  A weekly planning template that integrates all three pillars of the ZAG Matrix into your routine.
-                </p>
-                <div className="flex items-center gap-3">
-                  <Link 
-                    href="/downloads/weekly-zag-planner"
-                    className="inline-flex items-center font-manrope bg-cloud hover:bg-smoke text-phantom px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download
-                  </Link>
-                  <span className="font-manrope text-xs text-graphite">PDF • 12 pages</span>
-                </div>
-              </div>
-
-              <div className="border border-smoke rounded-lg p-4 hover:shadow-md transition-shadow">
-                <h3 className="font-manrope font-bold text-phantom mb-2">Executive Transition Checklist</h3>
-                <p className="font-manrope text-sm text-phantom mb-4">
-                  Based on my experience with multiple executive transitions, this checklist ensures you hit the ground running.
-                </p>
-                <div className="flex items-center gap-3">
-                  <Link 
-                    href="/downloads/executive-transition-checklist"
-                    className="inline-flex items-center font-manrope bg-cloud hover:bg-smoke text-phantom px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download
-                  </Link>
-                  <span className="font-manrope text-xs text-graphite">PDF • 8 pages</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>

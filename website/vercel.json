@@ -43,6 +43,11 @@
       "source": "/www/(.*)",
       "destination": "https://sheridanrichey.com/$1",
       "permanent": true
+    },
+    {
+      "source": "/zag-collective",
+      "destination": "/community",
+      "permanent": true
     }
   ]
 } 

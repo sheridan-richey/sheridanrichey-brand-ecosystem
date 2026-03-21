@@ -10,13 +10,20 @@ test.describe('Blog Functionality', () => {
     await expect(page.locator('main')).toBeVisible();
     await expect(page.locator('h1').first()).not.toHaveText(/404/i);
     
-    // Verify blog posts are displayed
+    // If posts exist, at least one article/card should be visible (tolerate empty state during stub phase)
     const blogPosts = page.locator('article, [data-testid="blog-post"], .blog-post');
-    await expect(blogPosts.first()).toBeVisible();
+    const count = await blogPosts.count();
+    if (count > 0) {
+      await expect(blogPosts.first()).toBeVisible();
+    }
   });
 
   test('blog posts should be accessible and readable', async ({ page }) => {
     await page.goto('/blog');
+    await page.waitForLoadState('domcontentloaded');
+    await expect(page.locator('main')).toBeVisible();
+    // Avoid flaky linkCount=0 before cards hydrate
+    await page.waitForSelector('a[href*="/blog/"]', { timeout: 15000 });
     
     // Get all blog post links
     const postLinks = page.locator('a[href*="/blog/"]');
@@ -69,26 +76,33 @@ test.describe('Blog Functionality', () => {
     }
   });
 
-  test('blog categories and filtering should work', async ({ page }) => {
+  test('blog page should display category tags when posts exist', async ({ page }) => {
     await page.goto('/blog');
     
-    // Look for category filters or tags
-    const categoryLinks = page.locator('a[href*="category"], a[href*="tag"], button:has-text("ZEN"), button:has-text("ACT"), button:has-text("GEM")');
+    // Blog page has no client-side category filtering; category tags appear on post cards.
+    // Verify main content and structure are present.
+    await expect(page.locator('main')).toBeVisible();
+    await expect(page.locator('h1').first()).not.toHaveText(/404/i);
     
-    if (await categoryLinks.count() > 0) {
-      // Test first category filter
-      const firstCategory = categoryLinks.first();
-      await expect(firstCategory).toBeVisible();
-      
-      // Click category and verify page updates
-      await firstCategory.click();
-      
-      // Wait for page to update
-      await page.waitForLoadState('networkidle');
-      
-      // Verify we're still on a valid page
-      await expect(page.locator('main')).toBeVisible();
-      await expect(page.locator('h1').first()).not.toHaveText(/404/i);
+    const postCards = page.locator('article, [data-testid="blog-post"], .blog-post');
+    if (await postCards.count() > 0) {
+      // When posts exist, at least one card should be visible (may have category tag)
+      await expect(postCards.first()).toBeVisible();
     }
+  });
+
+  test('blog index should have at least one post from content pipeline', async ({ page }) => {
+    await page.goto('/blog');
+    const articles = page.locator('article');
+    await expect(articles.first()).toBeVisible();
+    const count = await articles.count();
+    expect(count).toBeGreaterThanOrEqual(1);
+  });
+
+  test('known post slug career-transition-optconnect should load with expected title', async ({ page }) => {
+    await page.goto('/blog/career-transition-optconnect');
+    await expect(page.locator('h1').first()).toBeVisible();
+    await expect(page.locator('h1').first()).toContainText(/OptConnect|Transition/i);
+    await expect(page.locator('main')).toBeVisible();
   });
 }); 

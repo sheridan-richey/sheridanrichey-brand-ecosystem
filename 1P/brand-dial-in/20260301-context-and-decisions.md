@@ -33,9 +33,9 @@ This document captures the decisions from the full project review session so the
 
 ## Style
 
-- **Single token set**: Use only brand tokens from `website/tailwind.config.js` — phantom, graphite, smoke, cloud, light-bg, primary (teal). No `slate-*`, `gray-*`, `secondary-*`, `accent-*`, or hardcoded hex in page/component code.
-- **Align all pages**: About, blog post template, and ZAG pillar pages (zen, act, gem) currently use a different palette; bring them in line with the same tokens and `font-manrope`.
-- **Font loading**: Remove duplicate Manrope import from `globals.css`; rely on `next/font` in `layout.tsx` only.
+- **Single token set**: Use brand tokens from `website/tailwind.config.js` — phantom, graphite, smoke, cloud, light-bg, primary. Marketing surfaces (pages, `NewsletterSignup`, header, community) use these tokens; generic UI primitives (e.g. shadcn-style `components/ui/button`) may keep their own patterns unless we intentionally re-skin them.
+- **Align all pages**: ZAG pillar secondary buttons and community CTAs use `primary-*` / `smoke` / `cloud` instead of raw `gray-*` / `teal-*` Tailwind scales where applicable.
+- **Font loading**: Manrope via `next/font` in `layout.tsx`; no duplicate Google Fonts `@import` in `globals.css`.
 
 ---
 
@@ -58,14 +58,14 @@ This document captures the decisions from the full project review session so the
 
 ---
 
-## Execution Guardrails (from plan)
+## Refinement completion (2026-03-20)
 
-- Work in a dedicated branch after the move (e.g. `refactor/next14-content-pipeline`).
-- Checkpoint commit after each phase with a clear message.
-- Do not proceed to the next phase until the current phase's verify checklist passes.
-- Keep production deploys blocked until Phase 4 (CI update) is complete.
-- Create a rollback point before Phase 2 (Next upgrade) and before Phase 3 (content pipeline).
+- **Phases 0–7**: Implemented (Next 14, `lib/posts.ts`, E2E/CI, cleanup, lead magnet page, style token sweep on listed marketing components). Canonical status lives here and in `AGENTS.md` (the historical `.cursor/plans/slr_brand_launch_refinement_*.plan.md` YAML may still list `pending` if left unchanged).
+- **Repo location**: Development on a non–OneDrive clone (e.g. `c:\code\...`) is the working standard; keep OneDrive copies out of the active workflow.
+- **Assets**: Run `git checkout -- website/public/` if tracked images under `website/public/` are missing locally after a clone/move.
+- **PDF**: Root `.gitignore` ignores `*.pdf` except `website/public/downloads/*.pdf` so the toolkit file can be versioned when added.
+- **Docs/CI**: `deployment-process.md` describes GitHub Actions + Vercel (not native Vercel Git deploy). Playwright runs on `push` and `pull_request` to `main`; deploy workflow uses Node 20.
 
 ---
 
-*Last updated: 2026-03-01. Update this file when phases complete or decisions change.*
+*Last updated: 2026-03-20. Update this file when phases complete or decisions change.*

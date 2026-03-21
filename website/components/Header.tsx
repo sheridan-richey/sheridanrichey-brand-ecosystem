@@ -75,17 +75,17 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-base font-semibold leading-6 text-phantom hover:text-teal-500 transition-colors duration-200 relative group"
+                className="text-base font-semibold leading-6 text-phantom hover:text-primary-500 transition-colors duration-200 relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-500 transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link 
               href="/newsletter" 
-              className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+              className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
             >
               Newsletter
             </Link>
@@ -95,7 +95,10 @@ export default function Header() {
       
       {/* Mobile menu - Fixed positioning outside header */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-[100]">
+        <div
+          className="lg:hidden fixed inset-0 z-[100]"
+          data-testid="mobile-menu-overlay"
+        >
           {/* Backdrop */}
           <div 
             className="fixed inset-0 bg-black/20 backdrop-blur-sm"
@@ -140,7 +143,8 @@ export default function Header() {
                 <div className="py-6">
                   <Link
                     href="/newsletter"
-                    className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md w-full text-center block"
+                    data-testid="mobile-newsletter-link"
+                    className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md w-full text-center block"
                     onClick={closeMobileMenu}
                   >
                     Newsletter

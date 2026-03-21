@@ -1,39 +1,29 @@
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
-import { allPosts } from 'contentlayer/generated'
+import { getAllPosts } from '@/lib/posts'
 import { ArrowRight, Calendar, Tag } from 'lucide-react'
 import Link from 'next/link'
 
-// Sort posts: featured first, then non-featured, both in descending date order
-const blogPosts = allPosts
-  .map(post => {
-    return {
-      ...post,
-      date: new Date(post.date).toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'short', 
-        day: 'numeric' 
-      }),
-      featured: post.featured === true,
-      author: null // Temporarily remove author until contentlayer issue is resolved
-    }
-  })
-  .sort((a, b) => {
-    // First sort by featured status (featured posts first)
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
-    // Then sort by date (newest first)
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  })
-
-const categoryColorMap: Record<string, string> = {
-  ZAG: 'bg-teal-500 text-white',
-  ZEN: 'bg-zag-zen-light text-zag-zen-dark',
-  ACT: 'bg-zag-act-light text-zag-act-dark',
-  GEM: 'bg-zag-gem-light text-zag-gem-dark',
-  Featured: 'bg-teal-500/10 text-teal-500',
-}
-
 export default function BlogPage() {
+  const allPosts = getAllPosts()
+  const blogPosts = allPosts.map(post => ({
+    ...post,
+    date: new Date(post.date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    }),
+    featured: post.featured === true,
+    author: null
+  }))
+
+  const categoryColorMap: Record<string, string> = {
+    ZAG: 'bg-teal-500 text-white',
+    ZEN: 'bg-zag-zen-light text-zag-zen-dark',
+    ACT: 'bg-zag-act-light text-zag-act-dark',
+    GEM: 'bg-zag-gem-light text-zag-gem-dark',
+    Featured: 'bg-teal-500/10 text-teal-500',
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-light-bg to-white">
       {/* Header */}

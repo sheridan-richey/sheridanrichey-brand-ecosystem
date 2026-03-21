@@ -22,7 +22,7 @@ export default function CommunityPage() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="/newsletter"
-                className="group bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
+                className="group bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
               >
                 Join Newsletter First
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -117,8 +117,8 @@ export default function CommunityPage() {
             </h2>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <Check className="h-4 w-4 text-teal-600" />
+                <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Check className="h-4 w-4 text-primary-600" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-arsenic mb-2">Newsletter Subscription</h3>
@@ -127,8 +127,8 @@ export default function CommunityPage() {
               </div>
               
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <Check className="h-4 w-4 text-teal-600" />
+                <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Check className="h-4 w-4 text-primary-600" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-arsenic mb-2">Active Application</h3>
@@ -139,7 +139,7 @@ export default function CommunityPage() {
           </div>
 
           {/* Community Access & CTA - Combined Section */}
-          <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-12 text-white text-center">
+          <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl p-12 text-white text-center">
             <div className="flex justify-center mb-6">
               <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
                 <Key className="h-8 w-8 text-white" />
@@ -164,7 +164,7 @@ export default function CommunityPage() {
             <div className="flex justify-center">
               <Link
                 href="/contact?source=community&code=ZAG2025"
-                className="group bg-white text-teal-600 hover:bg-gray-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
+                className="group bg-white text-primary-600 hover:bg-cloud px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
               >
                 Request Community Access
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />

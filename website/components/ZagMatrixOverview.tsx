@@ -56,7 +56,7 @@ export default function ZagMatrixOverview({
               href={pillar.href}
               className="group block"
             >
-              <article className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-200 h-full flex flex-col">
+              <article className="bg-white rounded-xl shadow-sm border border-smoke overflow-hidden hover:shadow-lg transition-all duration-200 h-full flex flex-col">
                 <div className="p-6 flex-1 flex flex-col">
                   {/* Header with Icon and Title */}
                   <div className="flex items-center gap-x-3 mb-4">

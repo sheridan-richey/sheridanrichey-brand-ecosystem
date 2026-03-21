@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import ContributorCard from '@/components/ContributorCard'
 import { getAllAuthors } from '@/data/authors'
-import { allPosts } from 'contentlayer/generated'
+import { getAllPosts } from '@/lib/posts'
 
 export default function ContributorsPage() {
-  // Get all authors and their authored posts
+  const posts = getAllPosts()
   const authors = getAllAuthors()
   const contributors = authors.map(author => {
-    const authoredPosts = allPosts
+    const authoredPosts = posts
       .filter(post => post.author === author.id)
       .map(post => ({
         title: post.title,

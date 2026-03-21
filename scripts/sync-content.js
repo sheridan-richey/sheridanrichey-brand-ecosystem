@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 /**
+ * @deprecated No longer needed. Blog content is read directly from content/blog/
+ * via website/lib/posts.ts (gray-matter). Do not use this script for new workflows.
+ *
  * Content Sync Script for Sheridan Richey Brand Ecosystem
- * 
- * This script syncs content from the centralized content hub
- * to the website for publishing.
+ * Previously synced content from the hub to website/posts for Contentlayer.
  */
 
 const fs = require('fs');

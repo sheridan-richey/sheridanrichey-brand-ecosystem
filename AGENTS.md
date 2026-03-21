@@ -17,7 +17,7 @@ This file orients AI assistants (and humans) on what this repo is and how to wor
 
 - **Site**: Next.js 14 (App Router), TypeScript, Tailwind CSS, React 18.
 - **Content**: Markdown/MDX in `content/blog/` (zen, act, gem subdirs), parsed at build time via custom `website/lib/posts.ts` (gray-matter + fs). No Contentlayer.
-- **Hosting**: Vercel. Deploy via push to main (or configured branch); see `.github/workflows` and `website/vercel.json` for CI and config.
+- **Hosting**: Vercel. Production deploys use GitHub Actions ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)); `website/vercel.json` disables Vercel’s native Git auto-deploy. E2E runs on push/PR to `main` via [`.github/workflows/playwright.yml`](.github/workflows/playwright.yml).
 - **Tests**: Playwright E2E in `tests/e2e/`; default base URL is local so that `npm run dev` + `npm run test:e2e` validates the app under development.
 
 ---
@@ -38,11 +38,13 @@ This file orients AI assistants (and humans) on what this repo is and how to wor
 
 ---
 
-## Current priorities (update as phases complete)
+## Current priorities
 
-- **Phase 0**: Foundation — context doc and AGENTS.md added; repo move out of OneDrive is next (manual).
-- **Next**: Phase 1 — Test baseline (Playwright default to local, fix brittle selectors), then Phase 2 (Next 14 upgrade) and Phase 3 (custom content pipeline). See the plan in `.cursor/plans/` or the context doc for full phase list.
+- **Ship**: Commit, push to `main`, confirm GitHub Actions (Playwright + Deploy) and Vercel secrets. See [`1P/brand-dial-in/PUBLISH_CHECKLIST.md`](1P/brand-dial-in/PUBLISH_CHECKLIST.md).
+- **Lead magnet**: Add `website/public/downloads/prompt-architects-toolkit.pdf` when ready (see `website/public/downloads/README.md`). `.gitignore` allows PDFs in that folder only.
+- **Content**: New posts go in `content/blog/`; env vars for production are documented in `website/.env.example` (Beehiiv + Resend).
+- **Ongoing**: Blog cadence, newsletter, and ZAG-aligned content per [`.cursor/rules/`](.cursor/rules/).
 
 ---
 
-*Update "Current priorities" and the context doc as work progresses so the next session (or agent) has an accurate picture.*
+*Update this section when priorities shift. Historical decisions: [`1P/brand-dial-in/20260301-context-and-decisions.md`](1P/brand-dial-in/20260301-context-and-decisions.md).*

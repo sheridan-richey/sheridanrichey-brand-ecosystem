@@ -167,4 +167,4 @@ What system in your life would you like to start architecting today?
 
 ---
 
-*This is part of the ZAG Matrix framework for career transformation. Learn more about how ZEN, ACT, and GEM work together to create sustainable growth and fulfillment.* 
+*This is part of the ZAG Matrix framework for career transformation. Learn more about how ZEN, ACT, and GEM work together to create sustainable growth and fulfillment.*

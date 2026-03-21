@@ -16,14 +16,15 @@ test.describe('CTA Functionality Across Website', () => {
   });
 
   test('mobile menu newsletter CTA should work correctly', async ({ page }) => {
+    // Use mobile viewport so the hamburger menu is visible
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
-    
+
     // Open mobile menu
     const mobileMenuButton = page.locator('button[aria-label="Open main menu"]');
     await mobileMenuButton.click();
     
-    // Test mobile newsletter button
-    const mobileNewsletterButton = page.locator('.lg\\:hidden a:has-text("Newsletter")');
+    const mobileNewsletterButton = page.getByTestId('mobile-newsletter-link');
     await expect(mobileNewsletterButton).toBeVisible();
     
     // Click and verify navigation
@@ -38,10 +39,11 @@ test.describe('CTA Functionality Across Website', () => {
     // Scroll to footer
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     
-    // Test footer newsletter link
-    const footerNewsletterLink = page.locator('footer a:has-text("Join Newsletter")');
+    // Test footer newsletter link (footer uses "Newsletter" label per simplified footer)
+    const footerNewsletterLink = page.locator('footer a[href="/newsletter"]');
     await expect(footerNewsletterLink).toBeVisible();
-    
+    await expect(footerNewsletterLink).toContainText('Newsletter');
+
     // Click and verify navigation
     await footerNewsletterLink.click();
     await expect(page).toHaveURL(/.*newsletter/);
@@ -50,21 +52,15 @@ test.describe('CTA Functionality Across Website', () => {
 
   test('hero section newsletter CTA should work correctly', async ({ page }) => {
     await page.goto('/');
-    
-    // Test hero section newsletter button
-    const heroNewsletterButton = page.locator('button:has-text("Join Newsletter")');
-    await expect(heroNewsletterButton).toBeVisible();
-    
-    // Click and verify modal opens
-    await heroNewsletterButton.click();
-    
-    // Check for newsletter signup modal
-    const modal = page.locator('.fixed.inset-0');
-    await expect(modal).toBeVisible();
-    
-    // Check for modal content
-    const modalTitle = page.locator('text=Join The ZAG Navigator');
-    await expect(modalTitle).toBeVisible();
+
+    // Hero CTA is a link to /newsletter with text "Start Your Next Chapter + Get AI Guide"
+    const heroNewsletterLink = page.locator('section a[href="/newsletter"]').filter({ hasText: /Start Your Next Chapter|Get AI Guide/ }).first();
+    await expect(heroNewsletterLink).toBeVisible();
+
+    // Click and verify navigation to newsletter page
+    await heroNewsletterLink.click();
+    await expect(page).toHaveURL(/.*newsletter/);
+    await expect(page.locator('h1')).toBeVisible();
   });
 
   test('homepage CTA section should work correctly', async ({ page }) => {

@@ -7,13 +7,13 @@ export default function AboutPage() {
     <div className="min-h-screen">
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-24 sm:py-32">
+      <section className="bg-gradient-to-br from-primary-50 via-white to-light-bg py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-secondary-900 sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-phantom font-manrope sm:text-6xl">
               About <span className="gradient-text">Sheridan Richey</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-secondary-600">
+            <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
               Executive leader, entrepreneur, and guide for awakened technologists seeking 
               purpose-driven transformation through the ZAG Matrix framework.
             </p>
@@ -30,55 +30,55 @@ export default function AboutPage() {
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-phantom font-manrope sm:text-4xl">
                   My Journey
                 </h2>
-                <p className="mt-6 text-lg leading-8 text-secondary-600">
+                <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
                   I've spent over two decades in executive leadership roles at companies like 
                   AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect. I've led product 
                   development, managed M&A processes, built high-performing teams, and driven 
                   profitable growth.
                 </p>
-                <p className="mt-6 text-lg leading-8 text-secondary-600">
+                <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
                   But like many successful professionals, I hit a point where achievement 
                   wasn't enough. I was successful by conventional standards, but something 
                   was missing. That's when I began developing the ZAG Matrix framework.
                 </p>
-                <p className="mt-6 text-lg leading-8 text-secondary-600">
+                <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
                   Today, I help mid-career professionals who've achieved success but crave 
                   greater purpose. Through the ZAG Matrix, I guide them toward holistic 
                   transformation that integrates career growth with personal fulfillment.
                 </p>
               </div>
               <div className="card">
-                <h3 className="text-xl font-semibold text-secondary-900 mb-4">Key Achievements</h3>
+                <h3 className="text-xl font-semibold text-phantom font-manrope mb-4">Key Achievements</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <Award className="h-6 w-6 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-secondary-900">Executive Leadership</h4>
-                      <p className="text-secondary-600">Led teams of 100+ across multiple SaaS companies</p>
+                      <h4 className="font-semibold text-phantom font-manrope">Executive Leadership</h4>
+                      <p className="text-graphite font-manrope">Led teams of 100+ across multiple SaaS companies</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <Building className="h-6 w-6 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-secondary-900">Product Development</h4>
-                      <p className="text-secondary-600">Launched successful products serving millions of users</p>
+                      <h4 className="font-semibold text-phantom font-manrope">Product Development</h4>
+                      <p className="text-graphite font-manrope">Launched successful products serving millions of users</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <TrendingUp className="h-6 w-6 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-secondary-900">Growth & M&A</h4>
-                      <p className="text-secondary-600">Managed acquisitions and drove profitable expansion</p>
+                      <h4 className="font-semibold text-phantom font-manrope">Growth & M&A</h4>
+                      <p className="text-graphite font-manrope">Managed acquisitions and drove profitable expansion</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <Lightbulb className="h-6 w-6 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-secondary-900">Entrepreneurship</h4>
-                      <p className="text-secondary-600">Founded Bring It Forward Investments</p>
+                      <h4 className="font-semibold text-phantom font-manrope">Entrepreneurship</h4>
+                      <p className="text-graphite font-manrope">Founded Bring It Forward Investments</p>
                     </div>
                   </div>
                 </div>
@@ -89,16 +89,16 @@ export default function AboutPage() {
       </section>
 
       {/* ZAG Matrix Deep Dive */}
-      <ZagMatrixOverview className="bg-secondary-50" />
+      <ZagMatrixOverview className="bg-light-bg" />
 
       {/* Contributors Section */}
-      <section className="py-24 sm:py-32 bg-secondary-50">
+      <section className="py-24 sm:py-32 bg-light-bg">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-phantom font-manrope sm:text-4xl">
               Our Team
             </h2>
-            <p className="mt-6 text-lg leading-8 text-secondary-600">
+            <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
               Meet the talented strategists, architects, and storytellers dedicated to helping 
               you navigate your journey of transformation.
             </p>
@@ -115,10 +115,10 @@ export default function AboutPage() {
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-secondary-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-phantom font-manrope sm:text-4xl">
               My Mission
             </h2>
-            <p className="mt-6 text-lg leading-8 text-secondary-600">
+            <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
               To help awakened technologists transform their careers and lives by providing 
               practical frameworks, real-world insights, and a supportive community.
             </p>

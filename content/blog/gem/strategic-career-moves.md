@@ -134,4 +134,4 @@ Your career moves are investments in your future. Like any investment, they shou
 - **Compounding Potential** - Will this create opportunities for future growth?
 The most successful professionals don't just make good career moves—they make moves that create a foundation for future moves. Each decision builds on the last, creating a compounding effect that leads to exponential growth.
 ---
-*Ready to make strategic career moves that compound your success? Join our community of awakened technologists and get insights on positioning yourself for exponential growth.* 
+*Ready to make strategic career moves that compound your success? Join our community of awakened technologists and get insights on positioning yourself for exponential growth.*

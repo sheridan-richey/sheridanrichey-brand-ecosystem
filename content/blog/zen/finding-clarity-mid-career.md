@@ -15,7 +15,7 @@ featured: false
 You've climbed the ladder. You've hit your targets. You've built a reputation. But something's missing.
 This is the paradox of mid-career success: you've achieved what you set out to achieve, but now you're questioning whether it's what you actually want. You're not alone in this feeling.
 ## The Success Plateau
-Most high-achieving professionals hit this wall around their mid-30s to early 40s. You've mastered your craft, built relationships, and proven your value. But the next steps aren't as clear as they once were.
+Most high-achieving professionals hit this wall around their mid-35s to early 40s. You've mastered your craft, built relationships, and proven your value. But the next steps aren't as clear as they once were.
 The problem isn't that you're not successful—it's that success has become comfortable, and comfort is the enemy of growth.
 ## The ZEN Framework: Your Path to Clarity
 This is exactly where the **ZEN (Zeal Evolves Now)** component of the ZAG Matrix becomes crucial. Here's how to apply it:
@@ -63,4 +63,4 @@ Clarity is just the beginning. Once you have it, you'll need to build momentum (
 **The question isn't whether you'll find clarity—it's whether you're willing to do the work to discover it.**
 What's one small action you can take today to move toward greater clarity in your career?
 ---
-*This is part of the ZAG Matrix framework for career transformation. Learn more about how ZEN, ACT, and GEM work together to create sustainable growth and fulfillment.* 
+*This is part of the ZAG Matrix framework for career transformation. Learn more about how ZEN, ACT, and GEM work together to create sustainable growth and fulfillment.*

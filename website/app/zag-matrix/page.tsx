@@ -1,6 +1,5 @@
 import ZagMatrixOverview from '@/components/ZagMatrixOverview'
 import { CTAButton } from '@/components/ui/cta-button'
-import { BookOpen, Calendar, Users as UsersIcon } from 'lucide-react'
 import Link from 'next/link'
 
 export default function ZagMatrixPage() {
@@ -96,58 +95,6 @@ export default function ZagMatrixPage() {
                 investments, and entrepreneurial growth opportunities.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources Section */}
-      <section className="py-24 sm:py-32 bg-gradient-to-br from-primary-500/5 to-light-teal/5">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-phantom sm:text-4xl font-manrope">
-              Resources to Support Your Journey
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-graphite font-manrope">
-              Access tools, templates, and insights to help you apply the ZAG Matrix framework.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Link href="/blog" className="group">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-smoke hover:shadow-lg transition-shadow duration-200">
-                <BookOpen className="h-8 w-8 text-primary-500 mb-4" />
-                <h3 className="font-manrope text-lg font-bold text-phantom mb-2 group-hover:text-primary-500 transition-colors">
-                  Blog Articles
-                </h3>
-                <p className="font-manrope text-graphite text-sm">
-                  Deep dives into each pillar with practical strategies and real-world examples.
-                </p>
-              </div>
-            </Link>
-            
-            <Link href="/newsletter" className="group">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-smoke hover:shadow-lg transition-shadow duration-200">
-                <Calendar className="h-8 w-8 text-primary-500 mb-4" />
-                <h3 className="font-manrope text-lg font-bold text-phantom mb-2 group-hover:text-primary-500 transition-colors">
-                  Weekly Newsletter
-                </h3>
-                <p className="font-manrope text-graphite text-sm">
-                  Get actionable insights and strategies delivered to your inbox every week.
-                </p>
-              </div>
-            </Link>
-            
-            <Link href="/resources" className="group">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-smoke hover:shadow-lg transition-shadow duration-200">
-                <UsersIcon className="h-8 w-8 text-primary-500 mb-4" />
-                <h3 className="font-manrope text-lg font-bold text-phantom mb-2 group-hover:text-primary-500 transition-colors">
-                  Tools & Templates
-                </h3>
-                <p className="font-manrope text-graphite text-sm">
-                  Practical resources to help you implement the ZAG Matrix in your daily life.
-                </p>
-              </div>
-            </Link>
           </div>
         </div>
       </section>

@@ -8,13 +8,16 @@
 ## Pre-Deployment Checklist
 
 ### 1. Environment Variables Setup
-Create `.env.local` file in the `website/` directory:
+Create `.env.local` file in the `website/` directory (see also `website/.env.example`):
 ```env
 NEXT_PUBLIC_SITE_URL=https://sheridanrichey.com
 NEXT_PUBLIC_GA_ID=your-google-analytics-id
 NEXT_PUBLIC_VERCEL_ANALYTICS_ID=your-vercel-analytics-id
 BEEHIIV_PUBLICATION_ID=your-beehiiv-publication-id
 BEEHIIV_API_KEY=your-beehiiv-api-key
+RESEND_API_KEY=re_your_resend_key
+FROM_EMAIL=onboarding@yourdomain.com
+TO_EMAIL=you@yourdomain.com
 ```
 
 ### 2. Required Assets
@@ -77,6 +80,9 @@ NEXT_PUBLIC_GA_ID=your-google-analytics-id
 NEXT_PUBLIC_VERCEL_ANALYTICS_ID=your-vercel-analytics-id
 BEEHIIV_PUBLICATION_ID=your-beehiiv-publication-id
 BEEHIIV_API_KEY=your-beehiiv-api-key
+RESEND_API_KEY=re_...
+FROM_EMAIL=...
+TO_EMAIL=...
 ```
 
 ### Domain Configuration
@@ -131,10 +137,10 @@ BEEHIIV_API_KEY=your-beehiiv-api-key
 ```
 
 ## Content Updates
-- **Blog Posts:** Add MDX files to `posts/` directory
-- **Images:** Add to `public/` directory
-- **Components:** Edit React components in `components/`
-- **Pages:** Edit pages in `app/` directory
+- **Blog posts:** Add Markdown (or MDX) files under **`content/blog/`** at the repo root, in subfolders `zen/`, `act/`, `gem/`, or `zag/` as appropriate. The site reads them via `website/lib/posts.ts` at build time.
+- **Images:** Add under `website/public/` (e.g. `website/public/images/blog/`).
+- **Components:** Edit React components in `website/components/`
+- **Pages:** Edit pages in `website/app/`
 
 ## Performance Optimization
 

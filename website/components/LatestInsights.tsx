@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { allPosts } from 'contentlayer/generated'
+import { getAllPosts } from '@/lib/posts'
 import BlogCard, { BlogCardPost } from './BlogCard'
 import { getAuthor } from '@/data/authors'
 
@@ -41,7 +41,7 @@ export default function LatestInsights({
   showViewAllButton = true,
   className = ""
 }: LatestInsightsProps) {
-  const latestPosts = getLatestFeaturedPosts(allPosts, postCount)
+  const latestPosts = getLatestFeaturedPosts(getAllPosts(), postCount)
 
   return (
     <section className={`py-24 sm:py-32 ${className}`}>

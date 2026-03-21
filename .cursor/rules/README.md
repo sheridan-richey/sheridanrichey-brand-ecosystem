@@ -66,13 +66,12 @@ This directory contains Cursor rules that guide AI assistance for the Sheridan R
 4. Update this README if rule structure changes
 
 ## Current Project Status
-- **Newsletter Integration**: ✅ COMPLETED & ARCHIVED
-- **Next Priority**: Hero Section Optimization, About Page Refinement, or Resource Library Creation
-- **PARA System**: Active and well-maintained
-- **Technical Foundation**: Solid and production-ready
+- **Tech stack**: Next.js 14, TypeScript, Tailwind, custom content pipeline (gray-matter, `content/blog/`), Vercel
+- **Content**: Single source of truth in `content/blog/` (zen, act, gem, zag); blog images in `website/public/images/blog/<post-slug>/`
+- **Conversion**: Newsletter (The ZAG Navigator) via Beehiiv; lead magnet (Prompt Architect's Toolkit) at `/downloads/prompt-architects-toolkit`
+- **Next priority**: Add PDF to `website/public/downloads/prompt-architects-toolkit.pdf`; run E2E locally and in CI as needed
 
 ---
 
-**Last Updated**: 2025-08-11  
-**Status**: All rules updated and consolidated  
-**Redundancy**: Eliminated through rule consolidation
+**Last Updated**: 2026-03-01  
+**Status**: Brand launch refinement plan executed (Phases 0–7)

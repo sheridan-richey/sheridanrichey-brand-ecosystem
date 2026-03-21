@@ -97,4 +97,4 @@ The best strategic relationships take time to develop. They require:
 Think about one relationship in your network that could be more strategic. What would it look like to invest more in that relationship? What could you offer them? What could they help you with?
 The power of strategic relationships isn't just about what you get—it's about what you become through the process of building them. In the ACT phase of your ZAG Matrix journey, these relationships become the foundation for the momentum that will carry you into the GEM phase of growth and mastery.
 ---
-*Ready to accelerate your growth through strategic relationships? Join our community of awakened technologists and connect with others on the same journey.* 
+*Ready to accelerate your growth through strategic relationships? Join our community of awakened technologists and connect with others on the same journey.*

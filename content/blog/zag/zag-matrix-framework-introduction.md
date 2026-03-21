@@ -1,4 +1,4 @@
-﻿---
+---
 title: "The ZAG Matrix: A Framework for Awakened Technologists"
 description: "Discover how the ZAG Matrix helps mid-career professionals integrate clarity, momentum, and mastery into purpose-driven careers. A proven framework for those who've achieved success but crave greater meaning."
 date: "2025-07-21"
@@ -132,4 +132,4 @@ Transformation happens through consistent action. What's one small step you can 
 ## The Invitation
 If you're reading this and nodding along, you're ready for the next phase of your journey. The ZAG Matrix isn't just about career success—it's about building a life that feels authentic, meaningful, and aligned with who you truly are.
 **The question isn't whether you can transform your career and life—it's whether you're ready to do the work.**
-Are you ready to stop chasing success and start living ZAG? 
+Are you ready to stop chasing success and start living ZAG?

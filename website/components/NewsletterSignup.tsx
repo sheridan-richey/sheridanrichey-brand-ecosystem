@@ -80,7 +80,7 @@ export default function NewsletterSignup({
       case 'compact':
         return 'max-w-md mx-auto'
       case 'hero':
-        return 'max-w-2xl mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200'
+        return 'max-w-2xl mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-smoke'
       default:
         return 'max-w-lg mx-auto'
     }
@@ -89,22 +89,22 @@ export default function NewsletterSignup({
   const getTitleStyles = () => {
     switch (variant) {
       case 'hero':
-        return 'text-3xl font-bold text-gray-900 mb-4'
+        return 'text-3xl font-bold text-phantom mb-4'
       case 'compact':
-        return 'text-xl font-semibold text-gray-900 mb-2'
+        return 'text-xl font-semibold text-phantom mb-2'
       default:
-        return 'text-2xl font-bold text-gray-900 mb-3'
+        return 'text-2xl font-bold text-phantom mb-3'
     }
   }
 
   const getDescriptionStyles = () => {
     switch (variant) {
       case 'hero':
-        return 'text-lg text-gray-600 mb-6'
+        return 'text-lg text-graphite mb-6'
       case 'compact':
-        return 'text-sm text-gray-600 mb-4'
+        return 'text-sm text-graphite mb-4'
       default:
-        return 'text-base text-gray-600 mb-6'
+        return 'text-base text-graphite mb-6'
     }
   }
 
@@ -112,13 +112,13 @@ export default function NewsletterSignup({
     return (
       <div className={`${getVariantStyles()} ${className}`}>
         <div className="text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Welcome to The ZAG Navigator!</h3>
-          <p className="text-gray-600 mb-4">
+          <h3 className="text-xl font-semibold text-phantom mb-2">Welcome to The ZAG Navigator!</h3>
+          <p className="text-graphite mb-4">
             You're now part of our community of awakened technologists. Check your email for your first resource.
           </p>
           <Button
@@ -147,7 +147,7 @@ export default function NewsletterSignup({
         <div className="grid grid-cols-1 gap-4">
           {showName && (
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-arsenic mb-1">
                 First Name
               </label>
               <input
@@ -155,14 +155,14 @@ export default function NewsletterSignup({
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-smoke rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 placeholder="Your first name"
               />
             </div>
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-arsenic mb-1">
               Email Address *
             </label>
             <input
@@ -171,14 +171,14 @@ export default function NewsletterSignup({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-smoke rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               placeholder="your.email@example.com"
             />
           </div>
 
           {showRole && (
             <div>
-              <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="role" className="block text-sm font-medium text-arsenic mb-1">
                 Current Role
               </label>
               <input
@@ -186,7 +186,7 @@ export default function NewsletterSignup({
                 id="role"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-smoke rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 placeholder="e.g., Software Engineer, Product Manager"
               />
             </div>
@@ -196,7 +196,7 @@ export default function NewsletterSignup({
         {message && (
           <div className={`p-3 rounded-lg text-sm ${
             isSuccess 
-              ? 'bg-green-50 text-green-800 border border-green-200' 
+              ? 'bg-primary-50 text-primary-800 border border-primary-200' 
               : 'bg-red-50 text-red-800 border border-red-200'
           }`}>
             {message}
@@ -206,7 +206,7 @@ export default function NewsletterSignup({
         <Button
           type="submit"
           disabled={isLoading || !email}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isLoading ? (
             <div className="flex items-center justify-center">
@@ -221,7 +221,7 @@ export default function NewsletterSignup({
           )}
         </Button>
 
-        <p className="text-xs text-gray-500 text-center">
+        <p className="text-xs text-graphite text-center">
           Get weekly insights on career transformation, leadership, and the ZAG Matrix framework. 
           Unsubscribe at any time.
         </p>
@@ -229,12 +229,12 @@ export default function NewsletterSignup({
 
       {variant === 'hero' && (
         <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600 mb-3">🎁 Free Resource: AI Prompt Engineer's Guide</p>
-          <p className="text-xs text-gray-500">
+          <p className="text-sm text-graphite mb-3">🎁 Free Resource: AI Prompt Engineer's Guide</p>
+          <p className="text-xs text-graphite">
             New subscribers get instant access to my comprehensive guide on using AI for career transformation
           </p>
         </div>
       )}
     </div>
   )
-} 
+}

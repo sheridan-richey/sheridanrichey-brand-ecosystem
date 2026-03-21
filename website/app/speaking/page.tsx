@@ -189,7 +189,7 @@ export default function SpeakingPage() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link 
                 href="/contact?subject=Speaking%20Engagement&source=speaking" 
-                className="bg-white text-primary-500 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-colors font-manrope inline-flex items-center gap-2"
+                className="bg-white text-primary-500 hover:bg-cloud font-semibold py-3 px-6 rounded-lg transition-colors font-manrope inline-flex items-center gap-2"
               >
                 Book a Speaking Engagement <ArrowRight className="h-4 w-4" />
               </Link>
