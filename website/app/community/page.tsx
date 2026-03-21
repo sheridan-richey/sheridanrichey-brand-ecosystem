@@ -1,6 +1,9 @@
 import { ArrowRight, Check, Key, MessageCircle, Shield, Users } from 'lucide-react'
 import Link from 'next/link'
 
+/** Shown on this page and passed to /contact so submissions include the current year's code. */
+const ZAG_COLLECTIVE_ACCESS_CODE = 'ZAG2026'
+
 export default function CommunityPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-cloud to-smoke">
@@ -156,14 +159,14 @@ export default function CommunityPage() {
             <div className="bg-white/20 rounded-lg p-6 mb-8 inline-block">
               <p className="text-sm opacity-75 mb-2">Community Access Code</p>
               <code className="text-3xl font-mono font-bold text-white tracking-wider">
-                ZAG2025
+                {ZAG_COLLECTIVE_ACCESS_CODE}
               </code>
             </div>
             
             {/* CTA Button */}
             <div className="flex justify-center">
               <Link
-                href="/contact?source=community&code=ZAG2025"
+                href={`/contact?source=community&code=${ZAG_COLLECTIVE_ACCESS_CODE}`}
                 className="group bg-white text-primary-600 hover:bg-cloud px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
               >
                 Request Community Access
