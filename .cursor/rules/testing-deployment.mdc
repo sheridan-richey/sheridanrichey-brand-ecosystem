@@ -14,7 +14,7 @@ alwaysApply: false
 ## Testing
 
 ### Playwright
-- Configuration: [playwright.config.js](mdc:playwright.config.js)
+- Configuration: [playwright.config.js](mdc:playwright.config.js) — local runs use a dedicated dev port (`E2E_PORT`, default **3100**) so the Playwright `webServer` does not collide with a normal `next dev` on port 3000.
 - Tests: [tests/e2e/](mdc:tests/e2e/) — homepage, blog, contact, newsletter, links, speaking, zag-matrix
 - Page objects: [tests/e2e/pageObjects/](mdc:tests/e2e/pageObjects/)
 - Default: run E2E against **local** dev (`npm run dev` + `npm run test:e2e`); use production `BASE_URL` only when intentionally testing live site
