@@ -240,7 +240,7 @@ export default function ZenPage() {
                 href="/zag-matrix/act" 
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors"
               >
-                Next: ACT (Awaken Core Thrust)
+                Next: ACT (Activate Core Thrust)
               </Link>
               
               <Link 

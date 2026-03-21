@@ -363,7 +363,7 @@ export default function GemPage() {
                 href="/zag-matrix/act" 
                 className="inline-flex items-center px-6 py-3 border border-smoke text-base font-medium rounded-md text-phantom bg-white hover:bg-light-bg transition-colors"
               >
-                Previous: ACT (Awaken Core Thrust)
+                Previous: ACT (Activate Core Thrust)
               </Link>
             </div>
           </div>

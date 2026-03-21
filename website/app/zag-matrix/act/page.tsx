@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'ACT - Awaken Core Thrust | ZAG Matrix Framework | Sheridan Richey',
-  description: 'Discover how ACT (Awaken Core Thrust) builds physical well-being, strengthens relationships, and generates momentum for your transformation journey.',
-  keywords: 'ACT, Awaken Core Thrust, physical well-being, relationships, momentum, ZAG Matrix, mid-career transformation',
+  title: 'ACT - Activate Core Thrust | ZAG Matrix Framework | Sheridan Richey',
+  description: 'Discover how ACT (Activate Core Thrust) builds physical well-being, strengthens relationships, and generates momentum for your transformation journey.',
+  keywords: 'ACT, Activate Core Thrust, physical well-being, relationships, momentum, ZAG Matrix, mid-career transformation',
 }
 
 export default function ActPage() {
@@ -24,7 +24,7 @@ export default function ActPage() {
               ACT
             </h1>
             <p className="text-2xl md:text-3xl font-semibold text-primary-600 mb-4">
-              Awaken Core Thrust
+              Activate Core Thrust
             </p>
             <p className="text-xl text-graphite font-manrope max-w-3xl mx-auto">
               The energy and momentum engine that transforms your mental clarity into tangible action and results.
