@@ -1,5 +1,7 @@
 # Brand Guidelines Implementation Status
 
+> **Authority:** If anything here conflicts with [`.cursor/rules/core-standards.mdc`](../../.cursor/rules/core-standards.mdc), the rule file wins. This document tracks implementation status against the brand guidelines.
+
 ## 🎯 **Current Implementation Status**
 
 ### ✅ **FULLY IMPLEMENTED**

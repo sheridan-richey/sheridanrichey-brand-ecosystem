@@ -1,47 +1,37 @@
+---
+description: Collaboration, handoffs, GitHub Issues, and quality before deploy
+globs:
+  - .github/**/*
+  - 1P/**/*
+  - 2A/**/*
+  - 3R/**/*
+alwaysApply: false
+---
+
 # Collaboration & Team Standards
 
-## Team Structure
-- **Sheridan Richey** - Project owner and brand strategist
-- **Sean** - Team member and collaborator
-- **AI Assistant** - Development and content support
+## Roles
+- **Sheridan Richey** — Project owner and brand strategist
+- **Collaborators** — As invited
+- **AI assistants** — Follow [AGENTS.md](mdc:AGENTS.md) and `.cursor/rules/`
 
-## Communication Channels
-- **Slack Community** - Primary team communication
-- **GitHub** - Code collaboration and version control
-- **Project Documentation** - PARA system for project tracking
-- **Session Handoffs** - Clear documentation between sessions
+## Work tracking
+- **GitHub Issues** are the default for tasks, bugs, and content work items
+- Use issue templates and labels (see [agentic-workflows.mdc](./agentic-workflows.mdc))
+- Avoid duplicating a full project tracker in markdown under `1P/` for routine work; reserve `1P/` for strategic initiative notes and decision logs
 
-## Collaboration Standards
-- Use clear communication channels
-- Document decisions and rationale
-- Maintain project history and learnings
-- Share progress updates regularly
-- Celebrate project completions
+## Communication
+- **GitHub** — Code, PRs, issues, and review
+- **Slack (ZAG Collective)** — Community and async discussion (not a substitute for issue acceptance criteria)
 
-## Project Handoff Process
-- Create comprehensive session documentation
-- Update project trackers and status files
-- Document decisions made and rationale
-- Note any known issues or limitations
-- Provide clear next steps and priorities
+## Handoffs
+- Document decisions and rationale in PR descriptions or issue comments
+- Link related issues and PRs
+- Note known limitations and follow-ups before closing work
 
-## Team Onboarding
-- Use established onboarding templates
-- Provide environment setup guides
-- Share collaboration guidelines
-- Establish communication protocols
-- Document team member responsibilities
+## Quality before merge
+- Run lint and E2E locally when touching user-facing flows
+- Validate ZAG alignment for content and copy changes
 
-## Knowledge Sharing
-- Maintain comprehensive project documentation
-- Use PARA system for organization
-- Create reusable templates and guides
-- Document lessons learned
-- Share best practices and standards
-
-## Quality Assurance
-- Review all changes before deployment
-- Test functionality across environments
-- Validate against brand guidelines
-- Ensure ZAG Matrix alignment
-- Maintain code quality standards
+## Knowledge sharing
+- Long-lived how-tos belong in `2A/` / `3R/` or app docs (`website/BLOG_SYSTEM_README.md`, etc.) — they **supplement** rules; they do not replace `.cursor/rules/*.mdc`

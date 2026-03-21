@@ -1,5 +1,7 @@
 # Environment Setup for Slack Automation
 
+> **Supplementary / legacy:** Slack automation env vars for optional tooling. **Collaboration norms:** [`.cursor/rules/collaboration-standards.mdc`](../../../.cursor/rules/collaboration-standards.mdc). **Secrets:** never commit tokens; production env is documented in [AGENTS.md](../../../AGENTS.md) and [`.cursor/rules/testing-deployment.mdc`](../../../.cursor/rules/testing-deployment.mdc). If the project no longer runs this automation, treat this as historical reference only.
+
 ## 🔧 **Required Environment Variables**
 
 Create a `.env` file in your project root with these variables:

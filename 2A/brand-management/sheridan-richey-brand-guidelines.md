@@ -1,5 +1,7 @@
 # Sheridan Richey: Brand Guidelines (Version 1.0)
 
+> **Authority:** If anything here conflicts with [`.cursor/rules/core-standards.mdc`](../../.cursor/rules/core-standards.mdc), the rule file wins. This document is supplementary design reference.
+
 ## 1.0 Introduction
 
 ### 1.1 Index of Content

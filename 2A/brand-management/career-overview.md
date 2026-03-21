@@ -1,5 +1,7 @@
 # Professional Roles & Brand Positioning
 
+> **Authority:** Editorial voice, audience, and ZAG-aligned content expectations are defined in [`.cursor/rules/content-strategy.mdc`](../../.cursor/rules/content-strategy.mdc). This document is durable reference for roles, bios, and how to describe positions; if something conflicts with that rule, follow the rule file.
+
 ## 🎯 **Professional Identity Framework**
 
 ### **Primary Roles:**

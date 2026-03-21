@@ -4,6 +4,35 @@ This file orients AI assistants (and humans) on what this repo is and how to wor
 
 ---
 
+## Documentation hierarchy (source of truth)
+
+When guidance conflicts, the higher-ranked source wins:
+
+1. **This file (`AGENTS.md`)** — Repo operating map: identity, stack, where truth lives, priorities.
+2. **[`.cursor/rules/*.mdc`](.cursor/rules/)** — Enforceable standards (code, Next.js, content, testing, workflow, PARA placement).
+3. **App onboarding** — [README.md](README.md) (repo quick start), [website/README.md](website/README.md) (Next.js app), [website/BLOG_SYSTEM_README.md](website/BLOG_SYSTEM_README.md) (blog pipeline detail).
+4. **`2A/` and `3R/`** — Supplementary reference (areas, templates, setup notes). Must not override rules; if something duplicates a rule, the rule wins.
+5. **`1P/`** — Strategic initiative context and decisions (not a second standards layer).
+
+**Deprecated:** [RULES.md](RULES.md) is a stub pointing here and to `.cursor/rules/`. Do not treat it as authoritative.
+
+**Active work:** Use [GitHub Issues](https://github.com/sheridan-richey/sheridanrichey-brand-ecosystem/issues) for tasks, bugs, and content work items—not markdown trackers in `1P/`.
+
+**Skills:** Repeatable procedures live under `.cursor/skills/` (e.g. creating a blog post). Rules define *what* must be true; skills describe *how* to execute a workflow.
+
+---
+
+## Doc maintenance triggers
+
+Update `AGENTS.md` and/or the relevant `.mdc` rule when you:
+
+- Change the content pipeline, app routing, or major dependencies (e.g. Next.js version).
+- Change deploy/CI behavior (GitHub Actions, Vercel, env vars).
+- Add or remove a lead magnet, newsletter integration, or conversion path.
+- Introduce a new doc surface that agents should treat as canonical.
+
+---
+
 ## Project identity
 
 - **What it is**: Personal brand ecosystem for Sheridan Richey — website (sheridanrichey.com), content hub, and professional presence.
@@ -16,7 +45,7 @@ This file orients AI assistants (and humans) on what this repo is and how to wor
 ## Tech stack
 
 - **Site**: Next.js 14 (App Router), TypeScript, Tailwind CSS, React 18.
-- **Content**: Markdown/MDX in `content/blog/` (zen, act, gem subdirs), parsed at build time via custom `website/lib/posts.ts` (gray-matter + fs). No Contentlayer.
+- **Content**: Markdown/MDX in `content/blog/` (zen, act, gem, zag subdirs), parsed at build time via custom [`website/lib/posts.ts`](website/lib/posts.ts) (gray-matter + fs). No Contentlayer.
 - **Hosting**: Vercel. Production deploys use GitHub Actions ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)); `website/vercel.json` disables Vercel’s native Git auto-deploy. E2E runs on push/PR to `main` via [`.github/workflows/playwright.yml`](.github/workflows/playwright.yml).
 - **Tests**: Playwright E2E in `tests/e2e/`; default base URL is local so that `npm run dev` + `npm run test:e2e` validates the app under development.
 
@@ -24,17 +53,27 @@ This file orients AI assistants (and humans) on what this repo is and how to wor
 
 ## Content home
 
-- **Blog**: Single source of truth is `content/blog/` at repo root. Subdirs `zen/`, `act/`, `gem/` map to ZAG pillars. Add or edit `.md`/`.mdx` there; the site builds from this directory.
+- **Blog**: Single source of truth is `content/blog/` at repo root. Subdirs `zen/`, `act/`, `gem/` (and `zag/`) map to categories. Add or edit `.md`/`.mdx` there; the site builds from this directory.
 - **Images**: Use `website/public/images/blog/` (or `website/public/images/blog/<post-slug>/`). Reference in markdown as `/images/blog/...`.
-- **Rules and copy**: [RULES.md](RULES.md) and [.cursor/rules/](.cursor/rules/) define brand, PARA, and technical standards.
+- **Standards**: Brand and technical standards are in [`.cursor/rules/`](.cursor/rules/) — see [content-strategy](.cursor/rules/content-strategy.mdc), [nextjs-architecture](.cursor/rules/nextjs-architecture.mdc), [core-standards](.cursor/rules/core-standards.mdc), [agentic-workflows](.cursor/rules/agentic-workflows.mdc), [para-system](.cursor/rules/para-system.mdc).
+
+---
+
+## Other doc locations (reference, not rules)
+
+These are intentionally outside PARA; link here instead of duplicating:
+
+- **[`professional-roles/`](professional-roles/)** — Role descriptions (OptConnect, Bring It Forward, Henry Schein One).
+- **[`github-profile/`](github-profile/)** — GitHub profile README and setup notes for the profile repo.
+- **[`templates/bio-templates/`](templates/bio-templates/)** — Bio copy templates (also see `3R/templates/`).
 
 ---
 
 ## How to work in this repo
 
-1. **Code and content**: Follow [RULES.md](RULES.md) and the Cursor rules in [.cursor/rules/](.cursor/rules/). For content, use [content-strategy](.cursor/rules/content-strategy.mdc) and ZAG Matrix alignment. For Next.js and components, use [nextjs-architecture](.cursor/rules/nextjs-architecture.mdc) and [core-standards](.cursor/rules/core-standards.mdc).
-2. **Organization**: Repo uses PARA at the root (1P = Projects, 2A = Areas, 3R = Resources, 4A = Archives). See [para-system](.cursor/rules/para-system.mdc).
-3. **Decisions and context**: For the current refinement plan and captured decisions, see [1P/brand-dial-in/20260301-context-and-decisions.md](1P/brand-dial-in/20260301-context-and-decisions.md).
+1. **Code and content**: Follow [`.cursor/rules/`](.cursor/rules/). For content, use [content-strategy](.cursor/rules/content-strategy.mdc). For Next.js and components, use [nextjs-architecture](.cursor/rules/nextjs-architecture.mdc) and [core-standards](.cursor/rules/core-standards.mdc). For planning and issues, use [agentic-workflows](.cursor/rules/agentic-workflows.mdc).
+2. **Organization**: Durable knowledge uses PARA at the root (`2A`, `3R`, selective `1P`, optional `4A`). See [para-system](.cursor/rules/para-system.mdc). **Work tracking** belongs in GitHub Issues, not duplicate trackers in markdown.
+3. **Decisions and context**: For captured decisions, see [`1P/brand-dial-in/20260301-context-and-decisions.md`](1P/brand-dial-in/20260301-context-and-decisions.md).
 
 ---
 
@@ -47,4 +86,4 @@ This file orients AI assistants (and humans) on what this repo is and how to wor
 
 ---
 
-*Update this section when priorities shift. Historical decisions: [`1P/brand-dial-in/20260301-context-and-decisions.md`](1P/brand-dial-in/20260301-context-and-decisions.md).*
+*Update the priorities section when it shifts. Historical decisions: [`1P/brand-dial-in/20260301-context-and-decisions.md`](1P/brand-dial-in/20260301-context-and-decisions.md).*

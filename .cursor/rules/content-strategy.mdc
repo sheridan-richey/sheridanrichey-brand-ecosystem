@@ -1,3 +1,10 @@
+---
+description: ZAG-aligned content strategy, blog categories, and distribution
+globs:
+  - content/**/*
+alwaysApply: false
+---
+
 # Content Strategy & ZAG Matrix Integration
 
 ## Content Creation Principles
@@ -7,51 +14,26 @@
 - Maintain professional authority while being approachable
 - Focus on actionable, implementable advice
 
-## Content Structure & Organization
-- Use MDX for blog posts in [posts directory](mdc:website/posts/)
-- Follow content structure in [content directory](mdc:content/)
-- Implement proper metadata and SEO
-- Use Contentlayer for content processing
-- Maintain consistent ZAG Matrix messaging
+## Content structure (blog)
+- **Source of truth:** Markdown/MDX files in **`content/blog/`** at repo root (see [website/lib/posts.ts](mdc:website/lib/posts.ts))
+- **Categories (frontmatter):** ZEN, ACT, GEM, ZAG, Featured — align folders under `content/blog/` with pillars where applicable
+- **Detail:** [website/BLOG_SYSTEM_README.md](mdc:website/BLOG_SYSTEM_README.md) for frontmatter, slugs, authors, images
+- Do not describe Contentlayer or `website/posts/` as the blog pipeline
 
-## Blog Content Strategy
-- **ZEN Pillar Content**: Clarity, purpose, mental resilience
-- **ACT Pillar Content**: Physical well-being, relationships, momentum
-- **GEM Pillar Content**: Strategic growth, entrepreneurship, career advancement
-- Mix of framework explanations and practical applications
-- Include personal stories and executive experiences
+## Blog content strategy
+- **ZEN:** Clarity, purpose, mental resilience
+- **ACT:** Physical well-being, relationships, momentum
+- **GEM:** Strategic growth, entrepreneurship, career advancement
+- Mix framework explanations with practical application and personal stories
 
-## Newsletter Content Strategy
-- Weekly insights for "awakened technologists"
-- ZAG Matrix framework integration throughout
-- Actionable strategies and tools
-- Community engagement and discussion prompts
-- Professional development insights
+## Newsletter
+- The ZAG Navigator (Beehiiv); ZAG Matrix integration throughout
+- Actionable strategies; community prompts where appropriate
 
-## Content Calendar & Planning
-- Weekly newsletter publication
-- Monthly blog post releases
-- Seasonal content themes aligned with ZAG Matrix
-- Guest content opportunities
-- Repurposing content across platforms
+## SEO & distribution
+- Primary site: sheridanrichey.com
+- Internal linking to ZAG Matrix and pillar content
+- Meta titles/descriptions consistent with frontmatter and page `generateMetadata` where implemented
 
-## SEO & Content Optimization
-- Target relevant keywords for "Alex, the Awakened Technologist"
-- Optimize for career development and executive coaching
-- Use structured data for better search visibility
-- Include internal linking to ZAG Matrix framework
-- Optimize meta descriptions and titles
-
-## Content Distribution
-- Primary platform: sheridanrichey.com
-- Newsletter distribution via Beehiiv
-- Social media amplification
-- Speaking engagement content
-- Resource library downloads
-
-## Content Performance Metrics
-- Newsletter open rates and engagement
-- Blog post read time and social shares
-- Website time on page and bounce rate
-- Resource download rates
-- Newsletter subscriber growth
+## Metrics (orientation)
+- Newsletter engagement; blog traffic and time on page; resource downloads; subscriber growth

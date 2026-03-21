@@ -1,193 +1,53 @@
-# Sheridan Richey Website
+# Website — sheridanrichey.com
 
-The official website for Sheridan Richey's personal brand, built with Next.js 13 and featuring the ZAG Matrix framework for career transformation.
+Next.js **14** (App Router), TypeScript, Tailwind CSS. Run from repo root with `npm run dev` or from this directory with `npm run dev`.
 
-## 🎯 **Website Overview**
+**URL:** [sheridanrichey.com](https://sheridanrichey.com)
 
-**URL:** [sheridanrichey.com](https://sheridanrichey.com)  
-**Purpose:** Personal branding, ZAG Matrix framework showcase, and community building for awakened technologists
+## Quick start
 
-## 🚀 **Quick Start**
-
-### **Development**
 ```bash
-# From the root directory
+# From repo root
+cd sheridanrichey-brand-ecosystem
+npm run setup
 npm run dev
 
-# Or from the website directory
+# Or from website/
 cd website
+npm install
 npm run dev
 ```
 
-### **Build & Deploy**
-```bash
-# Build for production
-npm run build
+- Dev: [http://localhost:3000](http://localhost:3000)
+- Build: `npm run build` (root or `website/`)
+- Lint: `npm run lint`
+- E2E: `npm run test:e2e` (Playwright; config in repo root `playwright.config.js`)
 
-# Start production server
-npm start
-
-# Deploy to Vercel
-npm run deploy:website
-```
-
-## 🏗️ **Website Structure**
+## Layout
 
 ```
 website/
-├── app/                    # Next.js 13 app directory
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout with metadata
-│   ├── page.tsx           # Homepage
-│   ├── about/             # About page
-│   ├── contact/           # Contact page
-│   └── blog/              # Blog pages
-├── components/            # React components
-│   ├── Header.tsx         # Navigation header
-│   └── Footer.tsx         # Site footer
-├── posts/                 # Blog content (MDX files)
-├── contentlayer.config.ts # Content management config
-├── tailwind.config.js     # Tailwind CSS configuration
-└── package.json           # Dependencies and scripts
+├── app/              # App Router routes, layouts, API routes
+├── components/       # React components
+├── lib/              # posts.ts — reads ../content/blog at build/runtime
+├── data/             # authors.ts and shared data
+├── public/           # Static assets, images, downloads
+└── package.json
 ```
 
-## 📝 **Content Management**
+Blog content is **not** in `website/posts/`. Posts live at repo root in `content/blog/` and are loaded by [`lib/posts.ts`](lib/posts.ts).
 
-### **Blog Posts**
-- **Location:** `posts/` directory
-- **Format:** MDX with frontmatter
-- **Categories:** ZEN, ACT, GEM, Leadership, Entrepreneurship, Wellness
-- **Data-Driven:** Uses centralized author data and automatic attribution
+## Content and images
 
-### **Adding New Posts**
-The blog system is now fully data-driven. See [BLOG_SYSTEM_README.md](./BLOG_SYSTEM_README.md) for complete documentation.
+- **Full blog guide:** [BLOG_SYSTEM_README.md](./BLOG_SYSTEM_README.md) (frontmatter, categories, slugs, authors).
+- **Resend (contact form):** [RESEND_SETUP.md](./RESEND_SETUP.md) and `.env.example` for env vars.
+- **Public downloads:** [public/downloads/README.md](./public/downloads/README.md) (lead magnet PDF).
+- **Image checklist:** [public/ASSETS_README.md](./public/ASSETS_README.md).
 
-**Quick Start:**
-1. Create MDX file in `posts/` directory
-2. Add required frontmatter:
-   ```yaml
-   ---
-   title: "Your Post Title"
-   description: "Brief description for SEO"
-   date: "2025-07-26"
-   category: "GEM"  # ZEN, ACT, GEM, Leadership, etc.
-   author: "sheridan-richey"  # Must match author ID in data/authors.ts
-   tags:
-     - "tag1"
-     - "tag2"
-   featured: false
-   ---
-   ```
-3. Write content using Markdown/MDX
-4. Deploy - everything is automatically wired up!
+## Environment
 
-## 🎨 **Design System**
+Copy `website/.env.example` to `website/.env.local` for local secrets (Beehiiv, Resend, etc.). Production vars live in Vercel.
 
-### **Colors**
-- **Primary:** Blue gradient (#0ea5e9 to #0284c7)
-- **Secondary:** Gray scale (#64748b to #0f172a)
-- **Accent:** Yellow (#eab308)
+## More context
 
-### **Typography**
-- **Font:** Inter (Google Fonts)
-- **Headings:** Bold, gradient text
-- **Body:** Clean, readable secondary colors
-
-### **Components**
-- **Buttons:** Primary (blue) and Secondary (gray)
-- **Cards:** Clean white cards with shadows
-- **Navigation:** Sticky header with mobile menu
-
-## 🔧 **Technical Stack**
-
-- **Framework:** Next.js 13 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Content:** MDX with Contentlayer
-- **Deployment:** Vercel
-
-## 📊 **SEO & Performance**
-
-### **SEO Features**
-- Meta tags and Open Graph
-- Structured data
-- Sitemap generation
-- Image optimization
-
-### **Performance**
-- Image optimization
-- Code splitting
-- Font optimization
-- Core Web Vitals optimization
-
-## 🚀 **Deployment**
-
-### **Vercel (Recommended)**
-1. Connect GitHub repository to Vercel
-2. Set root directory to `website/`
-3. Deploy automatically on push
-
-### **Environment Variables**
-```env
-NEXT_PUBLIC_SITE_URL=https://sheridanrichey.com
-NEXT_PUBLIC_GA_ID=your-google-analytics-id
-```
-
-## 📈 **Analytics**
-
-### **Google Analytics**
-- Page views and user behavior
-- Content performance
-- Traffic sources
-
-### **Vercel Analytics**
-- Performance metrics
-- Core Web Vitals
-- Real user monitoring
-
-## 🔄 **Content Workflow**
-
-### **Content Creation Flow:**
-1. Write content in `../content/blog/` (organized by ZAG)
-2. Sync to `posts/` for website publishing
-3. Preview and test locally
-4. Deploy to production
-
-### **Content Categories:**
-- **ZEN:** Clarity, purpose, mental resilience
-- **ACT:** Physical well-being, relationships, momentum  
-- **GEM:** Strategic growth, investments, mastery
-
-## 🎯 **Key Features**
-
-- **Responsive Design:** Mobile-first approach
-- **Fast Performance:** Optimized images and code
-- **SEO Optimized:** Meta tags and structured data
-- **Content Management:** Easy MDX-based blog system
-- **Modern Stack:** Next.js 13, TypeScript, Tailwind CSS
-- **Accessibility:** WCAG compliant components
-
-## 🤝 **Development**
-
-### **Available Scripts**
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-
-### **Adding New Pages**
-1. Create directory in `app/`
-2. Add `page.tsx` for the route
-3. Update navigation in `components/Header.tsx`
-
-## 📞 **Support**
-
-For technical issues or questions:
-- **Email:** sheridan@sheridanrichey.com
-- **GitHub Issues:** Create issue in main repository
-
----
-
-**Part of the Sheridan Richey Personal Brand Ecosystem**
-
-*Built with Next.js and ❤️ for awakened technologists everywhere.* 
+Repo-wide operating map: [../AGENTS.md](../AGENTS.md).

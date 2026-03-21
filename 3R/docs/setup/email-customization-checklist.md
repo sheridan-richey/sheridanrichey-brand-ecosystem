@@ -1,5 +1,7 @@
 # Email Customization Checklist for Sean's Welcome Email
 
+> **Historical (2025):** Onboarding checklist for a specific collaborator welcome email. **Current collaboration and handoffs:** [`.cursor/rules/collaboration-standards.mdc`](../../../.cursor/rules/collaboration-standards.mdc) and [`.cursor/rules/agentic-workflows.mdc`](../../../.cursor/rules/agentic-workflows.mdc). Prefer **GitHub Issues** for new work items. Keep this file only as reference for the original email draft process.
+
 ## 🔧 **Details You Need to Fill In**
 
 ### **Contact Information**

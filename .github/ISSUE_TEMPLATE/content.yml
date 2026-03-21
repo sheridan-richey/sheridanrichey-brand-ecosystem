@@ -1,0 +1,31 @@
+name: Content
+description: Blog, newsletter, or copy work
+title: "[content] "
+labels: ["type:content"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Topic, pillar (ZEN/ACT/GEM), and target audience note if useful.
+    validations:
+      required: true
+  - type: dropdown
+    id: pillar
+    attributes:
+      label: ZAG pillar
+      options:
+        - pillar:zen
+        - pillar:act
+        - pillar:gem
+        - pillar:zag
+        - n/a
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Deliverables
+      description: e.g. new post path under content/blog/, newsletter draft link, etc.
+    validations:
+      required: true

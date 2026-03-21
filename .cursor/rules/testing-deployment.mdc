@@ -1,78 +1,64 @@
-# Testing & Deployment Standards
-
-## Testing Infrastructure
-- Use Playwright for end-to-end testing
-- Follow the configuration in [playwright.config.js](mdc:playwright.config.js)
-- Maintain test results in [test-results directory](mdc:test-results/)
-- Use page object pattern for maintainable tests
-
-## E2E Test Structure
-Follow the established patterns in the [tests/e2e directory](mdc:tests/e2e/):
-
-### Test Files
-- [Homepage Tests](mdc:tests/e2e/homepage.spec.js) - Landing page functionality
-- [Blog Tests](mdc:tests/e2e/blog.spec.js) - Blog page and content
-- [Contact Tests](mdc:tests/e2e/contact.spec.js) - Contact form functionality
-- [Newsletter Tests](mdc:tests/e2e/newsletter.spec.js) - Email signup process
-- [ZAG Matrix Tests](mdc:tests/e2e/zag-matrix.spec.js) - Framework page
-- [Links Tests](mdc:tests/e2e/links.spec.js) - Navigation and link validation
-- [Speaking Tests](mdc:tests/e2e/speaking.spec.js) - Speaking page functionality
-
-### Page Objects
-- [BlogPage](mdc:tests/e2e/pageObjects/BlogPage.js) - Blog page interactions
-- [NewsletterPage](mdc:tests/e2e/pageObjects/NewsletterPage.js) - Newsletter functionality
-- [HomePage](mdc:tests/e2e/pageObjects/HomePage.js) - Homepage interactions
-- [ContactPage](mdc:tests/e2e/pageObjects/ContactPage.js) - Contact form handling
-
-## Testing Standards
-- Test all critical user flows
-- Validate responsive design across screen sizes
-- Ensure accessibility compliance
-- Test form submissions and API integrations
-- Verify navigation and link functionality
-- Check for proper error handling
-- Test newsletter signup and Beehiiv integration
-
-## Deployment Infrastructure
-- Use Vercel for hosting and deployment
-- Follow the configuration in [vercel.json](mdc:vercel.json)
-- Use the deployment script in [deploy.ps1](mdc:website/deploy.ps1)
-- Maintain environment variables securely
-
-## Git-Based Deployment (GitOps)
-- Primary deployment method: `git push` to `main` branch
-- Automatic production deployment via Vercel on push
-- Preview deployments for pull requests
-- Use [deploy.ps1](mdc:website/deploy.ps1) for deployment assistance
-- Commit messages should be descriptive and follow conventional format
-
-## Deployment Process
-1. **Stage Changes**: Use `git add` to stage modified files
-2. **Commit Changes**: Use descriptive commit messages with conventional format
-3. **Push to Deploy**: `git push origin main` triggers automatic deployment
-4. **Verify Deployment**: Check Vercel dashboard for deployment status
-5. **Test Production**: Verify functionality on live site
-
-## Environment Management
-- Use environment variables for sensitive configuration
-- Maintain separate configs for development and production
-- Store API keys and secrets securely
-- Use Vercel environment variables for production
-
-## Continuous Integration
-- Run tests on every deployment
-- Generate test reports for review
-- Maintain test coverage metrics
-- Automate test result notifications
-- Include visual regression testing in CI/CD pipeline
-
-## Performance Monitoring
-- Monitor Core Web Vitals
-- Track page load times
-- Monitor API response times
-- Use Vercel Analytics for performance insights
-- Optimize based on real user data
-description:
+---
+description: Playwright E2E, CI, GitHub Actions, Vercel deploy, and env management
 globs:
+  - tests/**/*
+  - .github/**/*
+  - website/vercel.json
+  - vercel.json
+  - website/deploy.ps1
 alwaysApply: false
 ---
+
+# Testing, CI/CD, and Deployment
+
+## Testing
+
+### Playwright
+- Configuration: [playwright.config.js](mdc:playwright.config.js)
+- Tests: [tests/e2e/](mdc:tests/e2e/) — homepage, blog, contact, newsletter, links, speaking, zag-matrix
+- Page objects: [tests/e2e/pageObjects/](mdc:tests/e2e/pageObjects/)
+- Default: run E2E against **local** dev (`npm run dev` + `npm run test:e2e`); use production `BASE_URL` only when intentionally testing live site
+- **Pre-deploy:** Prefer `npm run test:e2e` and `npm run build` before merging to `main`
+
+### Standards
+- Cover critical user flows: navigation, forms, blog load, newsletter paths
+- Keep selectors maintainable (prefer stable names over brittle counts)
+
+## Continuous Integration
+
+- [`.github/workflows/playwright.yml`](mdc:.github/workflows/playwright.yml) — E2E on push/PR to `main`
+- [`.github/workflows/deploy.yml`](mdc:.github/workflows/deploy.yml) — production deploy workflow
+- Quality gates: TypeScript build; tests green; Next.js build succeeds
+
+## Deployment Strategy
+
+- **Platform:** Vercel hosting; **production URL:** https://sheridanrichey.com
+- **Primary method:** Git-based (GitOps). `website/vercel.json` may disable native Git auto-deploy — follow [AGENTS.md](mdc:AGENTS.md) and the deploy workflow for the actual path to production
+- **Trigger:** Push to `main` (and/or GitHub Actions workflow as configured)
+- **Preview:** PR preview deployments on Vercel when enabled
+- **Fallback:** Vercel CLI manual deploy if needed
+
+### Helper script
+- [website/deploy.ps1](mdc:website/deploy.ps1) — PowerShell helper for commit/deploy steps
+
+### Git workflow
+1. Develop locally
+2. Commit with clear messages (conventional format preferred)
+3. Push to `main` (or open PR for review)
+4. Verify Vercel dashboard and GitHub Actions
+
+## Vercel configuration
+
+- **Config files:** [vercel.json](mdc:vercel.json) (root), [website/vercel.json](mdc:website/vercel.json) (app)
+- **Root directory:** Vercel project should use `website/` as the app root when applicable
+- **IDs and team settings:** stored in Vercel dashboard — do not commit secrets; project/team IDs belong in Vercel UI, not in repo docs as authoritative config
+
+## Environment variables
+
+- **Secrets:** Beehiiv, Resend, etc. — set in Vercel for production; use `website/.env.local` locally (see `website/.env.example`)
+- Never commit API keys or tokens
+
+## Rollback & monitoring
+
+- **Rollback:** revert commit or redeploy previous Vercel deployment
+- Monitor deployment status, Core Web Vitals, and errors via Vercel (and Analytics if enabled)

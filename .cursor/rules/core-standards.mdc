@@ -1,3 +1,8 @@
+---
+description: ZAG Matrix alignment, core coding standards, icons, naming, and quality bar
+alwaysApply: true
+---
+
 # Core Development & Project Standards
 
 ## ZAG Matrix Framework Integration
@@ -8,7 +13,7 @@ All development and content must align with the ZAG Matrix framework:
 - Focus on helping "Alex, the Awakened Technologist" find direction
 - Content should provide clarity and reduce overwhelm
 
-### ACT (Activate Core Thrust) 
+### ACT (Activate Core Thrust)
 - Physical well-being, relationships, and momentum
 - Emphasize actionable steps and building momentum
 - Focus on community and connection
@@ -26,12 +31,31 @@ All development and content must align with the ZAG Matrix framework:
 
 ## Technical Standards
 - Use TypeScript strict mode
-- Follow Next.js 13+ App Router patterns
-- Implement responsive design with Tailwind CSS
+- Follow Next.js 14 App Router patterns
+- Implement responsive design with Tailwind CSS (mobile-first)
 - Write self-documenting code with clear comments
 - Include JSDoc comments for complex functions
 - Use semantic HTML and accessibility best practices
 - Include proper error handling and loading states
+- Prefer React Server Components by default; use `'use client'` only when state or browser APIs are required
+
+## Icons (critical)
+- **Never** use emojis or multi-color icons for UI
+- **Only** use icons from the [Lucide](https://lucide.dev/) family
+- Style: clean, minimal, monochrome; brand colors (teal, grayscale palette)
+- Sizes: 16px, 20px, 24px, or 32px as context dictates
+
+## Naming Conventions
+- Components: PascalCase (e.g. `ZagMatrixSidebar.tsx`)
+- Files: kebab-case (e.g. `zag-matrix-page.tsx`)
+- Functions: camelCase (e.g. `handleNewsletterSignup`)
+- Constants: UPPER_SNAKE_CASE (e.g. `ZAG_MATRIX_PILLARS`)
+
+## Date stamping (PARA / project files)
+- Use the **current** date when creating date-prefixed files; never guess dates
+- **1P** project files: `YYYYMMDD-[description].md`
+- **4A** archives: `YYYYMMDD-[description]-COMPLETED.md`
+- **2A** / **3R**: no date prefix on filenames unless a specific convention requires it
 
 ## Content Principles
 - Professional but approachable tone
@@ -42,21 +66,11 @@ All development and content must align with the ZAG Matrix framework:
 
 ## Testing Standards
 - Use Playwright for end-to-end testing
-- Test all critical user flows
-- Validate responsive design across screen sizes
-- Ensure accessibility compliance
-- Test form submissions and API integrations
-- Verify navigation and link functionality
-- Check for proper error handling
+- Test critical user flows; forms, navigation, blog rendering
+- Validate responsive layouts and accessibility basics
 
 ## Performance & Security
 - Optimize images and assets for web delivery
-- Implement proper caching strategies
-- Use CDN for static assets
-- Monitor Core Web Vitals and performance metrics
-- Validate all user inputs and implement proper authentication
-- Use HTTPS for all communications
-description:
-globs:
-alwaysApply: false
----
+- Implement proper caching strategies where appropriate
+- Validate user inputs on API routes; use HTTPS in production
+- Monitor Core Web Vitals and performance in production

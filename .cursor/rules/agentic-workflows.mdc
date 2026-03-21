@@ -1,0 +1,33 @@
+---
+description: How agents plan work, use issues, and keep docs in sync with the repo
+alwaysApply: true
+---
+
+# Agentic Engineering Workflows
+
+## Read first
+1. [AGENTS.md](mdc:AGENTS.md) — repo map and documentation hierarchy
+2. Relevant `.cursor/rules/*.mdc` for the task domain
+
+## Planning
+- For non-trivial changes: outline steps, files touched, and risks before editing
+- Prefer small, reviewable PRs with a clear issue link
+
+## Work items (GitHub Issues)
+- Open or reference an issue for substantive work (features, bugs, content batches)
+- Suggested **labels:**
+  - **Type:** `type:feature`, `type:bug`, `type:content`, `type:chore`
+  - **Area:** `area:website`, `area:docs`, `area:seo`, `area:content`
+  - **Priority:** `priority:p1`, `priority:p2`
+  - **ZAG pillar (content):** `pillar:zen`, `pillar:act`, `pillar:gem`
+
+## Documentation hygiene
+- If you change architecture, content pipeline, deploy, or env vars: update **AGENTS.md** and/or the relevant **rule file**
+- If you find stale docs (old stack names, wrong paths): fix or add a one-line deprecation pointer in the same PR when feasible
+- Do not duplicate standards in `2A`/`3R` — link to rules instead
+
+## Stale reference sweep (when touching related code)
+- Grep for obsolete terms: `Contentlayer`, `website/posts/` as blog root, `Next.js 13` as current stack, `content:sync` as required blog step
+
+## Handoff
+- PR description: what changed, how to test, issue link, follow-ups

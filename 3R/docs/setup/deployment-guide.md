@@ -1,5 +1,7 @@
 # Complete Deployment Setup Guide for Sheridan Richey Website
 
+> **Authority:** Deploy policy, CI expectations, and env handling are defined in [`.cursor/rules/testing-deployment.mdc`](../../../.cursor/rules/testing-deployment.mdc) and [AGENTS.md](../../../AGENTS.md). This guide is a step-by-step setup walkthrough; if it conflicts with those, follow the rule file.
+
 ## 🚀 Quick Start Checklist
 
 ### Phase 1: Environment Setup

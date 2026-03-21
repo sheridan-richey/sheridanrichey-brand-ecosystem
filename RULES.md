@@ -1,82 +1,8 @@
-# Sheridan Richey Brand Ecosystem - Team Rules
+# Rules (deprecated)
 
-## Project Context
-- Building personal brand website for Sheridan Richey
-- Target audience: "Alex, the Awakened Technologist"
-- Core framework: ZAG Matrix (ZEN, ACT, GEM)
-- Tech stack: Next.js, TypeScript, Tailwind CSS, MDX
+**This file is deprecated.** Standards for this repo live in:
 
-## Code Standards
-- Use TypeScript strict mode
-- Follow Next.js 13+ App Router patterns
-- Implement responsive design with Tailwind
-- Write self-documenting code with clear comments
-- Include JSDoc comments for complex functions
+- **[AGENTS.md](AGENTS.md)** — Repository operating map and documentation hierarchy
+- **[`.cursor/rules/`](.cursor/rules/)** — Enforceable Cursor rules (Next.js, content, testing, workflows, PARA placement)
 
-## Brand Guidelines
-- All content must connect to ZAG Matrix framework
-- Professional but approachable tone
-- Focus on actionable insights
-- Include specific examples from Sheridan's career
-- Maintain visual consistency with brand assets
-
-## **CRITICAL ICON RULE**
-- **NEVER use emojis or multi-color icons**
-- **ONLY use icons from the Lucide icon family** (https://lucide.dev/)
-- **Icon Style**: Clean, minimal, monochrome
-- **Icon Color**: Use brand colors (teal, grayscale palette)
-- **Icon Size**: Consistent sizing based on context (16px, 20px, 24px, 32px)
-- **Icon Purpose**: Enhance clarity, not distract from content
-
-## File Organization (PARA System)
-- **1P** - Time-bound objectives (Projects) with YYYYMMDD prefix
-- **2A** - Ongoing responsibilities (Areas) - no date prefix
-- **3R** - Reference materials (Resources) - no date prefix  
-- **4A** - Completed work (Archives) with YYYYMMDD-COMPLETED suffix
-- Components in `/website/components/`
-- Pages in `/website/app/`
-- Blog posts in `/website/posts/`
-- Content in `/content/` directory
-- Tests in `/tests/` directory
-
-## Date Stamping Rules
-- **ALWAYS use current date** when creating new files with YYYYMMDD prefix
-- **NEVER use dates from memory** - always get current date programmatically
-- Use `Get-Date -Format "yyyyMMdd"` (PowerShell) or equivalent for current date
-- For Projects (1P): `YYYYMMDD-[description].md`
-- For Archives (4A): `YYYYMMDD-[description]-COMPLETED.md`
-- Areas (2A) and Resources (3R): No date prefix needed
-
-## Naming Conventions
-- Components: PascalCase (e.g., `ZagMatrixSidebar.tsx`)
-- Files: kebab-case (e.g., `zag-matrix-page.tsx`)
-- Functions: camelCase (e.g., `handleNewsletterSignup`)
-- Constants: UPPER_SNAKE_CASE (e.g., `ZAG_MATRIX_PILLARS`)
-
-## Testing Requirements
-- Write E2E tests for critical user flows
-- Test responsive design on multiple screen sizes
-- Ensure accessibility compliance
-- Validate brand consistency in UI components
-
-## Content Strategy
-- Every piece of content must serve "Alex, the Awakened Technologist"
-- Connect all insights back to ZEN, ACT, GEM framework
-- Use specific examples from Sheridan's executive career
-- Maintain professional authority while being approachable
-- Focus on actionable, implementable advice
-
-## ZAG Matrix Integration
-- ZEN (Zeal Evolves Now): Mental clarity, purpose, resilience
-- ACT (Activate Core Thrust): Physical well-being, relationships, momentum
-- GEM (Growth Earns Mastery): Strategic moves, investments, entrepreneurship
-- Always consider how content relates to these three pillars
-
-## Technical Priorities
-- Performance and accessibility first
-- Mobile-responsive design
-- SEO optimization
-- Fast loading times
-- Clean, maintainable code
-- **Minimalist, clean interface design**
-- **Simple, compelling user experience**
+Do not add new content here. Update `AGENTS.md` or the relevant `.mdc` rule instead.
