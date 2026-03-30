@@ -47,7 +47,7 @@ Update `AGENTS.md` and/or the relevant `.mdc` rule when you:
 - **Site**: Next.js 14 (App Router), TypeScript, Tailwind CSS, React 18.
 - **Content**: Markdown/MDX in `content/blog/` (zen, act, gem, zag subdirs), parsed at build time via custom [`website/lib/posts.ts`](website/lib/posts.ts) (gray-matter + fs). No Contentlayer.
 - **Hosting**: Vercel. Production deploys use GitHub Actions ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)); `website/vercel.json` disables Vercel’s native Git auto-deploy. E2E runs on push/PR to `main` via [`.github/workflows/playwright.yml`](.github/workflows/playwright.yml).
-- **Tests**: Playwright E2E in `tests/e2e/`; default base URL is local so that `npm run dev` + `npm run test:e2e` validates the app under development.
+- **Tests**: Playwright E2E in `tests/e2e/`; [`playwright.config.js`](playwright.config.js) targets a local base URL and starts the Next dev server on port **3100** by default (`E2E_PORT`) so it does not conflict with a manual `next dev` on port 3000.
 
 ---
 
@@ -72,6 +72,7 @@ These are intentionally outside PARA; link here instead of duplicating:
 ## How to work in this repo
 
 1. **Code and content**: Follow [`.cursor/rules/`](.cursor/rules/). For content, use [content-strategy](.cursor/rules/content-strategy.mdc). For Next.js and components, use [nextjs-architecture](.cursor/rules/nextjs-architecture.mdc) and [core-standards](.cursor/rules/core-standards.mdc). For planning and issues, use [agentic-workflows](.cursor/rules/agentic-workflows.mdc).
+   - **Delivery policy:** plan and implement in a feature branch, pass local quality gates, merge by PR with green CI, then verify production deployment/smoke checks (see [agentic-workflows](.cursor/rules/agentic-workflows.mdc) and [testing-deployment](.cursor/rules/testing-deployment.mdc)).
 2. **Organization**: Durable knowledge uses PARA at the root (`2A`, `3R`, selective `1P`, optional `4A`). See [para-system](.cursor/rules/para-system.mdc). **Work tracking** belongs in GitHub Issues, not duplicate trackers in markdown.
 3. **Decisions and context**: For captured decisions, see [`1P/brand-dial-in/20260301-context-and-decisions.md`](1P/brand-dial-in/20260301-context-and-decisions.md).
 
@@ -79,7 +80,7 @@ These are intentionally outside PARA; link here instead of duplicating:
 
 ## Current priorities
 
-- **Ship**: Commit, push to `main`, confirm GitHub Actions (Playwright + Deploy) and Vercel secrets. See [`1P/brand-dial-in/PUBLISH_CHECKLIST.md`](1P/brand-dial-in/PUBLISH_CHECKLIST.md).
+- **Ship**: Commit to a feature branch, merge to `main` via PR, then confirm GitHub Actions (Playwright + Deploy) and Vercel secrets. See [`1P/brand-dial-in/PUBLISH_CHECKLIST.md`](1P/brand-dial-in/PUBLISH_CHECKLIST.md).
 - **Lead magnet**: Add `website/public/downloads/prompt-architects-toolkit.pdf` when ready (see `website/public/downloads/README.md`). `.gitignore` allows PDFs in that folder only.
 - **Content**: New posts go in `content/blog/`; env vars for production are documented in `website/.env.example` (Beehiiv + Resend).
 - **Ongoing**: Blog cadence, newsletter, and ZAG-aligned content per [`.cursor/rules/`](.cursor/rules/).

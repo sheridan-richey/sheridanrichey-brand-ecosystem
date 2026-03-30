@@ -54,7 +54,8 @@
     @apply font-manrope text-sm text-graphite;
   }
   
-  /* Blog post styling with new brand colors */
+  /* Blog post styling — legacy fallback when markdown is not rendered via ReactMarkdown overrides
+     (see website/app/blog/[slug]/page.tsx). Prefer updating the page components for typography changes. */
   .blog-content h1 {
     @apply font-manrope text-h1 font-bold text-phantom mt-8 mb-6;
   }

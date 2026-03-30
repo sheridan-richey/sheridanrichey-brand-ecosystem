@@ -1,6 +1,5 @@
 import ZagMatrixOverview from '@/components/ZagMatrixOverview'
-import { CTAButton } from '@/components/ui/cta-button'
-import Link from 'next/link'
+import { CTAButtonLink } from '@/components/ui/cta-button'
 
 export default function ZagMatrixPage() {
   return (
@@ -20,24 +19,12 @@ export default function ZagMatrixPage() {
               Integrate clarity, momentum, and mastery into your purpose-driven career.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/blog">
-                <CTAButton
-                  variant="journey-progress"
-                  size="md"
-                  background="white"
-                >
-                  Read the Blog
-                </CTAButton>
-              </Link>
-              <Link href="/newsletter">
-                <CTAButton
-                  variant="journey-action"
-                  size="md"
-                  background="white"
-                >
-                  Master the Framework
-                </CTAButton>
-              </Link>
+              <CTAButtonLink href="/blog" variant="journey-progress" size="md" background="white">
+                Read the Blog
+              </CTAButtonLink>
+              <CTAButtonLink href="/newsletter" variant="journey-action" size="md" background="white">
+                Master the Framework
+              </CTAButtonLink>
             </div>
           </div>
         </div>
@@ -111,24 +98,12 @@ export default function ZagMatrixPage() {
               to create purpose-driven careers and lives.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <CTAButton
-                  variant="journey-progress"
-                  size="lg"
-                  background="white"
-                >
-                  Let's Talk
-                </CTAButton>
-              </Link>
-              <Link href="/newsletter">
-                <CTAButton
-                  variant="journey-complete"
-                  size="lg"
-                  background="white"
-                >
-                  Start Your Journey
-                </CTAButton>
-              </Link>
+              <CTAButtonLink href="/contact" variant="journey-progress" size="lg" background="white">
+                Let's Talk
+              </CTAButtonLink>
+              <CTAButtonLink href="/newsletter" variant="journey-complete" size="lg" background="white">
+                Start Your Journey
+              </CTAButtonLink>
             </div>
           </div>
         </div>

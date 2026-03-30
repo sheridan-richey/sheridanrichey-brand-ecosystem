@@ -25,8 +25,8 @@ export type BlogCardPost = {
 export default function BlogCard({ post }: { post: BlogCardPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block">
-      <article className="bg-white rounded-xl shadow-sm border border-smoke overflow-hidden hover:shadow-lg transition-all duration-200 h-full flex flex-col cursor-pointer">
-        <div className="p-6 flex-1 flex flex-col">
+      <article className="bg-white rounded-xl border border-smoke/80 shadow-none overflow-hidden transition-all duration-200 h-full flex flex-col cursor-pointer hover:shadow-md hover:border-smoke">
+        <div className="p-8 flex-1 flex flex-col">
           <div className="flex items-center gap-2 mb-3">
             <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${categoryColorMap[post.category] || 'bg-primary-500/10 text-primary-500'}`}>{post.category}</span>
             {post.featured && (
