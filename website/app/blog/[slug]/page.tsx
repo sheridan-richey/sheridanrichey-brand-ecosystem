@@ -9,6 +9,22 @@ import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
+/**
+ * Removes the first markdown block when it is a single-line ATX H1 (`# Title`).
+ * Hero already shows frontmatter title; body often repeats `# Title` from authoring.
+ */
+function stripLeadingH1Block(body: string): string {
+  const trimmed = body.trimStart()
+  const blocks = trimmed.split(/\n\n/)
+  if (blocks.length === 0) return body
+  const first = blocks[0].trim()
+  // One `#` only (not `##`), then space and heading text
+  if (/^#\s+\S[^\n]*$/.test(first)) {
+    return blocks.slice(1).join('\n\n').trimStart()
+  }
+  return body
+}
+
 export function generateStaticParams() {
   const posts = getAllPosts()
   return posts.map((p) => ({ slug: p.slug }))
@@ -92,7 +108,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     body: { raw: post.bodyRaw }
   }
 
-  const rawBody = formattedPost.bodyRaw
+  const rawBody = stripLeadingH1Block(formattedPost.bodyRaw)
   const blocks = rawBody.split(/\n\n/)
   const showMidPostCta = blocks.length >= 2
   const introMd = showMidPostCta ? blocks[0] : rawBody
