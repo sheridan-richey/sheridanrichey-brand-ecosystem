@@ -83,9 +83,9 @@ export default function Header() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link 
-              href="/newsletter" 
-              className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+            <Link
+              href="/newsletter"
+              className="inline-flex items-center rounded-md bg-primary-500 px-3.5 py-1.5 text-base font-semibold leading-6 text-white shadow-sm transition-colors duration-200 hover:bg-primary-600"
             >
               Newsletter
             </Link>
@@ -144,7 +144,7 @@ export default function Header() {
                   <Link
                     href="/newsletter"
                     data-testid="mobile-newsletter-link"
-                    className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md w-full text-center block"
+                    className="block w-full rounded-md bg-primary-500 px-4 py-2.5 text-center text-base font-semibold leading-6 text-white shadow-sm transition-colors duration-200 hover:bg-primary-600"
                     onClick={closeMobileMenu}
                   >
                     Newsletter
