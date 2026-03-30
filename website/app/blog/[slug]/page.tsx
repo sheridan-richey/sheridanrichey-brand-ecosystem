@@ -10,19 +10,28 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 /**
+ * Markdown on disk may use CRLF; splitting only on `\n\n` misses `\r\n\r\n`, so we
+ * normalize first (fixes duplicate H1 strip on Windows).
+ */
+function normalizeMarkdownNewlines(body: string): string {
+  return body.replace(/\r\n/g, '\n').replace(/\r/g, '\n')
+}
+
+/**
  * Removes the first markdown block when it is a single-line ATX H1 (`# Title`).
  * Hero already shows frontmatter title; body often repeats `# Title` from authoring.
  */
 function stripLeadingH1Block(body: string): string {
-  const trimmed = body.trimStart()
+  const normalized = normalizeMarkdownNewlines(body)
+  const trimmed = normalized.trimStart()
   const blocks = trimmed.split(/\n\n/)
-  if (blocks.length === 0) return body
+  if (blocks.length === 0) return normalized
   const first = blocks[0].trim()
   // One `#` only (not `##`), then space and heading text
   if (/^#\s+\S[^\n]*$/.test(first)) {
     return blocks.slice(1).join('\n\n').trimStart()
   }
-  return body
+  return normalized
 }
 
 export function generateStaticParams() {
@@ -109,10 +118,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   }
 
   const rawBody = stripLeadingH1Block(formattedPost.bodyRaw)
-  const blocks = rawBody.split(/\n\n/)
-  const showMidPostCta = blocks.length >= 2
-  const introMd = showMidPostCta ? blocks[0] : rawBody
-  const restMd = showMidPostCta ? blocks.slice(1).join('\n\n') : ''
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-light-bg to-white">
@@ -165,36 +170,23 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         <article className="prose prose-lg max-w-none">
           <div className="blog-content mx-auto max-w-[65ch] text-[17px] sm:text-lg leading-[1.75] text-graphite font-manrope">
             <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-              {introMd}
+              {rawBody}
             </ReactMarkdown>
-            {showMidPostCta && (
-              <div className="my-12 rounded-2xl border border-smoke bg-gradient-to-br from-primary-500/5 to-light-teal/5 p-8 text-center">
-                <p className="mb-4 font-manrope text-sm text-graphite">Get the weekly letter for awakened technologists.</p>
-                <NewsletterCTA ctaSource="blog_post_mid" variant="default" size="lg" className="font-manrope font-semibold">
-                  Subscribe to The ZAG Navigator
-                </NewsletterCTA>
-              </div>
-            )}
-            {showMidPostCta && (
-              <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-                {restMd}
-              </ReactMarkdown>
-            )}
           </div>
         </article>
 
         <div className="mx-auto mt-12 max-w-[65ch]">
-          <div className="rounded-2xl border border-smoke bg-gradient-to-br from-primary-500/5 to-primary-500/10 p-8 text-center">
-            <h3 className="mb-3 font-manrope text-2xl font-bold text-phantom">The ZAG Navigator</h3>
-            <p className="mb-6 font-manrope text-graphite">
+          <div className="rounded-xl border border-smoke bg-gradient-to-br from-primary-500/5 to-primary-500/10 px-5 py-6 text-center sm:px-6">
+            <h3 className="mb-2 font-manrope text-xl font-bold text-phantom sm:text-2xl">The ZAG Navigator</h3>
+            <p className="mb-4 font-manrope text-sm text-graphite sm:text-base">
               Weekly signal for clarity, momentum, and mastery—no fluff.
             </p>
-            <div className="flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
+            <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
               <NewsletterCTA
                 ctaSource="blog_post_footer"
                 variant="default"
-                size="lg"
-                className="font-manrope font-semibold px-8 py-3 h-auto min-h-[2.75rem]"
+                size="default"
+                className="font-manrope text-sm font-semibold"
               >
                 Subscribe to The ZAG Navigator
               </NewsletterCTA>
