@@ -83,6 +83,14 @@ test.describe('Blog Functionality', () => {
     await expect(page.locator('main')).toBeVisible();
   });
 
+  test('blog shows exactly one ZAG Matrix sidebar in main content', async ({ page }) => {
+    await page.goto('/blog');
+    const sidebarTitles = page
+      .locator('main')
+      .getByRole('heading', { name: 'The ZAG Matrix', exact: true });
+    await expect(sidebarTitles).toHaveCount(1);
+  });
+
   test('blog index links to framework overview instead of newsletter', async ({ page }) => {
     await page.goto('/blog');
     const framework = page.locator('main a[href="/zag-matrix"]').filter({ hasText: /Framework overview/i });

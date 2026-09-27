@@ -31,8 +31,12 @@ if (!fs.existsSync(source)) {
     process.exit(0)
   }
   console.warn(`[stage-blog-content] No source at ${source} and no staged content at ${target}`)
-  if (process.env.VERCEL === '1') {
-    console.error('[stage-blog-content] Refusing to build on Vercel without blog content')
+  const strict =
+    process.env.VERCEL === '1' ||
+    process.env.CI === 'true' ||
+    process.env.GITHUB_ACTIONS === 'true'
+  if (strict) {
+    console.error('[stage-blog-content] Refusing to build without blog content in CI/Vercel')
     process.exit(1)
   }
   process.exit(0)
@@ -45,7 +49,11 @@ fs.cpSync(source, target, { recursive: true })
 const staged = countMarkdownFiles(target)
 console.log(`[stage-blog-content] Staged ${staged} markdown file(s) to ${target}`)
 
-if (process.env.VERCEL === '1' && staged === 0) {
-  console.error('[stage-blog-content] Vercel build requires at least one blog post')
+const strictDeploy =
+  process.env.VERCEL === '1' ||
+  process.env.CI === 'true' ||
+  process.env.GITHUB_ACTIONS === 'true'
+if (strictDeploy && staged === 0) {
+  console.error('[stage-blog-content] CI/Vercel build requires at least one blog post')
   process.exit(1)
 }

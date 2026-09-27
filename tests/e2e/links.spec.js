@@ -70,6 +70,7 @@ test.describe('Navigation and Page Loading', () => {
       { from: '/zag-matrix/zen', to: /\/zag-matrix$/ },
       { from: '/zag-matrix/act', to: /\/zag-matrix$/ },
       { from: '/zag-matrix/gem', to: /\/zag-matrix$/ },
+      { from: '/zag-collective', to: /\/blog/ },
     ];
 
     for (const { from, to } of redirects) {

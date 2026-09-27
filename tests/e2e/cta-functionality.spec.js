@@ -8,6 +8,15 @@ test.describe('Primary navigation CTAs', () => {
     await expect(newsletterButton).toHaveCount(0);
   });
 
+  test('header should not link to speaking or cut surfaces', async ({ page }) => {
+    await page.goto('/');
+    const nav = page.locator('nav[aria-label="Global"]');
+    await expect(nav.locator('a[href="/speaking"]')).toHaveCount(0);
+    await expect(nav.locator('a[href="/resources"]')).toHaveCount(0);
+    await expect(nav.locator('a[href="/newsletter"]')).toHaveCount(0);
+    await expect(nav.locator('a[href="/community"]')).toHaveCount(0);
+  });
+
   test('mobile menu should match desktop nav items', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');

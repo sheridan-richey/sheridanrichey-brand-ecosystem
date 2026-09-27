@@ -17,6 +17,7 @@ const nextConfig = {
       { source: '/zag-matrix/zen', destination: '/zag-matrix', permanent: true },
       { source: '/zag-matrix/act', destination: '/zag-matrix', permanent: true },
       { source: '/zag-matrix/gem', destination: '/zag-matrix', permanent: true },
+      { source: '/zag-collective', destination: '/blog', permanent: true },
     ]
   },
 }

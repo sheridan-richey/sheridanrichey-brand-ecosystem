@@ -24,6 +24,8 @@ jobs:
         run: npm ci
         working-directory: website
 
+      # Vercel project Root Directory is website/ — sibling repo-root content/ is not on the
+      # remote builder unless copied into website/ before CLI upload (matches prebuild staging).
       - name: Stage blog content into website for Vercel upload
         run: |
           node website/scripts/stage-blog-content.js
