@@ -17,7 +17,17 @@ export interface Post {
   bodyRaw: string
 }
 
-const CONTENT_DIR = path.join(process.cwd(), '..', 'content', 'blog')
+/** Repo hub (local / full monorepo) or staged copy under website/ for Vercel. */
+function resolveContentDir(): string {
+  const parentHub = path.join(process.cwd(), '..', 'content', 'blog')
+  const staged = path.join(process.cwd(), 'content', 'blog')
+  if (fs.existsSync(parentHub)) return parentHub
+  if (fs.existsSync(staged)) return staged
+  console.warn('[posts] content/blog not found; checked', parentHub, 'and', staged)
+  return parentHub
+}
+
+const CONTENT_DIR = resolveContentDir()
 
 function getAllMarkdownFiles(dir: string, files: string[] = []): string[] {
   if (!fs.existsSync(dir)) return files

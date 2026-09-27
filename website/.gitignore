@@ -34,3 +34,6 @@ next-env.d.ts
 
 # Contentlayer
 .contentlayer/
+
+# Staged at build time from repo-root content/blog (see scripts/stage-blog-content.js)
+/content/blog/

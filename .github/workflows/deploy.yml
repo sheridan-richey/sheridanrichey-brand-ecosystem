@@ -24,6 +24,11 @@ jobs:
         run: npm ci
         working-directory: website
 
+      - name: Stage blog content into website for Vercel upload
+        run: |
+          node website/scripts/stage-blog-content.js
+          echo "Markdown files staged: $(find website/content/blog -name '*.md' | wc -l)"
+
       - name: Deploy to Vercel
         id: deploy
         env:
