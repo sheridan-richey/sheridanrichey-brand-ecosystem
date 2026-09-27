@@ -6,6 +6,8 @@ import Link from 'next/link'
 
 export default function BlogPage() {
   const allPosts = getAllPosts()
+  const featuredPost = allPosts.find((post) => post.featured === true)
+
   const blogPosts: BlogCardPost[] = allPosts.map((post) => ({
     slug: post.slug,
     title: post.title,
@@ -45,43 +47,47 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {blogPosts
-        .filter((post) => post.featured)
-        .map((post) => (
-          <div key={post.slug} className="bg-white border-b border-smoke">
-            <div className="max-w-7xl mx-auto px-6 py-16">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="inline-flex items-center px-3 py-1 bg-primary-500/10 rounded-full mb-4">
-                    <span className="text-primary-500 font-manrope text-sm font-medium">Featured Post</span>
-                  </div>
-                  <h2 className="font-manrope text-3xl md:text-4xl font-bold text-phantom mb-4">{post.title}</h2>
-                  <p className="font-manrope text-lg text-graphite mb-6">{post.description}</p>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="flex items-center gap-2 text-graphite">
-                      <Calendar className="h-4 w-4" />
-                      <span className="font-manrope text-sm">{post.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Tag className="h-4 w-4 text-primary-500" />
-                      <span className="font-manrope text-sm font-medium text-primary-500">{post.category}</span>
-                    </div>
-                  </div>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center font-manrope bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg transition-colors duration-200"
-                  >
-                    Read Full Article
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+      {featuredPost && (
+        <div className="bg-white border-b border-smoke">
+          <div className="max-w-7xl mx-auto px-6 py-16">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center px-3 py-1 bg-primary-500/10 rounded-full mb-4">
+                  <span className="text-primary-500 font-manrope text-sm font-medium">Featured Post</span>
                 </div>
-                <div className="relative">
-                  <ZagMatrixSidebar />
+                <h2 className="font-manrope text-3xl md:text-4xl font-bold text-phantom mb-4">{featuredPost.title}</h2>
+                <p className="font-manrope text-lg text-graphite mb-6">{featuredPost.description}</p>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="flex items-center gap-2 text-graphite">
+                    <Calendar className="h-4 w-4" />
+                    <span className="font-manrope text-sm">
+                      {new Date(featuredPost.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      })}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Tag className="h-4 w-4 text-primary-500" />
+                    <span className="font-manrope text-sm font-medium text-primary-500">{featuredPost.category}</span>
+                  </div>
                 </div>
+                <Link
+                  href={`/blog/${featuredPost.slug}`}
+                  className="inline-flex items-center font-manrope bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg transition-colors duration-200"
+                >
+                  Read Full Article
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+              <div className="relative">
+                <ZagMatrixSidebar />
               </div>
             </div>
           </div>
-        ))}
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="mb-12">
