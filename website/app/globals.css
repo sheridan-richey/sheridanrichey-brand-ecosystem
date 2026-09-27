@@ -107,6 +107,10 @@
   .blog-content pre {
     @apply bg-cloud p-4 rounded-lg overflow-x-auto mb-4 border border-smoke;
   }
+
+  .blog-content .lab-value-red {
+    @apply text-red-600;
+  }
   
   /* Navigation Components */
   .nav-link {

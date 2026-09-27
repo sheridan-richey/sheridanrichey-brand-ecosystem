@@ -17,7 +17,7 @@ featured: false
 
 In July 2025 I went in for routine bloodwork. Most of it came back better than good. Blood sugar, hormones, liver, prostate: all excellent for a guy in his fifties.
 
-Then there were a few lines in red. LDL cholesterol: 164. Total cholesterol: 241.
+Then there were a few lines in red. <span class="lab-value-red">LDL cholesterol: 164. Total cholesterol: 241.</span>
 
 The strange part was that I felt fine. I walked every day, meditated, journaled, and practiced intermittent fasting. I thought I was doing the right things. That was the lesson that stuck with me: **feeling healthy and being healthy are not the same thing.**
 
@@ -30,7 +30,7 @@ I've spent my career in leadership, working in sprints, roadmaps, and retrospect
 Here's what I built:
 
 - **13-week cycles.** Twelve weeks of execution, one week to review what worked and plan what's next.
-- **A small team of AI coaches.** One reads my Apple Watch data and coaches my cardio. One handles nutrition, with a motto I now live by: every meal is a vote for or against your LDL. One keeps my daily self-care rituals on track. A fourth ties it all together. None of them replace my doctor. They keep me honest between visits.
+- **A small team of AI coaches.** One reads my Apple Watch data and coaches my cardio. One handles nutrition, with a motto I now live by: every meal is a vote for or against your LDL. One keeps my daily self-care rituals on track. A fourth, **Master Program Agent**, ties it all together. None of them replace my doctor. They keep me honest between visits.
 - **A philosophy underneath it all.** Stoicism, Atomic Habits, and a belief that systems beat willpower every time.
 
 ## What actually changed
@@ -41,7 +41,7 @@ Here's what I built:
 
 ## The retest
 
-In May 2026 I went back for bloodwork. LDL dropped from 164 to 137. Total cholesterol from 241 to 211. Triglycerides nearly cut in half. HDL, the good kind, went up. No cholesterol medication.
+In May 2026 I went back for bloodwork. LDL dropped from 164 to 137. Total cholesterol from 241 to 211. Triglycerides nearly cut in half. HDL, the good kind, went up. No cholesterol medication. My doctor was thrilled with the results and encouraged me to keep doing what I was doing.
 
 That same stretch, something less clinical showed up on the course. I shot the best round of golf of my life and finally broke 100. I felt strong and vital out there, not creaky and aching. The labs were moving. So was how my body showed up when I wasn’t thinking about labs.
 
