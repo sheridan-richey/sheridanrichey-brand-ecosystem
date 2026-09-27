@@ -7,9 +7,6 @@
   "git": {
     "deploymentEnabled": false
   },
-  "public": true,
-
-
   "headers": [
     {
       "source": "/(.*)",
@@ -46,7 +43,7 @@
     },
     {
       "source": "/zag-collective",
-      "destination": "/community",
+      "destination": "/blog",
       "permanent": true
     }
   ]
