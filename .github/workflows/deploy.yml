@@ -20,17 +20,29 @@ jobs:
           cache: 'npm'
           cache-dependency-path: website/package-lock.json
 
+      - name: Install website dependencies
+        run: npm ci
+        working-directory: website
+
       - name: Deploy to Vercel
         id: deploy
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: ${{ github.ref == 'refs/heads/main' && '--prod' || '' }}
+        working-directory: website
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          set -euo pipefail
+          PROD_FLAG=""
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            PROD_FLAG="--prod"
+          fi
+          DEPLOY_URL=$(npx vercel@latest deploy --token "$VERCEL_TOKEN" --yes $PROD_FLAG 2>&1 | tee /tmp/vercel-deploy.log | tail -n 1)
+          echo "preview-url=$DEPLOY_URL" >> "$GITHUB_OUTPUT"
+          echo "Deployed to: $DEPLOY_URL"
 
       - name: Show Deployment URL
         run: |
           echo "🚀 Deployment URL: ${{ steps.deploy.outputs.preview-url }}"
           echo "📝 Branch: ${{ github.ref_name }}"
-          echo "🔗 Production: https://sheridanrichey.com" 
+          echo "🔗 Production: https://sheridanrichey.com"
