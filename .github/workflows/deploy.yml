@@ -20,17 +20,60 @@ jobs:
           cache: 'npm'
           cache-dependency-path: website/package-lock.json
 
+      - name: Install website dependencies
+        run: npm ci
+        working-directory: website
+
+      # Vercel project Root Directory is website/ — sibling repo-root content/ is not on the
+      # remote builder unless copied into website/ before CLI upload (matches prebuild staging).
+      - name: Stage blog content into website for Vercel upload
+        run: |
+          node website/scripts/stage-blog-content.js
+          echo "Markdown files staged: $(find website/content/blog -name '*.md' | wc -l)"
+
       - name: Deploy to Vercel
         id: deploy
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: ${{ github.ref == 'refs/heads/main' && '--prod' || '' }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          set -euo pipefail
+          PROD_ARGS=()
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            PROD_ARGS+=(--prod)
+          fi
+
+          LOG_FILE="${RUNNER_TEMP}/vercel-deploy.log"
+          : > "$LOG_FILE"
+
+          echo "Deploying from repo root $(pwd); Vercel project root directory should be website/ in dashboard."
+          set +e
+          npx vercel@latest deploy \
+            --token "$VERCEL_TOKEN" \
+            --yes \
+            "${PROD_ARGS[@]}" \
+            2>&1 | tee "$LOG_FILE"
+          DEPLOY_EXIT=${PIPESTATUS[0]}
+          set -e
+
+          if [ "$DEPLOY_EXIT" -ne 0 ]; then
+            echo "::error::Vercel deploy failed with exit code ${DEPLOY_EXIT}. Full CLI output:"
+            cat "$LOG_FILE"
+            exit "$DEPLOY_EXIT"
+          fi
+
+          DEPLOY_URL=$(grep -Eo 'https://[a-zA-Z0-9.-]+\.vercel\.app' "$LOG_FILE" | tail -n 1 || true)
+          if [ -z "$DEPLOY_URL" ]; then
+            echo "::warning::Could not parse a *.vercel.app URL from the deploy log; using last line."
+            DEPLOY_URL=$(tail -n 1 "$LOG_FILE")
+          fi
+
+          echo "preview-url=${DEPLOY_URL}" >> "$GITHUB_OUTPUT"
+          echo "Deployed to: ${DEPLOY_URL}"
 
       - name: Show Deployment URL
         run: |
           echo "🚀 Deployment URL: ${{ steps.deploy.outputs.preview-url }}"
           echo "📝 Branch: ${{ github.ref_name }}"
-          echo "🔗 Production: https://sheridanrichey.com" 
+          echo "🔗 Production: https://sheridanrichey.com"

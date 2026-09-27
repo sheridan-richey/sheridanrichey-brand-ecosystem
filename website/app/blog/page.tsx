@@ -1,5 +1,4 @@
 import BlogCard, { BlogCardPost } from '@/components/BlogCard'
-import NewsletterCTA from '@/components/NewsletterCTA'
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
 import { getAllPosts } from '@/lib/posts'
 import { ArrowRight, Calendar, Tag } from 'lucide-react'
@@ -7,6 +6,8 @@ import Link from 'next/link'
 
 export default function BlogPage() {
   const allPosts = getAllPosts()
+  const featuredPost = allPosts.find((post) => post.featured === true)
+
   const blogPosts: BlogCardPost[] = allPosts.map((post) => ({
     slug: post.slug,
     title: post.title,
@@ -46,49 +47,53 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {blogPosts
-        .filter((post) => post.featured)
-        .map((post) => (
-          <div key={post.slug} className="bg-white border-b border-smoke">
-            <div className="max-w-7xl mx-auto px-6 py-16">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="inline-flex items-center px-3 py-1 bg-primary-500/10 rounded-full mb-4">
-                    <span className="text-primary-500 font-manrope text-sm font-medium">Featured Post</span>
-                  </div>
-                  <h2 className="font-manrope text-3xl md:text-4xl font-bold text-phantom mb-4">{post.title}</h2>
-                  <p className="font-manrope text-lg text-graphite mb-6">{post.description}</p>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="flex items-center gap-2 text-graphite">
-                      <Calendar className="h-4 w-4" />
-                      <span className="font-manrope text-sm">{post.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Tag className="h-4 w-4 text-primary-500" />
-                      <span className="font-manrope text-sm font-medium text-primary-500">{post.category}</span>
-                    </div>
-                  </div>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center font-manrope bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg transition-colors duration-200"
-                  >
-                    Read Full Article
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+      {featuredPost && (
+        <div className="bg-white border-b border-smoke">
+          <div className="max-w-7xl mx-auto px-6 py-16">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center px-3 py-1 bg-primary-500/10 rounded-full mb-4">
+                  <span className="text-primary-500 font-manrope text-sm font-medium">Featured Post</span>
                 </div>
-                <div className="relative">
-                  <ZagMatrixSidebar />
+                <h2 className="font-manrope text-3xl md:text-4xl font-bold text-phantom mb-4">{featuredPost.title}</h2>
+                <p className="font-manrope text-lg text-graphite mb-6">{featuredPost.description}</p>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="flex items-center gap-2 text-graphite">
+                    <Calendar className="h-4 w-4" />
+                    <span className="font-manrope text-sm">
+                      {new Date(featuredPost.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      })}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Tag className="h-4 w-4 text-primary-500" />
+                    <span className="font-manrope text-sm font-medium text-primary-500">{featuredPost.category}</span>
+                  </div>
                 </div>
+                <Link
+                  href={`/blog/${featuredPost.slug}`}
+                  className="inline-flex items-center font-manrope bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg transition-colors duration-200"
+                >
+                  Read Full Article
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+              <div className="relative">
+                <ZagMatrixSidebar />
               </div>
             </div>
           </div>
-        ))}
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="mb-12">
           <h2 className="font-manrope text-3xl font-bold text-phantom mb-4">All Articles</h2>
           <p className="font-manrope text-graphite max-w-2xl">
-            Weekly ideas in your inbox—browse the archive for the long-form version.
+            Essays on clarity (ZEN), momentum (ACT), and mastery (GEM)—browse the full archive below.
           </p>
         </div>
 
@@ -100,26 +105,16 @@ export default function BlogPage() {
 
         <div className="mt-16 rounded-2xl border border-smoke bg-gradient-to-br from-primary-500/5 to-light-teal/5 p-8">
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="font-manrope text-2xl font-bold text-phantom mb-4">The ZAG Navigator</h3>
+            <h3 className="font-manrope text-2xl font-bold text-phantom mb-4">New to ZAG?</h3>
             <p className="font-manrope text-graphite mb-6">
-              Weekly clarity, momentum, and mastery—no fluff. Join the list.
+              Start with the framework overview, then dive into posts by pillar.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <NewsletterCTA
-                ctaSource="blog_index_footer"
-                variant="default"
-                size="lg"
-                className="font-manrope font-semibold px-8 py-3 h-auto min-h-[2.75rem]"
-              >
-                Join the Newsletter
-              </NewsletterCTA>
-              <Link
-                href="/zag-matrix"
-                className="font-manrope border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-8 py-3 rounded-lg transition-colors duration-200 font-semibold"
-              >
-                Learn the Framework
-              </Link>
-            </div>
+            <Link
+              href="/zag-matrix"
+              className="inline-flex font-manrope bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg transition-colors duration-200 font-semibold"
+            >
+              Framework overview
+            </Link>
           </div>
         </div>
       </div>

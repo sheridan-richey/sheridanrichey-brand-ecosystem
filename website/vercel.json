@@ -1,15 +1,10 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "regions": ["iad1"],
+  "installCommand": "npm ci",
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "installCommand": "npm install",
-  "git": {
-    "deploymentEnabled": false
-  },
-  "public": true,
-
-
+  "regions": ["iad1"],
   "headers": [
     {
       "source": "/(.*)",
@@ -46,8 +41,8 @@
     },
     {
       "source": "/zag-collective",
-      "destination": "/community",
+      "destination": "/blog",
       "permanent": true
     }
   ]
-} 
+}

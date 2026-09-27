@@ -13,6 +13,6 @@ Disallow: /admin/
 Allow: /
 Allow: /about/
 Allow: /blog/
-Allow: /resources/
 Allow: /contact/
-Allow: /newsletter/ 
+Allow: /zag-matrix/
+Allow: /speaking/

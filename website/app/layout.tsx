@@ -13,9 +13,11 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'Sheridan Richey - ZAG Matrix Leadership & Personal Branding',
-  description: 'Transform your career and life with the ZAG Matrix framework. Executive leadership insights, personal branding strategies, and entrepreneurial growth for awakened technologists.',
-  keywords: 'leadership, personal branding, ZAG Matrix, executive coaching, entrepreneurship, career transformation',
+  title: 'Sheridan Richey — Essays on leadership, craft, and the ZAG Matrix',
+  description:
+    'Blog and frameworks for technologists navigating clarity, momentum, and mastery. Writing from Sheridan Richey on leadership, career, and the ZAG Matrix.',
+  keywords:
+    'Sheridan Richey, ZAG Matrix, technologist, leadership, career, blog, ZEN ACT GEM',
   authors: [{ name: 'Sheridan Richey' }],
   creator: 'Sheridan Richey',
   icons: {
@@ -24,16 +26,16 @@ export const metadata: Metadata = {
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: 'Sheridan Richey - ZAG Matrix Leadership & Personal Branding',
-    description: 'Transform your career and life with the ZAG Matrix framework.',
+    title: 'Sheridan Richey — Essays on leadership and the ZAG Matrix',
+    description: 'Blog and frameworks for technologists navigating clarity, momentum, and mastery.',
     url: 'https://sheridanrichey.com',
     siteName: 'Sheridan Richey',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sheridan Richey - ZAG Matrix Leadership & Personal Branding',
-    description: 'Transform your career and life with the ZAG Matrix framework.',
+    title: 'Sheridan Richey — Essays on leadership and the ZAG Matrix',
+    description: 'Blog and frameworks for technologists navigating clarity, momentum, and mastery.',
   },
 }
 

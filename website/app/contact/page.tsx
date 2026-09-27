@@ -5,42 +5,39 @@ import { Suspense } from 'react'
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
-      
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-light-bg via-white to-light-teal/20 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-phantom sm:text-6xl font-manrope">
-              Let's <span className="text-primary-500">Connect</span>
+              Let&apos;s <span className="text-primary-500">Connect</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
-              Ready to transform your career? I'm here to help you navigate your next chapter 
-              with the ZAG Matrix framework.
+              Coaching inquiries, speaking requests, or a thoughtful note—I read everything that
+              lands here.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Form */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
               <div>
-                                 <div className="flex justify-center mb-8">
-                   <img src="/sheridan-contact.jpg" alt="Sheridan Richey" className="rounded-2xl shadow-xl w-64 h-80 object-cover object-top" />
-                 </div>
+                <div className="flex justify-center mb-8">
+                  <img src="/sheridan-contact.jpg" alt="Sheridan Richey" className="rounded-2xl shadow-xl w-64 h-80 object-cover object-top" />
+                </div>
                 <h2 className="text-3xl font-bold tracking-tight text-phantom sm:text-4xl font-manrope">
                   Get in Touch
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
-                  Whether you're looking for executive coaching, speaking opportunities, 
-                  or just want to learn more about the ZAG Matrix framework, I'd love to hear from you.
+                  Whether you&apos;re exploring executive coaching, booking a talk, or following up
+                  on something you read on the blog, I&apos;d like to hear from you.
                 </p>
-                
+
                 <div className="mt-10 space-y-6">
-                  <a 
-                    href="mailto:sheridan@sheridanrichey.com" 
+                  <a
+                    href="mailto:sheridan@sheridanrichey.com"
                     className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cloud transition-all duration-200 group"
                   >
                     <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500 group-hover:bg-primary-600 transition-colors">
@@ -53,10 +50,10 @@ export default function ContactPage() {
                       </p>
                     </div>
                   </a>
-                  
-                  <a 
-                    href="https://linkedin.com/in/sheridanrichey" 
-                    target="_blank" 
+
+                  <a
+                    href="https://linkedin.com/in/sheridanrichey"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cloud transition-all duration-200 group"
                   >
@@ -70,9 +67,9 @@ export default function ContactPage() {
                       </p>
                     </div>
                   </a>
-                  
-                  <a 
-                    href="/speaking" 
+
+                  <a
+                    href="/speaking"
                     className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cloud transition-all duration-200 group"
                   >
                     <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary-500 group-hover:bg-primary-600 transition-colors">
@@ -85,7 +82,7 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
-              
+
               <Suspense fallback={<div className="font-manrope text-graphite">Loading form...</div>}>
                 <ContactForm />
               </Suspense>
@@ -93,30 +90,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="bg-primary-500">
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-manrope">
-              Ready to Start Your Transformation?
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/90 font-manrope">
-              Join our community of awakened technologists and get exclusive insights, 
-              frameworks, and strategies delivered to your inbox.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a href="/newsletter" className="bg-white text-primary-500 hover:bg-cloud font-semibold py-3 px-6 rounded-lg transition-colors font-manrope">
-                Join the Newsletter
-              </a>
-              <a href="/blog" className="text-white hover:text-white/80 font-semibold font-manrope">
-                Read the Blog →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   )
-} 
+}

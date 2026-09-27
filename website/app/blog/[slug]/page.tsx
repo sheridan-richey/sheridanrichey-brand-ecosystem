@@ -1,5 +1,4 @@
 import AboutAuthor from '@/components/AboutAuthor'
-import NewsletterCTA from '@/components/NewsletterCTA'
 import { CTAButtonLink } from '@/components/ui/cta-button'
 import { getAuthor } from '@/data/authors'
 import { getPostBySlug, getAllPosts } from '@/lib/posts'
@@ -177,21 +176,16 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
         <div className="mx-auto mt-12 max-w-[65ch]">
           <div className="rounded-xl border border-smoke bg-gradient-to-br from-primary-500/5 to-primary-500/10 px-5 py-6 text-center sm:px-6">
-            <h3 className="mb-2 font-manrope text-xl font-bold text-phantom sm:text-2xl">The ZAG Navigator</h3>
+            <h3 className="mb-2 font-manrope text-xl font-bold text-phantom sm:text-2xl">Keep reading</h3>
             <p className="mb-4 font-manrope text-sm text-graphite sm:text-base">
-              Weekly signal for clarity, momentum, and mastery—no fluff.
+              More essays on clarity, momentum, and mastery—or the framework that ties them together.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
-              <NewsletterCTA
-                ctaSource="blog_post_footer"
-                variant="default"
-                size="default"
-                className="font-manrope text-sm font-semibold"
-              >
-                Subscribe to The ZAG Navigator
-              </NewsletterCTA>
+              <CTAButtonLink href="/blog" variant="journey-progress" size="md">
+                All posts
+              </CTAButtonLink>
               <CTAButtonLink href="/zag-matrix" variant="journey-start" size="md">
-                Explore the Framework
+                ZAG Matrix overview
               </CTAButtonLink>
             </div>
           </div>
