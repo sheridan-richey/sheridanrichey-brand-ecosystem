@@ -19,21 +19,21 @@ export default function ZagMatrixOverview({
       icon: Target,
       title: "ZEN (Zeal Evolves Now)",
       description: "Awaken to your authentic self and true purpose. Transform your mindset from reactive to proactive, building the foundation for sustainable growth.",
-      href: "/zag-matrix/zen",
+      href: "/zag-matrix",
       color: "bg-zag-zen-base"
     },
     {
       icon: Users,
       title: "ACT (Activate Core Thrust)",
       description: "Align your energy, relationships, and systems. Create the momentum and support system needed for breakthrough growth.",
-      href: "/zag-matrix/act",
+      href: "/zag-matrix",
       color: "bg-zag-act-base"
     },
     {
       icon: TrendingUp,
       title: "GEM (Growth Earns Mastery)",
       description: "Achieve mastery through strategic career moves, investments, and entrepreneurial growth. Master the art of compounding success.",
-      href: "/zag-matrix/gem",
+      href: "/zag-matrix",
       color: "bg-zag-gem-base"
     }
   ]

@@ -6,30 +6,26 @@ import { useEffect, useState } from 'react'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Resources', href: '/resources' },
+  { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // Close mobile menu when route changes
   useEffect(() => {
     const handleRouteChange = () => {
       setMobileMenuOpen(false)
     }
 
-    // Listen for route changes
     window.addEventListener('popstate', handleRouteChange)
-    
+
     return () => {
       window.removeEventListener('popstate', handleRouteChange)
     }
   }, [])
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -70,7 +66,7 @@ export default function Header() {
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-10">
+          <div className="hidden lg:flex lg:gap-x-10 lg:flex-1 lg:justify-end">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -82,31 +78,20 @@ export default function Header() {
               </Link>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link
-              href="/newsletter"
-              className="inline-flex items-center rounded-md bg-primary-500 px-3.5 py-1.5 text-base font-semibold leading-6 text-white shadow-sm transition-colors duration-200 hover:bg-primary-600"
-            >
-              Newsletter
-            </Link>
-          </div>
         </nav>
       </header>
-      
-      {/* Mobile menu - Fixed positioning outside header */}
+
       {mobileMenuOpen && (
         <div
           className="lg:hidden fixed inset-0 z-[100]"
           data-testid="mobile-menu-overlay"
         >
-          {/* Backdrop */}
-          <div 
+          <div
             className="fixed inset-0 bg-black/20 backdrop-blur-sm"
             onClick={closeMobileMenu}
             aria-hidden="true"
           />
-          
-          {/* Menu panel */}
+
           <div className="fixed inset-y-0 right-0 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-phantom/10">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={closeMobileMenu}>
@@ -127,29 +112,17 @@ export default function Header() {
               </button>
             </div>
             <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-steel/10">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-phantom hover:bg-cloud transition-colors"
-                      onClick={closeMobileMenu}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-                <div className="py-6">
+              <div className="space-y-2 py-6">
+                {navigation.map((item) => (
                   <Link
-                    href="/newsletter"
-                    data-testid="mobile-newsletter-link"
-                    className="block w-full rounded-md bg-primary-500 px-4 py-2.5 text-center text-base font-semibold leading-6 text-white shadow-sm transition-colors duration-200 hover:bg-primary-600"
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-phantom hover:bg-cloud transition-colors"
                     onClick={closeMobileMenu}
                   >
-                    Newsletter
+                    {item.name}
                   </Link>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -157,4 +130,4 @@ export default function Header() {
       )}
     </>
   )
-} 
+}

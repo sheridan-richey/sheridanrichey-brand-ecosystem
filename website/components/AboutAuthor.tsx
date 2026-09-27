@@ -55,10 +55,10 @@ export default function AboutAuthor({ author }: AboutAuthorProps) {
               {author.bio}
             </p>
             <Link 
-              href={`/contributors#${author.id}`}
+              href="/about"
               className="inline-flex items-center text-teal-500 hover:text-teal-600 font-manrope font-medium transition-colors duration-200"
             >
-              Read Full Bio →
+              About Sheridan →
             </Link>
           </div>
         </div>

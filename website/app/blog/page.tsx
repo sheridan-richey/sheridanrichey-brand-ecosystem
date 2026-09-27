@@ -1,5 +1,4 @@
 import BlogCard, { BlogCardPost } from '@/components/BlogCard'
-import NewsletterCTA from '@/components/NewsletterCTA'
 import ZagMatrixSidebar from '@/components/ZagMatrixSidebar'
 import { getAllPosts } from '@/lib/posts'
 import { ArrowRight, Calendar, Tag } from 'lucide-react'
@@ -88,7 +87,7 @@ export default function BlogPage() {
         <div className="mb-12">
           <h2 className="font-manrope text-3xl font-bold text-phantom mb-4">All Articles</h2>
           <p className="font-manrope text-graphite max-w-2xl">
-            Weekly ideas in your inbox—browse the archive for the long-form version.
+            Essays on clarity (ZEN), momentum (ACT), and mastery (GEM)—browse the full archive below.
           </p>
         </div>
 
@@ -100,26 +99,16 @@ export default function BlogPage() {
 
         <div className="mt-16 rounded-2xl border border-smoke bg-gradient-to-br from-primary-500/5 to-light-teal/5 p-8">
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="font-manrope text-2xl font-bold text-phantom mb-4">The ZAG Navigator</h3>
+            <h3 className="font-manrope text-2xl font-bold text-phantom mb-4">New to ZAG?</h3>
             <p className="font-manrope text-graphite mb-6">
-              Weekly clarity, momentum, and mastery—no fluff. Join the list.
+              Start with the framework overview, then dive into posts by pillar.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <NewsletterCTA
-                ctaSource="blog_index_footer"
-                variant="default"
-                size="lg"
-                className="font-manrope font-semibold px-8 py-3 h-auto min-h-[2.75rem]"
-              >
-                Join the Newsletter
-              </NewsletterCTA>
-              <Link
-                href="/zag-matrix"
-                className="font-manrope border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-8 py-3 rounded-lg transition-colors duration-200 font-semibold"
-              >
-                Learn the Framework
-              </Link>
-            </div>
+            <Link
+              href="/zag-matrix"
+              className="inline-flex font-manrope bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg transition-colors duration-200 font-semibold"
+            >
+              Framework overview
+            </Link>
           </div>
         </div>
       </div>

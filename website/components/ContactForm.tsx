@@ -8,7 +8,6 @@ interface FormData {
   email: string
   subject: string
   message: string
-  newsletterSignup: boolean
   communityCode?: string
 }
 
@@ -26,21 +25,18 @@ export default function ContactForm() {
     email: '',
     subject: '',
     message: '',
-    newsletterSignup: false,
     communityCode: ''
   })
-  
+
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  // Handle URL parameters for community access
   useEffect(() => {
     const source = searchParams.get('source')
     const code = searchParams.get('code')
     const subject = searchParams.get('subject')
-    
+
     if (source === 'community' && code) {
       setFormData(prev => ({
         ...prev,
@@ -58,97 +54,42 @@ export default function ContactForm() {
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
-    
+
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required'
     }
-    
+
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required'
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address'
     }
-    
+
     if (!formData.subject || formData.subject === 'Select a topic') {
       newErrors.subject = 'Please select a topic'
     }
-    
+
     if (!formData.message.trim()) {
       newErrors.message = 'Message must be at least 10 characters long'
     } else if (formData.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters long'
     }
-    
+
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
 
-  const handleNewsletterSignup = async (): Promise<boolean> => {
-    if (!formData.newsletterSignup) return true
-    
-    try {
-      // Determine the source for more accurate attribution
-      let ctaSource = 'contact_form'
-      let medium = 'contact_form'
-      
-      if (formData.communityCode) {
-        ctaSource = 'community_contact_form'
-        medium = 'community_access'
-      }
-      
-      const response = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          name: formData.name,
-          role: 'Community Member',
-          ctaSource: ctaSource,
-          medium: medium,
-          source: 'website',
-          campaign: 'zag_community'
-        })
-      })
-
-      if (!response.ok) {
-        const errorData = await response.json()
-        console.error('Newsletter signup failed:', errorData)
-        setNewsletterStatus('error')
-        return false
-      }
-
-      setNewsletterStatus('success')
-      return true
-    } catch (error) {
-      console.error('Newsletter signup error:', error)
-      setNewsletterStatus('error')
-      return false
-    }
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (!validateForm()) {
       return
     }
-    
+
     setIsSubmitting(true)
     setSubmitStatus('idle')
-    
+
     try {
-      // Handle newsletter signup first if checked
-      if (formData.newsletterSignup) {
-        const newsletterSuccess = await handleNewsletterSignup()
-        if (!newsletterSuccess) {
-          // Continue with form submission even if newsletter fails
-          console.warn('Newsletter signup failed, but continuing with form submission')
-        }
-      }
-      
-      // Submit contact form to our API
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -159,7 +100,7 @@ export default function ContactForm() {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          newsletterSignup: formData.newsletterSignup,
+          newsletterSignup: false,
           communityCode: formData.communityCode,
           source: searchParams.get('source') || 'contact_page'
         })
@@ -174,22 +115,20 @@ export default function ContactForm() {
 
       const result = await response.json()
       console.log('Contact form submitted successfully:', result)
-      
+
       setSubmitStatus('success')
-      setFormData({ 
-        name: '', 
-        email: '', 
-        subject: '', 
-        message: '', 
-        newsletterSignup: false,
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
         communityCode: ''
       })
-      
-      // Reset success message after 5 seconds
+
       setTimeout(() => {
         setSubmitStatus('idle')
       }, 5000)
-      
+
     } catch (error) {
       console.error('Contact form submission error:', error)
       setSubmitStatus('error')
@@ -201,15 +140,10 @@ export default function ContactForm() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
-    
-    // Clear error when user starts typing
+
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }))
     }
-  }
-
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({ ...prev, newsletterSignup: e.target.checked }))
   }
 
   return (
@@ -217,17 +151,14 @@ export default function ContactForm() {
       {submitStatus === 'success' && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800 font-medium">
-            Thank you! Your message has been sent successfully. I'll get back to you soon.
-            {formData.newsletterSignup && newsletterStatus === 'success' && (
-              <span className="block mt-2">You've also been subscribed to the newsletter!</span>
-            )}
+            Thank you! Your message has been sent successfully. I&apos;ll get back to you soon.
             {formData.subject === 'Speaking Engagement' && (
-              <span className="block mt-2">I'll review your speaking inquiry and get back to you within 24 hours.</span>
+              <span className="block mt-2">I&apos;ll review your speaking inquiry and get back to you within 24 hours.</span>
             )}
           </p>
         </div>
       )}
-      
+
       {submitStatus === 'error' && (
         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
           <p className="text-red-800 font-medium">
@@ -236,14 +167,6 @@ export default function ContactForm() {
         </div>
       )}
 
-      {newsletterStatus === 'error' && (
-        <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-          <p className="text-yellow-800 font-medium">
-            Your message was sent, but there was an issue with the newsletter signup. You can subscribe separately on the newsletter page.
-          </p>
-        </div>
-      )}
-      
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-phantom font-manrope">
@@ -264,7 +187,7 @@ export default function ContactForm() {
             <p className="mt-1 text-sm text-red-600">{errors.name}</p>
           )}
         </div>
-        
+
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-phantom font-manrope">
             Email *
@@ -284,7 +207,7 @@ export default function ContactForm() {
             <p className="mt-1 text-sm text-red-600">{errors.email}</p>
           )}
         </div>
-        
+
         <div>
           <label htmlFor="subject" className="block text-sm font-medium text-phantom font-manrope">
             Subject *
@@ -312,7 +235,7 @@ export default function ContactForm() {
             <p className="mt-1 text-sm text-red-600">{errors.subject}</p>
           )}
         </div>
-        
+
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-phantom font-manrope">
             Message *
@@ -339,25 +262,11 @@ export default function ContactForm() {
               Community Access Code: <code className="bg-teal-100 px-2 py-1 rounded font-mono">{formData.communityCode}</code>
             </p>
             <p className="text-teal-700 text-sm mt-1">
-              This code shows you've read the community page and understand the process.
+              This code shows you&apos;ve read the community page and understand the process.
             </p>
           </div>
         )}
-        
-        <div className="flex items-center">
-          <input
-            id="newsletterSignup"
-            name="newsletterSignup"
-            type="checkbox"
-            checked={formData.newsletterSignup}
-            onChange={handleCheckboxChange}
-            className="h-4 w-4 text-primary-500 focus:ring-primary-500 border-smoke rounded"
-          />
-          <label htmlFor="newsletterSignup" className="ml-2 block text-sm text-graphite font-manrope">
-            Subscribe to my newsletter for insights on career transformation and the ZAG Matrix framework
-          </label>
-        </div>
-        
+
         <button
           type="submit"
           disabled={isSubmitting}
@@ -368,4 +277,4 @@ export default function ContactForm() {
       </form>
     </div>
   )
-} 
+}

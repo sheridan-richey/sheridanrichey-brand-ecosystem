@@ -4,13 +4,11 @@ const { test, expect } = require('@playwright/test');
 test.describe('Blog Functionality', () => {
   test('blog index page should load with content', async ({ page }) => {
     await page.goto('/blog');
-    
-    // Check page structure
+
     await expect(page.locator('h1').first()).toBeVisible();
     await expect(page.locator('main')).toBeVisible();
     await expect(page.locator('h1').first()).not.toHaveText(/404/i);
-    
-    // If posts exist, at least one article/card should be visible (tolerate empty state during stub phase)
+
     const blogPosts = page.locator('article, [data-testid="blog-post"], .blog-post');
     const count = await blogPosts.count();
     if (count > 0) {
@@ -22,7 +20,6 @@ test.describe('Blog Functionality', () => {
     await page.goto('/blog');
     await page.waitForLoadState('domcontentloaded');
     await expect(page.locator('main')).toBeVisible();
-    // Scope to main so header/footer links do not steal first match
     await page.waitForSelector('main a[href^="/blog/"]', { timeout: 15000 });
 
     const postLinks = page.locator('main a[href^="/blog/"]');
@@ -31,41 +28,34 @@ test.describe('Blog Functionality', () => {
     if (linkCount > 0) {
       const firstPostLink = postLinks.first();
       const href = await firstPostLink.getAttribute('href');
-      
+
       if (href) {
         await page.goto(href);
 
         await expect(page.locator('main h1').first()).toBeVisible();
         await expect(page.locator('main')).toBeVisible();
         await expect(page.locator('main h1').first()).not.toHaveText(/404/i);
-        
-        // Check for blog post content
+
         const article = page.locator('article, [data-testid="blog-post"], .blog-post');
         await expect(article).toBeVisible();
-        
-        // Verify navigation back to blog
+
         const backToBlog = page.locator('a[href="/blog"], a:has-text("Back to Blog")');
         if (await backToBlog.count() > 0) {
           await expect(backToBlog.first()).toBeVisible();
         }
       }
     } else {
-      // If no blog post links, just verify the blog page loads
       await expect(page.locator('main')).toBeVisible();
     }
   });
 
   test('blog should have proper metadata and structure', async ({ page }) => {
     await page.goto('/blog');
-    
-    // Check for blog-specific content
+
     const blogContent = page.locator('main');
     await expect(blogContent).toBeVisible();
-    
-    // Verify it's not a 404 page
     await expect(page.locator('h1').first()).not.toHaveText(/404/i);
-    
-    // Check for blog post titles or excerpts
+
     const postTitles = page.locator('h2, h3, [data-testid="post-title"]');
     if (await postTitles.count() > 0) {
       await expect(postTitles.first()).toBeVisible();
@@ -74,15 +64,12 @@ test.describe('Blog Functionality', () => {
 
   test('blog page should display category tags when posts exist', async ({ page }) => {
     await page.goto('/blog');
-    
-    // Blog page has no client-side category filtering; category tags appear on post cards.
-    // Verify main content and structure are present.
+
     await expect(page.locator('main')).toBeVisible();
     await expect(page.locator('h1').first()).not.toHaveText(/404/i);
-    
+
     const postCards = page.locator('article, [data-testid="blog-post"], .blog-post');
     if (await postCards.count() > 0) {
-      // When posts exist, at least one card should be visible (may have category tag)
       await expect(postCards.first()).toBeVisible();
     }
   });
@@ -102,20 +89,22 @@ test.describe('Blog Functionality', () => {
     await expect(page.locator('main')).toBeVisible();
   });
 
-  test('blog index newsletter CTA uses tracked cta source', async ({ page }) => {
+  test('blog index links to framework overview instead of newsletter', async ({ page }) => {
     await page.goto('/blog');
-    const tracked = page.locator('main a[href*="cta=blog_index_footer"]');
-    await expect(tracked.first()).toBeVisible();
-    await expect(tracked.first()).toHaveAttribute('href', /\/newsletter\?/);
+    const framework = page.locator('main a[href="/zag-matrix"]').filter({ hasText: /Framework overview/i });
+    await expect(framework.first()).toBeVisible();
+    await expect(framework.first()).toHaveAttribute('href', '/zag-matrix');
+    const newsletter = page.locator('main a[href*="/newsletter"]');
+    await expect(newsletter).toHaveCount(0);
   });
 
-  test('blog post footer has newsletter-primary CTA and framework secondary', async ({ page }) => {
+  test('blog post footer links to blog and ZAG overview', async ({ page }) => {
     await page.goto('/blog/career-transition-optconnect');
-    const newsletterFooter = page.locator('main a[href*="cta=blog_post_footer"]');
-    await expect(newsletterFooter.first()).toBeVisible();
-    await expect(newsletterFooter.first()).toHaveAttribute('href', /\/newsletter\?/);
-    const framework = page.getByRole('link', { name: /Explore the Framework/i });
+    const allPosts = page.getByRole('link', { name: /All posts/i });
+    await expect(allPosts).toBeVisible();
+    await expect(allPosts).toHaveAttribute('href', '/blog');
+    const framework = page.getByRole('link', { name: /ZAG Matrix overview/i });
     await expect(framework).toBeVisible();
     await expect(framework).toHaveAttribute('href', '/zag-matrix');
   });
-}); 
+});

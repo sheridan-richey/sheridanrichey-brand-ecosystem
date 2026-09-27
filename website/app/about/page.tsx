@@ -1,12 +1,9 @@
-import ZagMatrixOverview from '@/components/ZagMatrixOverview'
 import { Award, Building, Lightbulb, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 via-white to-light-bg py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
@@ -14,17 +11,16 @@ export default function AboutPage() {
               About <span className="gradient-text">Sheridan Richey</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
-              Executive leader, entrepreneur, and guide for awakened technologists seeking 
-              purpose-driven transformation through the ZAG Matrix framework.
+              SaaS executive, investor, and writer on the intersection of technology leadership
+              and a purposeful next chapter.
             </p>
-                         <div className="flex justify-center mt-8">
-               <img src="/sheridan-about.jpg" alt="Sheridan Richey" className="rounded-2xl shadow-xl w-64 h-80 object-cover object-top" />
-             </div>
+            <div className="flex justify-center mt-8">
+              <img src="/sheridan-about.jpg" alt="Sheridan Richey" className="rounded-2xl shadow-xl w-64 h-80 object-cover object-top" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Story Section */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">
@@ -34,51 +30,61 @@ export default function AboutPage() {
                   My Journey
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
-                  I've spent over two decades in executive leadership roles at companies like 
-                  AdvancedMD, SirsiDynix, Extensiv, Henry Schein One, and OptConnect. I've led product 
-                  development, managed M&A processes, built high-performing teams, and driven 
-                  profitable growth.
+                  I&apos;ve spent over two decades in executive leadership at companies including
+                  AdvancedMD, SirsiDynix, Extensiv, and Henry Schein One. Today I serve as{' '}
+                  <strong>CTO at OptConnect</strong>, where I focus on product strategy, AI adoption,
+                  and building teams that ship.
                 </p>
                 <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
-                  But like many successful professionals, I hit a point where achievement 
-                  wasn't enough. I was successful by conventional standards, but something 
-                  was missing. That's when I began developing the ZAG Matrix framework.
+                  Alongside that role, I co-founded{' '}
+                  <strong>Bring It Forward Investments</strong>—acquiring and operating businesses
+                  whose owners are ready to transition. That operator-investor lens shows up often in
+                  my writing on career moves and compounding growth.
                 </p>
                 <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
-                  Today, I help mid-career professionals who've achieved success but crave 
-                  greater purpose. Through the ZAG Matrix, I guide them toward holistic 
-                  transformation that integrates career growth with personal fulfillment.
+                  I developed the <Link href="/zag-matrix" className="text-primary-600 font-semibold hover:text-primary-500">ZAG Matrix</Link>{' '}
+                  (ZEN, ACT, GEM) as a practical way to think about clarity, momentum, and mastery when
+                  conventional success stops feeling like enough. The blog is where I explore those
+                  ideas in depth.
                 </p>
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <Link href="/blog" className="btn-primary">
+                    Read the blog
+                  </Link>
+                  <Link href="/contact" className="btn-secondary">
+                    Contact
+                  </Link>
+                </div>
               </div>
               <div className="card">
-                <h3 className="text-xl font-semibold text-phantom font-manrope mb-4">Key Achievements</h3>
+                <h3 className="text-xl font-semibold text-phantom font-manrope mb-4">At a glance</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <Award className="h-6 w-6 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-phantom font-manrope">Executive Leadership</h4>
-                      <p className="text-graphite font-manrope">Led teams of 100+ across multiple SaaS companies</p>
+                      <h4 className="font-semibold text-phantom font-manrope">Executive leadership</h4>
+                      <p className="text-graphite font-manrope">20+ years across SaaS product and engineering</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <Building className="h-6 w-6 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-phantom font-manrope">Product Development</h4>
-                      <p className="text-graphite font-manrope">Launched successful products serving millions of users</p>
+                      <h4 className="font-semibold text-phantom font-manrope">OptConnect</h4>
+                      <p className="text-graphite font-manrope">Chief Technology Officer</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <TrendingUp className="h-6 w-6 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-phantom font-manrope">Growth & M&A</h4>
-                      <p className="text-graphite font-manrope">Managed acquisitions and drove profitable expansion</p>
+                      <h4 className="font-semibold text-phantom font-manrope">Bring It Forward</h4>
+                      <p className="text-graphite font-manrope">Co-founder and managing partner</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <Lightbulb className="h-6 w-6 text-primary-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-phantom font-manrope">Entrepreneurship</h4>
-                      <p className="text-graphite font-manrope">Founded Bring It Forward Investments</p>
+                      <h4 className="font-semibold text-phantom font-manrope">ZAG Matrix</h4>
+                      <p className="text-graphite font-manrope">Framework for purpose-driven technologists</p>
                     </div>
                   </div>
                 </div>
@@ -87,53 +93,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* ZAG Matrix Deep Dive */}
-      <ZagMatrixOverview className="bg-light-bg" />
-
-      {/* Contributors Section */}
-      <section className="py-24 sm:py-32 bg-light-bg">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-phantom font-manrope sm:text-4xl">
-              Our Team
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
-              Meet the talented strategists, architects, and storytellers dedicated to helping 
-              you navigate your journey of transformation.
-            </p>
-            <div className="mt-10">
-              <Link href="/contributors" className="btn-primary">
-                Meet Our Contributors
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-phantom font-manrope sm:text-4xl">
-              My Mission
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-graphite font-manrope">
-              To help awakened technologists transform their careers and lives by providing 
-              practical frameworks, real-world insights, and a supportive community.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link href="/contact" className="btn-primary">
-                Let's Work Together
-              </Link>
-              <Link href="/newsletter" className="btn-secondary">
-                Join the Newsletter
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   )
-} 
+}
