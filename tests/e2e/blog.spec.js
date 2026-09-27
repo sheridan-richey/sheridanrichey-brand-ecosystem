@@ -1,6 +1,8 @@
 // tests/e2e/blog.spec.js
 const { test, expect } = require('@playwright/test');
 
+const EXPECTED_MIN_POSTS = 1;
+
 test.describe('Blog Functionality', () => {
   test('blog index page should load with content', async ({ page }) => {
     await page.goto('/blog');
@@ -9,11 +11,10 @@ test.describe('Blog Functionality', () => {
     await expect(page.locator('main')).toBeVisible();
     await expect(page.locator('h1').first()).not.toHaveText(/404/i);
 
-    const blogPosts = page.locator('article, [data-testid="blog-post"], .blog-post');
+    const blogPosts = page.locator('main article');
+    await expect(blogPosts.first()).toBeVisible();
     const count = await blogPosts.count();
-    if (count > 0) {
-      await expect(blogPosts.first()).toBeVisible();
-    }
+    expect(count).toBeGreaterThanOrEqual(EXPECTED_MIN_POSTS);
   });
 
   test('blog posts should be accessible and readable', async ({ page }) => {
@@ -24,29 +25,23 @@ test.describe('Blog Functionality', () => {
 
     const postLinks = page.locator('main a[href^="/blog/"]');
     const linkCount = await postLinks.count();
+    expect(linkCount).toBeGreaterThanOrEqual(EXPECTED_MIN_POSTS);
 
-    if (linkCount > 0) {
-      const firstPostLink = postLinks.first();
-      const href = await firstPostLink.getAttribute('href');
+    const firstPostLink = postLinks.first();
+    const href = await firstPostLink.getAttribute('href');
+    expect(href).toBeTruthy();
 
-      if (href) {
-        await page.goto(href);
+    await page.goto(href);
 
-        await expect(page.locator('main h1').first()).toBeVisible();
-        await expect(page.locator('main')).toBeVisible();
-        await expect(page.locator('main h1').first()).not.toHaveText(/404/i);
+    await expect(page.locator('main h1').first()).toBeVisible();
+    await expect(page.locator('main')).toBeVisible();
+    await expect(page.locator('main h1').first()).not.toHaveText(/404/i);
 
-        const article = page.locator('article, [data-testid="blog-post"], .blog-post');
-        await expect(article).toBeVisible();
+    const article = page.locator('main article');
+    await expect(article).toBeVisible();
 
-        const backToBlog = page.locator('a[href="/blog"], a:has-text("Back to Blog")');
-        if (await backToBlog.count() > 0) {
-          await expect(backToBlog.first()).toBeVisible();
-        }
-      }
-    } else {
-      await expect(page.locator('main')).toBeVisible();
-    }
+    const backToBlog = page.locator('a[href="/blog"], a:has-text("Back to Blog")');
+    await expect(backToBlog.first()).toBeVisible();
   });
 
   test('blog should have proper metadata and structure', async ({ page }) => {
@@ -56,30 +51,29 @@ test.describe('Blog Functionality', () => {
     await expect(blogContent).toBeVisible();
     await expect(page.locator('h1').first()).not.toHaveText(/404/i);
 
-    const postTitles = page.locator('h2, h3, [data-testid="post-title"]');
-    if (await postTitles.count() > 0) {
-      await expect(postTitles.first()).toBeVisible();
-    }
+    const postTitles = page.locator('main article h3');
+    await expect(postTitles.first()).toBeVisible();
+    expect(await postTitles.count()).toBeGreaterThanOrEqual(EXPECTED_MIN_POSTS);
   });
 
-  test('blog page should display category tags when posts exist', async ({ page }) => {
+  test('blog page should display post cards in All Articles', async ({ page }) => {
     await page.goto('/blog');
 
     await expect(page.locator('main')).toBeVisible();
     await expect(page.locator('h1').first()).not.toHaveText(/404/i);
+    await expect(page.getByRole('heading', { name: /All Articles/i })).toBeVisible();
 
-    const postCards = page.locator('article, [data-testid="blog-post"], .blog-post');
-    if (await postCards.count() > 0) {
-      await expect(postCards.first()).toBeVisible();
-    }
+    const postCards = page.locator('main article');
+    await expect(postCards.first()).toBeVisible();
+    expect(await postCards.count()).toBeGreaterThanOrEqual(EXPECTED_MIN_POSTS);
   });
 
   test('blog index should have at least one post from content pipeline', async ({ page }) => {
     await page.goto('/blog');
-    const articles = page.locator('article');
+    const articles = page.locator('main article');
     await expect(articles.first()).toBeVisible();
     const count = await articles.count();
-    expect(count).toBeGreaterThanOrEqual(1);
+    expect(count).toBeGreaterThanOrEqual(EXPECTED_MIN_POSTS);
   });
 
   test('known post slug career-transition-optconnect should load with expected title', async ({ page }) => {

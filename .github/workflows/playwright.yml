@@ -8,9 +8,65 @@ on:
   workflow_dispatch:
 
 jobs:
+  deploy-parity:
+    name: Blog content deploy parity
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: website/package-lock.json
+
+      - name: Install website dependencies
+        run: npm ci
+        working-directory: website
+
+      - name: Fail prebuild when hub and staged content are missing (Vercel-like)
+        run: |
+          set -euo pipefail
+          rm -rf website/content/blog
+          if [ -d content/blog ]; then
+            mv content/blog content/.ci-blog-hub-hidden
+          fi
+          set +e
+          (cd website && VERCEL=1 npm run prebuild)
+          PREBUILD_EXIT=$?
+          set -e
+          if [ -d content/.ci-blog-hub-hidden ]; then
+            mv content/.ci-blog-hub-hidden content/blog
+          fi
+          if [ "$PREBUILD_EXIT" -eq 0 ]; then
+            echo "::error::prebuild must fail when neither repo hub nor staged website/content/blog exists"
+            exit 1
+          fi
+          echo "OK: prebuild exited $PREBUILD_EXIT without blog content (expected non-zero)"
+
+      - name: Stage blog content and build with repo hub hidden
+        run: |
+          set -euo pipefail
+          rm -rf website/content/blog
+          node website/scripts/stage-blog-content.js
+          STAGED_COUNT=$(find website/content/blog -name '*.md' | wc -l)
+          echo "Staged markdown files: $STAGED_COUNT"
+          test "$STAGED_COUNT" -ge 6
+          mv content/blog content/.ci-blog-hub-hidden
+          cd website
+          npm run build
+          REQUIRE_STAGED_CONTENT=1 MIN_BLOG_POSTS=6 node scripts/assert-blog-posts-present.js
+          cd ..
+          mv content/.ci-blog-hub-hidden content/blog
+
   e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    needs: deploy-parity
 
     steps:
       - name: Checkout code

@@ -22,6 +22,9 @@ test.describe('Homepage Functionality', () => {
     await page.goto('/');
 
     await expect(page.getByRole('heading', { name: /Latest from the blog/i })).toBeVisible();
+    const latestCards = page.locator('main article');
+    await expect(latestCards.first()).toBeVisible();
+    expect(await latestCards.count()).toBeGreaterThanOrEqual(1);
   });
 
   test('homepage should not promote newsletter signup', async ({ page }) => {
