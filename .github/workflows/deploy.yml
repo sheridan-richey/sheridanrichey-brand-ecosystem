@@ -26,20 +26,44 @@ jobs:
 
       - name: Deploy to Vercel
         id: deploy
-        working-directory: website
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           set -euo pipefail
-          PROD_FLAG=""
+          PROD_ARGS=()
           if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            PROD_FLAG="--prod"
+            PROD_ARGS+=(--prod)
           fi
-          DEPLOY_URL=$(npx vercel@latest deploy --token "$VERCEL_TOKEN" --yes $PROD_FLAG 2>&1 | tee /tmp/vercel-deploy.log | tail -n 1)
-          echo "preview-url=$DEPLOY_URL" >> "$GITHUB_OUTPUT"
-          echo "Deployed to: $DEPLOY_URL"
+
+          LOG_FILE="${RUNNER_TEMP}/vercel-deploy.log"
+          : > "$LOG_FILE"
+
+          echo "Deploying from repo root $(pwd); Vercel project root directory should be website/ in dashboard."
+          set +e
+          npx vercel@latest deploy \
+            --token "$VERCEL_TOKEN" \
+            --yes \
+            "${PROD_ARGS[@]}" \
+            2>&1 | tee "$LOG_FILE"
+          DEPLOY_EXIT=${PIPESTATUS[0]}
+          set -e
+
+          if [ "$DEPLOY_EXIT" -ne 0 ]; then
+            echo "::error::Vercel deploy failed with exit code ${DEPLOY_EXIT}. Full CLI output:"
+            cat "$LOG_FILE"
+            exit "$DEPLOY_EXIT"
+          fi
+
+          DEPLOY_URL=$(grep -Eo 'https://[a-zA-Z0-9.-]+\.vercel\.app' "$LOG_FILE" | tail -n 1 || true)
+          if [ -z "$DEPLOY_URL" ]; then
+            echo "::warning::Could not parse a *.vercel.app URL from the deploy log; using last line."
+            DEPLOY_URL=$(tail -n 1 "$LOG_FILE")
+          fi
+
+          echo "preview-url=${DEPLOY_URL}" >> "$GITHUB_OUTPUT"
+          echo "Deployed to: ${DEPLOY_URL}"
 
       - name: Show Deployment URL
         run: |
