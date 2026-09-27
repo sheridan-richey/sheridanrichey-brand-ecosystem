@@ -6,6 +6,7 @@ import { ArrowLeft, Calendar, Share2, Tag } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 
 /**
@@ -81,7 +82,13 @@ const markdownComponents = {
   ),
   img: ({ src, alt }: { src?: string; alt?: string }) => (
     <img src={src} alt={alt ?? ''} className="my-6 max-w-full rounded-lg border border-smoke" />
-  )
+  ),
+  span: ({ className, children }: { className?: string; children?: React.ReactNode }) => {
+    if (className === 'lab-value-red') {
+      return <span className="lab-value-red font-semibold">{children}</span>
+    }
+    return <span>{children}</span>
+  }
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
@@ -168,7 +175,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <div className="max-w-4xl mx-auto px-6 py-12">
         <article className="prose prose-lg max-w-none">
           <div className="blog-content mx-auto max-w-[65ch] text-[17px] sm:text-lg leading-[1.75] text-graphite font-manrope">
-            <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
+              components={markdownComponents}
+            >
               {rawBody}
             </ReactMarkdown>
           </div>
