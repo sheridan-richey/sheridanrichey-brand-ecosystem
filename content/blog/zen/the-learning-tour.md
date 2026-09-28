@@ -56,9 +56,7 @@ Working the themes with the teams, especially under Bridge, was also Multiplier 
 
 ## SKO as the start of the rollout
 
-At SKO I introduced the themes for the upcoming year. Alongside [Jeff](https://www.linkedin.com/in/jeffpenka) and our VP of Engineering, we put them in front of the broader organization in an Innovation Engine session. We also shared the big projects already underway and asked for feedback: what were we missing, and where should we lean?
-
-People voted on the projects. I wanted input and validation, not applause. Themes framed the year. The vote showed where energy wanted to go. That conversation fed the planning work we did through Q1.
+At SKO I introduced the themes for the upcoming year. Alongside [Jeff](https://www.linkedin.com/in/jeffpenka) and our VP of Engineering, we ran a lively workshop with the broader organization. We shared the themes and the big projects already underway, and everyone weighed in on how they would invest our resources: what were we missing, and where should we lean? I wanted input and validation, not applause. Themes framed the year. That conversation showed where energy wanted to go and fed the planning work we did through Q1.
 
 The same theme content traveled with me. About a month later, at my first board meeting, I reused it and got additional buy-in. A month after that, at our five-year strategic planning offsite, I kept folding those themes into the new initiatives that came out of the room. SKO was not a one-day reveal. It was the first public pass of material that kept showing up in board alignment and longer-range planning.
 
