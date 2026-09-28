@@ -26,7 +26,7 @@ I brought a Learning Tour: about three dozen interviews in December and early Ja
 
 For about fifteen years I have used [*The First 90 Days*](https://www.amazon.com/First-90-Days-Strategies-Expanded/dp/1422188612) by Michael D. Watkins in each new role. I lean into it harder each time. This time I bought the book for my team and colleagues. My joining changed their world too. Shared language mattered.
 
-I stuck to the interviews before SKO even though the calendar wanted answers. I recorded conversations in Google Meet, used Gemini on the transcripts, and loaded everything into NotebookLM. NotebookLM still does not get enough credit. With enough sources in one place, patterns are easier to see and harder to invent from memory.
+I stuck to the interviews before SKO even though the calendar wanted answers. I recorded conversations in Google Meet, used Gemini on the transcripts, and loaded everything into NotebookLM, now known as Gemini Notebook. Gemini Notebook still does not get enough credit. With enough sources in one place, patterns are easier to see and harder to invent from memory.
 
 ## Five themes
 
@@ -38,7 +38,7 @@ I shared five working themes with leadership ahead of SKO as a way to prioritize
 - **Multiplier.** Use AI to increase velocity across engineering and the company, with discipline, not chaos.
 - **Global.** Harmonize technology and systems across the international footprint so teams are not fighting silos.
 
-Bridge was the one I staffed first. [Jeff Penka](https://www.linkedin.com/in/jeffpenka) joined at SKO as Product Advisor on that theme: product management as the translation layer between market needs and what we build. I shared the NotebookLM notebook with him so he did not have to rebuild my first month from hallway talk. That stack was Multiplier in practice too.
+Bridge was the one I staffed first. [Jeff Penka](https://www.linkedin.com/in/jeffpenka) joined at SKO as Product Advisor on that theme: product management as the translation layer between market needs and what we build. I shared the Gemini Notebook with him so he did not have to rebuild my first month from hallway talk. That stack was Multiplier in practice too.
 
 ## Rollout
 
