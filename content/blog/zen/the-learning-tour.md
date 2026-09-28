@@ -50,13 +50,13 @@ Equal billing then, equal billing here:
 
 Those names came from what I kept hearing: missing context without a strong product function, a need for clearer ownership and more predictable delivery, AI used carefully instead of randomly, packaging that matched how buyers actually buy, stronger data-backed value stories, and more coherent global operations. Naming the themes made them something the org could argue with.
 
-Bridge was the one I staffed first. Jeff Penka joined at SKO as Product Advisor focused on that theme: standing up product management as the translation layer between market needs and what we build. I shared the NotebookLM notebook with him so he did not have to rebuild my first month from hallway summaries. It sped up his ramp after the event.
+Bridge was the one I staffed first. [Jeff Penka](https://www.linkedin.com/in/jeffpenka) joined at SKO as Product Advisor focused on that theme: standing up product management as the translation layer between market needs and what we build. I shared the NotebookLM notebook with him so he did not have to rebuild my first month from hallway summaries. It sped up his ramp after the event.
 
 Working the themes with the teams, especially under Bridge, was also Multiplier in practice. The same AI-assisted listening that produced the themes helped a new advisor get productive faster.
 
 ## SKO as the start of the rollout
 
-At SKO I introduced the themes for the upcoming year. Alongside Jeff and our VP of Engineering, we put them in front of the broader organization in an Innovation Engine session. We also shared the big projects already underway and asked for feedback: what were we missing, and where should we lean?
+At SKO I introduced the themes for the upcoming year. Alongside [Jeff](https://www.linkedin.com/in/jeffpenka) and our VP of Engineering, we put them in front of the broader organization in an Innovation Engine session. We also shared the big projects already underway and asked for feedback: what were we missing, and where should we lean?
 
 People voted on the projects. I wanted input and validation, not applause. Themes framed the year. The vote showed where energy wanted to go. That conversation fed the planning work we did through Q1.
 
