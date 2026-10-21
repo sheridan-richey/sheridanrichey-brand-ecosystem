@@ -46,7 +46,7 @@ Blog content is **not** in `website/posts/`. Posts live at repo root in `content
 
 ## Environment
 
-Copy `website/.env.example` to `website/.env.local` for local secrets (Beehiiv, Resend, etc.). Production vars live in Vercel.
+Copy `website/.env.example` to `website/.env.local` for local secrets (Resend for the contact form, etc.). Production vars live in Vercel.
 
 ## More context
 

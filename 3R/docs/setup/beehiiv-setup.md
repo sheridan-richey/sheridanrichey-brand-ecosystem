@@ -1,8 +1,10 @@
 # Beehiiv Newsletter Integration Setup
 
-> **Authority:** Env var names and production setup belong in [`website/.env.example`](../../../website/.env.example), [AGENTS.md](../../../AGENTS.md), and [`.cursor/rules/testing-deployment.mdc`](../../../.cursor/rules/testing-deployment.mdc). Editorial/newsletter strategy: [`.cursor/rules/content-strategy.mdc`](../../../.cursor/rules/content-strategy.mdc). This file is a **step-by-step vendor guide**; if steps conflict with the repo or rules, prefer the repo.
+> **Archived (Oct 2026):** The public site no longer uses Beehiiv or `/api/newsletter`. Legacy `/newsletter` URLs redirect to `/blog`. This guide is kept for historical reference only.
 
-This guide will help you set up the Beehiiv integration for the ZAG Community newsletter.
+> **Authority:** Current env vars: [`website/.env.example`](../../../website/.env.example) and [AGENTS.md](../../../AGENTS.md). This file is a **step-by-step vendor guide**; if steps conflict with the repo or rules, prefer the repo.
+
+This guide documents the former Beehiiv integration for the ZAG Community newsletter.
 
 ## Prerequisites
 

@@ -1,5 +1,5 @@
 // tests/e2e/newsletter.spec.js
-// Newsletter UX removed from public site; API remains for dormant integrations.
+// Legacy /newsletter URLs redirect to /blog; no newsletter signup surface on the site.
 const { test, expect } = require('@playwright/test');
 
 test.describe('Newsletter surface removal', () => {
@@ -14,11 +14,10 @@ test.describe('Newsletter surface removal', () => {
     await expect(newsletterElements).toHaveCount(0);
   });
 
-  test('newsletter API route is still mounted', async ({ request }) => {
+  test('newsletter API route is removed', async ({ request }) => {
     const response = await request.post('/api/newsletter', {
       data: { email: 'not-an-email' },
     });
-    // Route exists; without Beehiiv env in dev, server may return 400 (validation) or 500 (config).
-    expect([400, 500]).toContain(response.status());
+    expect(response.status()).toBe(404);
   });
 });

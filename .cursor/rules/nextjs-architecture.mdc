@@ -12,8 +12,6 @@ Follow the established patterns in the website directory:
 - [Main Layout](mdc:website/app/layout.tsx) — Root layout with metadata and global styles
 - [Homepage](mdc:website/app/page.tsx) — Landing page
 - [ZAG Matrix Page](mdc:website/app/zag-matrix/page.tsx) — Framework presentation
-- [Newsletter Page](mdc:website/app/newsletter/page.tsx) — Email signup
-- [Resources Page](mdc:website/app/resources/page.tsx) — Tools and frameworks
 - [About Page](mdc:website/app/about/page.tsx) — Personal story
 - [Contact Page](mdc:website/app/contact/page.tsx) — Contact form
 - [Blog Pages](mdc:website/app/blog/) — Blog index and post routes
@@ -34,8 +32,6 @@ Follow the established patterns in the website directory:
 ## Key Components Reference
 - [HeroSection](mdc:website/components/HeroSection.tsx)
 - [ZagMatrixSidebar](mdc:website/components/ZagMatrixSidebar.tsx)
-- [NewsletterSignup](mdc:website/components/NewsletterSignup.tsx)
-- [NewsletterCTA](mdc:website/components/NewsletterCTA.tsx)
 - [ContactForm](mdc:website/components/ContactForm.tsx)
 - [BlogCard](mdc:website/components/BlogCard.tsx)
 - [LatestInsights](mdc:website/components/LatestInsights.tsx)
@@ -46,7 +42,7 @@ Follow the established patterns in the website directory:
 - Mobile-first responsive design; consistent spacing and typography
 
 ## API Integration
-- Follow [newsletter API](mdc:website/app/api/newsletter/route.ts)
+- Follow [contact API](mdc:website/app/api/contact/route.ts) (Resend)
 - Proper error handling, validation, HTTP status codes
 - TypeScript interfaces for request/response shapes
 
@@ -57,6 +53,5 @@ Follow the established patterns in the website directory:
 - [postcss.config.js](mdc:website/postcss.config.js)
 - Root [vercel.json](mdc:vercel.json) and [website/vercel.json](mdc:website/vercel.json) — see testing-deployment rule for deploy details
 
-## Newsletter
-- Centralized signup via `/newsletter`; use `NewsletterCTA` for redirect flows
-- Capture `ctaSource` for attribution; Beehiiv integration with custom fields
+## Legacy URLs
+- `/newsletter`, `/resources`, `/community`, and `/downloads/prompt-architects-toolkit` redirect to `/blog` via [next.config.js](mdc:website/next.config.js)

@@ -59,7 +59,7 @@ In the [Vercel dashboard](https://vercel.com):
 - **Root directory:** `website`
 - **Build command:** `npm run build`
 - **Install command:** `npm install`
-- **Environment variables:** same as in `2A/technical-maintenance/deployment-process.md` (e.g. `BEEHIIV_*`, `NEXT_PUBLIC_SITE_URL`, etc.)
+- **Environment variables:** same as in `2A/technical-maintenance/deployment-process.md` (e.g. `RESEND_*`, `NEXT_PUBLIC_SITE_URL`, etc.)
 
 If the project was already connected and working, you don’t need to change this.
 
