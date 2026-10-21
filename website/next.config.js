@@ -1,5 +1,9 @@
+const path = require('path')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Monorepo: repo root has package-lock.json; app lives in website/ (Vercel Root Directory).
+  outputFileTracingRoot: path.join(__dirname, '..'),
   trailingSlash: false,
   assetPrefix: '',
   basePath: '',

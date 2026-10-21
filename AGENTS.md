@@ -44,7 +44,7 @@ Update `AGENTS.md` and/or the relevant `.mdc` rule when you:
 
 ## Tech stack
 
-- **Site**: Next.js 14 (App Router), TypeScript, Tailwind CSS, React 18.
+- **Site**: Next.js 15 (App Router), TypeScript, Tailwind CSS, React 18.
 - **Content**: Markdown/MDX in `content/blog/` (zen, act, gem, zag subdirs), parsed at build time via custom [`website/lib/posts.ts`](website/lib/posts.ts) (gray-matter + fs). No Contentlayer.
 - **Hosting**: Vercel. Production deploys use GitHub Actions ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)); `website/vercel.json` disables Vercel’s native Git auto-deploy. E2E runs on push/PR to `main` via [`.github/workflows/playwright.yml`](.github/workflows/playwright.yml).
 - **Tests**: Playwright E2E in `tests/e2e/`; [`playwright.config.js`](playwright.config.js) targets a local base URL and starts the Next dev server on port **3100** by default (`E2E_PORT`) so it does not conflict with a manual `next dev` on port 3000.

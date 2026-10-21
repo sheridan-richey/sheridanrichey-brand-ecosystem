@@ -28,7 +28,7 @@ Open [http://localhost:3000](http://localhost:3000). The Next.js app lives in `w
 
 | Path | Purpose |
 |------|---------|
-| [website/](website/) | Next.js 14 app (App Router) — see [website/README.md](website/README.md) |
+| [website/](website/) | Next.js 15 app (App Router) — see [website/README.md](website/README.md) |
 | [content/blog/](content/blog/) | Blog markdown (single source of truth for posts) |
 | [tests/e2e/](tests/e2e/) | Playwright tests |
 | [.github/workflows/](.github/workflows/) | CI: deploy, Playwright |
