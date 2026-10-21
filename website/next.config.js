@@ -1,5 +1,12 @@
+const path = require('path')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Monorepo local/CI builds: silence duplicate lockfile warning. Omit on Vercel (Root Directory
+  // is already website/) — setting this there breaks output file tracing (ENOENT on routes-manifest).
+  ...(process.env.VERCEL !== '1' && {
+    outputFileTracingRoot: path.join(__dirname, '..'),
+  }),
   trailingSlash: false,
   assetPrefix: '',
   basePath: '',
