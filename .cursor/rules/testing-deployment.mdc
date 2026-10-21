@@ -15,13 +15,13 @@ alwaysApply: false
 
 ### Playwright
 - Configuration: [playwright.config.js](mdc:playwright.config.js) — local runs use a dedicated dev port (`E2E_PORT`, default **3100**) so the Playwright `webServer` does not collide with a normal `next dev` on port 3000.
-- Tests: [tests/e2e/](mdc:tests/e2e/) — homepage, blog, contact, newsletter, links, speaking, zag-matrix
+- Tests: [tests/e2e/](mdc:tests/e2e/) — homepage, blog, contact, legacy redirects, links, speaking, zag-matrix
 - Page objects: [tests/e2e/pageObjects/](mdc:tests/e2e/pageObjects/)
 - Default: run E2E against **local** dev (`npm run dev` + `npm run test:e2e`); use production `BASE_URL` only when intentionally testing live site
 - **Pre-deploy:** Prefer `npm run test:e2e` and `npm run build` before merging to `main`
 
 ### Standards
-- Cover critical user flows: navigation, forms, blog load, newsletter paths
+- Cover critical user flows: navigation, contact form, blog load, legacy URL redirects
 - Keep selectors maintainable (prefer stable names over brittle counts)
 
 ## Continuous Integration
@@ -57,7 +57,7 @@ alwaysApply: false
 
 ## Environment variables
 
-- **Secrets:** Beehiiv, Resend, etc. — set in Vercel for production; use `website/.env.local` locally (see `website/.env.example`)
+- **Secrets:** Resend (contact form), etc. — set in Vercel for production; use `website/.env.local` locally (see `website/.env.example`)
 - Never commit API keys or tokens
 
 ## Rollback & monitoring

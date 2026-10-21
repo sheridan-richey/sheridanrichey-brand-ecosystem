@@ -37,7 +37,7 @@ Update `AGENTS.md` and/or the relevant `.mdc` rule when you:
 
 - **What it is**: Personal brand ecosystem for Sheridan Richey — website (sheridanrichey.com), content hub, and professional presence.
 - **Audience**: "Alex, the Awakened Technologist" — mid-career professionals seeking purpose-driven transformation.
-- **Conversion goals**: Grow the email list for **The ZAG Navigator** newsletter and capture leads for the **Prompt Architect's Toolkit** (and other lead magnets).
+- **Conversion goals**: Blog-first audience building; primary on-site conversion is the **contact form** (Resend). Legacy `/newsletter` URLs redirect to `/blog`.
 - **Framework**: All content and positioning tie back to the **ZAG Matrix** (ZEN, ACT, GEM).
 
 ---
@@ -82,8 +82,8 @@ These are intentionally outside PARA; link here instead of duplicating:
 
 - **Ship**: Commit to a feature branch, merge to `main` via PR, then confirm GitHub Actions (Playwright + Deploy) and Vercel secrets. See [`1P/brand-dial-in/PUBLISH_CHECKLIST.md`](1P/brand-dial-in/PUBLISH_CHECKLIST.md).
 - **Lead magnet**: Add `website/public/downloads/prompt-architects-toolkit.pdf` when ready (see `website/public/downloads/README.md`). `.gitignore` allows PDFs in that folder only.
-- **Content**: New posts go in `content/blog/`; env vars for production are documented in `website/.env.example` (Beehiiv + Resend).
-- **Ongoing**: Blog cadence, newsletter, and ZAG-aligned content per [`.cursor/rules/`](.cursor/rules/).
+- **Content**: New posts go in `content/blog/`; env vars for production are documented in `website/.env.example` (Resend for contact).
+- **Ongoing**: Blog cadence and ZAG-aligned content per [`.cursor/rules/`](.cursor/rules/).
 
 ---
 
