@@ -1,6 +1,6 @@
 # Website — sheridanrichey.com
 
-Next.js **14** (App Router), TypeScript, Tailwind CSS. Run from repo root with `npm run dev` or from this directory with `npm run dev`.
+Next.js **15** (App Router), TypeScript, Tailwind CSS. Run from repo root with `npm run dev` or from this directory with `npm run dev`.
 
 **URL:** [sheridanrichey.com](https://sheridanrichey.com)
 
