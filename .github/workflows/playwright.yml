@@ -65,7 +65,7 @@ jobs:
 
   e2e:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     needs: deploy-parity
 
     steps:
@@ -90,7 +90,7 @@ jobs:
         working-directory: website
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps chromium
 
       - name: Start server and run Playwright
         run: |
