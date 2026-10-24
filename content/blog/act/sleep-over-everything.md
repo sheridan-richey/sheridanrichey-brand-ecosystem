@@ -1,7 +1,7 @@
 ---
 title: "Sleep Over Everything"
 description: "Five months of stacked travel showed me my routine was too heavy to carry. Here's the lighter version I'm building, starting with sleep."
-date: "2026-10-28"
+date: "2026-10-23"
 category: "ACT"
 author: "sheridan-richey"
 tags:
